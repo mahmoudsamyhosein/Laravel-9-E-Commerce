@@ -54,30 +54,30 @@
 						</div>
 
 					</div><!--end wrap shop control-->
-
-					<div class="row">
-
-						<ul class="product-list grid-products equal-container">
-							@foreach ($products as $product)	
-								<li class="col-lg-4 col-md-6 col-sm-6 col-xs-6 ">
-									<div class="product product-style-3 equal-elem ">
-										<div class="product-thumnail">
-											<a href="{{ route('products.details', ['slug' => $product->slug ]) }}" title="{{$product->name}}">
-												<figure><img src="{{ asset ('assets/images/products') }}/{{ $product->image }}" alt="{{$product->name}}"></figure>
-											</a>
-										</div>
-										<div class="product-info">
-											<a href="{{ route('products.details', ['slug' => $product->slug ]) }}" class="product-name"><span>{{ $product->name }}</span></a>
-											<div class="wrap-price"><span class="product-price">{{ $product->regular_price }}</span></div>
-											<a href="#" class="btn add-to-cart" wire:click.prevent="store({{ $product->id }},{{ $product->name }},{{ $product->regular_price }})">Add To Cart</a>
-										</div>
-									</div>
-								</li>
-							@endforeach
-						</ul>
-
-					</div>
-
+                    @if($products->count()>0)
+                        <div class="row">
+                            <ul class="product-list grid-products equal-container">
+                                @foreach ($products as $product)	
+                                    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-6 ">
+                                        <div class="product product-style-3 equal-elem ">
+                                            <div class="product-thumnail">
+                                                <a href="{{ route('products.details', ['slug' => $product->slug ]) }}" title="{{$product->name}}">
+                                                    <figure><img src="{{ asset ('assets/images/products') }}/{{ $product->image }}" alt="{{$product->name}}"></figure>
+                                                </a>
+                                            </div>
+                                            <div class="product-info">
+                                                <a href="{{ route('products.details', ['slug' => $product->slug ]) }}" class="product-name"><span>{{ $product->name }}</span></a>
+                                                <div class="wrap-price"><span class="product-price">{{ $product->regular_price }}</span></div>
+                                                <a href="#" class="btn add-to-cart" wire:click.prevent="store({{ $product->id }},{{ $product->name }},{{ $product->regular_price }})">Add To Cart</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @else
+                        <p style="padding-top: 30px;">No Products</p>
+                    @endif
 					<div class="wrap-pagination-info">
 						{{ $products->links() }}
 						<p class="result-count">Showing 1-8 of 12 result</p>
@@ -91,9 +91,9 @@
 							<ul class="list-category">
 								@foreach ($categories as $category)
 									<li class="category-item">
-										{{-- <a href="{{ route('product.category') , [ 'category_slug' =>$category->slug ] }}" class="cate-link"> {{ $category->name }} </a> --}}
+										<a href="" class="cate-link"> {{ $category->name }} </a>
 														{{-- category_slug خطأ في تمرير المعامل  --}}
-										
+										{{-- {{ route('product.category') , [ 'category_slug' => $category_slug ] }} --}}
 									</li>
 								@endforeach
 							</ul>
