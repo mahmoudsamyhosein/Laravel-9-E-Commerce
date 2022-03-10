@@ -9,15 +9,13 @@ class AdminAddCategoryComponent extends Component
 {
     public $name;
     public $slug;
-
-
     public function generateslug(){
         $this->slug = Str::slug($this->name,'-');
     }
     public function store(){
         $category = new Category();
         $category->name = $this->name;
-        $category->name = $this->slug;
+        $category->slug = $this->slug;
         $category->save();
         Session()->flash('message','Category Has Been Created Successfully!');
     }

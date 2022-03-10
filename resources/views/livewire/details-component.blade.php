@@ -10,19 +10,14 @@
 				</ul>
 			</div>
 			<div class="row">
-
 				<div class="col-lg-9 col-md-8 col-sm-8 col-xs-12 main-content-area">
 					<div class="wrap-product-detail">
 						<div class="detail-media">
 							<div class="product-gallery">
 							  <ul class="slides">
-
 							    <li data-thumb="{{ asset('assets/images/products')}}/{{$product->image}}">
 							    	<img src="{{ asset('assets/images/products')}}/{{$product->image}}" alt="{{$product->name}}" />
 							    </li>
-
-							    
-
 							  </ul>
 							</div>
 						</div>
@@ -44,7 +39,11 @@
                             <div class="wrap-social">
                             	<a class="link-socail" href="#"><img src="{{ asset('assets/images/social-list.png') }}" alt=""></a>
                             </div>
-                            <div class="wrap-price"><span class="product-price">${{ $product->regular_price }}</span></div>
+							@if($product->sale_price > 0)
+							<div class="wrap-price"><ins><p class="product-price">${{$product->sale_price}}</p></ins> <del><p class="product-price">${{$product->regular_price}}</p></del></div>
+							@else
+								<div class="wrap-price"><span class="product-price">${{ $product->regular_price }}</span></div>
+							@endif
                             <div class="stock-info in-stock">
                                 <p class="availability">Availability: <b>{{ $product->stock_status }}</b></p>
                             </div>
@@ -243,23 +242,23 @@
 						<div class="wrap-products">
 							<div class="products slide-carousel owl-carousel style-nav-1 equal-container" data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"3"},"1200":{"items":"5"}}' >
 								<div class="product product-style-2 equal-elem ">
-                                @foreach($related_products as $r_product)
-									<div class="product-thumnail">
-										<a href="{{ route('products.details', ['slug' => $r_product->slug ]) }}" title="{{ $r_product->name }}">
-											<figure><img src="{{ asset('assets/images/products')}}/{{ $r_product->name }}" width="214" height="214" alt="{{ $r_product->name }}"></figure>
-										</a>
-										<div class="group-flash">
-											<span class="flash-item new-label">new</span>
+									@foreach($related_products as $r_product)
+										<div class="product-thumnail">
+											<a href="{{ route('products.details', ['slug' => $r_product->slug ]) }}" title="{{ $r_product->name }}">
+												<figure><img src="{{ asset('assets/images/products')}}/{{ $r_product->image }}" width="214" height="214" alt="{{ $r_product->name }}"></figure>
+											</a>
+											<div class="group-flash">
+												<span class="flash-item new-label">new</span>
+											</div>
+											<div class="wrap-btn">
+												<a href="#" class="function-link">quick view</a>
+											</div>
 										</div>
-										<div class="wrap-btn">
-											<a href="#" class="function-link">quick view</a>
+										<div class="product-info">
+											<a href="{{ route('products.details', ['slug' => $r_product->slug ]) }}" class="product-name"><span>{{ $r_product->name }}</span></a>
+											<div class="wrap-price"><span class="product-price">${{ $r_product->regular_price }}</span></div>
 										</div>
-									</div>
-									<div class="product-info">
-										<a href="#" class="product-name"><span>{{ $r_product->name }}</span></a>
-										<div class="wrap-price"><span class="product-price">${{ $r_product->regular_price }}</span></div>
-									</div>
-                                @endforeach
+									@endforeach
 								</div>
 							</div>
 						</div><!--End wrap-products-->

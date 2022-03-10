@@ -9,7 +9,9 @@ use App\Http\Livewire\Admin\AdminEditProductComponent;
 use App\Http\Livewire\Admin\AdminHomeSliderComponent;
 use App\Http\Livewire\Admin\AdminAddHomeSliderComponent;
 use App\Http\Livewire\Admin\AdminEditHomeSliderComponent;
+use App\Http\Livewire\Admin\AdminHomeCategoryComponent;
 use App\Http\Livewire\Admin\AdminProductComponent;
+use App\Http\Livewire\Admin\AdminSaleComponent;
 use App\Http\Livewire\CartComponent;
 use App\Http\Livewire\CategoryComponent;
 use App\Http\Livewire\CheckOutComponent;
@@ -65,5 +67,9 @@ Route::middleware(['auth:sanctum', 'verified','authadmin'])->group(function(){
     Route::get('/admin/slider',AdminHomeSliderComponent::class)->name('admin.homeslider');
     Route::get('/admin/slider/add',AdminAddHomeSliderComponent::class)->name('admin.addhomeslider');
     Route::get('/admin/slider/edit/{slide_id}',AdminEditHomeSliderComponent::class)->name('admin.edithomeslider');
+    //رئيسية المنتجات بالأقسام
+    Route::get('/admin/home-categories',AdminHomeCategoryComponent::class)->name('admin.home-categories');
+    //الخصومات
+    Route::get('/admin/sale',AdminSaleComponent::class)->name('admin.sale');
 });
 

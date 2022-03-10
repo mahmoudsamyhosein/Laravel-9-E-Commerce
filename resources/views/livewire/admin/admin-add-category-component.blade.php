@@ -39,7 +39,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="" class="col-md-4 control-label">
+                                <label  class="col-md-4 control-label">
                                 </label>
                                 <div class="col-md-4">
                                 <button type="submit" class="btn btn-primary">Submit</button>

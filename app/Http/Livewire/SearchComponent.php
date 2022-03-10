@@ -12,7 +12,7 @@ class SearchComponent extends Component
 {
     
     use WithPagination;
-
+    
     public $sorting;
     public $pagesize;
     

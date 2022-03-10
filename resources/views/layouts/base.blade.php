@@ -16,6 +16,9 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/chosen.min.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/color-01.css') }}">
+	<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	
     @livewireStyles
 </head>
 <body class="home-page home-01 ">
@@ -87,7 +90,13 @@
 																	<a  title="Manage Home Slider"  href="{{ route('admin.homeslider')}}">Manage Home Slider</a>
 																</li>
 																<li class="menu-item">
-																	<a href=" {{ route('logout') }}" onclick="event.preventDefault(); document.getElementByid('logout-form').submit();">Logout</a>
+																	<a  title="Manage Home Categories"  href="{{ route('admin.home-categories')}}">Manage Home Categories</a>
+																</li>
+																<li class="menu-item">
+																	<a  title="Sale Setting"  href="{{ route('admin.sale')}}">Sale Setting</a>
+																</li>
+																<li class="menu-item">
+																	<a href=" {{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
 																</li>
 																<form  id="logout-form" action=" {{ route('logout') }}" method="post">
 																	@csrf
@@ -470,6 +479,12 @@
 	<script src="{{ asset('assets/js/jquery.countdown.min.js') }}"></script>
 	<script src="{{ asset('assets/js/jquery.sticky.js') }}"></script>
 	<script src="{{ asset('assets/js/functions.js') }}"></script>
+	<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     @livewireScripts
+
+
+	@stack('scripts')
 </body>
 </html>
