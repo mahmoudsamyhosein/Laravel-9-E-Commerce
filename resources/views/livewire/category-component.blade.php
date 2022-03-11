@@ -81,12 +81,7 @@
 
 					<div class="wrap-pagination-info">
 						{{ $products->links() }}
-						{{-- <ul class="page-numbers">
-							<li><span class="page-number-item current" >1</span></li>
-							<li><a class="page-number-item" href="#" >2</a></li>
-							<li><a class="page-number-item" href="#" >3</a></li>
-							<li><a class="page-number-item next-link" href="#" >Next</a></li>
-						</ul> --}}
+						
 						<p class="result-count">Showing 1-8 of 12 result</p>
 					</div>
 				</div><!--end main products area-->
@@ -98,7 +93,7 @@
 							<ul class="list-category">
 								@foreach ($categories as $category)
 								<li class="category-item">
-									<a href="{{ route('product.category') , ['category_slug'] => $category->slug }}" class="cate-link">{{ $category->name }}</a>
+									<a href="{{ route('product.category') , ['category_slug' => $category->slug ] }}" class="cate-link">{{ $category->name }}</a>
 								</li>
 								@endforeach
 							</ul>

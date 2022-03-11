@@ -8,13 +8,16 @@ use App\Http\Livewire\Admin\AdminEditCategoryComponent;
 use App\Http\Livewire\Admin\AdminEditProductComponent;
 use App\Http\Livewire\Admin\AdminHomeSliderComponent;
 use App\Http\Livewire\Admin\AdminAddHomeSliderComponent;
+use App\Http\Livewire\Admin\AdminContactComponent;
 use App\Http\Livewire\Admin\AdminEditHomeSliderComponent;
 use App\Http\Livewire\Admin\AdminHomeCategoryComponent;
 use App\Http\Livewire\Admin\AdminProductComponent;
 use App\Http\Livewire\Admin\AdminSaleComponent;
+use App\Http\Livewire\Admin\AdminSettingComponent;
 use App\Http\Livewire\CartComponent;
 use App\Http\Livewire\CategoryComponent;
 use App\Http\Livewire\CheckOutComponent;
+use App\Http\Livewire\ContactComponent;
 use App\Http\Livewire\DetailsComponent;
 use App\Http\Livewire\HomeComponent;
 use App\Http\Livewire\SearchComponent;
@@ -47,6 +50,8 @@ Route::get('/checkout',CheckOutComponent::class);
 Route::get('/product/{slug}',DetailsComponent::class)->name('products.details');
 // البحث 
 Route::get('/search',SearchComponent::class)->name('product.search');
+//تواصل معنا
+Route::get('/contact-us',ContactComponent::class)->name('contact-us');
 //مسار للعميل للدخول الي لوحة التحكم
 Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::get('/user/dashboard',UserDashboardComponent::class)->name('user.dashboard');
@@ -71,5 +76,9 @@ Route::middleware(['auth:sanctum', 'verified','authadmin'])->group(function(){
     Route::get('/admin/home-categories',AdminHomeCategoryComponent::class)->name('admin.home-categories');
     //الخصومات
     Route::get('/admin/sale',AdminSaleComponent::class)->name('admin.sale');
+    //تواصل معنا 
+    Route::get('/admin/contact-us',AdminContactComponent::class)->name('admin.contact-us');
+    //الأعدادات
+    Route::get('/admin/settings',AdminSettingComponent::class)->name('admin.settings');
 });
 

@@ -7,12 +7,15 @@
                       Sale Setting
                   </div>
                   <div class="panel-body">
-                      <form class="form-horizontal">
+                        @if(Session::has('message'))
+                            <div class="alert alert-success" role="alert">{{ Session::get('message')}}</div>
+                        @endif
+                      <form class="form-horizontal" wire:submit.prevent='updatesale'>
                           @csrf
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Status</label>
                                 <div class="col-md-4">
-                                    <select class="form-control">
+                                    <select class="form-control" wire:model='status'>
                                         <option value="0">Inactive</option>
                                         <option value="1">Active</option>
                                     </select>
@@ -21,7 +24,7 @@
                             <div class="form-group">
                                     <label class="col-md-4 control-label">Sale Date</label>
                                     <div class="col-md-4">
-                                    <input type="text" id="sale-date" placeholder="YYYY/MM/DD H:M:S" class="form-control input-md">
+                                    <input type="text" id="sale-date" placeholder="YYYY/MM/DD H:M:S" class="form-control input-md" wire:model='sale_date'>
                                     </div>
                             </div>
                             <div class="form-group">
@@ -44,6 +47,8 @@
                 format: 'Y-MM-DD h:m:s',
             })
             .on('dp.change',function(ev){
+                var data = $('#sale-date').val();
+                @this.set('sale_date',data);
 
             });
         });
