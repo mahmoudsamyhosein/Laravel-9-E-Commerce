@@ -33,7 +33,7 @@
                             <h2 class="product-name">{{ $product->name }}</h2>
                             <div class="short-desc">
                                 <ul>
-                                    {{ $product->short_description }}
+                                    {!! $product->short_description !!}
                                 </ul>
                             </div>
                             <div class="wrap-social">
@@ -76,7 +76,7 @@
 							</div>
 							<div class="tab-contents">
 								<div class="tab-content-item active" id="description">
-									{{ $product->description }}
+									{!! $product->description !!}
 								</div>
 								<div class="tab-content-item " id="add_infomation">
 									<table class="shop_attributes">
@@ -250,13 +250,7 @@
 										<div class="product-thumnail">
 											<a href="{{ route('products.details', ['slug' => $r_product->slug ]) }}" title="{{ $r_product->name }}">
 												<figure><img src="{{ asset('assets/images/products')}}/{{ $r_product->image }}" width="214" height="214" alt="{{ $r_product->name }}"></figure>
-											</a>
-											<div class="group-flash">
-												<span class="flash-item new-label">new</span>
-											</div>
-											<div class="wrap-btn">
-												<a href="#" class="function-link">quick view</a>
-											</div>
+											</a>						
 										</div>
 										<div class="product-info">
 											<a href="{{ route('products.details', ['slug' => $r_product->slug ]) }}" class="product-name"><span>{{ $r_product->name }}</span></a>

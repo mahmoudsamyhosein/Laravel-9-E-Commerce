@@ -9,7 +9,7 @@ use Livewire\WithPagination;
 class AdminCategoryComponent extends Component
 {
     use WithPagination;
-
+    public $category;
     public function destroycategory($id){
         $category = Category::find($id);
         $category->delete();
@@ -19,7 +19,6 @@ class AdminCategoryComponent extends Component
     public function render()
     {
         $categories = Category::paginate(5);
-       
         return view('livewire.admin.admin-category-component' ,['categories' => $categories ])->layout('layouts.base');
     }
 }
