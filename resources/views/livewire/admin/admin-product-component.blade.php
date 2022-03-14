@@ -13,11 +13,15 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 All Products
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                <a href="{{ route('admin.addproduct') }}" class="btn btn-success pull-right">Add New</a>
+                            </div>
+
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" placeholder="search..." wire:model="searchterm">
                             </div>
                         </div>    
                     </div>
@@ -54,11 +58,11 @@
                                             <a href="{{ route('admin.editproduct' ,['product_slug' => $product->slug ])}}"><i class="fa fa-edit fa-2x text-info">
                                                 </i>
                                             </a>
-                                            <a href="#" onclick="confirm('Are You Sure, You Want To Delete This Product ? ') || event.stopImmediatePropagation()" style="margin-left:10px;" wire:click.prevent='deleteproduct({{ $product->id }})'>
+                                            <a href="#" onclick="confirm('Are You Sure, You Want To Delete This Product ? ') || event.stopImmediatePropagation()" style="margin-left:10px;" 
+                                            wire:click.prevent="destroyproduct({{$product->id}})">
                                             <i class="fa fa-times fa-2x text-danger"></i></a>
                                         </td>
                                     </tr>
-                                    
                                 @endforeach
                             </tbody>
                         </table>

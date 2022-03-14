@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\App;
 class Admin_auth
 {
     /**
@@ -25,5 +25,8 @@ class Admin_auth
             return redirect()->route('login');
         }
         return $next($request);
+
+
+        
     }
 }

@@ -11,8 +11,8 @@
 						<div class="slide-info slide-1">
 							<h2 class="f-title"><b>{{$slide->title}}</b></h2>
 							<span class="subtitle">{{$slide->subtitle}}</span>
-							<p class="sale-info">Only price: <span class="price">${{$slide->price}}</span></p>
-							<a href="{{ $slide->link }}" class="btn-link">Shop Now</a>
+							<p class="sale-info">{{__('mshmk.Only_price:')}} <span class="price">${{$slide->price}}</span></p>
+							<a href="{{ $slide->link }}" class="btn-link">{{__('mshmk.Shop_Now')}}</a>
 						</div>
 					</div>
 					@endforeach
@@ -37,7 +37,7 @@
 			<!--On Sale-->
 			@if($sproducts->count() > 0 && $sale->status == 1 && $sale->sale_date > Carbon\Carbon::now() )
 				<div class="wrap-show-advance-info-box style-1 has-countdown">
-					<h3 class="title-box">On Sale</h3>
+					<h3 class="title-box">{{__('mshmk.On_Sale')}}</h3>
 					<div class="wrap-countdown mercado-countdown" data-expire="{{ Carbon\Carbon::parse($sale->sale_date)->format('Y/m/d h:m:s') }}"></div>
 					<div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container " data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
 						@foreach($sproducts as $sproduct)
@@ -47,7 +47,7 @@
 										<figure><img src="{{ asset('assets/images/products') }}/{{$sproduct->image}}" width="800" height="800" alt="{{$sproduct->name}}"></figure>
 									</a>
 									<div class="group-flash">
-										<span class="flash-item sale-label">sale</span>
+										<span class="flash-item sale-label">{{__('mshmk.sale')}}</span>
 									</div>
 									
 								</div>
@@ -62,7 +62,7 @@
 			@endif
 			<!--Latest Products-->
 			<div class="wrap-show-advance-info-box style-1">
-				<h3 class="title-box">Latest Products</h3>
+				<h3 class="title-box">{{__('mshmk.Latest_Products')}}</h3>
 				<div class="wrap-top-banner">
 					<a href="#" class="link-banner banner-effect-2">
 						<figure><img src="{{ asset('assets/images/digital-electronic-banner.jpg') }}" width="1170" height="240" alt=""></figure>
@@ -95,7 +95,7 @@
 
 			<!--Product Categories-->
 			<div class="wrap-show-advance-info-box style-1">
-				<h3 class="title-box">Product Categories</h3>
+				<h3 class="title-box">{{__('mshmk.Product_Categories')}}</h3>
 				<div class="wrap-top-banner">
 					<a href="#" class="link-banner banner-effect-2">
 						<figure><img src="assets/images/fashion-accesories-banner.jpg" width="1170" height="240" alt=""></figure>

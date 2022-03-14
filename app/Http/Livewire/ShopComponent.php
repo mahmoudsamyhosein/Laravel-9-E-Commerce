@@ -7,6 +7,8 @@ use Livewire\Component;
 use Livewire\WithPagination;
 use Cart;
 use App\Models\Category;
+use Gloudemans\Shoppingcart\Cart as ShoppingcartCart;
+use Gloudemans\Shoppingcart\Facades\Cart as FacadesCart;
 
 class ShopComponent extends Component
 {
@@ -32,12 +34,27 @@ class ShopComponent extends Component
 
     public function store($product_id,$product_name,$product_price){
 
-        Cart::add($product_id,$product_name,1,$product_price)->associate('App\Models\Product');
+        Cart::instance('cart')->add($product_id,$product_name,1,$product_price)->associate('App\Models\Product');
         session()->flash('success_message','Item added in Cart');
         return redirect()->route('product.cart');
 
     }
-    
+    public function addtowishlist($product_id,$product_name,$product_price){
+        Cart::instance('wishlist')->add($product_id,$product_name,1,$product_price)->associate('App\Models\Product');
+        $this->emitTo('wishlist-count-component','refreshComponent');
+
+    }
+
+    public function removeFromWishList($product_id){
+        foreach(Cart::instance('wishlist')->content() as $witem){
+            if($witem->id == $product_id){
+                Cart::instance('wishlist')->remove($witem->rowId);
+                $this->emitTo('wishlist-count-component','refreshComponent');
+                return;
+            }
+        }
+    }
+
     public function render()
     {
         

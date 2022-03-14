@@ -22,6 +22,7 @@ use App\Http\Livewire\HomeComponent;
 use App\Http\Livewire\SearchComponent;
 use App\Http\Livewire\ShopComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
+use App\Http\Livewire\WishListComponent;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +50,8 @@ Route::get('/product/{slug}',DetailsComponent::class)->name('products.details');
 Route::get('/search',SearchComponent::class)->name('product.search');
 //تواصل معنا
 Route::get('/contact-us',ContactComponent::class)->name('contact-us');
+//قائمة الأمنيات
+route::get('/wishlist',WishListComponent::class)->name('product.wishlist');
 //مسار للعميل للدخول الي لوحة التحكم
 Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::get('/user/dashboard',UserDashboardComponent::class)->name('user.dashboard');
@@ -79,3 +82,4 @@ Route::middleware(['auth:sanctum', 'verified','authadmin'])->group(function(){
     Route::get('/admin/settings',AdminSettingComponent::class)->name('admin.settings');
 });
 
+Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);

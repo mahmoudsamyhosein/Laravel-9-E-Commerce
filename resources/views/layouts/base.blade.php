@@ -21,7 +21,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.css" integrity="sha512-KRrxEp/6rgIme11XXeYvYRYY/x6XPGwk0RsIC6PyMRc072vj2tcjBzFmn939xzjeDhj0aDO7TDMd7Rbz3OEuBQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     @livewireStyles
 </head>
-<body class="home-page home-01 ">
+<body class="home-page home-01 " >
 
 	<!-- mobile menu -->
     <div class="mercado-clone-wrap">
@@ -40,22 +40,26 @@
 						<div class="topbar-menu left-menu">
 							<ul>
 								<li class="menu-item" >
-									<a title="Hotline: (+123) 456 789" href="#" ><span class="icon label-before fa fa-mobile"></span>Hotline: (+123) 456 789</a>
+									<a title="{{__('mshmk.Hotline')}}: (+123) 456 789" href="#" ><span class="icon label-before fa fa-mobile"></span>{{__('mshmk.Hotline')}}: (+123) 456 789</a>
 								</li>
 							</ul>
 						</div>
 						<div class="topbar-menu right-menu">
 							<ul>
 								<li class="menu-item lang-menu menu-item-has-children parent">
-									<a title="English" href="#"><span class="img label-before"><img src="{{ asset('assets/images/lang-en.png') }}" alt="lang-en"></span>English<i class="fa fa-angle-down" aria-hidden="true"></i></a>
-									<ul class="submenu lang" >
-										<li class="menu-item" ><a title="hungary" href="#"><span class="img label-before"><img src="{{ asset('assets/images/lang-hun.png') }}" alt="lang-hun"></span>Hungary</a></li>
-										<li class="menu-item" ><a title="german" href="#"><span class="img label-before"><img src="{{ asset('assets/images/lang-ger.png') }}" alt="lang-ger" ></span>German</a></li>
-										<li class="menu-item" ><a title="french" href="#"><span class="img label-before"><img src="{{ asset('assets/images/lang-fra.png') }}" alt="lang-fre"></span>French</a></li>
-										<li class="menu-item" ><a title="canada" href="#"><span class="img label-before"><img src="{{ asset('assets/images/lang-can.png') }}" alt="lang-can"></span>Canada</a></li>
-									</ul>
+									<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									<span class="flag-icon flag-icon-{{Config::get('languages')[App::getLocale()]['flag-icon']}}"></span> {{ Config::get('languages')[App::getLocale()]['display'] }}
+									</a>
+									<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+									@foreach (Config::get('languages') as $lang => $language)
+										@if ($lang != App::getLocale())
+												<a class="dropdown-item" href="{{ route('lang.switch', $lang) }}"><span class="flag-icon flag-icon-{{$language['flag-icon']}}"></span> {{$language['display']}}</a>
+										@endif
+									@endforeach
+									</div>
 								</li>
-								<li class="menu-item menu-item-has-children parent" >
+
+								{{-- <li class="menu-item menu-item-has-children parent" >
 									<a title="Dollar (USD)" href="#">Dollar (USD)<i class="fa fa-angle-down" aria-hidden="true"></i></a>
 									<ul class="submenu curency" >
 										<li class="menu-item" >
@@ -68,41 +72,41 @@
 											<a title="Dollar (USD)" href="#">Dollar (USD)</a>
 										</li>
 									</ul>
-								</li>
+								</li> --}}
 								{{-- تسجيل الدخول للمدير والمستخدم العادي --}}
 								@if(Route::has('login'))
 									@auth{{-- 	في حال كان المستخدم مدير أو بخلاف ذلك  --}}
 												@if(Auth::user()->utype === "ADM" )
 														<li class="menu-item menu-item-has-children parent" >
 																									{{-- عرض أسم المستخدم --}}
-															<a title="My Account" href="#">My Account({{Auth::user()->name}})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+															<a title="My Account" href="#">{{__('mshmk.My_Account')}}({{Auth::user()->name}})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
 															<ul class="submenu curency" >
 																<li class="menu-item" >
-																	<a title="Dashboard" href="{{ route('admin.dashboard')}}">Dashboard</a>
+																	<a title="Dashboard" href="{{ route('admin.dashboard')}}">{{__('mshmk.Dashboard')}}</a>
 																</li>
 																<li class="menu-item">
-																	<a  title="Categories"  href="{{ route('admin.categories')}}">Categories</a>
+																	<a  title="Categories"  href="{{ route('admin.categories')}}">{{__('mshmk.Categories')}}</a>
 																</li>
 																<li class="menu-item">
-																	<a  title="Products"  href="{{ route('admin.products')}}">All Products</a>
+																	<a  title="Products"  href="{{ route('admin.products')}}">{{__('mshmk.All_Products')}}</a>
 																</li>
 																<li class="menu-item">
-																	<a  title="Manage Home Slider"  href="{{ route('admin.homeslider')}}">Manage Home Slider</a>
+																	<a  title="Manage Home Slider"  href="{{ route('admin.homeslider')}}">{{__('mshmk.Manage_Home_Slider')}}</a>
 																</li>
 																<li class="menu-item">
-																	<a  title="Manage Home Categories"  href="{{ route('admin.home-categories')}}">Manage Home Categories</a>
+																	<a  title="Manage Home Categories"  href="{{ route('admin.home-categories')}}">{{__('mshmk.Manage_Home_Categories')}}</a>
 																</li>
 																<li class="menu-item">
-																	<a  title="Sale Setting"  href="{{ route('admin.sale')}}">Sale Setting</a>
+																	<a  title="Sale Setting"  href="{{ route('admin.sale')}}">{{__('mshmk.Sale_Setting')}}</a>
 																</li>
 																<li class="menu-item">
-																	<a  title="Contact Messages"  href="{{ route('admin.contact-us')}}">Contact Messages </a>
+																	<a  title="Contact Messages"  href="{{ route('admin.contact-us')}}"> {{__('mshmk.Contact_Messages')}}</a>
 																</li>
 																<li class="menu-item">
-																	<a  title="settings"  href="{{ route('admin.settings')}}">Settings </a>
+																	<a  title="settings"  href="{{ route('admin.settings')}}"> {{__('mshmk.Settings')}}</a>
 																</li>
 																<li class="menu-item">
-																	<a href=" {{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+																	<a href=" {{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{__('mshmk.Logout')}}</a>
 																</li>
 																<form  id="logout-form" action=" {{ route('logout') }}" method="post">
 																	@csrf
@@ -115,10 +119,10 @@
 															<a title="My Account" href="#">My Account({{Auth::user()->name}})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
 															<ul class="submenu curency" >
 																<li class="menu-item" >
-																	<a title="Dashboard" href="{{ route('user.dashboard')}}">Dashboard</a>
+																	<a title="Dashboard" href="{{ route('user.dashboard')}}">{{__('mshmk.Dashboard')}}</a>
 																</li>
 																<li class="menu-item">
-																	<a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+																	<a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{__('mshmk.Logout')}}</a>
 																</li>
 																<form  id="logout-form" action="{{ route('logout') }}" method="post">
 																	@csrf
@@ -127,8 +131,8 @@
 														</li>
 												@endif
 									@else{{--  اذا لم يكن مخول اظهر روابط تسجيل الدخول والتسجيل --}}
-										<li class="menu-item" ><a title="Register or Login" href="{{ route('login') }}">Login</a></li>
-										<li class="menu-item" ><a title="Register or Login" href="{{ route('register') }}">Register</a></li>
+										<li class="menu-item" ><a title="Register or Login" href="{{ route('login') }}">{{__('mshmk.Login')}}</a></li>
+										<li class="menu-item" ><a title="Register or Login" href="{{ route('register') }}">{{__('mshmk.Register')}}</a></li>
 									@endif
 								@endif
 							</ul>
@@ -146,26 +150,9 @@
 						@livewire('header-search-component')
 
 						<div class="wrap-icon right-section">
-							<div class="wrap-icon-section wishlist">
-								<a href="#" class="link-direction">
-									<i class="fa fa-heart" aria-hidden="true"></i>
-									<div class="left-info">
-										<span class="index">0 item</span>
-										<span class="title">Wishlist</span>
-									</div>
-								</a>
-							</div>
-							<div class="wrap-icon-section minicart">
-								<a href="#" class="link-direction">
-									<i class="fa fa-shopping-basket" aria-hidden="true"></i>
-									<div class="left-info">
-										@if(Cart::count() > 0 )
-											<span class="index">{{Cart::count() }} items</span>
-										@endif
-										<span class="title">CART</span>
-									</div>
-								</a>
-							</div>
+							@livewire('wish-list-count-component')
+							
+							@livewire('cart-count-component')
 							<div class="wrap-icon-section show-up-after-1024">
 								<a href="#" class="mobile-navigation">
 									<span></span>
@@ -179,7 +166,7 @@
 				</div>
 
 				<div class="nav-section header-sticky">
-					<div class="header-nav-section">
+					{{-- <div class="header-nav-section">
 						<div class="container">
 							<ul class="nav menu-nav clone-main-menu" id="mercado_haead_menu" data-menuname="Sale Info" >
 								<li class="menu-item"><a href="#" class="link-term">Weekly Featured</a><span class="nav-label hot-label">hot</span></li>
@@ -189,7 +176,7 @@
 								<li class="menu-item"><a href="#" class="link-term">Top rated items</a><span class="nav-label hot-label">hot</span></li>
 							</ul>
 						</div>
-					</div>
+					</div> --}}
 
 					<div class="primary-nav-section">
 						<div class="container">
@@ -198,19 +185,19 @@
 									<a href="index.html" class="link-term mercado-item-title"><i class="fa fa-home" aria-hidden="true"></i></a>
 								</li>
 								<li class="menu-item">
-									<a href="about-us.html" class="link-term mercado-item-title">About Us</a>
+									<a href="about-us.html" class="link-term mercado-item-title">{{__('mshmk.About_Us')}}</a>
 								</li>
 								<li class="menu-item">
-									<a href="/shop" class="link-term mercado-item-title">Shop</a>
+									<a href="/shop" class="link-term mercado-item-title">{{__('mshmk.Shop')}}</a>
 								</li>
 								<li class="menu-item">
-									<a href="/cart" class="link-term mercado-item-title">Cart</a>
+									<a href="/cart" class="link-term mercado-item-title">{{__('mshmk.Cart')}}</a>
 								</li>
 								<li class="menu-item">
-									<a href="/checkout" class="link-term mercado-item-title">Checkout</a>
+									<a href="/checkout" class="link-term mercado-item-title">{{__('mshmk.Checkout')}}</a>
 								</li>
 								<li class="menu-item">
-									<a href="{{ route('contact-us')}}" class="link-term mercado-item-title">Contact Us</a>
+									<a href="{{ route('contact-us')}}" class="link-term mercado-item-title">{{__('mshmk.Contact_Us')}}</a>
 								</li>																	
 							</ul>
 						</div>
@@ -239,5 +226,6 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.js" integrity="sha512-EnXkkBUGl2gBm/EIZEgwWpQNavsnBbeMtjklwAa7jLj60mJk932aqzXFmdPKCG6ge/i8iOCK0Uwl1Qp+S0zowg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="https://cdn.tiny.cloud/1/b7vhlj1xgbj9guv1kjrx6iyin4zov3kr6x7aguzir6ds7v7j/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>	@livewireScripts
 	@stack('scripts')
+	@livewireScripts
 </body>
 </html>

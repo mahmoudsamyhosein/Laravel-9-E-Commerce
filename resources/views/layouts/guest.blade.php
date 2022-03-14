@@ -51,7 +51,7 @@
 										<li class="menu-item" ><a title="canada" href="#"><span class="img label-before"><img src="{{ asset('assets/images/lang-can.png') }}" alt="lang-can"></span>Canada</a></li>
 									</ul>
 								</li>
-								<li class="menu-item menu-item-has-children parent" >
+								{{-- <li class="menu-item menu-item-has-children parent" >
 									<a title="Dollar (USD)" href="#">Dollar (USD)<i class="fa fa-angle-down" aria-hidden="true"></i></a>
 									<ul class="submenu curency" >
 										<li class="menu-item" >
@@ -64,7 +64,7 @@
 											<a title="Dollar (USD)" href="#">Dollar (USD)</a>
 										</li>
 									</ul>
-								</li>
+								</li> --}}
 								{{-- تسجيل الدخول للمدير والمستخدم العادي --}}
 								@if(Route::has('login'))
 									@auth{{-- 	في حال كان المستخدم مدير أو بخلاف ذلك  --}}
