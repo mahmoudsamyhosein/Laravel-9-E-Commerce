@@ -14,10 +14,10 @@
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-md-4">
-                                All Products
+                                {{__('mshmk.All_Products')}}
                             </div>
                             <div class="col-md-4">
-                               <a href="{{ route('admin.addproduct') }}" class="btn btn-success pull-right">Add New</a>
+                               <a href="{{ route('admin.addproduct') }}" class="btn btn-success pull-right">{{__('mshmk.Add_New')}}</a>
                             </div>
 
                             <div class="col-md-4">
@@ -59,7 +59,7 @@
                                                 </i>
                                             </a>
                                             <a href="#" onclick="confirm('Are You Sure, You Want To Delete This Product ? ') || event.stopImmediatePropagation()" style="margin-left:10px;" 
-                                            wire:click.prevent="destroyproduct({{$product->id}})">
+                                            wire:click.prevent="destroyproduct('{{$product->id}}')">
                                             <i class="fa fa-times fa-2x text-danger"></i></a>
                                         </td>
                                     </tr>

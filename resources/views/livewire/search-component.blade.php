@@ -1,12 +1,12 @@
 	<!--main area-->
-	<main id="main" class="main-site left-sidebar">
+	<main id="main" class="main-site right-sidebar" dir="rtl" style="text-align: right">
 
 		<div class="container">
 
 			<div class="wrap-breadcrumb">
 				<ul>
-					<li class="item-link"><a href="#" class="link">{{__('mshmk.home')}}</a></li>
-					<li class="item-link"><span>{{__('mshmk.shop')}}</span></li>
+					<li class="item-link"><a href="/" class="link">{{__('mshmk.home')}}</a></li>
+					<li class="item-link"><span>{{__('mshmk.Shop')}}</span></li>
 				</ul>
 			</div>
 			<div class="row">
@@ -14,8 +14,8 @@
 				<div class="col-lg-9 col-md-8 col-sm-8 col-xs-12 main-content-area">
 
 					<div class="banner-shop">
-						<a href="#" class="banner-link">
-							<figure><img src="assets/images/shop-banner.jpg" alt=""></figure>
+						<a href="/shop" class="banner-link">
+							<figure><img src="{{asset('assets/images/shop-banner.jpg')}}" alt=""></figure>
 						</a>
 					</div>
 

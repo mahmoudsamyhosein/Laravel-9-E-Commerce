@@ -7,29 +7,22 @@ use Livewire\Component;
 use Livewire\WithPagination;
 use Cart;
 use App\Models\Category;
-use Gloudemans\Shoppingcart\Cart as ShoppingcartCart;
-use Gloudemans\Shoppingcart\Facades\Cart as FacadesCart;
+
 
 class ShopComponent extends Component
 {
     
     use WithPagination;
-
+    public $category;
     public $sorting;
     public $pagesize;
-
     public $min_price;
     public $max_price;
-
     public function mount(){
-
         $this->sorting = "default";
         $this->pagesize = 12;
-
         $this->min_price = 1;
-        $this->max_price = 10000;
-
-
+        $this->max_price = 1000;
     }
 
     public function store($product_id,$product_name,$product_price){
@@ -75,7 +68,6 @@ class ShopComponent extends Component
         }
 
         $categories = Category::all();
-
         return view('livewire.shop-component' ,['products'=> $products ,'categories' => $categories  ])->layout('layouts.base');
     }
 }

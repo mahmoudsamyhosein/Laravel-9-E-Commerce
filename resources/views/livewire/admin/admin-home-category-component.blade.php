@@ -41,7 +41,6 @@
                                     <button type="submit" class="btn btn-primary">Save</button>
                                 </div>
                             </div>
-                            
                         </form>
                     </div>
                 </div>
@@ -55,7 +54,7 @@
         $(document).ready(function(){
             $('.sel_categories').select2();
             $('.sel_categories').on('change',function(e){
-                var data = $('.sel_categories').select2('val');
+                var data = $('.sel_categories').select2("val");
                 @this.set('selected_categories',data);
             });
         });

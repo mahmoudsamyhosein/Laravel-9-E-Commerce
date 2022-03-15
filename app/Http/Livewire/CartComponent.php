@@ -60,12 +60,41 @@ class CartComponent extends Component
             session()->put('checkout',[
                 'discount'  => 0,
                 'subtotal'  => Cart::instance('cart')->subtotal(),
-                'tax' => Cart::instance('cart')->tax,
+                'tax' => Cart::instance('cart')->tax(),
                 'total' => Cart::instance('cart')->total()
                ]);
 
         }
     }
+
+    public function switchToSaveForLater($rowId){
+
+        $item = Cart::instance('cart')->get($rowId);
+        Cart::instance('cart')->remove($rowId);
+        Cart::instance('saveForLater')->add($item->id,$item->name,1,$item->price)->associate('App\Models\Product');
+        $this->emitTo('cart-count-component','refreshComponent');
+        session()->flash('success_message','Item Has Been Saved For Later');
+
+    }
+
+
+    public function moveToCart($rowId){
+
+        $item = Cart::instance('saveForLater')->get($rowId);
+        Cart::instance('saveForLater')->remove($rowId);
+        Cart::instance('cart')->add($item->id,$item->name,1,$item->price)->associate('App\Models\Product');
+        $this->emitTo('cart-count-component','refreshComponent');
+        session()->flash('s_success_message','Item Has Been Moved To Cart');
+
+    }
+
+    public function deleteFromSaveForLater($rowId){
+
+        Cart::instance('saveForLater')->remove($rowId);
+        session()->flash('s_success_message','Item Has Been Removed From save for Later');
+
+    }
+
     public function render()
     {
         $this->setAmountForCheckout();

@@ -1,4 +1,4 @@
-<footer id="footer" >
+<footer id="footer">
     <div class="wrap-footer-content footer-style-1">
         <div class="wrap-function-info">
             <div class="container">
@@ -146,7 +146,7 @@
 
                     <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
                         <div class="wrap-footer-item">
-                            <h3 class="item-header">{{__('mshmk.Social_network')}}</h3>
+                            <h3 class="item-header ">{{__('mshmk.Social_network')}}</h3>
                             <div class="item-content">
                                 <div class="wrap-list-item social-network">
                                     <ul>
@@ -167,8 +167,8 @@
                             <div class="item-content">
                                 <div class="wrap-list-item apps-list">
                                     <ul>
-                                        <li><a href="#" class="link-to-item" title="our application on apple store"><figure><img src="assets/images/brands/apple-store.png" alt="apple store" width="128" height="36"></figure></a></li>
-                                        <li><a href="#" class="link-to-item" title="our application on google play store"><figure><img src="assets/images/brands/google-play-store.png" alt="google play store" width="128" height="36"></figure></a></li>
+                                        <li><a href="#" class="link-to-item" title="our application on apple store"><figure><img src="{{asset('assets/images/brands/apple-store.png')}}" alt="apple store" width="128" height="36"></figure></a></li>
+                                        <li><a href="#" class="link-to-item" title="our application on google play store"><figure><img src="{{asset('assets/images/brands/google-play-store.png')}}" alt="google play store" width="128" height="36"></figure></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -181,8 +181,8 @@
             <div class="wrap-back-link">
                 <div class="container">
                     <div class="back-link-box">
-                        <h3 class="backlink-title">{{__('mshmk.Quick_Links')}}</h3>
-                        <div class="back-link-row">
+                        <h3 class="backlink-title text-right">{{__('mshmk.Quick_Links')}}</h3>
+                        <div class="back-link-row ">
                             <ul class="list-back-link" >
                                 <li><span class="row-title">Mobiles:</span></li>
                                 <li><a href="#" class="redirect-back-link" title="mobile">Mobiles</a></li>
@@ -230,12 +230,9 @@
 
         </div>
 
-        <div class="coppy-right-box">
-            <div class="container">
+        <div class="coppy-right-box ">
+            <div class="container ">
                 <div class="coppy-right-item item-left">
-                    <p class="coppy-right-text">{{__('mshmk.Copyright')}} © {{ now()->year }}  {{__('mshmk.MSHMK_Systems._All_rights_reserved')}}</p>
-                </div>
-                <div class="coppy-right-item item-right">
                     <div class="wrap-nav horizontal-nav">
                         <ul>
                             <li class="menu-item"><a href="/" class="link-term">{{__('mshmk.About_Us')}}</a></li>								
@@ -244,6 +241,9 @@
                             <li class="menu-item"><a href="/" class="link-term">{{__('mshmk.Return_Policy')}}</a></li>								
                         </ul>
                     </div>
+                </div>
+                <div class="coppy-right-item item-right">
+                    <p class="coppy-right-text">{{__('mshmk.MSHMK_Systems._All_rights_reserved')}} © {{ now()->year }} {{__('mshmk.Copyright')}}  </p>
                 </div>
                 <div class="clearfix"></div>
             </div>

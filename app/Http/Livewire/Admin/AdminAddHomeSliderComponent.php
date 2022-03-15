@@ -27,9 +27,9 @@ class AdminAddHomeSliderComponent extends Component
         $slider->subtitle = $this->subtitle;
         $slider->price = $this->price;
         $slider->link = $this->link;
-        $imagename = Carbon::now()->timestamp. '.' . $this->image->extension();
+        $imagename = Carbon::now()->timestamp . '.' . $this->image->extension();
         $this->image->storeAs('sliders',$imagename);
-        $slider->image = $this->image;
+        $slider->image =  $imagename;
         $slider->status = $this->status;
         $slider->save();
         Session()->flash('message','Slide Has Been Created Successfully!');

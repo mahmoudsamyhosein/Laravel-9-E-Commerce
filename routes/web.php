@@ -1,5 +1,6 @@
 <?php
 use App\Http\Livewire\Admin\AdminAddCategoryComponent;
+use App\Http\Livewire\Admin\AdminAddCouponComponent;
 use App\Http\Livewire\Admin\AdminAddProductComponent;
 use App\Http\Livewire\Admin\AdminCategoryComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
@@ -8,6 +9,8 @@ use App\Http\Livewire\Admin\AdminEditProductComponent;
 use App\Http\Livewire\Admin\AdminHomeSliderComponent;
 use App\Http\Livewire\Admin\AdminAddHomeSliderComponent;
 use App\Http\Livewire\Admin\AdminContactComponent;
+use App\Http\Livewire\Admin\AdminCouponsComponent;
+use App\Http\Livewire\Admin\AdminEditCouponComponent;
 use App\Http\Livewire\Admin\AdminEditHomeSliderComponent;
 use App\Http\Livewire\Admin\AdminHomeCategoryComponent;
 use App\Http\Livewire\Admin\AdminProductComponent;
@@ -41,9 +44,9 @@ Route::get('/shop',ShopComponent::class);
 // مسار العربة 
 Route::get('/cart',CartComponent::class)->name('product.cart');
 //مسار الأقسام 
-Route::get('/product-category/{category_slug}', CategoryComponent::class)->name('product.category');
+Route::get('/product/category/{category_slug}', CategoryComponent::class)->name('product.category');
 //مسار أتمام الدفع
-Route::get('/checkout',CheckOutComponent::class);
+Route::get('/checkout',CheckOutComponent::class)->name('product.checkout');
 //مسار تفاصيل المنتج
 Route::get('/product/{slug}',DetailsComponent::class)->name('products.details');
 // البحث 
@@ -80,6 +83,19 @@ Route::middleware(['auth:sanctum', 'verified','authadmin'])->group(function(){
     Route::get('/admin/contact-us',AdminContactComponent::class)->name('admin.contact-us');
     //الأعدادات
     Route::get('/admin/settings',AdminSettingComponent::class)->name('admin.settings');
+    //الكوبونات
+    Route::get('admin/coupons',AdminCouponsComponent::class)->name('admin.coupons');
+    Route::get('admin/coupon/add',AdminAddCouponComponent::class)->name('admin.addcoupons');
+    Route::get('admin/coupon/edit/{coupon_id}',AdminEditCouponComponent::class)->name('admin.editcoupons');
 });
 
+
+
+
+
+
+
+
+
+//مبدل اللغات
 Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);

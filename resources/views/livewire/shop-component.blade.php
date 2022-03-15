@@ -14,8 +14,8 @@
 				<div class="col-lg-9 col-md-8 col-sm-8 col-xs-12 main-content-area">
 
 					<div class="banner-shop">
-						<a href="#" class="banner-link">
-							<figure><img src="assets/images/shop-banner.jpg" alt=""></figure>
+						<a href="/shop" class="banner-link">
+							<figure><img src="{{asset('assets/images/shop-banner.jpg')}}" alt=""></figure>
 						</a>
 					</div>
 
@@ -93,7 +93,7 @@
 										<div class="product-info">
 											<a href="{{ route('products.details', ['slug' => $product->slug ]) }}" class="product-name"><span>{{ $product->name }}</span></a>
 											<div class="wrap-price"><span class="product-price">{{ $product->regular_price }}</span></div>
-											<a href="#" class="btn add-to-cart" wire.click.prevent="store({{ $product->id }},'{{ $product->name }}',{{ $product->regular_price }})">{{__('mshmk.Add_To_Cart')}}</a>
+											<a href="#" class="btn add-to-cart" wire:click.prevent="store( {{$product->id}},'{{$product->name}}',{{$product->regular_price}} )" >{{__('mshmk.Add_To_Cart')}}</a>
 										</div>
 										<div class="product-wish">
 											@if($witems->contains($product->id))
@@ -122,9 +122,8 @@
 							<ul class="list-category">
 								@foreach ($categories as $category)
 									<li class="category-item">
-										 {{-- <a href="{{ route('product.category') , [ 'category_slug' =>$category->slug ] }}" class="cate-link"> {{ $category->name }} </a>  --}}
-														{{-- category_slug خطأ في تمرير المعامل  --}}
-										
+										 {{-- <a href="{{ route('product.category') , [ 'category_slug' =>$category->slug ] }}" class="cate-link"> {{ $category->name }} </a>   --}}
+														
 									</li>
 								@endforeach
 							</ul>
