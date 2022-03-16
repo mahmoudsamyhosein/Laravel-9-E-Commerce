@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="{{ App::isLocale('ar') ? 'rtl' : 'ltr'}}">
+<html lang="en" >
 
 <head>
 	<meta charset="utf-8">
@@ -20,6 +20,7 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/flexslider.css')  }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/chosen.min.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/custom.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/color-01.css') }}">
 	<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 	<link rel="stylesheet"
@@ -29,26 +30,26 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.css"
 		integrity="sha512-KRrxEp/6rgIme11XXeYvYRYY/x6XPGwk0RsIC6PyMRc072vj2tcjBzFmn939xzjeDhj0aDO7TDMd7Rbz3OEuBQ=="
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<!-- include summernote css -->
+	<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 	@livewireStyles
 </head>
-
 <body class="home-page home-01 " >
-
-	<!-- mobile menu -->
+	<!-- قائمة الموبايل -->
 	<div class="mercado-clone-wrap">
 		<div class="mercado-panels-actions-wrap">
 			<a class="mercado-close-btn mercado-close-panels" href="#">x</a>
 		</div>
 		<div class="mercado-panels"></div>
 	</div>
-
-	<!--header-->
-	<header id="header" class="header header-style-1">
+	<!-- قائمة الموبايل -->
+	<!--الهيدر-->
+	<header id="header" class="header header-style-1"  >
 		<div class="container-fluid">
 			<div class="row">
 				<div class="topbar-menu-area">
 					<div class="container">
-						<div class="topbar-menu right-menu">
+						<div class="topbar-menu left-menu">
 							<ul>
 								{{-- تسجيل الدخول للمدير والمستخدم العادي --}}
 								@if(Route::has('login'))
@@ -96,6 +97,10 @@
 												{{__('mshmk.Settings')}}</a>
 										</li>
 										<li class="menu-item">
+											<a title="Pages" href="{{ route('admin.pages')}}">
+												{{__('mshmk.Pages')}}</a>
+										</li>
+										<li class="menu-item">
 											<a href=" {{ route('logout') }}"
 												onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{__('mshmk.Logout')}}</a>
 										</li>
@@ -133,7 +138,7 @@
 								@endif
 							</ul>
 						</div>
-						<div class="topbar-menu left-menu">
+						<div class="topbar-menu right-menu">
 							<ul>
 								<li class="menu-item lang-menu menu-item-has-children parent">
 									<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
@@ -144,7 +149,7 @@
 									</a>
 									<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 										@foreach (Config::get('languages') as $lang => $language)
-										@if ($lang != App::getLocale())
+										@if ($lang != App::getLocale() )
 										<a class="dropdown-item" href="{{ route('lang.switch', $lang) }}"><span
 												class="flag-icon flag-icon-{{$language['flag-icon']}}"></span>
 											{{$language['display']}}</a>
@@ -179,7 +184,7 @@
 				<div class="container">
 					<div class="mid-section main-info-area">
 
-						<div class="wrap-logo-top left-section">
+						<div class="wrap-logo-top left-section ">
 							<a href="/" class="link-to-home"><img src="{{asset('assets/images/logo-top-1.png')}}"
 									alt="mercado"></a>
 						</div>
@@ -187,9 +192,10 @@
 						@livewire('header-search-component')
 
 						<div class="wrap-icon right-section">
-							@livewire('wish-list-count-component')
+							
 
 							@livewire('cart-count-component')
+							@livewire('wish-list-count-component')
 							<div class="wrap-icon-section show-up-after-1024">
 								<a href="#" class="mobile-navigation">
 									<span></span>
@@ -202,7 +208,7 @@
 					</div>
 				</div>
 
-				<div class="nav-section header-sticky" dir="rtl">
+				<div class="nav-section header-sticky" >
 					{{-- <div class="header-nav-section">
 						<div class="container">
 							<ul class="nav menu-nav clone-main-menu" id="mercado_haead_menu" data-menuname="Sale Info">
@@ -220,11 +226,11 @@
 						</div>
 					</div> --}}
 
-					<div class="primary-nav-section"  dir="{{ App::isLocale('ar') ? 'rtl' : 'ltr'}}">
+					<div class="primary-nav-section" >
 						<div class="container">
-							<ul class="nav primary clone-main-menu" id="mercado_main" data-menuname="Main menu">
+							<ul class="nav primary clone-main-menu " id="mercado_main" data-menuname="Main menu">
 								<li class="menu-item home-icon">
-									<a href="index.html" class="link-term mercado-item-title"><i class="fa fa-home"
+									<a href="/" class="link-term mercado-item-title"><i class="fa fa-home"
 											aria-hidden="true"></i></a>
 								</li>
 								<li class="menu-item">
@@ -252,11 +258,12 @@
 			</div>
 		</div>
 	</header>
-
+	<!--الهيدر-->
 	{{ $slot }}
-
+	<!--الفوتور-->
 	@livewire('footer-component')
-
+	<!--الفوتور-->
+	<!--جافا سكربت-->
 	<script src="{{ asset('assets/js/jquery-1.12.4.minb8ff.js?ver=1.12.4') }}"></script>
 	<script src="{{ asset('assets/js/jquery-ui-1.12.4.minb8ff.js?ver=1.12.4') }}"></script>
 	<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
@@ -277,10 +284,12 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.js"
 		integrity="sha512-EnXkkBUGl2gBm/EIZEgwWpQNavsnBbeMtjklwAa7jLj60mJk932aqzXFmdPKCG6ge/i8iOCK0Uwl1Qp+S0zowg=="
 		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script src="https://cdn.tiny.cloud/1/b7vhlj1xgbj9guv1kjrx6iyin4zov3kr6x7aguzir6ds7v7j/tinymce/5/tinymce.min.js"
-		referrerpolicy="origin"></script>
+	{{-- <script src="https://cdn.tiny.cloud/1/b7vhlj1xgbj9guv1kjrx6iyin4zov3kr6x7aguzir6ds7v7j/tinymce/5/tinymce.min.js"
+		referrerpolicy="origin"></script> --}}
+	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 	@stack('scripts')
 	@livewireScripts
-</body>
+	<!--جافا سكربت-->
 
+</body>
 </html>

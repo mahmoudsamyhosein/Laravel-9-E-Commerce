@@ -21,7 +21,7 @@
                             </div>
 
                             <div class="col-md-4">
-                                <input type="text" class="form-control" placeholder="search..." wire:model="searchterm">
+                                <input type="text" class="form-control" placeholder="search..." wire:model='searchterm'>
                             </div>
                         </div>    
                     </div>

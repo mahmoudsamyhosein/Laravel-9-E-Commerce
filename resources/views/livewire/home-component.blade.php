@@ -1,7 +1,6 @@
 <main id="main">
 		<div class="container">
-
-			<!--MAIN SLIDE-->
+			<!--السلايدر الرئيسيي-->
 			<div class="wrap-main-slide">
 				<div class="slide-carousel owl-carousel style-nav-1" data-items="1" data-loop="1" data-nav="true" data-dots="false">
 					@foreach ($sliders as $slide)
@@ -16,11 +15,10 @@
 						</div>
 					</div>
 					@endforeach
-					
 				</div>
 			</div>
-
-			<!--BANNER-->
+			<!--السلايدر الرئيسيي-->
+			<!--2 بانر أسفل البانر الرئيسي-->
 			<div class="wrap-banner style-twin-default">
 				<div class="banner-item">
 					<a href="#" class="link-banner banner-effect-1">
@@ -33,12 +31,12 @@
 					</a>
 				</div>
 			</div>
-
-			<!--On Sale-->
+			<!--2 بانر أسفل البانر الرئيسي-->
+			<!--  المنتجات في الخصم-->
 			@if($sproducts->count() > 0 && $sale->status == 1 && $sale->sale_date > Carbon\Carbon::now() )
-				<div class="wrap-show-advance-info-box style-1 has-countdown">
+				<div class="wrap-show-advance-info-box style-1 has-countdown" >
 					<h3 class="title-box">{{__('mshmk.On_Sale')}}</h3>
-					<div class="wrap-countdown mercado-countdown" data-expire="{{ Carbon\Carbon::parse($sale->sale_date)->format('Y/m/d h:m:s') }}"></div>
+					<div class="wrap-countdown mercado-countdown " dir="rtl" data-expire="{{ Carbon\Carbon::parse($sale->sale_date)->format('Y/m/d h:m:s') }}"></div>
 					<div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container " data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
 						@foreach($sproducts as $sproduct)
 							<div class="product product-style-2 equal-elem ">
@@ -60,7 +58,8 @@
 					</div>
 				</div>
 			@endif
-			<!--Latest Products-->
+			<!--  المنتجات في الخصم-->
+			<!--أحدث المنتجات-->
 			<div class="wrap-show-advance-info-box style-1">
 				<h3 class="title-box">{{__('mshmk.Latest_Products')}}</h3>
 				<div class="wrap-top-banner">
@@ -92,8 +91,7 @@
 					</div>
 				</div>
 			</div>
-
-			<!--Product Categories-->
+			<!--المنتجات بالأقسام-->
 			<div class="wrap-show-advance-info-box style-1">
 				<h3 class="title-box">{{__('mshmk.Product_Categories')}}</h3>
 				<div class="wrap-top-banner">
@@ -102,8 +100,8 @@
 					</a>
 				</div>
 				<div class="wrap-products">
-					<div class="wrap-product-tab tab-style-1">
-						<div class="tab-control">
+					<div class="wrap-product-tab tab-style-1 ">
+						<div class="tab-control ">
 							@foreach ($categories as $key=>$category)
 								<a href="#category_{{$category->id}}" class="tab-control-item {{ $key == 0 ? 'active' : '' }}">{{$category->name}}</a>
 							@endforeach
@@ -136,7 +134,8 @@
 							</div>
 					</div>
 				</div>
-			</div>			
+			</div>
+			<!--المنتجات بالأقسام-->			
 		</div>
 </main>
 

@@ -8,7 +8,7 @@
                             All Coupon
                         </div>
                         <div class="col-md-6">
-                            <a href="{{ route('admin.addcoupon') }}" class="btn btn-success pull-right">ADD New</a>
+                            <a href="{{ route('admin.addcoupons') }}" class="btn btn-success pull-right">ADD New</a>
                         </div>
                     </div>
                     <div class="panel-body">
@@ -21,34 +21,45 @@
                             <thead>
                                 <tr>
                                     <th>Id</th>
-                                    <th>Category Name</th>
-                                    <th>Slug</th>
+                                    <th>Coupon Code</th>
+                                    <th>Coupon Type</th>
+                                    <th>Coupon Value</th>
+                                    <th>Cart Value</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($categories as $category)
+                                @foreach ($coupons as $coupon)
                                 <tr>
-                                    <td>{{ $category->id }} </td>
-                                    <td>{{ $category->name }} </td>
-                                    <td>{{ $category->slug }}</td>
+                                    <td>{{ $coupon->id }} </td>
+                                    <td>{{ $coupon->code }} </td>
+                                    <td>{{ $coupon->type }} </td>
+                                    @if ($coupon->type == 'fixed' )
+                                        <td>${{ $coupon->value }}</td>
+                                    @else
+                                        <td>{{ $coupon->value }}%</td>    
+                                    @endif
+                                    <td>{{ $coupon->cart_value }}</td>
                                     <td>
-                                        {{-- <a
-                                            href="{{route('admin.editcategory') ,['category_slug'=>$category->slug ]}}"><i
-                                                class="fa fa-edit fa-2x"></i></a> --}}
+                                        <a                                      
+                                            href="{{route('admin.editcoupons' ,['coupon_id' => $coupon->id ] )}}"><i
+                                                class="fa fa-edit fa-2x"></i>
+                                        </a>
                                         <a href="#"
-                                            onclick="confirm('Are You Sure, You Want to delete this Category?') || event.stopImmediatePropagation()"
-                                            wire:click.prevent='destroycategory({{$category->id}})'
-                                            style="margin-left:10px;"><i class="fa fa-times fa-2x text-danger"></i></a>
+                                            onclick="confirm('Are You Sure, You Want to delete this Coupon?') || event.stopImmediatePropagation()"
+                                            wire:click.prevent="deletecoupon( {{$coupon->id}} )"
+                                            style="margin-left:10px;"><i class="fa fa-times fa-2x text-danger"></i>
+                                        </a>
                                     </td>
                                 </tr>
                                 @endforeach
                             </tbody>
                         </table>
-                        {{ $categories->links() }}
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+

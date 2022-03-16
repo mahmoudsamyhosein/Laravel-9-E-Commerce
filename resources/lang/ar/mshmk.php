@@ -56,7 +56,7 @@ return [
     'Quick_Links'=> 'روابط سريعة',
     'Dowload_App'=> 'تحميل التطبيق',
     'Social_network'=> 'التواصل الأجتماعي',
-    'We_Using_Safe_Payments:'=> ': طرق دفع أمنة ',
+    'We_Using_Safe_Payments:'=> ' طرق دفع أمنة :',
     'Order_History'=> 'تاريخ الطلبات',
     'Specials'=> 'الخصومات',
     'Site_Map'=> 'خريطة الموقع',

@@ -17,7 +17,9 @@ class AdminEditHomeSliderComponent extends Component
     public $link;
     public $image;
     public $status;
-
+    public $newimage;
+    public $slider_id;
+    
     public function mount($slide_id){
 
         $slider = Homeslider::find($slide_id);
@@ -52,3 +54,4 @@ class AdminEditHomeSliderComponent extends Component
         return view('livewire.admin.admin-edit-home-slider-component')->layout('layouts.base');
     }
 }
+

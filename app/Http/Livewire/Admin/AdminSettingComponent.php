@@ -18,8 +18,11 @@ class AdminSettingComponent extends Component
     public $pinterest;
     public $instagram;
     public $youtube;
+    public $images;
 
     public function mount(){
+
+        
         $setting = Setting::find(1);
         if($setting){
             $this->email = $setting->email;
@@ -84,11 +87,13 @@ class AdminSettingComponent extends Component
         $setting->youtube = $this->youtube;
         $setting->save();
         Session()->flash('message','Setting Has Been Saved!');
-
-
     }
+
+
     public function render()
     {
+        
+        
         return view('livewire.admin.admin-setting-component')->layout('layouts.base');
     }
 }

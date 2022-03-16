@@ -67,7 +67,7 @@ class ShopComponent extends Component
             $products = Product::whereBetween('regular_price',[ $this->min_price , $this->max_price ])->paginate($this->pagesize);
         }
 
-        $categories = Category::all();
+        $categories = Category::all()->take(12);
         return view('livewire.shop-component' ,['products'=> $products ,'categories' => $categories  ])->layout('layouts.base');
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Product;
 use Livewire\Component;
 use Cart;
 use Illuminate\Support\Facades\Auth;
@@ -94,10 +95,17 @@ class CartComponent extends Component
         session()->flash('s_success_message','Item Has Been Removed From save for Later');
 
     }
+    //المنتجات التي تمت مشاهدتها حديثا
+    public function mvproducts($product){
+        session()->push('livewire.cart-component', $product->getKey());
+
+    }
 
     public function render()
     {
+        $products = session()->get('livewire.cart-component');
+        $products = Product::find($products);
         $this->setAmountForCheckout();
-        return view('livewire.cart-component')->layout('layouts.base');
+        return view('livewire.cart-component',['products' => $products])->layout('layouts.base');
     }
 }

@@ -73,21 +73,21 @@
                     <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 
                         <div class="wrap-footer-item">
-                            <h3 class="item-header">{{__('mshmk.Hotline')}}</h3>
+                            <h3 class="item-header ">{{__('mshmk.Hotline')}}</h3>
                             <div class="item-content">
                                 <div class="wrap-hotline-footer">
-                                    <span class="desc">{{__('mshmk.Call_Us_toll_Free')}}</span>
-                                    <b class="phone-number"> {{$setting->phone2}}</b>
+                                    <span class="desc ">{{__('mshmk.Call_Us_toll_Free')}}</span>
+                                    <b class="phone-number "> {{$setting->phone2}}</b>
                                 </div>
                             </div>
                         </div>
 
                         <div class="wrap-footer-item footer-item-second">
-                            <h3 class="item-header">{{__('mshmk.Sign_up_for_newsletter')}}</h3>
+                            <h3 class="item-header ">{{__('mshmk.Sign_up_for_newsletter')}}</h3>
                             <div class="item-content">
                                 <div class="wrap-newletter-footer">
                                     <form action="#" class="frm-newletter" id="frm-newletter">
-                                        <input type="email" class="input-email" name="email" value="" placeholder="{{__('mshmk.Enter_your_email_address')}}">
+                                        <input type="email" class="input-email ml-"  placeholder="{{__('mshmk.Enter_your_email_address')}}">
                                         <button class="btn-submit">{{__('mshmk.Subscribe')}}</button>
                                     </form>
                                 </div>
@@ -178,51 +178,16 @@
                 </div>
             </div>
 
-            <div class="wrap-back-link">
+            <div class="wrap-back-link ">
                 <div class="container">
                     <div class="back-link-box">
-                        <h3 class="backlink-title text-right">{{__('mshmk.Quick_Links')}}</h3>
+                        <h3 class="backlink-title ">{{__('mshmk.Quick_Links')}}</h3>
                         <div class="back-link-row ">
                             <ul class="list-back-link" >
-                                <li><span class="row-title">Mobiles:</span></li>
-                                <li><a href="#" class="redirect-back-link" title="mobile">Mobiles</a></li>
-                                <li><a href="#" class="redirect-back-link" title="yphones">YPhones</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Gianee Mobiles GL">Gianee Mobiles GL</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Mobiles Karbonn">Mobiles Karbonn</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Mobiles Viva">Mobiles Viva</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Mobiles Intex">Mobiles Intex</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Mobiles Micrumex">Mobiles Micrumex</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Mobiles Bsus">Mobiles Bsus</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Mobiles Samsyng">Mobiles Samsyng</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Mobiles Lenova">Mobiles Lenova</a></li>
+                                @foreach($categories as $category)
+                                    <li><a href="{{ route('product.category' , ['category_slug' => $category->slug ]) }}" class="redirect-back-link" title="mobile">{{$category->name}}</a></li>
+                                @endforeach
                             </ul>
-
-                            <ul class="list-back-link" >
-                                <li><span class="row-title">Tablets:</span></li>
-                                <li><a href="#" class="redirect-back-link" title="Plesc YPads">Plesc YPads</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Samsyng Tablets" >Samsyng Tablets</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Qindows Tablets" >Qindows Tablets</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Calling Tablets" >Calling Tablets</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Micrumex Tablets" >Micrumex Tablets</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Lenova Tablets Bsus" >Lenova Tablets Bsus</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Tablets iBall" >Tablets iBall</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Tablets Swipe" >Tablets Swipe</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Tablets TVs, Audio" >Tablets TVs, Audio</a></li>
-                            </ul>
-
-                            <ul class="list-back-link" >
-                                <li><span class="row-title">Fashion:</span></li>
-                                <li><a href="#" class="redirect-back-link" title="Sarees Silk" >Sarees Silk</a></li>
-                                <li><a href="#" class="redirect-back-link" title="sarees Salwar" >sarees Salwar</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Suits Lehengas" >Suits Lehengas</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Biba Jewellery" >Biba Jewellery</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Rings Earrings" >Rings Earrings</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Diamond Rings" >Diamond Rings</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Loose Diamond Shoes" >Loose Diamond Shoes</a></li>
-                                <li><a href="#" class="redirect-back-link" title="BootsMen Watches" >BootsMen Watches</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Women Watches" >Women Watches</a></li>
-                            </ul>
-
                         </div>
                     </div>
                 </div>
@@ -235,14 +200,13 @@
                 <div class="coppy-right-item item-left">
                     <div class="wrap-nav horizontal-nav">
                         <ul>
-                            <li class="menu-item"><a href="/" class="link-term">{{__('mshmk.About_Us')}}</a></li>								
-                            <li class="menu-item"><a href="/" class="link-term">{{__('mshmk.Privacy_Policy')}}</a></li>
-                            <li class="menu-item"><a href="/" class="link-term">{{__('mshmk.Terms_&_Conditions')}}</a></li>
-                            <li class="menu-item"><a href="/" class="link-term">{{__('mshmk.Return_Policy')}}</a></li>								
+                            {{-- @foreach ($homepages as $homepage)
+                                <li class="menu-item"><a href="{{route('admin.pages',['homepage_id' => $homepage->id ] )}}" class="link-term">{{$homepage->name}}</a></li>								
+                            @endforeach --}}
                         </ul>
                     </div>
                 </div>
-                <div class="coppy-right-item item-right">
+                <div class="coppy-right-item item-left">
                     <p class="coppy-right-text">{{__('mshmk.MSHMK_Systems._All_rights_reserved')}} © {{ now()->year }} {{__('mshmk.Copyright')}}  </p>
                 </div>
                 <div class="clearfix"></div>
