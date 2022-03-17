@@ -1,5 +1,6 @@
-	<!--main area-->
-	<main id="main" class="main-site">
+<div>
+<!--main area-->
+	<main id="main" class="main-site" dir="rtl" style="text-align: right">
 		<div class="container">
 			<div class="wrap-breadcrumb">
 				<ul>
@@ -33,7 +34,7 @@
 												<a class="btn btn-increase" href="#" wire:click.prevent="increasecartby_1({{ $item->rowId }})"></a>
 												<a class="btn btn-reduce" href="#"wire:click.prevent="decreasecartby_1({{ $item->rowId }})"></a>
 											</div>
-											<p class="text-center"><a href="#" wire:click.prevent="switchToSaveForLater('{{$item->rowId}}')">{{_('mshmk.Save_For_Later')}}</a></p>
+											<p class="text-center"><a href="#" wire:click.prevent="switchToSaveForLater('{{$item->rowId}}')">{{__('mshmk.Saved_For_Later')}}</a></p>
 										</div>
 										<div class="price-field sub-total"><p class="price">${{ $item->sub_total}}</p></div>
 										<div class="delete">
@@ -50,21 +51,46 @@
 					@endif
 				</div>
 <!--ملخص الطلب-->
-				<div class="summary">
+				<div class="summary" >
 					<div class="order-summary">
 						<h4 class="title-box">{{__('mshmk.Order_Summary')}}</h4>
-						<p class="summary-info"><span class="title">{{__('mshmk.Subtotal')}}</span><b class="index">${{ Cart::subtotal() }}</b></p>
-						<p class="summary-info"><span class="title">{{__('mshmk.Tax')}}</span><b class="index">${{ Cart::tax() }}</b></p>
-						<p class="summary-info"><span class="title">{{__('mshmk.Shipping')}}</span><b class="index">{{__('mshmk.Free_Shipping')}}</b></p>
-						<p class="summary-info total-info "><span class="title">{{__('mshmk.Total')}}</span><b class="index">${{ Cart::total() }}</b></p>
+						<p class="summary-info"><span class="title">{{__('mshmk.Subtotal')}}</span><b class="index">${{ Cart::instance()->subtotal() }}</b></p>
+						@if(Session::has('coupon'))
+							<p class="summary-info"><span class="title">{{__('mshmk.Discount')}}({{Session::get('coupon')['code']}}) <a href="#" wire:click.prevent= "removeCoupon"><i class="fa fa-times text-danger"></i></a></span></span><b class="index"> -${{number_format($discount,2)}}</b></p>
+							<p class="summary-info"><span class="title">{{__('mshmk.Subtotal_with_Discount')}}</span></span><b class="index">${{number_format($subtotalAfterDiscount,2)}}</b></p>
+							<p class="summary-info"><span class="title">{{__('mshmk.Tax')}} ({{config('cart.tax')}}%)</span></span><b class="index">${{number_format($taxAfterDiscount,2)}}</b></p>                        
+							<p class="summary-info total-info "><span class="title">{{__('mshmk.Total')}}</span><b class="index">${{number_format($totalAfterDiscount,2)}}</b></p>
+						@else
+							<p class="summary-info"><span class="title">{{__('mshmk.Tax')}}</span><b class="index">${{Cart::instance('cart')->tax()}}</b></p>
+							<p class="summary-info"><span class="title">{{__('mshmk.Shipping')}}</span><b class="index">{{__('mshmk.Free_Shipping')}}</b></p>
+							<p class="summary-info total-info "><span class="title">{{__('mshmk.Total')}}</span><b class="index">${{Cart::instance('cart')->total()}}</b></p>
+						@endif  
 					</div>
 					<div class="checkout-info">
-						<label class="checkbox-field">
-							<input class="frm-input " name="have-code" id="have-code" value="" type="checkbox"><span>{{__('mshmk.I_have_promo_code')}}</span>
-						</label>
-						<a class="btn btn-checkout" href="#" wire:click.prevent='checkout'>{{__('mshmk.Check_out')}}</a>
+						@if(!Session::has('coupon'))  
+							<label class="checkbox-field">
+								<input class="frm-input " name="have-code" id="have-code" value="1" type="checkbox" wire:model="haveCouponCode"><span>{{__('mshmk.I_have_coupon_code')}}</span>
+							</label>
+							@if($haveCouponCode == 1)
+								<div class="summary-item">
+									<form wire:submit.prevent="applyCouponCode">
+										<h4 class="title-box">{{__('mshmk.Coupon_Code')}}</h4>
+										@if(Session::has('coupon_message'))
+											<div class="alert alert-danger" role="danger">{{Session::get('coupon_message')}}</div>
+										@endif
+										<p class="row-in-form">
+											<label for="coupon-code">{{__('mshmk.Enter_your_coupon_code:')}}</label>
+											<input type="text" name="coupon-code" wire:model="couponCode" />
+										</p>
+										<button type="submit" class="btn btn-small">{{__('mshmk.Apply')}}</button>
+									</form>
+								</div>
+							@endif
+						@endif
+						<a class="btn btn-checkout" href="{{route('product.checkout')}}" >{{__('mshmk.Check_out')}}</a>                    
 						<a class="link-to-shop" href="/shop">{{__('mshmk.Continue_Shopping')}}<i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
 					</div>
+
 					<div class="update-clear">
 						<a class="btn btn-clear" href="#" wire:click.prevent="destroyall()" >{{__('mshmk.Clear_Shopping_Cart')}}</a>
 						<a class="btn btn-update" href="#">{{__('mshmk.Update_Shopping_Cart')}}</a>
@@ -103,7 +129,7 @@
 												<a class="btn btn-increase" href="#" wire:click.prevent="increasecartby_1({{ $item->rowId }})"></a>
 												<a class="btn btn-reduce" href="#"wire:click.prevent="decreasecartby_1({{ $item->rowId }})"></a>
 											</div>
-											<p class="text-center"><a href="#" wire:click.prevent="moveToCart('{{$item->rowId}}')">{{_('mshmk.Move_To_Cart')}}</a></p>
+											<p class="text-center"><a href="#" wire:click.prevent="moveToCart('{{$item->rowId}}')">{{__('mshmk.Move_To_Cart')}}</a></p>
 										</div>
 										<div class="delete">
 											<a href="#" class="btn btn-delete"  wire:click.prevent="deleteFromSaveForLater({{$item->rowId}})">
@@ -145,3 +171,4 @@
 
 	</main>
 	<!--main area-->
+<div>

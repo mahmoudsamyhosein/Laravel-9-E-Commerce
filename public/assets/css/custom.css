@@ -1551,7 +1551,7 @@ li.menu-item .nav-label.sale-label::before{
 }
 .style-twin-default .banner-item{
     display: inline-block;
-    float: right;
+    float: left;
     width: calc( 50% - 5px);
     width: -webkit-calc( 50% - 5px);
     width: -moz-calc( 50% - 5px);
@@ -1559,7 +1559,7 @@ li.menu-item .nav-label.sale-label::before{
     padding: 10px 0 0 0;
 }
 .style-twin-default .banner-item:nth-child(even){
-    margin-right: 10px;
+    margin-left: 10px;
 }
 .wrap-show-advance-info-box{
     display: inline-block;

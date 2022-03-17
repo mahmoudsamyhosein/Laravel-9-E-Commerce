@@ -1,12 +1,11 @@
-	<!--main area-->
-	<main id="main" class="main-site">
-
+<div>
+<!--main area-->
+	<main id="main" class="main-site" >
 		<div class="container">
-
 			<div class="wrap-breadcrumb">
 				<ul>
-					<li class="item-link"><a href="/" class="link">home</a></li>
-					<li class="item-link"><span>detail</span></li>
+					<li class="item-link"><a href="/" class="link">{{__('mshmk.Home')}}</a></li>
+					<li class="item-link"><span>{{__('mshmk.product_details')}}</span></li>
 				</ul>
 			</div>
 			<div class="row">
@@ -36,9 +35,7 @@
                                     {!! $product->short_description !!}
                                 </ul>
                             </div>
-                            <div class="wrap-social">
-                            	<a class="link-socail" href="#"><img src="{{ asset('assets/images/social-list.png') }}" alt=""></a>
-                            </div>
+                            
 							@if($product->sale_price > 0 && $sale->status == 1 && $sale->sale_date > Carbon\Carbon::now() )
 							<div class="wrap-price"><ins><p class="product-price">${{$product->sale_price}}</p></ins> <del><p class="product-price">${{$product->regular_price}}</p></del></div>
 							@else
@@ -62,7 +59,6 @@
 									<a href="#" class="btn add-to-cart" wire:click.prevent="store( {{ $product->id }},{{ $product->name }},{{ $product->regular_price }} )">Add to Cart</a>
 								@endif
                                 <div class="wrap-btn">
-                                    <a href="#" class="btn btn-compare">Add Compare</a>
                                     <a href="#" class="btn btn-wishlist">Add Wishlist</a>
                                 </div>
 							</div>
@@ -243,17 +239,17 @@
 					<div class="wrap-show-advance-info-box style-1 box-in-site">
 						<h3 class="title-box">{{__('mshmk.Related_Products')}}</h3>
 						<div class="wrap-products">
-							<div class="products slide-carousel owl-carousel style-nav-1 equal-container" data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"3"},"1200":{"items":"5"}}' >
+							<div class="products slide-carousel owl-carousel style-nav-1 equal-container" data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"3"},"1200":{"items":"5"}}'>
 								<div class="product product-style-2 equal-elem ">
 									@foreach($related_products as $r_product)
 										<div class="product-thumnail">
-											<a href="{{ route('products.details', ['slug' => $r_product->slug ]) }}" title="{{ $r_product->name }}">
-												<figure><img src="{{ asset('assets/images/products')}}/{{ $r_product->image }}" width="214" height="214" alt="{{ $r_product->name }}"></figure>
+											<a href="{{ route('products.details',['slug'=>$r_product->slug])}}" title="{{$r_product->name}}">
+												<figure><img src="{{ asset('assets/images/products')}}/{{$r_product->image}}" width="214" height="214" alt="{{$r_product->name}}"></figure>
 											</a>						
 										</div>
 										<div class="product-info">
-											<a href="{{ route('products.details', ['slug' => $r_product->slug ]) }}" class="product-name"><span>{{ $r_product->name }}</span></a>
-											<div class="wrap-price"><span class="product-price">${{ $r_product->regular_price }}</span></div>
+											<a href="{{ route('products.details',['slug'=>$r_product->slug])}}" class="product-name"><span>{{$r_product->name}}</span></a>
+											<div class="wrap-price"><span class="product-price">${{$r_product->regular_price}}</span></div>
 										</div>
 									@endforeach
 								</div>
@@ -261,10 +257,8 @@
 						</div><!--End wrap-products-->
 					</div>
 				</div>
-
 			</div><!--end row-->
-
 		</div><!--end container-->
-
 	</main>
 	<!--main area-->
+</div>

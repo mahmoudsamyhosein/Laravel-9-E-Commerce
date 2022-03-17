@@ -1,4 +1,5 @@
-	<!--main area-->
+<div>
+<!--main area-->
 	<main id="main" class="main-site left-sidebar" >
 
 		<div class="container">
@@ -216,6 +217,7 @@
 
 	</main>
 	<!--main area-->
+</div>
 @push('scripts')
 <script>
 	 var slider = document.getElementById('slider');

@@ -1,254 +1,223 @@
-
+<div>
 	<!--main area-->
-	<main id="main" class="main-site">
-
+	<main id="main" class="main-site" dir="rtl" style="text-align: right">
+		<style>
+			.summary-item .row-in-form input[type="password"], .summary-item .row-in-form input[type="text"], .summary-item .row-in-form input[type="tel"] {
+				font-size: 13px;
+				line-height: 19px;
+				display: inline-block;
+				height: 43px;
+				padding: 2px 20px;
+				max-width: 300px;
+				width: 100%;
+				border: 1px solid #e6e6e6;
+			}
+		</style>
 		<div class="container">
 
 			<div class="wrap-breadcrumb">
 				<ul>
-					<li class="item-link"><a href="#" class="link">home</a></li>
-					<li class="item-link"><span>login</span></li>
+					<li class="item-link"><a href="/" class="link">{{__('mshmk.Home')}}</a></li>
+					<li class="item-link"><span>{{__('mshmk.Check_out')}}</span></li>
 				</ul>
 			</div>
 			<div class=" main-content-area">
-				<div class="wrap-address-billing">
-					<h3 class="box-title">Billing Address</h3>
-					<form action="#" method="get" name="frm-billing">
-						<p class="row-in-form">
-							<label for="fname">first name<span>*</span></label>
-							<input id="fname" type="text" name="fname" value="" placeholder="Your name">
-						</p>
-						<p class="row-in-form">
-							<label for="lname">last name<span>*</span></label>
-							<input id="lname" type="text" name="lname" value="" placeholder="Your last name">
-						</p>
-						<p class="row-in-form">
-							<label for="email">Email Addreess:</label>
-							<input id="email" type="email" name="email" value="" placeholder="Type your email">
-						</p>
-						<p class="row-in-form">
-							<label for="phone">Phone number<span>*</span></label>
-							<input id="phone" type="number" name="phone" value="" placeholder="10 digits format">
-						</p>
-						<p class="row-in-form">
-							<label for="add">Address:</label>
-							<input id="add" type="text" name="add" value="" placeholder="Street at apartment number">
-						</p>
-						<p class="row-in-form">
-							<label for="country">Country<span>*</span></label>
-							<input id="country" type="text" name="country" value="" placeholder="United States">
-						</p>
-						<p class="row-in-form">
-							<label for="zip-code">Postcode / ZIP:</label>
-							<input id="zip-code" type="number" name="zip-code" value="" placeholder="Your postal code">
-						</p>
-						<p class="row-in-form">
-							<label for="city">Town / City<span>*</span></label>
-							<input id="city" type="text" name="city" value="" placeholder="City name">
-						</p>
-						<p class="row-in-form fill-wife">
-							<label class="checkbox-field">
-								<input name="create-account" id="create-account" value="forever" type="checkbox">
-								<span>Create an account?</span>
-							</label>
-							<label class="checkbox-field">
-								<input name="different-add" id="different-add" value="forever" type="checkbox">
-								<span>Ship to a different address?</span>
-							</label>
-						</p>
-					</form>
-				</div>
-				<div class="summary summary-checkout">
-					<div class="summary-item payment-method">
-						<h4 class="title-box">Payment Method</h4>
-						<p class="summary-info"><span class="title">Check / Money order</span></p>
-						<p class="summary-info"><span class="title">Credit Cart (saved)</span></p>
-						<div class="choose-payment-methods">
-							<label class="payment-method">
-								<input name="payment-method" id="payment-method-bank" value="bank" type="radio">
-								<span>Direct Bank Transder</span>
-								<span class="payment-desc">But the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</span>
-							</label>
-							<label class="payment-method">
-								<input name="payment-method" id="payment-method-visa" value="visa" type="radio">
-								<span>visa</span>
-								<span class="payment-desc">There are many variations of passages of Lorem Ipsum available</span>
-							</label>
-							<label class="payment-method">
-								<input name="payment-method" id="payment-method-paypal" value="paypal" type="radio">
-								<span>Paypal</span>
-								<span class="payment-desc">You can pay with your credit</span>
-								<span class="payment-desc">card if you don't have a paypal account</span>
-							</label>
+				<form wire:submit.prevent='placeorder' >
+				@csrf
+					<div class="row">
+						<div class="col-md-12">
+							<div class="wrap-address-billing">
+								<h3 class="box-title">{{__('mshmk.Billing_Address')}}</h3>
+								<div class="Billing_Address">
+									<p class="row-in-form">
+										<label for="fname">{{__('mshmk.first_name')}}<span>*</span></label>
+										<input  type="text" name="fname"  placeholder="{{__('mshmk.first_name')}}" wire:model='firstname'>
+										@error('firstname')<span class="text-danger">{{$message}}</span>@enderror
+									</p>
+									<p class="row-in-form">
+										<label for="lname">{{__('mshmk.last_name')}}<span>*</span></label>
+										<input  type="text" name="lname"  placeholder="{{__('mshmk.last_name')}}" wire:model='lastname'>
+										@error('lastname')<span class="text-danger">{{$message}}</span>@enderror
+									</p>
+									<p class="row-in-form">
+										<label for="email">{{__('mshmk.Email_Addreess:')}}</label>
+										<input  type="email" name="email"  placeholder="{{__('mshmk.Type_your_email')}}" wire:model='email'>
+										@error('email')<span class="text-danger">{{$message}}</span>@enderror
+									</p>
+									<p class="row-in-form">
+										<label for="phone">{{__('mshmk.Phone_number')}}<span>*</span></label>
+										<input  type="number" name="phone" placeholder="{{__('mshmk.10_digits_format')}}" wire:model='mobile'>
+										@error('mobile')<span class="text-danger">{{$message}}</span>@enderror
+									</p>
+									<p class="row-in-form">
+										<label for="add">{{__('mshmk.line1')}}</label>
+										<input  type="text" name="line1"  placeholder="{{__('mshmk.Street_at_apartment_number')}}" wire:model='line1'>
+										@error('line1')<span class="text-danger">{{$message}}</span>@enderror
+									</p>
+									<p class="row-in-form">
+										<label for="add">{{__('mshmk.line2')}}</label>
+										<input  type="text" name="line2"  placeholder="{{__('mshmk.line2_description')}}" wire:model='line2'>
+										@error('line2')<span class="text-danger">{{$message}}</span>@enderror
+									</p>
+									<p class="row-in-form">
+										<label for="country">{{__('mshmk.Country')}}<span>*</span></label>
+										<input  type="text" name="country"  placeholder="{{__('mshmk.Egypt')}}" wire:model='country'>
+										@error('country')<span class="text-danger">{{$message}}</span>@enderror
+									</p>
+									<p class="row-in-form">
+										<label for="city">{{__('mshmk.Town/City')}}<span>*</span></label>
+										<input  type="text" name="city" placeholder="{{__('mshmk.City_name')}}" wire:model='city'>
+										@error('city')<span class="text-danger">{{$message}}</span>@enderror
+									</p>
+									<p class="row-in-form">
+										<label for="province">{{__('mshmk.province')}}<span>*</span></label>
+										<input  type="text" name="province" placeholder="{{__('mshmk.province')}}" wire:model='province'>
+										@error('province')<span class="text-danger">{{$message}}</span>@enderror
+									</p>
+									<p class="row-in-form">
+										<label for="zip-code">{{__('mshmk.Postcode/ZIP:')}}</label>
+										<input  type="number" name="zip-code" placeholder="{{__('mshmk.Your_postal_code')}}" wire:model='zipcode'>
+										@error('zipcode')<span class="text-danger">{{$message}}</span>@enderror
+									</p>
+									<p class="row-in-form fill-wife">
+										
+										<label class="checkbox-field">
+											<input name="different-add" id="different-add" value="1" type="checkbox" wire:model='is_shipping_different'>
+											<span>{{__('mshmk.Ship_to_a_different_address?')}}</span>
+										</label>
+									</p>
+								</div>		
 						</div>
-						<p class="summary-info grand-total"><span>Grand Total</span> <span class="grand-total-price">$100.00</span></p>
-						<a href="thankyou.html" class="btn btn-medium">Place order now</a>
-					</div>
-					<div class="summary-item shipping-method">
-						<h4 class="title-box f-title">Shipping method</h4>
-						<p class="summary-info"><span class="title">Flat Rate</span></p>
-						<p class="summary-info"><span class="title">Fixed $50.00</span></p>
-						<h4 class="title-box">Discount Codes</h4>
-						<p class="row-in-form">
-							<label for="coupon-code">Enter Your Coupon code:</label>
-							<input id="coupon-code" type="text" name="coupon-code" value="" placeholder="">	
-						</p>
-						<a href="#" class="btn btn-small">Apply</a>
-					</div>
-				</div>
+						@if($is_shipping_different)
+						<div class="col-md-12">
+							<div class="wrap-address-billing">
+								<h3 class="box-title">{{__('mshmk.Shipping_Address')}}</h3>
+								<div class="Billing_Address">
+									<p class="row-in-form">
+										<label for="fname">{{__('mshmk.first_name')}}<span>*</span></label>
+										<input  type="text" name="fname"  placeholder="{{__('mshmk.first_name')}}" wire:model='s_firstname'>
+										@error('s_firstname')<span class="text-danger">{{$message}}</span>@enderror
 
-				<div class="wrap-show-advance-info-box style-1 box-in-site">
-					<h3 class="title-box">Most Viewed Products</h3>
-					<div class="wrap-products">
-						<div class="products slide-carousel owl-carousel style-nav-1 equal-container" data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"3"},"1200":{"items":"5"}}' >
+									</p>
+									<p class="row-in-form">
+										<label for="lname">{{__('mshmk.last_name')}}<span>*</span></label>
+										<input  type="text" name="lname"  placeholder="{{__('mshmk.last_name')}}" wire:model='s_lastname'>
+										@error('s_lastname')<span class="text-danger">{{$message}}</span>@enderror
 
-							<div class="product product-style-2 equal-elem ">
-								<div class="product-thumnail">
-									<a href="#" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-										<figure><img src="{{ asset('assets/images/products/digital_04.jpg')}}" width="214" height="214" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
-									</a>
-									<div class="group-flash">
-										<span class="flash-item new-label">new</span>
-									</div>
-									<div class="wrap-btn">
-										<a href="#" class="function-link">quick view</a>
-									</div>
-								</div>
-								<div class="product-info">
-									<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-									<div class="wrap-price"><span class="product-price">$250.00</span></div>
-								</div>
-							</div>
-
-							<div class="product product-style-2 equal-elem ">
-								<div class="product-thumnail">
-									<a href="#" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-										<figure><img src="{{ asset('assets/images/products/digital_17.jpg')}}" width="214" height="214" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
-									</a>
-									<div class="group-flash">
-										<span class="flash-item sale-label">sale</span>
-									</div>
-									<div class="wrap-btn">
-										<a href="#" class="function-link">quick view</a>
-									</div>
-								</div>
-								<div class="product-info">
-									<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-									<div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
-								</div>
-							</div>
-
-							<div class="product product-style-2 equal-elem ">
-								<div class="product-thumnail">
-									<a href="#" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-										<figure><img src="{{ asset('assets/images/products/digital_15.jpg')}}" width="214" height="214" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
-									</a>
-									<div class="group-flash">
-										<span class="flash-item new-label">new</span>
-										<span class="flash-item sale-label">sale</span>
-									</div>
-									<div class="wrap-btn">
-										<a href="#" class="function-link">quick view</a>
-									</div>
-								</div>
-								<div class="product-info">
-									<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-									<div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
-								</div>
-							</div>
-
-							<div class="product product-style-2 equal-elem ">
-								<div class="product-thumnail">
-									<a href="#" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-										<figure><img src="{{ asset('assets/images/products/digital_01.jpg')}}" width="214" height="214" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
-									</a>
-									<div class="group-flash">
-										<span class="flash-item bestseller-label">Bestseller</span>
-									</div>
-									<div class="wrap-btn">
-										<a href="#" class="function-link">quick view</a>
-									</div>
-								</div>
-								<div class="product-info">
-									<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-									<div class="wrap-price"><span class="product-price">$250.00</span></div>
-								</div>
-							</div>
-
-							<div class="product product-style-2 equal-elem ">
-								<div class="product-thumnail">
-									<a href="#" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-										<figure><img src="{{ asset('assets/images/products/digital_21.jpg')}}" width="214" height="214" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
-									</a>
-									<div class="wrap-btn">
-										<a href="#" class="function-link">quick view</a>
-									</div>
-								</div>
-								<div class="product-info">
-									<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-									<div class="wrap-price"><span class="product-price">$250.00</span></div>
-								</div>
-							</div>
-
-							<div class="product product-style-2 equal-elem ">
-								<div class="product-thumnail">
-									<a href="#" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-										<figure><img src="{{ asset('assets/images/products/digital_03.jpg')}}" width="214" height="214" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
-									</a>
-									<div class="group-flash">
-										<span class="flash-item sale-label">sale</span>
-									</div>
-									<div class="wrap-btn">
-										<a href="#" class="function-link">quick view</a>
-									</div>
-								</div>
-								<div class="product-info">
-									<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-									<div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
-								</div>
-							</div>
-
-							<div class="product product-style-2 equal-elem ">
-								<div class="product-thumnail">
-									<a href="#" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-										<figure><img src="{{ asset('assets/images/products/digital_04.jpg')}}" width="214" height="214" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
-									</a>
-									<div class="group-flash">
-										<span class="flash-item new-label">new</span>
-									</div>
-									<div class="wrap-btn">
-										<a href="#" class="function-link">quick view</a>
-									</div>
-								</div>
-								<div class="product-info">
-									<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-									<div class="wrap-price"><span class="product-price">$250.00</span></div>
-								</div>
-							</div>
-
-							<div class="product product-style-2 equal-elem ">
-								<div class="product-thumnail">
-									<a href="#" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-										<figure><img src="{{ asset('assets/images/products/digital_05.jpg')}}" width="214" height="214" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
-									</a>
-									<div class="group-flash">
-										<span class="flash-item bestseller-label">Bestseller</span>
-									</div>
-									<div class="wrap-btn">
-										<a href="#" class="function-link">quick view</a>
-									</div>
-								</div>
-								<div class="product-info">
-									<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-									<div class="wrap-price"><span class="product-price">$250.00</span></div>
-								</div>
-							</div>
+									</p>
+									<p class="row-in-form">
+										<label for="email">{{__('mshmk.Email_Addreess:')}}</label>
+										<input  type="email" name="email"  placeholder="{{__('mshmk.Type_your_email')}}" wire:model='s_email'>
+										@error('s_email')<span class="text-danger">{{$message}}</span>@enderror
+									</p>
+									<p class="row-in-form">
+										<label for="phone">{{__('mshmk.Phone_number')}}<span>*</span></label>
+										<input  type="number" name="phone" placeholder="{{__('mshmk.10_digits_format')}}" wire:model='s_mobile'>
+										@error('s_mobile')<span class="text-danger">{{$message}}</span>@enderror
+									</p>
+									<p class="row-in-form">
+										<label for="add">{{__('mshmk.line1')}}</label>
+										<input  type="text" name="line1"  placeholder="{{__('mshmk.Street_at_apartment_number')}}" wire:model='s_line1'>
+										@error('s_line1')<span class="text-danger">{{$message}}</span>@enderror
+									</p>
+									<p class="row-in-form">
+										<label for="add">{{__('mshmk.line2')}}</label>
+										<input  type="text" name="line2"  placeholder="{{__('mshmk.line2_description')}}" wire:model='s_line2'>
+										@error('s_line2')<span class="text-danger">{{$message}}</span>@enderror
+									</p>
+									<p class="row-in-form">
+										<label for="country">{{__('mshmk.Country')}}<span>*</span></label>
+										<input  type="text" name="country"  placeholder="{{__('mshmk.Egypt')}}" wire:model='s_country'>
+										@error('s_country')<span class="text-danger">{{$message}}</span>@enderror
+									</p>
+									<p class="row-in-form">
+										<label for="city">{{__('mshmk.Town/City')}}<span>*</span></label>
+										<input  type="text" name="city" placeholder="{{__('mshmk.City_name')}}" wire:model='s_city'>
+										@error('s_city')<span class="text-danger">{{$message}}</span>@enderror
+									</p>
+									<p class="row-in-form">
+										<label for="province">{{__('mshmk.province')}}<span>*</span></label>
+										<input  type="text" name="province" placeholder="{{__('mshmk.province')}}" wire:model='s_province'>
+										@error('s_province')<span class="text-danger">{{$message}}</span>@enderror
+									</p>
+									<p class="row-in-form">
+										<label for="zip-code">{{__('mshmk.Postcode/ZIP:')}}</label>
+										<input  type="number" name="zip-code" placeholder="{{__('mshmk.Your_postal_code')}}" wire:model='s_zipcode'>
+										@error('s_zipcode')<span class="text-danger">{{$message}}</span>@enderror
+									</p>
+								</div>		
 						</div>
-					</div><!--End wrap-products-->
-				</div>
-
+						@endif
+					</div>
+					<div class="summary summary-checkout">
+						<div class="summary-item payment-method">
+							<h4 class="title-box">{{__('mshmk.Payment_Method')}}</h4>
+							@if ($paymentmode == 'card')								
+								<div class="wrap-address-billing">
+									@if (Session::has('stripe_error'))
+										<div class="alert alert-danger" role="alert">{{Session::get('stripe_error')}}</div>
+										
+									@endif
+									<p class="row-in-form">
+										<label for="card_no">{{__('mshmk.Card_Number')}}</label>
+										<input  type="text" name="card_no" placeholder="{{__('mshmk.Card_Number')}}" wire:model='card_no'>
+										@error('card_no')<span class="text-danger">{{$message}}</span>@enderror
+									</p>
+									<p class="row-in-form">
+										<label for="exp-month">{{__('mshmk.exp-month')}}</label>
+										<input  type="text" name="exp-month" placeholder="MM" wire:model='exp_month'>
+										@error('exp-month')<span class="text-danger">{{$message}}</span>@enderror
+									</p>
+									<p class="row-in-form">
+										<label for="exp_year">{{__('mshmk.exp_year')}}</label>
+										<input  type="text" name="exp_year" placeholder="YYYY" wire:model='exp_year'>
+										@error('exp_year')<span class="text-danger">{{$message}}</span>@enderror
+									</p>
+									<p class="row-in-form">
+										<label for="cvc">{{__('mshmk.cvc')}}</label>
+										<input  type="password" name="card_no" placeholder="CVC" wire:model='cvc'>
+										@error('cvc')<span class="text-danger">{{$message}}</span>@enderror
+									</p>
+								</div>
+							@endif
+							<div class="choose-payment-methods">
+								{{-- <label class="payment-method">
+									<input name="payment-method" id="payment-method-bank" value="bank" type="radio">
+									<span>{{__('mshmk.Direct_Bank_Transder')}}</span>
+									<span class="payment-desc">{{__('mshmk.Direct_Bank_Transder_description')}}</span>
+								</label> --}}
+								<label class="payment-method">
+									<input name="payment-method" id="payment-method-bank" value="cod" type="radio" wire:model='paymentmode'>
+									<span> {{__('mshmk.Cash_On_Delivery')}}</span>
+									<span class="payment-desc">{{__('mshmk.Cash_On_Delivery_description')}}</span>
+								</label>
+								<label class="payment-method">
+									<input name="payment-method" id="payment-method-visa" value="card" type="radio" wire:model='paymentmode'>
+									<span>{{__('mshmk.Debit/Credit_card')}}</span>
+									<span class="payment-desc">{{__('mshmk.Debit/Credit_card_description')}}</span>
+								</label>
+								<label class="payment-method">
+									<input name="payment-method" id="payment-method-paypal" value="paypal" type="radio" wire:model='paymentmode'>
+									<span>{{__('mshmk.Paypal')}}</span>
+									<span class="payment-desc">{{__('mshmk.card_if_you_don\'t_have_a_paypal_account')}}</span>
+								</label>
+								@error('payment-method')<span class="text-danger">{{$message}}</span>@enderror
+							</div>
+							@if(Session::has('checkout'))
+								<p class="summary-info grand-total"><span>{{__('mshmk.Grand_Total')}}</span> <span class="grand-total-price">${{Session::get('checkout')['total']}}</span></p>
+							@endif
+							<button type="submit" class="btn btn-medium">{{__('mshmk.Place_order_now')}}</button>
+						</div>
+						<div class="summary-item shipping-method">
+							<h4 class="title-box f-title">{{__('mshmk.Shipping_method')}}</h4>
+							<p class="summary-info"><span class="title">{{__('mshmk.Flat_Rate')}}</span></p>
+							<p class="summary-info"><span class="title">{{__('mshmk.Fixed_$0')}}</span></p>
+						</div>
+					</div>
+				</form>
 			</div><!--end main content area-->
 		</div><!--end container-->
 
 	</main>
 	<!--main area-->
+</div>

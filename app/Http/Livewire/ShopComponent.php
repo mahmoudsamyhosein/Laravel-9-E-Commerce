@@ -5,7 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\Product;
 use Livewire\Component;
 use Livewire\WithPagination;
-use Cart;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use App\Models\Category;
 
 

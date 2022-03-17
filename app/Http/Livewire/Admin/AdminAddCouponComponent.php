@@ -12,6 +12,7 @@ class AdminAddCouponComponent extends Component
     public $type;
     public $value;
     public $cart_value;
+    public $expiry_date;
 
     public function updated($fields){
 
@@ -21,6 +22,7 @@ class AdminAddCouponComponent extends Component
             'type' => 'required',
             'value' => 'required|numeric',
             'cart_value' => 'required|numeric',
+            'expiry_date' => 'required',
 
         ]);
     }
@@ -32,6 +34,7 @@ class AdminAddCouponComponent extends Component
            'type' => 'required',
            'value' => 'required|numeric',
            'cart_value' => 'required|numeric',
+           'expiry_date' => 'required',
        ]);
        //ثم قم بانشاء كائن جديد وتخزين قيمة البيانات المدخلة
        $coupon = new coupon();
@@ -39,6 +42,7 @@ class AdminAddCouponComponent extends Component
        $coupon->type = $this->type;
        $coupon->value = $this->value;
        $coupon->cart_value = $this->cart_value;
+       $coupon->expiry_date = $this->expiry_date;
        // قم بحفظ البيانات بأستخدام التابع save
        $coupon->save();
        //بعد ذلك قم بطباعه الرسالة التالية لجلسة المستخدم
