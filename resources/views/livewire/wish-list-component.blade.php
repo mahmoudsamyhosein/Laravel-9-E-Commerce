@@ -1,4 +1,4 @@
-	<!--main area-->
+<div>
 <main id="main" class="main-site left-sidebar">
 		<div class="container">
 			<div class="wrap-breadcrumb">
@@ -58,4 +58,4 @@
             </div>
         </div>
 </main>
-
+</div>

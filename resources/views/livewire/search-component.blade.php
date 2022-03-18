@@ -1,5 +1,5 @@
-	<!--main area-->
-	<main id="main" class="main-site right-sidebar" dir="rtl" style="text-align: right">
+<div>	
+<main id="main" class="main-site right-sidebar" dir="rtl" style="text-align: right">
 
 		<div class="container">
 
@@ -186,3 +186,4 @@
 
 	</main>
 	<!--main area-->
+</div>

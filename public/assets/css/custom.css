@@ -460,6 +460,8 @@ input,textarea{
 	position: relative;
 	max-width: 522px;
 	width: 100%;
+    padding-left: 50px;
+
 }
 .header.fill-color .center-section .wrap-search-form{
     border-color: #ffffff;
@@ -467,12 +469,13 @@ input,textarea{
 .center-section .wrap-search-form .wrap-list-cate{
     position: absolute;
     top: 0;
-    left: 56px;
+    left: 393px;
     width: 125px;
     height: 35px;
     border: none;
     outline: none;
     background: #f6f6f6;
+
 }
 .center-section .wrap-search-form .wrap-list-cate .list-cate li:hover{
     cursor: pointer;
@@ -480,23 +483,23 @@ input,textarea{
 .center-section .wrap-search-form .wrap-list-cate .list-cate li{
 	display: inline-block;
 	width: 100%;
-	float: right;
+	float: left;
 	list-style: none;
 	font-size: 13px;
 	color: #666;
     padding: 3.5px 15px;
-    padding-left: 5px;
+    padding-right: 5px;
 }
 .center-section .wrap-search-form .wrap-list-cate .list-cate li:not(.level-0){
     font-weight: 300;
-    padding-right: 22px;
+    padding-left: 22px;
 }
 .center-section .wrap-search-form .wrap-list-cate .list-cate li.level-0{
     color: #000;
     background: #f0f2f5;
 }
 .center-section .wrap-search-form .wrap-list-cate .list-cate li.level-2{
-    padding-right: 42px;
+    padding-left: 42px;
 }
 .center-section .wrap-search-form .wrap-list-cate .list-cate{
 	padding: 0;
@@ -507,12 +510,12 @@ input,textarea{
     top: calc(100% + 2px);
     top: -webkit-calc(100% + 2px);
 	top: -moz-calc(100% + 2px);
-	left: 0;
+	right: 0;
 	width: 228px;
 	z-index: 10;
     max-height: 442px;
     overflow-y: auto;
-    text-align: right;
+    text-align: left;
     display: none;
     padding-bottom: 12px;
 }
@@ -525,18 +528,18 @@ input,textarea{
 	display: inline-block;
 	position: absolute;
 	top: 7px;
-	left: 14px;
+	right: 14px;
 }
 .center-section .wrap-search-form .wrap-list-cate .link-control {
 	display: inline-block;
 	color: #999;
 	padding: 9px 15px;
 	width: 100%;
-    text-align: right;
+    text-align: left;
 }
 .center-section .wrap-search-form input[name="search"]{
     width: 100%;
-    float: right;
+    float: left;
     font-size: 13px;
     color: #999999;
     border: none;
@@ -552,7 +555,7 @@ input,textarea{
     background: #414141;
     height: 39px;
     top: -2px;
-    left: -2px;
+    right: -2px;
 }
 .center-section .wrap-search-form button{
 	width: 56px;
@@ -1937,11 +1940,13 @@ li.menu-item .nav-label.sale-label::before{
     font-weight: 700;
     display: block;
     margin: 0;
+    margin-right: 8px;
 }
 .wrap-footer-content .wrap-function-info .fc-info-item .wrap-left-info .fc-desc{
     display: block;
     text-align: right;
     margin: 0;
+    margin-right: 8px;
 }
 .wrap-footer-content .wrap-function-info .fc-info-item i{
     display: inline-block;
@@ -2035,11 +2040,14 @@ li.menu-item .nav-label.sale-label::before{
     width: 100%;
     font-weight: 700;
     margin-top: 1px;
+    text-align: right;
+    padding-left: 100px;
+
 }
 .wrap-newletter-footer{
     display: inline-block;
     width: 100%;
-    float: right;
+    float: left;
     position: relative;
     max-width: 330px;
 }
@@ -2052,6 +2060,8 @@ li.menu-item .nav-label.sale-label::before{
     border: 1px solid #e6e6e6;
     /*padding: 12.5px 15px;*/
     height: 45px;
+    right: 0;
+    direction: rtl;
 }
 .wrap-newletter-footer .btn-submit{
     display: inline-block;
@@ -2061,7 +2071,7 @@ li.menu-item .nav-label.sale-label::before{
     text-transform: capitalize;
     border: none;
     position: absolute;
-    right: 0;
+    left: 0;
     top: 0;
     color: #ffffff;
     padding: 11.5px 19.1px;
@@ -5794,7 +5804,7 @@ background-color: #888888;
     max-width: 90px;
     margin-top: 9px;
     margin-bottom: 11px;
-    margin-right: -1px;
+    margin-left: -1px;
 }
 .wrap-main-slide-3 .item-slide .type-2{
     top: 34%;
@@ -6830,7 +6840,7 @@ background-color: #888888;
         display: inline-block;
     }
     .wrap-footer-content .wrap-footer-item .item-header{
-        text-align: center;
+        text-align: right;
     }
     .wrap-footer-content .wrap-footer-item{
         width: 100%;

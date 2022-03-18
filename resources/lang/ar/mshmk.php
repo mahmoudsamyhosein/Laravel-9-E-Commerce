@@ -81,7 +81,7 @@ return [
     'Free_Shipping'=> 'شحن مجاني',
     'Free_On_Oder_Over_$99'=> ' $99 شحن مجاني للطلبات فوق ',
     'Product_Categries'=> 'أقسام المنتجات',
-    'Search_here...'=> ' ... بحث',
+    'Search_here...'=> '... بحث عن منتج ',
     'Latest_Products'=> 'أحدث المنتجات',
     'sale'=> 'خصم',
     'Product_Categories'=> 'المنتجات بالأقسام',
