@@ -5,12 +5,9 @@
 *MY_GITHUB_ACCOUNT:https://github.com/mahmoudsamyhosein .
 */
 namespace App\Http\Livewire;
-
 use App\Models\Contact;
 use App\Models\Setting;
-use Illuminate\Contracts\Session\Session;
 use Livewire\Component;
-
 class ContactComponent extends Component
 {
     //خواص الصنف
@@ -20,7 +17,6 @@ class ContactComponent extends Component
     public $comment;
     // دالة للتحقق وتحديث رسائل الخطأ
     public function updated($fields){
-
         $this->validateOnly($fields,[
             'name'      =>          'required',
             'email'     =>          'required|email',
@@ -43,7 +39,7 @@ class ContactComponent extends Component
         $contact->phone = $this->phone;
         $contact->comment = $this->comment;
         $contact->save();
-        Session()->flash('message','Your Message Has Been Sent Successfully!');
+        session()->flash('message','Your Message Has Been Sent Successfully!');
     }
     // دالة لتمرير المتغيرات الي العرض 
     public function render()
@@ -53,3 +49,6 @@ class ContactComponent extends Component
         return view('livewire.contact-component' ,['setting' => $setting ] )->layout('layouts.base');
     }
 }
+/*
+خلصانة بشياكة
+*/

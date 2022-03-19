@@ -15,12 +15,14 @@ class CategoryComponent extends Component
     public $sorting;
     public $pagesize;
     public $category_slug;
+   
 
     public function mount($category_slug){
 
         $this->sorting = "default";
         $this->pagesize = 12;
         $this->category_slug = $category_slug;
+        
     }
 
     public function store($product_id,$product_name,$product_price){
@@ -54,7 +56,8 @@ class CategoryComponent extends Component
             $products = Product::where('category_id' , $category_id )->paginate($this->pagesize);
         }
         $categories = Category::all();
+        $popular_products = Product::all()->take(5);
        
-        return view('livewire.category-component' ,['products'=> $products ,'categories' => $categories , 'category_name' => $category_name ])->layout('layouts.base');
+        return view('livewire.category-component' ,['products'=> $products ,'categories' => $categories , 'category_name' => $category_name ,'popular_products' => $popular_products ])->layout('layouts.base');
     }
 }

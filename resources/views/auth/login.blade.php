@@ -1,13 +1,11 @@
 <x-base-layout>
     	<!--main area-->
-	<main id="main" class="main-site left-sidebar">
-
+	<main id="main" class="main-site left-sidebar" dir="rtl">
 		<div class="container">
-
 			<div class="wrap-breadcrumb">
 				<ul>
-					<li class="item-link"><a href="/" class="link">home</a></li>
-					<li class="item-link"><span>login</span></li>
+					<li class="item-link"><a href="/" class="link">{{__('mshmk.Home')}}</a></li>
+					<li class="item-link"><span>{{__('mshmk.Login')}}</span></li>
 				</ul>
 			</div>
 			<div class="row">
@@ -21,33 +19,31 @@
 								<form name="frm-login" action="{{ route('login') }}" method="POST">
                                     @csrf
 									<fieldset class="wrap-title">
-										<h3 class="form-title">Log in to your account</h3>										
+										<h3 class="form-title">{{__('mshmk.Log_in_to_your_account')}}</h3>										
 									</fieldset>
 									<fieldset class="wrap-input">
-										<label for="frm-login-uname">Email Address:</label>
-										<input type="email" id="frm-login-uname" name="email" placeholder="Type your email address" :value="old('email')" required autofocus>
+										<label for="frm-login-uname">{{__('mshmk.Email_Address')}} <span style="color: red">*</span></label>
+										<input type="email" id="frm-login-uname" name="email" placeholder="{{__('mshmk.Enter_your_email_address')}}" :value="old('email')" required autofocus>
 									</fieldset>
 									<fieldset class="wrap-input">
-										<label for="frm-login-pass">Password:</label>
-										<input type="password" id="frm-login-pass" name="password" placeholder="************" required autocomplete="current-password">
+										<label for="frm-login-pass">{{__('mshmk.Password')}}<span style="color: red">*</span></label>
+										<input type="password" id="frm-login-pass" name="password" placeholder="{{__('mshmk.Password')}}" required autocomplete="current-password">
 									</fieldset>
 									
 									<fieldset class="wrap-input">
 										<label class="remember-field">
-											<input class="frm-input " name="remember" id="rememberme" value="forever" type="checkbox"><span>Remember me</span>
+											<input class="frm-input " name="remember" id="rememberme" value="forever" type="checkbox"><span>{{__('mshmk.Remember_me')}}</span>
 										</label>
-										<a class="link-function left-position" href="{{ route('password.request') }}" title="Forgotten password?">Forgotten password?</a>
+										<a class="link-function left-position" href="{{ route('password.request') }}" title="{{__('mshmk.Forgotten_password?')}}">{{__('mshmk.Forgotten_password?')}}</a>
 									</fieldset>
-									<input type="submit" class="btn btn-submit" value="Login" name="submit">
+									<input type="submit" class="btn btn-submit" value="{{__('mshmk.Login')}}" name="submit">
 								</form>
 							</div>												
 						</div>
 					</div><!--end main products area-->		
 				</div>
 			</div><!--end row-->
-
 		</div><!--end container-->
-
 	</main>
 	<!--main area-->
 </x-base-layout>

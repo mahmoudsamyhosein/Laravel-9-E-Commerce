@@ -15,6 +15,7 @@ use App\Http\Livewire\Admin\AdminEditCouponComponent;
 use App\Http\Livewire\Admin\AdminEditHomeSliderComponent;
 use App\Http\Livewire\Admin\AdminEditPageComponent;
 use App\Http\Livewire\Admin\AdminHomeCategoryComponent;
+use App\Http\Livewire\Admin\AdminOrderComponent;
 use App\Http\Livewire\Admin\AdminPagesComponent;
 use App\Http\Livewire\Admin\AdminProductComponent;
 use App\Http\Livewire\Admin\AdminSaleComponent;
@@ -97,6 +98,8 @@ Route::middleware(['auth:sanctum', 'verified','authadmin'])->group(function(){
     Route::get('admin/pages',AdminPagesComponent::class)->name('admin.pages');
     Route::get('admin/pages/add',AdminAddPageComponent::class)->name('admin.addpages');
     Route::get('admin/pages/edit/{page_id}',AdminEditPageComponent::class)->name('admin.editpages');
+    //الطلبات
+    Route::get('/admin/orders',AdminOrderComponent::class)->name('admin.orders');
 
 });
 //مبدل اللغات

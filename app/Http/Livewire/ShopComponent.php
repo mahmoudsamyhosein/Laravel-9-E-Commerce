@@ -18,6 +18,7 @@ class ShopComponent extends Component
     public $pagesize;
     public $min_price;
     public $max_price;
+    
     public function mount(){
         $this->sorting = "default";
         $this->pagesize = 12;
@@ -66,8 +67,8 @@ class ShopComponent extends Component
         else{
             $products = Product::whereBetween('regular_price',[ $this->min_price , $this->max_price ])->paginate($this->pagesize);
         }
-
+        $popular_products = Product::all()->take(5);
         $categories = Category::all()->take(12);
-        return view('livewire.shop-component' ,['products'=> $products ,'categories' => $categories  ])->layout('layouts.base');
+        return view('livewire.shop-component' ,['products'=> $products ,'categories' => $categories , 'popular_products' =>  $popular_products  ])->layout('layouts.base');
     }
 }

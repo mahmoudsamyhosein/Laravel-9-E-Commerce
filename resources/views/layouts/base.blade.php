@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" >
-
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,11 +35,13 @@
 </head>
 <body class="home-page home-01 " >
 	<!-- قائمة الموبايل -->
-	<div class="mercado-clone-wrap">
+	<div class="mercado-clone-wrap" dir="rtl">
 		<div class="mercado-panels-actions-wrap">
 			<a class="mercado-close-btn mercado-close-panels" href="#">x</a>
 		</div>
-		<div class="mercado-panels"></div>
+		<div class="mercado-panels">
+			{{----}}
+		</div>
 	</div>
 	<!-- قائمة الموبايل -->
 	<!--الهيدر-->
@@ -61,47 +62,51 @@
 											class="fa fa-angle-down" aria-hidden="true"></i></a>
 									<ul class="submenu curency">
 										<li class="menu-item">
-											<a title="Dashboard"
+											<a title="{{__('mshmk.Dashboard')}}"
 												href="{{ route('admin.dashboard')}}">{{__('mshmk.Dashboard')}}</a>
 										</li>
 										<li class="menu-item">
-											<a title="Categories"
+											<a title="{{__('mshmk.Categories')}}"
 												href="{{ route('admin.categories')}}">{{__('mshmk.Categories')}}</a>
 										</li>
 										<li class="menu-item">
-											<a title="Products"
+											<a title="{{__('mshmk.All_Products')}}"
 												href="{{ route('admin.products')}}">{{__('mshmk.All_Products')}}</a>
 										</li>
 										<li class="menu-item">
-											<a title="Manage Home Slider"
+											<a title="{{__('mshmk.Manage_Home_Slider')}}"
 												href="{{ route('admin.homeslider')}}">{{__('mshmk.Manage_Home_Slider')}}</a>
 										</li>
 										<li class="menu-item">
-											<a title="Manage Home Categories"
+											<a title="{{__('mshmk.Manage_Home_Categories')}}"
 												href="{{ route('admin.home-categories')}}">{{__('mshmk.Manage_Home_Categories')}}</a>
 										</li>
 										<li class="menu-item">
-											<a title="Sale Setting"
+											<a title="{{__('mshmk.Sale_Setting')}}"
 												href="{{ route('admin.sale')}}">{{__('mshmk.Sale_Setting')}}</a>
 										</li>
 										<li class="menu-item">
-											<a title="Contact Messages" href="{{ route('admin.contact-us')}}">
+											<a title="{{__('mshmk.Contact_Messages')}}" href="{{ route('admin.contact-us')}}">
 												{{__('mshmk.Contact_Messages')}}</a>
 										</li>
 										<li class="menu-item">
-											<a title="coupons" href="{{ route('admin.coupons')}}">
+											<a title="{{__('mshmk.coupons')}}" href="{{ route('admin.coupons')}}">
 												{{__('mshmk.coupons')}}</a>
 										</li>
 										<li class="menu-item">
-											<a title="settings" href="{{ route('admin.settings')}}">
+											<a title="{{__('mshmk.Settings')}}" href="{{ route('admin.settings')}}">
 												{{__('mshmk.Settings')}}</a>
 										</li>
 										<li class="menu-item">
-											<a title="Pages" href="{{ route('admin.pages')}}">
+											<a title="{{__('mshmk.Orders')}}" href="{{ route('admin.orders')}}">
+												{{__('mshmk.Orders')}}</a>
+										</li>
+										<li class="menu-item">
+											<a title="{{__('mshmk.Pages')}}" href="{{ route('admin.pages')}}">
 												{{__('mshmk.Pages')}}</a>
 										</li>
 										<li class="menu-item">
-											<a href=" {{ route('logout') }}"
+											<a title="{{__('mshmk.Logout')}}" href=" {{ route('logout') }}"
 												onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{__('mshmk.Logout')}}</a>
 										</li>
 										<form id="logout-form" action=" {{ route('logout') }}" method="post">
@@ -112,15 +117,15 @@
 								@else
 								<li class="menu-item menu-item-has-children parent">
 									{{-- عرض أسم المستخدم --}}
-									<a title="My Account" href="#">{{__('mshmk.My_Account')}}({{Auth::user()->name}})<i
+									<a title="{{__('mshmk.My_Account')}}" href="#">{{__('mshmk.My_Account')}}({{Auth::user()->name}})<i
 											class="fa fa-angle-down" aria-hidden="true"></i></a>
 									<ul class="submenu curency">
 										<li class="menu-item">
-											<a title="Dashboard"
+											<a title="{{__('mshmk.Dashboard')}}"
 												href="{{ route('user.dashboard')}}">{{__('mshmk.Dashboard')}}</a>
 										</li>
 										<li class="menu-item">
-											<a href="{{ route('logout') }}"
+											<a title="{{__('mshmk.Logout')}}" href="{{ route('logout') }}"
 												onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{__('mshmk.Logout')}}</a>
 										</li>
 										<form id="logout-form" action="{{ route('logout') }}" method="post">
@@ -130,15 +135,15 @@
 								</li>
 								@endif
 								@else{{-- اذا لم يكن مخول اظهر روابط تسجيل الدخول والتسجيل --}}
-								<li class="menu-item"><a title="Register or Login"
+								<li class="menu-item"><a title="{{__('mshmk.Register')}}"
 										href="{{ route('register') }}">{{__('mshmk.Register')}}</a></li>
-								<li class="menu-item"><a title="Register or Login"
+								<li class="menu-item"><a title="{{__('mshmk.Login')}}"
 										href="{{ route('login') }}">{{__('mshmk.Login')}}</a></li>
 								@endif
 								@endif
 							</ul>
 						</div>
-						<div class="topbar-menu right-menu">
+						{{-- <div class="topbar-menu right-menu">
 							<ul>
 								<li class="menu-item lang-menu menu-item-has-children parent">
 									<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
@@ -158,7 +163,7 @@
 									</div>
 								</li>
 							</ul>
-						</div>
+						</div> --}}
 						{{-- <div class="topbar-menu left-menu">
 							<ul>
 								<li class="menu-item menu-item-has-children parent">
@@ -181,21 +186,16 @@
 					</div>
 				</div>
 
-				<div class="container">
-					<div class="mid-section main-info-area">
-
-						<div class="wrap-logo-top left-section ">
+				<div class="container" >
+					<div class="mid-section main-info-area" dir="rtl">
+						<div class="wrap-logo-top left-section " >
 							<a href="/" class="link-to-home"><img src="{{asset('assets/images/logo-top-1.png')}}"
 									alt="mercado"></a>
 						</div>
-
 						@livewire('header-search-component')
-
-						<div class="wrap-icon right-section">
-							
-
-							@livewire('cart-count-component')
+						<div class="wrap-icon right-section" >
 							@livewire('wish-list-count-component')
+							@livewire('cart-count-component')
 							<div class="wrap-icon-section show-up-after-1024">
 								<a href="#" class="mobile-navigation">
 									<span></span>
@@ -204,10 +204,8 @@
 								</a>
 							</div>
 						</div>
-
 					</div>
 				</div>
-
 				<div class="nav-section header-sticky" >
 					{{-- <div class="header-nav-section">
 						<div class="container">
@@ -230,11 +228,12 @@
 						<div class="container">
 							<ul class="nav primary clone-main-menu " id="mercado_main" data-menuname="Main menu">
 								<li class="menu-item home-icon">
-									<a href="/" class="link-term mercado-item-title"><i class="fa fa-home"
-											aria-hidden="true"></i></a>
+									<a href="/" class="link-term mercado-item-title">
+										<i class="fa fa-home" aria-hidden="true"></i>
+									</a>	
 								</li>
 								<li class="menu-item">
-									<a href="about-us.html"
+									<a href="/"
 										class="link-term mercado-item-title">{{__('mshmk.About_Us')}}</a>
 								</li>
 								<li class="menu-item">
@@ -284,12 +283,11 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.js"
 		integrity="sha512-EnXkkBUGl2gBm/EIZEgwWpQNavsnBbeMtjklwAa7jLj60mJk932aqzXFmdPKCG6ge/i8iOCK0Uwl1Qp+S0zowg=="
 		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	{{-- <script src="https://cdn.tiny.cloud/1/b7vhlj1xgbj9guv1kjrx6iyin4zov3kr6x7aguzir6ds7v7j/tinymce/5/tinymce.min.js"
-		referrerpolicy="origin"></script> --}}
+	<script src="https://cdn.tiny.cloud/1/b7vhlj1xgbj9guv1kjrx6iyin4zov3kr6x7aguzir6ds7v7j/tinymce/5/tinymce.min.js"
+		referrerpolicy="origin"></script>
 	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 	@stack('scripts')
 	@livewireScripts
 	<!--جافا سكربت-->
-
 </body>
 </html>

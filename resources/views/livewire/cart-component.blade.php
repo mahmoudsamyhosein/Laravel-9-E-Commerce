@@ -144,28 +144,6 @@
 						<p>{{__('mshmk.No_Item_Saved_For_Later')}}</p>
 					@endif
 				</div>
-{{-- <!--المنتجات الأكثر مشاهدة-->
-				<div class="wrap-show-advance-info-box style-1 box-in-site">
-					<h3 class="title-box">{{__('mshmk.Most_Viewed_Products')}}</h3>
-					<div class="wrap-products">
-						<div class="products slide-carousel owl-carousel style-nav-1 equal-container" data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"3"},"1200":{"items":"5"}}' >
-							<div class="product product-style-2 equal-elem ">
-								@foreach ($products as $product)
-									<div class="product-thumnail">
-										<a href="#" title="{{$product->name}}">
-											<figure><img src="{{asset('assets/images/products')}}/{{$product->image}}" width="214" height="214" alt="{{$product->name}}"></figure>
-										</a>
-									</div>
-									<div class="product-info">
-										<a href="#" class="product-name"><span>{{$product->name}}</span></a>
-										<div class="wrap-price"><span class="product-price">${{$product->regular_price}}</span></div>
-									</div>
-								@endforeach
-							</div>
-						</div>
-					</div><!--End wrap-products-->
-				</div>
-<!--المنتجات الأكثر مشاهدة--> --}}
 			</div><!--end main content area-->
 		</div><!--end container-->
 

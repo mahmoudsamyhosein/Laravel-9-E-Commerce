@@ -19,6 +19,7 @@ class CreateCouponsTable extends Migration
             $table->enum('type',['fixed','percent']);
             $table->decimal('value');
             $table->decimal('cart_value');
+            $table->date('expiry_date')->timestamps();
             $table->timestamps();
         });
     }
@@ -30,6 +31,8 @@ class CreateCouponsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('coupons');
+        Schema::dropIfExists('coupons', function (Blueprint $table) {
+            $table->date('expiry_date')->timestamps();
+        });
     }
 }

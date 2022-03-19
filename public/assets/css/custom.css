@@ -1,6 +1,9 @@
 /*------------------------------------------------------------------
+* بسم الله الرحمن الرحيم والصلاة والسلام علي أشرف المرسلين سيدنا محمد
+* تم التعريب وتغيير الأتجاه بواسطة محمود سامي حسن متولي 
+* MY_GITHUB_ACCOUNT:https://github.com/mahmoudsamyhosein 
+--------------------------------------------------------------------
 [Stylesheet]
-
 Project:    Ecommerce
 Version:    1.0
 Last change:    23 July 2018 [Initial release]
@@ -355,6 +358,7 @@ input,textarea{
 	width: 100%;
 	background: #f9f9f9;
 	border-bottom: 1px solid #f2f2f2;
+    
 }
 .topbar-menu-area .topbar-menu{
 	display: block;
@@ -379,8 +383,9 @@ input,textarea{
     padding-right: 17px;
 }
 .topbar-menu-area .topbar-menu.right-menu>ul>li:last-child>a{
+    padding-left: 0;
 	padding-right: 17px;
-	padding-left: 0;
+	
 }
 
 .topbar-menu-area .topbar-menu ul li a{
@@ -460,7 +465,6 @@ input,textarea{
 	position: relative;
 	max-width: 522px;
 	width: 100%;
-    padding-left: 50px;
 
 }
 .header.fill-color .center-section .wrap-search-form{
@@ -469,7 +473,7 @@ input,textarea{
 .center-section .wrap-search-form .wrap-list-cate{
     position: absolute;
     top: 0;
-    left: 393px;
+    right: 393px;
     width: 125px;
     height: 35px;
     border: none;
@@ -553,9 +557,9 @@ input,textarea{
 }
 .header.fill-color .center-section .wrap-search-form button{
     background: #414141;
-    height: 39px;
+    height: 39;
     top: -2px;
-    right: -2px;
+    left: 2px;
 }
 .center-section .wrap-search-form button{
 	width: 56px;
@@ -564,6 +568,7 @@ input,textarea{
     position: absolute;
     left: 0;
     top: 0;
+    margin-right: 520px;
 }
 .center-section .wrap-search-form button i{
 	font-size: 15px;
@@ -1007,7 +1012,7 @@ li.menu-item .nav-label.sale-label::before{
 }
 .wrap-main-slide .slide-carousel .slide-info.slide-1{
     top: 30%;
-    right: 40%;
+    left: 40%;
     z-index: 15;
     transform: translate( 4px, -7px);
     -webkit-transform: translate( 4px, -7px);
@@ -1016,7 +1021,7 @@ li.menu-item .nav-label.sale-label::before{
 .wrap-main-slide .slide-carousel .slide-info.slide-2{
     max-width: 370px;
     z-index: 30;
-    right: 8%;
+    left: 8%;
     top: 22%;
     transform: translate(1px, 0px);
     -webkit-transform: translate(1px, 0px);
@@ -1024,7 +1029,7 @@ li.menu-item .nav-label.sale-label::before{
 }
 .wrap-main-slide .slide-carousel .slide-info.slide-3{
     top: 20%;
-    right: 8%;
+    left: 8%;
     max-width: 500px;
     transform: translate(7px, 4px);
     -ms-transform: translate(7px, 4px);
@@ -1103,7 +1108,7 @@ li.menu-item .nav-label.sale-label::before{
     display: inline-block;
     padding: 3px 27.27px 3px 20px;
     margin-top: 3px;
-    margin-right: 1px;
+    margin-left: 1px;
     margin-bottom: 12px;
 }
 .wrap-main-slide .slide-2 .s-title{
@@ -1112,7 +1117,7 @@ li.menu-item .nav-label.sale-label::before{
     color: #333333;
     font-weight: 700;
     text-transform: uppercase;
-    margin-right: -1px;
+    margin-left: -1px;
     margin-bottom: 4px;
 }
 .wrap-main-slide .slide-2 .s-subtitle{
@@ -1120,7 +1125,7 @@ li.menu-item .nav-label.sale-label::before{
     line-height: 24px;
     color: #666666;
     text-transform: uppercase;
-    margin-right: -1px;
+    margin-left: -1px;
 }
 .wrap-main-slide .slide-3 .f-title{
     text-align: right;
@@ -1128,7 +1133,7 @@ li.menu-item .nav-label.sale-label::before{
     line-height: 35px;
     color: #555555;
     text-transform: uppercase;
-    margin-right: -3px;
+    margin-left: -3px;
     margin-bottom: 7px;
 }
 .wrap-main-slide .slide-3 .f-title b{
@@ -1139,17 +1144,17 @@ li.menu-item .nav-label.sale-label::before{
     font-size: 18px;
     line-height: 24px;
     color: #555555;
-    text-align: right;
-    margin-right: -2px;
+    text-align:left;
+    margin-left: -2px;
     display: inline-block;
 }
 .wrap-main-slide .slide-3 .sale-info{
     font-size: 18px;
     line-height: 24px;
     color: #666666;
-    text-align: left;
+    text-align: right;
     margin-top: 8px;
-    margin-left: -1px;
+    margin-right: -1px;
     margin-bottom: 20px;
 }
 .wrap-main-slide .slide-3 .sale-info .price{
@@ -2994,6 +2999,7 @@ vertical-align: top;
 .product-list-style .advance-info .wrap-btn .btn.btn-wishlist{
     text-align: left;
     float: left;
+    
 }
 .product-list-style .advance-info .wrap-btn .btn-wishlist::before{
     content: "\f004";
@@ -5233,7 +5239,7 @@ table.shop_attributes tbody{
     max-width: calc( 76.9230769231% - 10px );
     max-width: -webkit-calc( 76.9230769231% - 10px );
     max-width: -moz-calc( 76.9230769231% - 10px );
-    float: left;
+    float: right;
     margin-top: 10px;
 }
 .header-toggle .nav-section{
@@ -5335,11 +5341,11 @@ table.shop_attributes tbody{
     text-transform: capitalize;
     font-weight: 400;
     min-width: 113px;
-    margin-right: 1px;
+    margin-left: 1px;
 }
 .wrap-main-slide-2 .wrap-banners.type-1{
     top: 20%;
-    right: 50%;
+    left: 50%;
     /*max-width: 334px;*/
     max-width: 364px;
     transform: translate(20px, -6px);
@@ -5373,7 +5379,7 @@ table.shop_attributes tbody{
 }
 .wrap-main-slide-2 .wrap-banners.type-2{
     top: 27%;
-    right: 11%;
+    left: 11%;
     /*max-width: 210px;*/
     max-width: 240px;
     transform: translate(0px, 5px);
@@ -5402,12 +5408,12 @@ table.shop_attributes tbody{
     color: #666666;
     margin: 0;
     margin-top: 9px;
-    margin-right: 2px;
+    margin-left: 2px;
     margin-bottom: 11px;
 }
 .wrap-main-slide-2 .wrap-banners.type-3{
     top: 28%;
-    right: 11%;
+    left: 11%;
     /*max-width: 220px;*/
     max-width: 250px;
     -webkit-transform: translate(1px, 1px);
@@ -5433,7 +5439,7 @@ table.shop_attributes tbody{
     margin: 0;
     font-weight: 400;
     text-transform: uppercase;
-    margin-right: 2px;
+    margin-left: 2px;
     margin-bottom: 9px;
 }
 .wrap-main-slide-2 .wrap-banners.type-3 .desc{
@@ -5442,11 +5448,11 @@ table.shop_attributes tbody{
     line-height: 24px;
     color: #333333;
     margin: 0;
-    margin-right: 3px;
+    margin-left: 3px;
     margin-bottom: 15px;
 }
 .wrap-main-slide-2 .wrap-banners.type-3 .desc + .btn{
-    margin-right: 5px;
+    margin-left: 5px;
 }
 .slide-banners{
     padding-top: 30px;
@@ -5666,7 +5672,7 @@ table.shop_attributes tbody{
 .wrap-top-banner-3 .banner-style-vertical{
     width: 29.0598290598%;
     display: inline-block;
-    padding-right: 0.8547008547%;
+    padding-left: 0.8547008547%;
     font-size: 0;
 }
 .wrap-top-banner-3 .banner-style-vertical .banner-item:not(:first-child){
@@ -5769,7 +5775,7 @@ background-color: #888888;
 }
 .wrap-main-slide-3 .item-slide .type-1{
     top: 25%;
-    right: 10%;
+    left: 10%;
     -webkit-transform: translate(7px, 5px);
     -moz-transform: translate(7px, 5px);
     -ms-transform: translate(7px, 5px);
@@ -5783,7 +5789,7 @@ background-color: #888888;
     font-weight: 300;
     display: block;
     text-transform: capitalize;
-    margin-right: -3px;
+    margin-left: -3px;
 }
 .wrap-main-slide-3 .item-slide .type-1 .s-title{
     font-size: 36px;
@@ -5793,7 +5799,7 @@ background-color: #888888;
     display: block;
     max-width: 150px;
     margin-top: 1px;
-    margin-right: -3px;
+    margin-left: -3px;
 }
 .wrap-main-slide-3 .item-slide .type-1 .desc{
     display: block;
@@ -5804,11 +5810,11 @@ background-color: #888888;
     max-width: 90px;
     margin-top: 9px;
     margin-bottom: 11px;
-    margin-left: -1px;
+    margin-right: -1px;
 }
 .wrap-main-slide-3 .item-slide .type-2{
     top: 34%;
-    right: 10%;
+    left: 10%;
     -webkit-transform: translate(12px, -14px);
     -moz-transform: translate(12px, -14px);
     -ms-transform: translate(12px, -14px);
@@ -5831,20 +5837,20 @@ background-color: #888888;
     text-transform: uppercase;
     display: block;
     margin-top: 1px;
-    margin-right: -3px;
+    margin-left: -3px;
 }
 .wrap-main-slide-3 .item-slide .type-2 .desc{
     font-size: 17px;
     line-height: 20px;
     color: #666666;
-    text-align: right;
+    text-align: left;
     display: block;
     margin-top: 10px;
     margin-bottom: 16px;
 }
 .wrap-main-slide-3 .item-slide .type-3{
     top: 20%;
-    right: 15%;
+    left: 15%;
     -webkit-transform: translate(-7px, 11px);
     -moz-transform: translate(-7px, 11px);
     -ms-transform: translate(-7px, 11px);
@@ -5858,7 +5864,7 @@ background-color: #888888;
     text-transform: capitalize;
     display: block;
     font-weight: 400;
-    margin-right: -2px;
+    margin-left: -2px;
 }
 .wrap-main-slide-3 .item-slide .type-3 .s-title{
     font-size: 40px;
@@ -5867,7 +5873,7 @@ background-color: #888888;
     text-transform: capitalize;
     display: block;
     font-weight: 700;
-    margin-right: -2px;
+    margin-left: -2px;
 }
 .wrap-main-slide-3 .item-slide .type-3 .desc{
     font-size: 17px;
@@ -5875,7 +5881,7 @@ background-color: #888888;
     color: #666666;
     display: block;
     margin-top: 6px;
-    margin-right: -1px;
+    margin-left: -1px;
     margin-bottom: 16px;
 }
 .wrap-product-tab.tab-style-3 .tab-control{
@@ -6334,6 +6340,8 @@ background-color: #888888;
 	    text-align: center;
 	    margin-top: 25px;
 	    margin-bottom: 25px;
+        
+
 	}
 	.header .main-info-area .center-section{
 		width: 100%;
@@ -6348,6 +6356,7 @@ background-color: #888888;
 	    margin: 0 auto;
 	    margin-bottom: 25px;
 	    width: initial;
+        
 	}
 	.header .main-info-area .right-section .show-up-after-1024{
 		display: inline-block !important;
@@ -6384,7 +6393,7 @@ background-color: #888888;
     }
     .wrap-main-slide-2.slide-fit-menu .slide-carousel{
         max-width: 100%;
-        float: right;
+        float: left;
     }
     .wrap-megamenu .demo-item{
         width: 100%;
@@ -6416,7 +6425,7 @@ background-color: #888888;
         transform: translateY(-50%);
     }
     .wrap-main-slide-2 .wrap-banners.type-1{
-        right: 10%;
+        left: 10%;
     }
     .wrap-main-slide-2 .wrap-banners{
         background-color: rgba(255,255,255,0.6);
@@ -6518,8 +6527,8 @@ background-color: #888888;
     .wrap-articles article .media{
         display: block;
         width: 100%;
-        text-align: right;
-        padding-right: 0;
+        text-align: left;
+        padding-left: 0;
     }
     .wrap-articles article .info{
         padding-top: 15px !important;
@@ -6550,13 +6559,13 @@ background-color: #888888;
     .wrap-main-slide .slide-carousel .slide-info.slide-3,
     .wrap-main-slide .slide-carousel .slide-info.slide-2{
         top: 10px;
-        right: 10%;
+        left: 10%;
         background: rgba(255,255,255,0.6);
         padding: 10px
     }
     .wrap-main-slide .slide-carousel .slide-info.slide-1{
         top: 13%;
-        right: 10%;
+        left: 10%;
         background: rgba(255,255,255,0.6);
         padding: 10px
     }
@@ -6645,7 +6654,7 @@ background-color: #888888;
     .wrap-top-banner-3 .wrap-main-slide-3,
     .wrap-top-banner-3 .banner-style-vertical{
         width: 100%;
-        padding-right: 0;
+        padding-left: 0;
     }
     .wrap-top-banner-3 .banner-style-vertical .banner-item{
         width: 50%;
@@ -6691,7 +6700,7 @@ background-color: #888888;
     .wrap-main-slide .slide-carousel .slide-info.slide-2,
     .wrap-main-slide .slide-carousel .slide-info.slide-3{
         top: 50% !important;
-        right: 10px !important;
+        left: 10px !important;
         transform: translateY(-50%);
         -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
@@ -7045,7 +7054,7 @@ background-color: #888888;
     .wrap-main-slide-2 .wrap-banners.type-1,
     .wrap-main-slide-2 .wrap-banners.type-2,
     .wrap-main-slide-2 .wrap-banners.type-3{
-        right: 8% !important;
+        left: 8% !important;
     }
     .wrap-main-slide-2 .wrap-banners.type-1 .f-title{
         font-size: 23px;
@@ -7063,8 +7072,8 @@ background-color: #888888;
     }
     .wrap-main-slide-2 .item-slide::before{
         content: '';
-        right: 0;
         left: 0;
+        right: 0;
         top: -20px;
         bottom: -20px;
         background-color: rgba(255,255,255,0.6);
@@ -7072,7 +7081,7 @@ background-color: #888888;
     }
     .wrap-main-slide-3 .item-slide .wrap-banners{
         top: 50% !important;
-        right: 5px !important;
+        left: 5px !important;
         -webkit-transform: translate(0, -50% ) !important;
         -moz-transform: translate(0, -50% ) !important;
         -ms-transform: translate(0, -50% ) !important;
@@ -7088,8 +7097,8 @@ background-color: #888888;
     .wrap-main-slide-3 .item-slide::before{
         content: '';
         position: absolute;
-        right: 0;
         left: 0;        top: 0;
+        right: 0;
         bottom: 0;
         background-color: rgba(255, 255, 255, 0.4);
     }
@@ -7176,4 +7185,6 @@ background-color: #888888;
 .text-red-600{
     color: red;
 }
-
+/*
+خلصانة بشياكة
+*/
