@@ -63,6 +63,9 @@
                                                 <h5>{{$item->quantity}}</h5>                                                
                                             </div>
                                             <div class="price-field sub-total"><p class="price">${{ $item->price * $item->quantity }}</p></div>
+                                            @if ($order->status == 'delivered' && $item->rstatus == false)
+                                                <div class="price-field sub-total"><p class="price"> <a href="{{ route('review.order',['order_item_id' => $item->id ])}}">Write Review</a></p></div>
+                                            @endif
                                         </li>
                                 @endforeach										
                             </ul>
@@ -179,7 +182,7 @@
                       Transaction
                     </div>
                 </div>
-                <div class="panel-body">
+                {{-- <div class="panel-body">
                     <table class="table text-right">
                         <tr>
                             <th>Transaction Mode </th>
@@ -194,7 +197,7 @@
                             <td>{{$order->transaction->created_at}}</td>
                         </tr>
                     </table>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

@@ -19,6 +19,7 @@ class CreateOrderItemsTable extends Migration
             $table->bigInteger('order_id')->unsigned();
             $table->decimal('price');
             $table->integer('quantity');
+            $table->boolean('rstatus')->default(false);
             $table->timestamps();
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
@@ -32,6 +33,9 @@ class CreateOrderItemsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('order_items');
+        Schema::dropIfExists('order_items', function(Blueprint $table){
+            $table->boolean('rstatus')->default(false);
+
+        });
     }
 }

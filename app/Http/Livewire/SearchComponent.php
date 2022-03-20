@@ -55,7 +55,8 @@ class SearchComponent extends Component
         }
 
         $categories = Category::all();
+        $popular_products = Product::all()->take(5);
 
-        return view('livewire.search-component' ,['products'=> $products ,'categories' => $categories  ])->layout('layouts.base');
+        return view('livewire.search-component' ,['products'=> $products ,'categories' => $categories , 'popular_products' => $popular_products ])->layout('layouts.base');
     }
 }

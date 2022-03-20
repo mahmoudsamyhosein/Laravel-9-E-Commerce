@@ -19,37 +19,30 @@
 						</a>
 					</div>
 
-					<div class="wrap-shop-control">
-
-						<h1 class="shop-title">{{__('mshmk.Shop')}}</h1>
-
+					<div class="wrap-shop-control" dir="rtl" style="text-align: right">
+						<h1 class="shop-title" >{{__('mshmk.Shop')}}</h1>
 						<div class="wrap-right">
 
 							<div class="sort-item orderby ">
 								<select name="orderby" class="use-chosen" wire:model='sorting'>
-									<option value="default" selected="selected">Default sorting</option>
-									<option value="date">Sort by newness</option>
-									<option value="price">Sort by price: low to high</option>
-									<option value="price-desc">Sort by price: high to low</option>
+									<option value="default" selected="selected">{{__('mshmk.Default_sorting')}}</option>
+									<option value="date">{{__('mshmk.Sort_by_newness')}}</option>
+									<option value="price">{{__('mshmk.Sort_by_price:_low_to_high')}}</option>
+									<option value="price-desc">{{__('mshmk.Sort_by_price:_high_to_low')}}</option>
 								</select>
 							</div>
 
 							<div class="sort-item product-per-page">
 								<select name="post-per-page" class="use-chosen" wire:model='pagesize'>
-									<option value="12" selected="selected">12 per page</option>
-									<option value="16">16 per page</option>
-									<option value="18">18 per page</option>
-									<option value="21">21 per page</option>
-									<option value="24">24 per page</option>
-									<option value="30">30 per page</option>
-									<option value="32">32 per page</option>
+									<option value="12" selected="selected">{{__('mshmk.12_per_page')}}</option>
+									<option value="16">{{__('mshmk.16_per_page')}}</option>
+									<option value="18">{{__('mshmk.18_per_page')}}</option>
+									<option value="21">{{__('mshmk.21_per_page')}}</option>
+									<option value="24">{{__('mshmk.24_per_page')}}</option>
+									<option value="30">{{__('mshmk.30_per_page')}}</option>
+									<option value="32">{{__('mshmk.32_per_page')}}</option>
 								</select>
 							</div>
-{{-- 
-							<div class="change-display-mode">
-								<a href="#" class="grid-mode display-mode active"><i class="fa fa-th"></i>Grid</a>
-								<a href="list.html" class="list-mode display-mode"><i class="fa fa-th-list"></i>List</a>
-							</div> --}}
 
 						</div>
 
@@ -97,24 +90,6 @@
 						</div>
 					</div><!-- Categories widget-->
 
-					<div class="widget mercado-widget filter-widget brand-widget">
-						{{-- <h2 class="widget-title">Brand</h2>
-						<div class="widget-content">
-							<ul class="list-style vertical-list list-limited" data-show="6">
-								<li class="list-item"><a class="filter-link active" href="#">Fashion Clothings</a></li>
-								<li class="list-item"><a class="filter-link " href="#">Laptop Batteries</a></li>
-								<li class="list-item"><a class="filter-link " href="#">Printer & Ink</a></li>
-								<li class="list-item"><a class="filter-link " href="#">CPUs & Prosecsors</a></li>
-								<li class="list-item"><a class="filter-link " href="#">Sound & Speaker</a></li>
-								<li class="list-item"><a class="filter-link " href="#">Shop Smartphone & Tablets</a></li>
-								<li class="list-item default-hiden"><a class="filter-link " href="#">Printer & Ink</a></li>
-								<li class="list-item default-hiden"><a class="filter-link " href="#">CPUs & Prosecsors</a></li>
-								<li class="list-item default-hiden"><a class="filter-link " href="#">Sound & Speaker</a></li>
-								<li class="list-item default-hiden"><a class="filter-link " href="#">Shop Smartphone & Tablets</a></li>
-								<li class="list-item"><a data-label='Show less<i class="fa fa-angle-up" aria-hidden="true"></i>' class="btn-control control-show-more" href="#">Show more<i class="fa fa-angle-down" aria-hidden="true"></i></a></li>
-							</ul>
-						</div>
-					</div><!-- brand widget--> --}}
 
 					<div class="widget mercado-widget filter-widget price-filter">
 						<h2 class="widget-title">Price</h2>
@@ -161,23 +136,24 @@
 						<h2 class="widget-title">{{__('mshmk.Popular_Products')}}</h2>
 						<div class="widget-content">
 							<ul class="products">
+                                @foreach($popular_products as $p_product )
 								<li class="product-item">
 									<div class="product product-widget-style">
 										<div class="thumbnnail">
-											<a href="detail.html" title="Radiant-360 R6 Wireless Omnidirectional Speaker [White]">
-												<figure><img src="{{ asset ('assets/images/products/digital_01.jpg') }}" alt=""></figure>
+											<a href="{{ route('products.details', ['slug' => $p_product->slug ]) }}" title="{{ $p_product->name }}">
+												<figure><img src="{{ asset('assets/images/products') }}/{{$p_product->image}}" alt="{{ $p_product->name }}"></figure>
 											</a>
 										</div>
 										<div class="product-info">
-											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker...</span></a>
-											<div class="wrap-price"><span class="product-price">$168.00</span></div>
+											<a href="{{ route('products.details', ['slug' => $p_product->slug ]) }}" class="product-name"><span>{{ $p_product->name }}</span></a>
+											<div class="wrap-price"><span class="product-price">${{$p_product->regular_price}}</span></div>
 										</div>
 									</div>
 								</li>
+                                @endforeach
 							</ul>
 						</div>
-					</div><!-- brand widget-->
-
+					</div>
 				</div><!--end sitebar-->
 
 			</div><!--end row-->

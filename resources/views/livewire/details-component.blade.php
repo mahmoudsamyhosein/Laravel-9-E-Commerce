@@ -22,12 +22,27 @@
 							</div>
 							<div class="detail-info"  dir="rtl" style="text-align: right">
 								<div class="product-rating">
-									<i class="fa fa-star" aria-hidden="true"></i>
-									<i class="fa fa-star" aria-hidden="true"></i>
-									<i class="fa fa-star" aria-hidden="true"></i>
-									<i class="fa fa-star" aria-hidden="true"></i>
-									<i class="fa fa-star" aria-hidden="true"></i>
-									<a href="#" class="count-review">(05 review)</a>
+									<style>
+										.color-grey{
+											color:#e6e6e6 !important;
+
+										}
+									</style>
+									@php
+										$avgrating = 0;
+									@endphp
+									@foreach ($product->orderItems->where('rstatus',1) as $orderItem)
+										@php $avgrating = $avgrating + $orderItem->review->rating; @endphp								
+									@endforeach
+									@for($i=1;$i<=5;$i++)
+										@if ( $i<= $avgrating)
+											<i class="fa fa-star" aria-hidden="true"></i>
+										@else
+											<i class="fa fa-star color-grey" aria-hidden="true"></i>
+										@endif
+									@endfor
+									<a href="#" class="count-review">( {{$product->orderItems->where('rstatus',1)->count()}} Review )</a>
+
 								</div>
 								<h2 class="product-name">{{ $product->name }}</h2>
 								<div class="short-desc">
@@ -90,81 +105,57 @@
 										</table>
 									</div>
 									{{-- جدول وصف المنتج --}}
-									{{-- مراجعات المنتج--}}
+								{{-- مراجعات المنتج--}}
 									<div class="tab-content-item " id="review"dir="rtl" style="text-align: right">
-										
 										<div class="wrap-review-form">
-											
+											<style>
+												.width-0-percent{
+													width:0%;
+												}
+												.width-20-percent{
+													width:20%;
+												}
+												.width-40-percent{
+													width:40%;
+												}
+												.width-60-percent{
+													width:60%;
+												}
+												.width-80-percent{
+													width:80%;
+												}
+												.width-100-percent{
+													width:100%;
+												}
+											</style>
 											<div id="comments">
-												<h2 class="woocommerce-Reviews-title">01 review for <span>Radiant-360 R6 Chainsaw Omnidirectional [Orage]</span></h2>
+												<h2 class="woocommerce-Reviews-title">{{$product->orderItems->where('rstatus',1)->count()}} Review for <span>{{$product->name}}</span></h2>
 												<ol class="commentlist">
-													<li class="comment byuser comment-author-admin bypostauthor even thread-even depth-1" id="li-comment-20">
-														<div id="comment-20" class="comment_container"> 
-															<img alt="" src="{{ asset('assets/images/author-avata.jpg ') }}" height="80" width="80">
-															<div class="comment-text">
-																<div class="star-rating">
-																	<span class="width-80-percent">Rated <strong class="rating">5</strong> out of 5</span>
-																</div>
-																<p class="meta"> 
-																	<strong class="woocommerce-review__author">admin</strong> 
-																	<span class="woocommerce-review__dash">–</span>
-																	<time class="woocommerce-review__published-date" datetime="2008-02-14 20:00" >Tue, Aug 15,  2017</time>
-																</p>
-																<div class="description">
-																	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+													@foreach ($product->orderItems->where('rstatus',1) as $orderItem)
+														<li class="comment byuser comment-author-admin bypostauthor even thread-even depth-1" id="li-comment-20">
+															<div id="comment-20" class="comment_container"> 
+																<img alt="" src="{{ asset('assets/images/author-avata.jpg ') }}" height="80" width="80">
+																<div class="comment-text">
+																	<div class="star-rating">
+																		<span class="width-{{ $orderItem->review->rating * 20 }}-percent">Rated <strong class="rating">{{ $orderItem->review->rating  }}</strong> out of 5</span>
+																	</div>
+																	<p class="meta"> 
+																		<strong class="woocommerce-review__author">{{$orderItem->order->user->name}}</strong> 
+																		<span class="woocommerce-review__dash">–</span>
+																		<time class="woocommerce-review__published-date" datetime="2008-02-14 20:00" >{{Carbon\Carbon::parse($orderItem->review->created_at)->format('d F Y g:i A')}}</time>
+																	</p>
+																	<div class="description">
+																		<p>{{$orderItem->review->comment}}</p>
+																	</div>
 																</div>
 															</div>
-														</div>
-													</li>
+														</li>
+													@endforeach
+
 												</ol>
 											</div><!-- #comments -->
 
-											<div id="review_form_wrapper"dir="rtl" style="text-align: right">
-												<div id="review_form">
-													<div id="respond" class="comment-respond"> 
-
-														<form action="#" method="post" id="commentform" class="comment-form" novalidate="">
-															<p class="comment-notes">
-																<span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span>
-															</p>
-															<div class="comment-form-rating">
-																<span>Your rating</span>
-																<p class="stars">
-																	
-																	<label for="rated-1"></label>
-																	<input type="radio" id="rated-1" name="rating" value="1">
-																	<label for="rated-2"></label>
-																	<input type="radio" id="rated-2" name="rating" value="2">
-																	<label for="rated-3"></label>
-																	<input type="radio" id="rated-3" name="rating" value="3">
-																	<label for="rated-4"></label>
-																	<input type="radio" id="rated-4" name="rating" value="4">
-																	<label for="rated-5"></label>
-																	<input type="radio" id="rated-5" name="rating" value="5" checked="checked">
-																</p>
-															</div>
-															<p class="comment-form-author">
-																<label for="author">Name <span class="required">*</span></label> 
-																<input id="author" name="author" type="text" value="">
-															</p>
-															<p class="comment-form-email">
-																<label for="email">Email <span class="required">*</span></label> 
-																<input id="email" name="email" type="email" value="" >
-															</p>
-															<p class="comment-form-comment">
-																<label for="comment">Your review <span class="required">*</span>
-																</label>
-																<textarea id="comment" name="comment" cols="45" rows="8"></textarea>
-															</p>
-															<p class="form-submit">
-																<input name="submit" type="submit" id="submit" class="submit" value="Submit">
-															</p>
-														</form>
-
-													</div><!-- .comment-respond-->
-												</div><!-- #review_form -->
-											</div><!-- #review_form_wrapper -->
-
+											
 										</div>
 									</div>
 								{{-- مراجعات المنتج--}}
@@ -208,16 +199,15 @@
 							<div class="products slide-carousel owl-carousel style-nav-1 equal-container" data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"3"},"1200":{"items":"5"}}' >
 								@foreach($related_products as $r_product)
 									<div class="product product-style-2 equal-elem ">
-											
-												<div class="product-thumnail">
-													<a href="{{ route('products.details',['slug'=>$r_product->slug])}}" title="{{$r_product->name}}">
-														<figure><img src="{{ asset('assets/images/products')}}/{{$r_product->image}}" width="214" height="214" alt="{{$r_product->name}}"></figure>
-													</a>						
-												</div>
-												<div class="product-info">
-													<a href="{{ route('products.details',['slug'=>$r_product->slug])}}" class="product-name"><span>{{$r_product->name}}</span></a>
-													<div class="wrap-price"><span class="product-price">${{$r_product->regular_price}}</span></div>
-												</div>
+										<div class="product-thumnail">
+											<a href="{{ route('products.details',['slug'=>$r_product->slug])}}" title="{{$r_product->name}}">
+												<figure><img src="{{ asset('assets/images/products')}}/{{$r_product->image}}" width="214" height="214" alt="{{$r_product->name}}"></figure>
+											</a>						
+										</div>
+										<div class="product-info">
+											<a href="{{ route('products.details',['slug'=>$r_product->slug])}}" class="product-name"><span>{{$r_product->name}}</span></a>
+											<div class="wrap-price"><span class="product-price">${{$r_product->regular_price}}</span></div>
+										</div>
 									</div>
 								@endforeach
 							</div>
