@@ -58,21 +58,20 @@
 								<form  name="frm-contact" wire.submit.prevent='sendmessage'>
 									@csrf
 									<label for="name">{{__('mshmk.Name')}}<span>*</span></label>
-									<input type="text"  id="name"  wire:model='name'>
+									<input type="text" name="name"  id="name"  wire:model='name'>
                                     @error('name') <p class="text-danger">{{ $message }}</p> @enderror
 
 									<label for="email">{{__('mshmk.Email')}}<span>*</span></label>
-									<input type="text"  id="email"  wire:model="email" >
+									<input type="text" name="email" id="email"  wire:model="email" >
                                     @error('email') <p class="text-danger">{{ $message }}</p>@enderror
 
 									<label for="phone">{{__('mshmk.Number_Phone')}}</label>
-									<input type="text"  id="phone"  wire:model="phone">
+									<input type="text" name="phone" id="phone"  wire:model="phone">
                                     @error('phone') <p class="text-danger">{{ $message }}</p>@enderror
 
 									<label for="comment">{{__('mshmk.Comment')}}</label>
-									<textarea  id="comment" wire:model="comment"></textarea>
+									<textarea name="comment"  id="comment" wire:model="comment"></textarea>
                                     @error('comment') <p class="text-danger">{{ $message }}</p>@enderror
-
 									<input type="submit"  value="{{__('mshmk.Submit')}}" >
 								</form>
 							</div>

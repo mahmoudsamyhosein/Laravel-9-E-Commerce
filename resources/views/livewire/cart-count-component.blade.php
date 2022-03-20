@@ -5,7 +5,7 @@
             @if(Cart::instance('cart')->count() > 0 )
                 <span class="index">{{Cart::instance('cart')->count() }} {{__('mshmk.items') }}</span>
             @endif
-            <span class="title">{{__('mshmk.Cart') }}</span>
+            <span class="title" style="margin-right:5px;" >{{__('mshmk.Cart') }}</span>
         </div>
     </a>
 </div>

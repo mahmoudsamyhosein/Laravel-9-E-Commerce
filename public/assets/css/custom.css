@@ -473,7 +473,7 @@ input,textarea{
 .center-section .wrap-search-form .wrap-list-cate{
     position: absolute;
     top: 0;
-    right: 393px;
+    right: 293px;
     width: 125px;
     height: 35px;
     border: none;
@@ -568,7 +568,7 @@ input,textarea{
     position: absolute;
     left: 0;
     top: 0;
-    margin-right: 520px;
+    margin-right: 462px;
 }
 .center-section .wrap-search-form button i{
 	font-size: 15px;
@@ -1547,10 +1547,10 @@ li.menu-item .nav-label.sale-label::before{
     color: #ffffff;
 }
 .style-nav-1 .owl-nav button.owl-prev{
-    float: right;
+    float: left;
 }
 .style-nav-1 .owl-nav button.owl-next{
-    float: left;
+    float: right;
 }
 .style-twin-default{
     display: block;
@@ -2206,6 +2206,7 @@ li.menu-item .nav-label.sale-label::before{
     display: inline-block;
     float: right;
     padding: 12px 0;
+
 }
 .coppy-right-box .coppy-right-item.item-right{
     float: left;
@@ -6364,7 +6365,7 @@ background-color: #888888;
 
 	.header .main-info-area .right-section .show-up-after-1024 a{
 	    display: inline-block;
-	    float: right;
+	    float: left;
 	    padding: 3px 0;
 	    border: 1px solid #333;
 	}
@@ -6374,7 +6375,7 @@ background-color: #888888;
 	    height: 2px;
 	    background: #333333;
 	    margin: 3px 5px;
-	    float: right;
+	    float: left;
 	    clear: both;
 	}
     .custom-col-5,
@@ -6438,11 +6439,15 @@ background-color: #888888;
 	.topbar-menu-area .topbar-menu.left-menu{
 		width: 100%;
 		text-align: center;
+        
+
 	}
     .topbar-menu-area .topbar-menu ul li{
         display: inline-block;
         float: none;
         text-align: right;
+        margin-left: 50px;
+        
     }
     .wrap-footer-content .wrap-function-info .fc-info-item{
         width: 50%;
@@ -7185,6 +7190,8 @@ background-color: #888888;
 .text-red-600{
     color: red;
 }
+
+
 /*
 خلصانة بشياكة
 */

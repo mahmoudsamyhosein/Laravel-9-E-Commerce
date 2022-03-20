@@ -137,16 +137,16 @@ class CheckOutComponent extends Component
         //حفظ بيانات الطلب 
         $order->save();
         //الأن حلقة لتخزين بيانات السلة في طلب جديد في جدول orderitem
-        // foreach(Cart::instance('cart')->content() as $item){
-        //     //قم بانشاء كائن جديد من الموديل orderitem
-        //     $orderItem = new OrderItem();
-        //     $orderItem->product_id = $item->id;
-        //     $orderItem->order_id = $item->id;
-        //     $orderItem->price = $item->price;
-        //     $orderItem->quantity = $item->qty;
-        //     //حقظ بيانات الطلب الجديد
-        //     $orderItem->save();
-        // }
+        foreach(Cart::instance('cart')->content() as $item){
+            //قم بانشاء كائن جديد من الموديل orderitem
+            $orderItem = new OrderItem();
+            $orderItem->product_id = $item->id;
+            $orderItem->order_id = $item->id;
+            $orderItem->price = $item->price;
+            $orderItem->quantity = $item->qty;
+            //حقظ بيانات الطلب الجديد
+            $orderItem->save();
+        }
         if($this->is_shipping_different){
 
             $this->validate([

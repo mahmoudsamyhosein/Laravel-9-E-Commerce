@@ -1,4 +1,6 @@
 <?php
+
+use App\Http\Livewire\AboutUsComponent;
 use App\Http\Livewire\Admin\AdminAddCategoryComponent;
 use App\Http\Livewire\Admin\AdminAddCouponComponent;
 use App\Http\Livewire\Admin\AdminAddProductComponent;
@@ -16,6 +18,7 @@ use App\Http\Livewire\Admin\AdminEditHomeSliderComponent;
 use App\Http\Livewire\Admin\AdminEditPageComponent;
 use App\Http\Livewire\Admin\AdminHomeCategoryComponent;
 use App\Http\Livewire\Admin\AdminOrderComponent;
+use App\Http\Livewire\Admin\AdminOrderDetailsComponent;
 use App\Http\Livewire\Admin\AdminPagesComponent;
 use App\Http\Livewire\Admin\AdminProductComponent;
 use App\Http\Livewire\Admin\AdminSaleComponent;
@@ -25,11 +28,17 @@ use App\Http\Livewire\CategoryComponent;
 use App\Http\Livewire\CheckOutComponent;
 use App\Http\Livewire\ContactComponent;
 use App\Http\Livewire\DetailsComponent;
+use App\Http\Livewire\FaqComponent;
 use App\Http\Livewire\HomeComponent;
+use App\Http\Livewire\PrivacyPolicyComponent;
+use App\Http\Livewire\ReturnPolicyComponent;
 use App\Http\Livewire\SearchComponent;
 use App\Http\Livewire\ShopComponent;
+use App\Http\Livewire\TermsComponent;
 use App\Http\Livewire\ThankYouPageComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
+use App\Http\Livewire\User\UserOrderDetailsComponent;
+use App\Http\Livewire\User\UserOrdersComponent;
 use App\Http\Livewire\WishListComponent;
 use Illuminate\Support\Facades\Route;
 /*
@@ -59,12 +68,24 @@ Route::get('/search',SearchComponent::class)->name('product.search');
 //تواصل معنا
 Route::get('/contact-us',ContactComponent::class)->name('contact-us');
 //قائمة الأمنيات
-route::get('/wishlist',WishListComponent::class)->name('product.wishlist');
+Route::get('/wishlist',WishListComponent::class)->name('product.wishlist');
 //صفحةالشكر بعد الطلب
-route::get('/thank-you',ThankYouPageComponent::class)->name('thank-you');
+Route::get('/thank-you',ThankYouPageComponent::class)->name('thank-you');
+//عن المتجر
+Route::get('/aboutus',AboutUsComponent::class)->name('aboutus');
+//الشروط
+Route::get('/terms',TermsComponent::class)->name('terms');
+//سياسة الخصوصية
+Route::get('/privacy-policy',PrivacyPolicyComponent::class)->name('privacy-policy');
+//سياسة الأستبدال
+Route::get('/return-policy',ReturnPolicyComponent::class)->name('return-policy');
+//الأسئلة الشائعة
+Route::get('/faq',FaqComponent::class)->name('faq');
 //مسار للعميل للدخول الي لوحة التحكم
 Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::get('/user/dashboard',UserDashboardComponent::class)->name('user.dashboard');
+    Route::get('/user/orders',UserOrdersComponent::class)->name('user.orders');
+    Route::get('/user/orders/{order_id}',UserOrderDetailsComponent::class)->name('user.orderdetails');
 });
 //مسار للمدير للدخول الي لوحة التحكم
 Route::middleware(['auth:sanctum', 'verified','authadmin'])->group(function(){
@@ -100,6 +121,7 @@ Route::middleware(['auth:sanctum', 'verified','authadmin'])->group(function(){
     Route::get('admin/pages/edit/{page_id}',AdminEditPageComponent::class)->name('admin.editpages');
     //الطلبات
     Route::get('/admin/orders',AdminOrderComponent::class)->name('admin.orders');
+    Route::get('/admin/orders/{order_id}',AdminOrderDetailsComponent::class)->name('admin.order_details');
 
 });
 //مبدل اللغات

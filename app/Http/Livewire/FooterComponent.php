@@ -13,7 +13,6 @@ class FooterComponent extends Component
     {
         $setting = Setting::find(1);
         $categories = Category::all()->take(12);
-        $homepages = Page::all()->take(5);
-        return view('livewire.footer-component',['setting' => $setting ],['categories' => $categories],['homepages'=>$homepages])->layout('layouts.base');
+        return view('livewire.footer-component',['setting' => $setting ,'categories' => $categories])->layout('layouts.base');
     }
 }

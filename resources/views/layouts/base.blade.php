@@ -125,6 +125,10 @@
 												href="{{ route('user.dashboard')}}">{{__('mshmk.Dashboard')}}</a>
 										</li>
 										<li class="menu-item">
+											<a title="{{__('mshmk.Orders')}}"
+												href="{{ route('user.orders')}}">{{__('mshmk.Orders')}}</a>
+										</li>
+										<li class="menu-item">
 											<a title="{{__('mshmk.Logout')}}" href="{{ route('logout') }}"
 												onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{__('mshmk.Logout')}}</a>
 										</li>
@@ -135,10 +139,13 @@
 								</li>
 								@endif
 								@else{{-- اذا لم يكن مخول اظهر روابط تسجيل الدخول والتسجيل --}}
-								<li class="menu-item"><a title="{{__('mshmk.Register')}}"
-										href="{{ route('register') }}">{{__('mshmk.Register')}}</a></li>
-								<li class="menu-item"><a title="{{__('mshmk.Login')}}"
-										href="{{ route('login') }}">{{__('mshmk.Login')}}</a></li>
+								<li class="menu-item"  ><a title="{{__('mshmk.Register')}}"
+											href="{{ route('register') }}">{{__('mshmk.Register')}}</a>
+								</li>
+								<li class="menu-item" style="margin-right: 10px;" ><a  title="{{__('mshmk.Login')}}"
+										href="{{ route('login') }}">{{__('mshmk.Login')}}</a>
+								</li>
+								
 								@endif
 								@endif
 							</ul>
@@ -207,23 +214,6 @@
 					</div>
 				</div>
 				<div class="nav-section header-sticky" >
-					{{-- <div class="header-nav-section">
-						<div class="container">
-							<ul class="nav menu-nav clone-main-menu" id="mercado_haead_menu" data-menuname="Sale Info">
-								<li class="menu-item"><a href="#" class="link-term">Weekly Featured</a><span
-										class="nav-label hot-label">hot</span></li>
-								<li class="menu-item"><a href="#" class="link-term">Hot Sale items</a><span
-										class="nav-label hot-label">hot</span></li>
-								<li class="menu-item"><a href="#" class="link-term">Top new items</a><span
-										class="nav-label hot-label">hot</span></li>
-								<li class="menu-item"><a href="#" class="link-term">Top Selling</a><span
-										class="nav-label hot-label">hot</span></li>
-								<li class="menu-item"><a href="#" class="link-term">Top rated items</a><span
-										class="nav-label hot-label">hot</span></li>
-							</ul>
-						</div>
-					</div> --}}
-
 					<div class="primary-nav-section" >
 						<div class="container">
 							<ul class="nav primary clone-main-menu " id="mercado_main" data-menuname="Main menu">
@@ -231,10 +221,6 @@
 									<a href="/" class="link-term mercado-item-title">
 										<i class="fa fa-home" aria-hidden="true"></i>
 									</a>	
-								</li>
-								<li class="menu-item">
-									<a href="/"
-										class="link-term mercado-item-title">{{__('mshmk.About_Us')}}</a>
 								</li>
 								<li class="menu-item">
 									<a href="/shop" class="link-term mercado-item-title">{{__('mshmk.Shop')}}</a>
@@ -249,6 +235,26 @@
 								<li class="menu-item">
 									<a href="{{ route('contact-us')}}"
 										class="link-term mercado-item-title">{{__('mshmk.Contact_Us')}}</a>
+								</li>
+								<li class="menu-item">
+									<a href="{{ route('aboutus') }}"
+										class="link-term mercado-item-title">{{__('mshmk.About_Us')}}</a>
+								</li>
+								<li class="menu-item">
+									<a href="{{ route('terms')}}"
+										class="link-term mercado-item-title">{{__('mshmk.terms')}}</a>
+								</li>
+								<li class="menu-item">
+									<a href="{{ route('privacy-policy')}}"
+										class="link-term mercado-item-title">{{__('mshmk.privacy-policy')}}</a>
+								</li>
+								<li class="menu-item">
+									<a href="{{ route('return-policy')}}"
+										class="link-term mercado-item-title">{{__('mshmk.return-policy')}}</a>
+								</li>
+								<li class="menu-item">
+									<a href="{{ route('faq')}}"
+										class="link-term mercado-item-title">{{__('mshmk.faq')}}</a>
 								</li>
 							</ul>
 						</div>

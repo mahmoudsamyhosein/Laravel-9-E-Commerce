@@ -5,7 +5,7 @@
             @if(Cart::instance('wishlist')->count() > 0)
                 <span class="index">{{ Cart::instance('wishlist')->count() > 0 }} {{__('mshmk.item')}}</span>
             @endif
-            <span class="title">{{__('mshmk.WishList')}}</span>
+            <span class="title" style="margin-right:5px;">{{__('mshmk.WishList')}}</span>
         </div>
     </a>
 </div>

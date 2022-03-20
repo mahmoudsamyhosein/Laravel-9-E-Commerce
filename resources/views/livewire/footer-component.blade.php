@@ -56,11 +56,11 @@
                                 <div class="item-content">
                                     <div class="wrap-vertical-nav">
                                         <ul>
-                                            <li class="menu-item"><a href="#" class="link-term">{{__('mshmk.My_Account')}}</a></li>
-                                            <li class="menu-item"><a href="#" class="link-term">{{__('mshmk.Brands')}}</a></li>
-                                            <li class="menu-item"><a href="#" class="link-term">{{__('mshmk.Gift_Certificates')}}</a></li>
-                                            <li class="menu-item"><a href="#" class="link-term">{{__('mshmk.Affiliates')}}</a></li>
-                                            <li class="menu-item"><a href="#" class="link-term">{{__('mshmk.Wish_list')}}</a></li>
+                                            <li class="menu-item"><a href="{{route('user.dashboard')}}" class="link-term">{{__('mshmk.My_Account')}}</a></li>
+                                            <li class="menu-item"><a href="{{route('contact-us')}}" class="link-term">{{__('mshmk.Contact_Us')}}</a></li>
+                                            <li class="menu-item"><a href="{{route('product.checkout')}}" class="link-term">{{__('mshmk.Check_out')}}</a></li>
+                                            <li class="menu-item"><a href="/shop" class="link-term">{{__('mshmk.Shop')}}</a></li>
+                                            <li class="menu-item"><a href="{{route('product.wishlist')}}" class="link-term">{{__('mshmk.Wish_list')}}</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -70,11 +70,11 @@
                                 <div class="item-content">
                                     <div class="wrap-vertical-nav">
                                         <ul>
-                                            <li class="menu-item"><a href="#" class="link-term">{{__('mshmk.Contact_Us')}}</a></li>
-                                            <li class="menu-item"><a href="#" class="link-term">{{__('mshmk.Returns')}}</a></li>
-                                            <li class="menu-item"><a href="#" class="link-term">{{__('mshmk.Site_Map')}}</a></li>
-                                            <li class="menu-item"><a href="#" class="link-term">{{__('mshmk.Specials')}}</a></li>
-                                            <li class="menu-item"><a href="#" class="link-term">{{__('mshmk.Order_History')}}</a></li>
+                                            <li class="menu-item"><a href="{{route('aboutus')}}" class="link-term">{{__('mshmk.About_Us')}}</a></li>
+                                            <li class="menu-item"><a href="{{route('terms')}}" class="link-term">{{__('mshmk.terms')}}</a></li>
+                                            <li class="menu-item"><a href="{{route('faq')}}" class="link-term">{{__('mshmk.faq')}}</a></li>
+                                            <li class="menu-item"><a href="{{route('privacy-policy')}}" class="link-term">{{__('mshmk.privacy-policy')}}</a></li>
+                                            <li class="menu-item"><a href="{{route('return-policy')}}" class="link-term">{{__('mshmk.return-policy')}}</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -198,22 +198,20 @@
             </div>
 
         </div>
-
         <div class="coppy-right-box ">
             <div class="container ">
-                <div class="coppy-right-item item-left">
+                <div class="coppy-right-item item-right">
                     <div class="wrap-nav horizontal-nav">
                         <ul>
-                            {{-- @foreach ($homepages as $homepage)
-                                <li class="menu-item"><a href="{{route('admin.pages')}}" class="link-term">{{$homepage->name}}</a></li>								
-                            @endforeach --}}
+                            <li class="menu-item"><a href="https://github.com/mahmoudsamyhosein" class="link-term">{{__('mshmk.tech_doc')}}</a></li>
+                            <li class="menu-item"><a href="https://github.com/mahmoudsamyhosein" class="link-term">{{__('mshmk.doc')}}</a></li>															
+															
                         </ul>
                     </div>
                 </div>
                 <div class="coppy-right-item item-left">
-                    <p class="coppy-right-text">{{__('mshmk.MSHMK_Systems._All_rights_reserved')}} © {{ now()->year }}   </p>
+                    <a href="https://github.com/mahmoudsamyhosein"><p class="coppy-right-text">  {{__('mshmk.MSHMK_Systems._All_rights_reserved')}} © {{ now()->year }}   </p></a>
                 </div>
-                <div class="clearfix"></div>
             </div>
         </div>
     </div>
