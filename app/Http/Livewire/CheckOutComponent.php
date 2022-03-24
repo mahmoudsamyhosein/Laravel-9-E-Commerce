@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Mail\OrderMail;
 use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\Shipping;
@@ -10,6 +11,8 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Cartalyst\Stripe\Laravel\Facades\Stripe;
+use Illuminate\Support\Facades\Mail;
+
 class CheckOutComponent extends Component
 {
     //تفعيل الشحن الي عنوان أخر 
@@ -257,9 +260,7 @@ class CheckOutComponent extends Component
                 
             }
         }
-        
-       
-        
+        $this->sendOrderConfirmationMail($order);  
     }
 
     public function resetCart(){
@@ -277,6 +278,9 @@ class CheckOutComponent extends Component
             $transaction->status = $status;
             $transaction->save();
 
+    }
+    public function sendOrderConfirmationMail($order){
+        Mail::to($order->email)->send(new OrderMail($order));
     }
 
     public function verifyforcheckout(){

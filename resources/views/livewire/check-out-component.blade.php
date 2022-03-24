@@ -22,7 +22,7 @@
 				</ul>
 			</div>
 			<div class=" main-content-area">
-				<form wire:submit.prevent='placeorder' >
+				<form wire:submit.prevent='placeorder' onsubmit="$('#processing').show();" >
 				@csrf
 					<div class="row">
 						<div class="col-md-12">
@@ -181,11 +181,7 @@
 								</div>
 							@endif
 							<div class="choose-payment-methods">
-								{{-- <label class="payment-method">
-									<input name="payment-method" id="payment-method-bank" value="bank" type="radio">
-									<span>{{__('mshmk.Direct_Bank_Transder')}}</span>
-									<span class="payment-desc">{{__('mshmk.Direct_Bank_Transder_description')}}</span>
-								</label> --}}
+								
 								<label class="payment-method">
 									<input name="payment-method" id="payment-method-bank" value="cod" type="radio" wire:model='paymentmode'>
 									<span> {{__('mshmk.Cash_On_Delivery')}}</span>
@@ -205,6 +201,12 @@
 							</div>
 							@if(Session::has('checkout'))
 								<p class="summary-info grand-total"><span>{{__('mshmk.Grand_Total')}}</span> <span class="grand-total-price">${{Session::get('checkout')['total']}}</span></p>
+							@endif
+							@if ($errors->isEmpty())
+								<div wire:ignore id="processing" style="font-size:22px; margin-bottom:20px;padding-left:37px;color:green;display:none;">
+									<i class="fa fa-spinner fa-pulse fa-fw"></i>
+									<span>{{__('mshmk.Processing...')}}</span>
+								</div>							
 							@endif
 							<button type="submit" class="btn btn-medium">{{__('mshmk.Place_order_now')}}</button>
 						</div>

@@ -129,6 +129,14 @@
 												href="{{ route('user.orders')}}">{{__('mshmk.Orders')}}</a>
 										</li>
 										<li class="menu-item">
+											<a title="{{__('mshmk.profile')}}"
+												href="{{ route('user.profile')}}">{{__('mshmk.profile')}}</a>
+										</li>
+										<li class="menu-item">
+											<a title="{{__('mshmk.change_password')}}"
+												href="{{route('user.changepassword')}}">{{__('mshmk.change_password')}}</a>
+										</li>
+										<li class="menu-item">
 											<a title="{{__('mshmk.Logout')}}" href="{{ route('logout') }}"
 												onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{__('mshmk.Logout')}}</a>
 										</li>

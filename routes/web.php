@@ -38,8 +38,10 @@ use App\Http\Livewire\TermsComponent;
 use App\Http\Livewire\ThankYouPageComponent;
 use App\Http\Livewire\User\UserChangePasswordComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
+use App\Http\Livewire\User\UserEditProfileComponent;
 use App\Http\Livewire\User\UserOrderDetailsComponent;
 use App\Http\Livewire\User\UserOrdersComponent;
+use App\Http\Livewire\User\UserprofileComponent;
 use App\Http\Livewire\User\UserReviewComponent;
 use App\Http\Livewire\WishListComponent;
 use Illuminate\Support\Facades\Route;
@@ -90,6 +92,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::get('/user/orders/{order_id}',UserOrderDetailsComponent::class)->name('user.orderdetails');
     Route::get('/user/review/{order_item_id}',UserReviewComponent::class)->name('user.review');
     Route::get('/user/change-password',UserChangePasswordComponent::class)->name('user.changepassword');
+    Route::get('/user/profile',UserprofileComponent::class)->name('user.profile');
+    Route::get('/user/profile/edit',UserEditProfileComponent::class)->name('user.editprofile');
 });
 //مسار للمدير للدخول الي لوحة التحكم
 Route::middleware(['auth:sanctum', 'verified','authadmin'])->group(function(){

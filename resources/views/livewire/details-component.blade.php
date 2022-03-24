@@ -12,11 +12,21 @@
 				<div class="col-lg-9 col-md-8 col-sm-8 col-xs-12 main-content-area">
 					<div class="wrap-product-detail">
 							<div class="detail-media">
-								<div class="product-gallery">
+								<div class="product-gallery" wire:ignore>
 								<ul class="slides">
 									<li data-thumb="{{ asset('assets/images/products')}}/{{$product->image}}">
 										<img src="{{ asset('assets/images/products')}}/{{$product->image}}" alt="{{$product->name}}" />
 									</li>
+									@php
+										$images = explode(",",$product->images);
+									@endphp
+									@foreach ($images as $image)
+										@if ($image)
+											<li data-thumb="{{ asset('assets/images/products')}}/{{$image}}">
+												<img src="{{ asset('assets/images/products')}}/{{$image}}" alt="{{$product->name}}" />
+											</li>
+										@endif
+									@endforeach
 								</ul>
 								</div>
 							</div>
@@ -134,7 +144,7 @@
 													@foreach ($product->orderItems->where('rstatus',1) as $orderItem)
 														<li class="comment byuser comment-author-admin bypostauthor even thread-even depth-1" id="li-comment-20">
 															<div id="comment-20" class="comment_container"> 
-																<img alt="" src="{{ asset('assets/images/author-avata.jpg ') }}" height="80" width="80">
+																<img alt="{{$orderItem->order->user->name}}" src="{{ asset('assets/images/profile') }}/{{$orderItem->order->user->profile->image}}" height="80" width="80">
 																<div class="comment-text">
 																	<div class="star-rating">
 																		<span class="width-{{ $orderItem->review->rating * 20 }}-percent">Rated <strong class="rating">{{ $orderItem->review->rating  }}</strong> out of 5</span>
@@ -154,12 +164,9 @@
 
 												</ol>
 											</div><!-- #comments -->
-
-											
 										</div>
 									</div>
 								{{-- مراجعات المنتج--}}
-
 							</div>
 						</div>
 					</div>
