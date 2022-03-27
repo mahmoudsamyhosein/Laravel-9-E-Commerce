@@ -82,6 +82,10 @@
 												href="{{ route('admin.home-categories')}}">{{__('mshmk.Manage_Home_Categories')}}</a>
 										</li>
 										<li class="menu-item">
+											<a title="{{__('mshmk.attributes')}}"
+												href="{{ route('admin.attributes')}}">{{__('mshmk.attributes')}}</a>
+										</li>
+										<li class="menu-item">
 											<a title="{{__('mshmk.Sale_Setting')}}"
 												href="{{ route('admin.sale')}}">{{__('mshmk.Sale_Setting')}}</a>
 										</li>
@@ -158,7 +162,7 @@
 								@endif
 							</ul>
 						</div>
-						{{-- <div class="topbar-menu right-menu">
+						<div class="topbar-menu right-menu">
 							<ul>
 								<li class="menu-item lang-menu menu-item-has-children parent">
 									<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
@@ -178,8 +182,8 @@
 									</div>
 								</li>
 							</ul>
-						</div> --}}
-						{{-- <div class="topbar-menu left-menu">
+						</div>
+						<div class="topbar-menu left-menu" style="margin-right:10px;">
 							<ul>
 								<li class="menu-item menu-item-has-children parent">
 									<a title="Dollar (USD)" href="#">Dollar (USD)<i class="fa fa-angle-down"
@@ -197,7 +201,7 @@
 									</ul>
 								</li>
 							</ul>
-						</div> --}}
+						</div>
 					</div>
 				</div>
 
@@ -281,7 +285,7 @@
 	<script src="{{ asset('assets/js/jquery-ui-1.12.4.minb8ff.js?ver=1.12.4') }}"></script>
 	<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
 	<script src="{{ asset('assets/js/jquery.flexslider.js') }}"></script>
-	{{-- <script src="{{ asset('assets/js/chosen.jquery.min.js') }}"></script> --}}
+	<script src="{{ asset('assets/js/chosen.jquery.min.js') }}"></script>
 	<script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
 	<script src="{{ asset('assets/js/jquery.countdown.min.js') }}"></script>
 	<script src="{{ asset('assets/js/jquery.sticky.js') }}"></script>

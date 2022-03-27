@@ -69,10 +69,27 @@
 								<div class="stock-info in-stock">
 									<p class="availability">{{__('mshmk.Availability:')}}<b>{{ $product->stock_status }}</b></p>
 								</div>
-								<div class="quantity">
+								<div>
+									@foreach ($attributeValues->unique('product_attribute_id') as $av)
+										<div class="row" style="margin-top: 20px">
+											<div class="col-xs-2">
+												<p>{{$av->productAttribute->name}}</p>
+											</div>
+											<div class="col-xs-10">
+												<select class="form-control" style="width: 200px;" wire:model='satt.{{$av->productAttribute->name}}'>
+													@foreach ($av->productAttribute->attributeValues->where('product_id',$product->id) as $pav)
+														<option value="{{$pav->value}}">{{$pav->value}}</option>
+													@endforeach
+												</select>
+											</div>
+										</div>
+									@endforeach
+
+								</div>
+								<div class="quantity" style="margin-top: 10px;">
 									<span>{{__('mshmk.Quantity:')}}</span>
 									<div class="quantity-input">
-										<input type="text" name="{{ $product->quantity }}" value="1" data-max="120" pattern="[0-9]*" wire:model='qty' >
+										<input type="text" name="product-quantity" value="1" data-max="120" pattern="[0-9]*" wire:model='qty' >
 										<a class="btn btn-reduce" href="#" wire:click.prevent="decreasequantity"></a>
 										<a class="btn btn-increase" href="#" wire:click.prevent="increasequantity"></a>
 									</div>

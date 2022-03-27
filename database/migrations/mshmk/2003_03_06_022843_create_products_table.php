@@ -28,9 +28,10 @@ class CreateProductsTable extends Migration
             $table->string('image')->nullable();
             $table->text('images')->nullable();
             $table->bigInteger('category_id')->unsigned()->nullable();
+            $table->bigInteger('subcategory_id')->unsigned()->nullable();
             $table->timestamps();
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
-
+            $table->foreign('subcategory_id')->references('id')->on('subcategories')->onDelete('cascade');
         });
     }
 
@@ -41,6 +42,10 @@ class CreateProductsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('products', function (Blueprint $table){
+            $table->dropForeign('products_subcategory_id_foreign');
+            $table->dropColumn('subcategory_id');
+
+        });
     }
 }

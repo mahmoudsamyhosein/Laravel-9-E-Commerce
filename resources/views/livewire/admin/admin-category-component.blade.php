@@ -7,6 +7,19 @@
         nav .hidden {
             display: block !important;
         }
+        .sclist{
+            list-style: none;
+        }
+        .sclist li{
+            line-height: 33px;
+            border-bottom: 1px solid #ccc;
+            
+        }
+        .slink i{
+            font-size: 16px;
+            margin-left: 12px;
+        }
+        
     </style>
     <div class="container" style="padding: 30px 0;">
         <div class="row">
@@ -32,6 +45,7 @@
                                     <th>Id</th>
                                     <th>Category Name</th>
                                     <th>Slug</th>
+                                    <th>Sub Category</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -41,6 +55,16 @@
                                     <td>{{ $category->id }} </td>
                                     <td>{{ $category->name }} </td>
                                     <td>{{ $category->slug }}</td>
+                                    <td>
+                                        <ul class="sclist">
+                                            @foreach ($category->subcategories as $scategory)
+                                                <li>
+                                                    <i class="fa fa-caret-right"></i>{{$scategory->name}} <a class="slink" href="{{route('admin.editcategory',[ 'category_slug'=> $category->slug , 'scategory_slug'=> $scategory->slug])}}"><i class="fa fa-edit"></i></a> 
+                                                    <a class="slink" href="#" onclick="confirm('Are You Sure, You Want To Delete Subcategory?') || event.stopImmediatePropagation()" wire:click.prevent='deletesubcategory({{$scategory->id}})'><i class="fa fa-times text-danger"></i></a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </td>
                                     <td>
                                          <a
                                             href="{{route('admin.editcategory' ,['category_slug'=>$category->slug ] )}}"><i

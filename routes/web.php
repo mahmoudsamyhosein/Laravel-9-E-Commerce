@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Livewire\AboutUsComponent;
+use App\Http\Livewire\Admin\AdminAddAttributeComponent;
 use App\Http\Livewire\Admin\AdminAddCategoryComponent;
 use App\Http\Livewire\Admin\AdminAddCouponComponent;
 use App\Http\Livewire\Admin\AdminAddProductComponent;
@@ -11,8 +12,10 @@ use App\Http\Livewire\Admin\AdminEditProductComponent;
 use App\Http\Livewire\Admin\AdminHomeSliderComponent;
 use App\Http\Livewire\Admin\AdminAddHomeSliderComponent;
 use App\Http\Livewire\Admin\AdminAddPageComponent;
+use App\Http\Livewire\Admin\AdminAttributesComponent;
 use App\Http\Livewire\Admin\AdminContactComponent;
 use App\Http\Livewire\Admin\AdminCouponsComponent;
+use App\Http\Livewire\Admin\AdminEditAttributeComponent;
 use App\Http\Livewire\Admin\AdminEditCouponComponent;
 use App\Http\Livewire\Admin\AdminEditHomeSliderComponent;
 use App\Http\Livewire\Admin\AdminEditPageComponent;
@@ -62,7 +65,7 @@ Route::get('/shop',ShopComponent::class);
 // مسار العربة 
 Route::get('/cart',CartComponent::class)->name('product.cart');
 //مسار الأقسام 
-Route::get('/product/category/{category_slug}', CategoryComponent::class)->name('product.category');
+Route::get('/product/category/{category_slug}/{scategory_slug?}', CategoryComponent::class)->name('product.category');
 //مسار أتمام الدفع
 Route::get('/checkout',CheckOutComponent::class)->name('product.checkout');
 //مسار تفاصيل المنتج
@@ -102,7 +105,7 @@ Route::middleware(['auth:sanctum', 'verified','authadmin'])->group(function(){
     //الأقسام
     Route::get('/admin/categories',AdminCategoryComponent::class)->name('admin.categories');
     Route::get('/admin/category/add',AdminAddCategoryComponent::class)->name('admin.addcategory');
-    Route::get('/admin/category/edit/{category_slug}',AdminEditCategoryComponent::class)->name('admin.editcategory');
+    Route::get('/admin/category/edit/{category_slug}/{scategory_slug?}',AdminEditCategoryComponent::class)->name('admin.editcategory');
     //المنتجات
     Route::get('/admin/products',AdminProductComponent::class )->name('admin.products');
     Route::get('/admin/products/add',AdminAddProductComponent::class )->name('admin.addproduct');
@@ -130,7 +133,10 @@ Route::middleware(['auth:sanctum', 'verified','authadmin'])->group(function(){
     //الطلبات
     Route::get('/admin/orders',AdminOrderComponent::class)->name('admin.orders');
     Route::get('/admin/orders/{order_id}',AdminOrderDetailsComponent::class)->name('admin.order_details');
-
+    //خواص المنتج
+    Route::get('/admin/attributes',AdminAttributesComponent::class)->name('admin.attributes');
+    Route::get('/admin/attribute/add',AdminAddAttributeComponent::class)->name('admin.add_attribute');
+    Route::get('/admin/attributes/edit/{attribute_id}',AdminEditAttributeComponent::class)->name('admin.edit_attribute');
 });
 //مبدل اللغات
 Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);

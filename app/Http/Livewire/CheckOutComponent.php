@@ -147,6 +147,10 @@ class CheckOutComponent extends Component
             $orderItem->order_id = $item->id;
             $orderItem->price = $item->price;
             $orderItem->quantity = $item->qty;
+            if($item->options){
+              $orderItem->options =  serialize($item->options);
+            }
+
             //حقظ بيانات الطلب الجديد
             $orderItem->save();
         }

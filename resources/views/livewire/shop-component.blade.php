@@ -2,7 +2,7 @@
 <!--main area-->
 	<main id="main" class="main-site left-sidebar" >
 		<div class="container">
-			<div class="wrap-breadcrumb">
+			<div class="wrap-breadcrumb" dir="rtl">
 				<ul>
 					<li class="item-link"><a href="/" class="link">{{__('mshmk.home')}}</a></li>
 					<li class="item-link"><span>{{__('mshmk.Shop')}}</span></li>
@@ -66,6 +66,10 @@
 						.fill-heart{
 							color:#ff7007 !important;
 						}
+						.toggle-control span{
+            				margin-right: 25px;
+        				}
+						
 					</style>
 					<div class="row">
 
@@ -112,9 +116,18 @@
 						<div class="widget-content">
 							<ul class="list-category">
 								@foreach ($categories as $category)
-									<li class="category-item">
-										 <a href="{{ route('product.category' , [ 'category_slug' =>$category->slug ] )}}" class="cate-link"> {{ $category->name }} </a>  
-														
+									<li class="category-item {{count($category->subcategories) > 0 ? 'has-child-cate':''}}">
+										 <a href="{{ route('product.category' , [ 'category_slug' =>$category->slug ] )}}" class="cate-link"> {{ $category->name }} </a> 
+										 @if (count($category->subcategories) > 0 )
+											 <span class="toggle-control">+</span>
+											 <ul class="sub-cate">
+												 @foreach ($category->subcategories as $scategory)
+													 <li class="category-item">
+														<a href="{{route('product.category',['category_slug'=> $category->slug ,'scategory_slug'=> $scategory->slug ])}}" class="cat-link"><i class="fa fa-caret-right"></i>{{$scategory->name}}</a>
+													 </li>
+												 @endforeach
+											 </ul>
+										 @endif 			
 									</li>
 								@endforeach
 							</ul>

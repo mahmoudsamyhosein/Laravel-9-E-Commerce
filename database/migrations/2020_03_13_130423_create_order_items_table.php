@@ -20,6 +20,7 @@ class CreateOrderItemsTable extends Migration
             $table->decimal('price');
             $table->integer('quantity');
             $table->boolean('rstatus')->default(false);
+            $table->longText('options')->nullable();
             $table->timestamps();
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
@@ -35,7 +36,7 @@ class CreateOrderItemsTable extends Migration
     {
         Schema::dropIfExists('order_items', function(Blueprint $table){
             $table->boolean('rstatus')->default(false);
-
+            $table->dropColumn('options');
         });
     }
 }
