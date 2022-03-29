@@ -20,7 +20,6 @@ class DatabaseSeeder extends Seeder
         \App\Models\Homeslider::factory(4)->create();
         \App\Models\HomeCategory::factory(1)->create();
         \App\Models\Page::factory(12)->create();
-        \App\Models\Coupon::factory(12)->create();
-            
+        \App\Models\Coupon::factory(12)->create();     
     }
 }
