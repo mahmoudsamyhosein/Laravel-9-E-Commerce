@@ -38,7 +38,7 @@
                             <h4 class="fc-name">{{__('mshmk.Online_Suport')}}</h4>
                             <p class="fc-desc">{{__('mshmk.We_Have_Support_24/7')}}</p>
                         </div>
-                        <i class="fa fa-life-ring" aria-hidden="true"></i>
+                        <i class="fa fa-life-ring" aria-hidden="true" ></i>
 
                     </li>
                 </ul>
@@ -203,8 +203,8 @@
                 <div class="coppy-right-item item-right">
                     <div class="wrap-nav horizontal-nav">
                         <ul>
-                            <li class="menu-item"><a href="https://github.com/mahmoudsamyhosein" class="link-term">{{__('mshmk.tech_doc')}}</a></li>
-                            <li class="menu-item"><a href="https://github.com/mahmoudsamyhosein" class="link-term">{{__('mshmk.doc')}}</a></li>															
+                            <li class="menu-item"><a href="https://github.com/mahmoudsamyhosein/mshmk_shop_tech_doc" class="link-term">{{__('mshmk.tech_doc')}}</a></li>
+                            <li class="menu-item"><a href="https://github.com/mahmoudsamyhosein/mshmk_shop_doc" class="link-term">{{__('mshmk.doc')}}</a></li>															
 															
                         </ul>
                     </div>

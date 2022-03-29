@@ -1,4 +1,4 @@
-<div>
+<div dir="rtl" style="text-align: right">
     <div class="container" style="padding: 30px 0;">
         <div class="row">
             <div class="col-md-12">
@@ -6,11 +6,11 @@
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-md-6">
-                                Add New Attribute
+                                {{__('mshmk.Add_New_Attribute')}}
                             </div>
                             <div class="col-md-6">
                                 <a href="{{ route('admin.attributes')}}" class="btn btn-success pull-right">
-                                    All Attribute
+                                    {{__('mshmk.All_Attribute')}}
                                 </a>
                             </div>
                         </div>
@@ -23,7 +23,7 @@
                          @csrf
                             <div class="form-group">
                                 <label  class="col-md-4 control-label">
-                                    Attribute Name 
+                                     {{__('mshmk.Attribute_Name')}}
                                 </label>
                                 <div class="col-md-4">
                                     <input type="text" placeholder="attribute Name" class="form-control input-md" wire:model='name'>
@@ -34,7 +34,7 @@
                                 <label  class="col-md-4 control-label">
                                 </label>
                                 <div class="col-md-4">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">{{__('mshmk.Submit')}}</button>
                                 </div>
                             </div>
                         </form>

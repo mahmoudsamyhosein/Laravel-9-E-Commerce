@@ -21,12 +21,12 @@
 			<!--2 بانر أسفل البانر الرئيسي-->
 			<div class="wrap-banner style-twin-default">
 				<div class="banner-item">
-					<a href="#" class="link-banner banner-effect-1">
+					<a href="/" class="link-banner banner-effect-1">
 						<figure><img src="{{ asset('assets/images/home-1-banner-1.jpg') }}" alt="" width="580" height="190"></figure>
 					</a>
 				</div>
 				<div class="banner-item">
-					<a href="#" class="link-banner banner-effect-1">
+					<a href="/" class="link-banner banner-effect-1">
 						<figure><img src="{{ asset('assets/images/home-1-banner-2.jpg') }}" alt="" width="580" height="190"></figure>
 					</a>
 				</div>
@@ -63,7 +63,7 @@
 			<div class="wrap-show-advance-info-box style-1">
 				<h3 class="title-box">{{__('mshmk.Latest_Products')}}</h3>
 				<div class="wrap-top-banner">
-					<a href="#" class="link-banner banner-effect-2">
+					<a href="/" class="link-banner banner-effect-2">
 						<figure><img src="{{ asset('assets/images/digital-electronic-banner.jpg') }}" width="1170" height="240" alt=""></figure>
 					</a>
 				</div>

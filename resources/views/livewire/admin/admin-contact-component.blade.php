@@ -6,7 +6,7 @@
         display: block !important;
     }
 </style>
-<div>
+<div dir="rtl" style="text-align: right">
     <div class="container" style="padding: 30px 0;">
         <div class="row">
             <div class="col-md-12">
@@ -14,7 +14,7 @@
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-md-6">
-                               Contact Messages
+                               {{__('mshmk.Contact_Messages')}}
                             </div>
                             
                         </div>    
@@ -27,11 +27,11 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Phone</th>
-                                    <th>Comment</th>
-                                    <th>Created At</th>
+                                    <th>{{__('mshmk.Name')}}</th>
+                                    <th>{{__('mshmk.Email')}}</th>
+                                    <th>{{__('mshmk.Phone')}}</th>
+                                    <th>{{__('mshmk.Comment')}}</th>
+                                    <th>{{__('mshmk.Created_At')}}</th>
                                 </tr>
                             </thead>
                             <tbody>

@@ -1,10 +1,10 @@
-<div>
+<div dir="rtl" style="text-align: right">
     <div class="container" style="padding: 30px 0;">
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Settings
+                        {{__('mshmk.Settings')}}
                     </div>
                     <div class="panel-body">
                         @if(Session::has('message'))
@@ -13,84 +13,84 @@
                         <form class="form-horizontal" wire:submit.prevent='savesettings'>
                             @csrf
                             <div class="form-group">
-                                <label class="col-md-4 control-label">Email</label>
+                                <label class="col-md-4 control-label">{{__('mshmk.Email')}}</label>
                                 <div class="col-md-4">
-                                    <input type="email" placeholder="Email" class="form-control input-md" wire:model='email'>
+                                    <input type="email" placeholder="{{__('mshmk.Email')}}" class="form-control input-md" wire:model='email'>
                                     @error('email') <p class="text-danger">{{$message}}</p>@enderror
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="col-md-4 control-label">Phone</label>
+                                <label class="col-md-4 control-label">{{__('mshmk.Phone')}}</label>
                                 <div class="col-md-4">
-                                    <input type="text" placeholder="Phone" class="form-control input-md" wire:model='phone'>
+                                    <input type="text" placeholder="{{__('mshmk.Phone')}}" class="form-control input-md" wire:model='phone'>
                                     @error('Phone') <p class="text-danger">{{$message}}</p>@enderror
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="col-md-4 control-label">Phone 2</label>
+                                <label class="col-md-4 control-label">{{__('mshmk.Phone_2')}}</label>
                                 <div class="col-md-4">
-                                    <input type="text" placeholder="Phone2" class="form-control input-md" wire:model='phone2'>
+                                    <input type="text" placeholder="{{__('mshmk.Phone_2')}}" class="form-control input-md" wire:model='phone2'>
                                     @error('Phone2') <p class="text-danger">{{$message}}</p>@enderror
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="col-md-4 control-label">Address</label>
+                                <label class="col-md-4 control-label">{{__('mshmk.Address')}}</label>
                                 <div class="col-md-4">
-                                    <input type="text" placeholder="Address" class="form-control input-md" wire:model='address'>
+                                    <input type="text" placeholder="{{__('mshmk.Address')}}" class="form-control input-md" wire:model='address'>
                                     @error('email') <p class="text-danger">{{$message}}</p>@enderror
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="col-md-4 control-label">Map</label>
+                                <label class="col-md-4 control-label">{{__('mshmk.Map')}}</label>
                                 <div class="col-md-4">
-                                    <input type="text" placeholder="Map" class="form-control input-md" wire:model='map'>
+                                    <input type="text" placeholder="{{__('mshmk.Map')}}" class="form-control input-md" wire:model='map'>
                                     @error('email') <p class="text-danger">{{$message}}</p>@enderror
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="col-md-4 control-label">Twitter</label>
+                                <label class="col-md-4 control-label">{{__('mshmk.Twitter')}}</label>
                                 <div class="col-md-4">
-                                    <input type="text" placeholder="Twitter" class="form-control input-md" wire:model='twiter'>
-                                    @error('email') <p class="text-danger">{{$message}}</p>@enderror
-                                </div>
-                            </div>
-
-
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">FaceBook</label>
-                                <div class="col-md-4">
-                                    <input type="text" placeholder="FaceBook" class="form-control input-md" wire:model='facebook'>
+                                    <input type="text" placeholder="{{__('mshmk.Twitter')}}" class="form-control input-md" wire:model='twiter'>
                                     @error('email') <p class="text-danger">{{$message}}</p>@enderror
                                 </div>
                             </div>
 
 
                             <div class="form-group">
-                                <label class="col-md-4 control-label">Pinterest</label>
+                                <label class="col-md-4 control-label">{{__('mshmk.FaceBook')}}</label>
                                 <div class="col-md-4">
-                                    <input type="text" placeholder="Pinterest" class="form-control input-md" wire:model='pinterest'>
-                                    @error('email') <p class="text-danger">{{$message}}</p>@enderror
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">Instagram</label>
-                                <div class="col-md-4">
-                                    <input type="text" placeholder="Instagram" class="form-control input-md" wire:model='instagram'>
+                                    <input type="text" placeholder="{{__('mshmk.FaceBook')}}" class="form-control input-md" wire:model='facebook'>
                                     @error('email') <p class="text-danger">{{$message}}</p>@enderror
                                 </div>
                             </div>
 
 
                             <div class="form-group">
-                                <label class="col-md-4 control-label">Youtube</label>
+                                <label class="col-md-4 control-label">{{__('mshmk.Pinterest')}}</label>
                                 <div class="col-md-4">
-                                    <input type="text" placeholder="Youtube" class="form-control input-md" wire:model='youtube'>
+                                    <input type="text" placeholder="{{__('mshmk.Pinterest')}}" class="form-control input-md" wire:model='pinterest'>
+                                    @error('email') <p class="text-danger">{{$message}}</p>@enderror
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">{{__('mshmk.Instagram')}}</label>
+                                <div class="col-md-4">
+                                    <input type="text" placeholder="{{__('mshmk.Instagram')}}" class="form-control input-md" wire:model='instagram'>
+                                    @error('email') <p class="text-danger">{{$message}}</p>@enderror
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">{{__('mshmk.Youtube')}}</label>
+                                <div class="col-md-4">
+                                    <input type="text" placeholder="{{__('mshmk.Youtube')}}" class="form-control input-md" wire:model='youtube'>
                                     @error('email') <p class="text-danger">{{$message}}</p>@enderror
                                 </div>
                             </div>
@@ -98,7 +98,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label"></label>
                                 <div class="col-md-4">
-                                    <button type="submit" class="btn btn-primary">Save</button>
+                                    <button type="submit" class="btn btn-primary">{{__('mshmk.Save')}}</button>
                                 </div>
                             </div>
                             

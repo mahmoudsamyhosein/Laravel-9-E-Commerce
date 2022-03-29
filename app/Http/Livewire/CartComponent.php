@@ -1,5 +1,9 @@
 <?php
-
+/*
+*بسم الله الرحمن الرحيم والصلاة والسلام علي أشرف المرسلين سيدنا محمد
+* [لوحة المستخدم] يحتوي هذا الملف علي منطق خواص المنتج .
+*MY_GITHUB_ACCOUNT:https://github.com/mahmoudsamyhosein .
+*/
 namespace App\Http\Livewire;
 
 use App\Models\Product;
@@ -18,25 +22,26 @@ class CartComponent extends Component
         public $taxAfterDiscount;
         public $totalAfterDiscount;
 
-    public function increasecartby_1($rowId){
+    public function increase_quantity($rowId){
 
         $product = Cart::instance('cart')->get($rowId);
-        $qty = $product->qty +1;
+        $qty = $product->qty + 1;
         Cart::instance('cart')->update($rowId,$qty);
         $this->emitTo('cart-count-component','refreshComponent');
 
     }
 
-    public function decreasecartby_1($rowId){
+    public function decrease_quantity($rowId){
         $product = Cart::instance('cart')->get($rowId);
-        $qty = $product->qty -1;
+        $qty = $product->qty - 1;
         Cart::instance('cart')->update($rowId,$qty);
         $this->emitTo('cart-count-component','refreshComponent');
     }
+
     public function destroy($rowId){
        Cart::instance('cart')->remove($rowId);
        $this->emitTo('cart-count-component','refreshComponent');
-       session()->flash('success_message','Item has been removed');
+       session()->flash('success_message',trans('mshmk.Item_has_been_removed!'));
     }
     
     public function destroyall(){
@@ -91,7 +96,7 @@ class CartComponent extends Component
         Cart::instance('cart')->remove($rowId);
         Cart::instance('saveForLater')->add($item->id,$item->name,1,$item->price)->associate('App\Models\Product');
         $this->emitTo('cart-count-component','refreshComponent');
-        session()->flash('success_message','Item Has Been Saved For Later');
+        session()->flash('success_message',trans('mshmk.Item_Has_Been_Saved_For_Later!'));
 
     }
 
@@ -102,14 +107,14 @@ class CartComponent extends Component
         Cart::instance('saveForLater')->remove($rowId);
         Cart::instance('cart')->add($item->id,$item->name,1,$item->price)->associate('App\Models\Product');
         $this->emitTo('cart-count-component','refreshComponent');
-        session()->flash('s_success_message','Item Has Been Moved To Cart');
+        session()->flash('s_success_message',trans('mshmk.Item_Has_Been_Moved_To_Cart!'));
 
     }
 
     public function deleteFromSaveForLater($rowId){
 
         Cart::instance('saveForLater')->remove($rowId);
-        session()->flash('s_success_message','Item Has Been Removed From save for Later');
+        session()->flash('s_success_message',trans('mshmk.Item_Has_Been_Removed_From_save_for_Later!'));
 
     }
     
@@ -118,7 +123,7 @@ class CartComponent extends Component
         $coupon = Coupon::where('code',$this->couponCode)->where('expiry_date','>=',Carbon::today() )->where('cart_value','<=',Cart::instance('cart')->subtotal())->first();
         if(!$coupon)
         {
-            session()->flash('coupon_message','Coupon code is invalid!');
+            session()->flash('coupon_message',trans('mshmk.Coupon_code_is_invalid!'));
             return;
         }
 
@@ -167,3 +172,6 @@ class CartComponent extends Component
     }
 
 }
+/*
+خلصانة بشياكة
+*/

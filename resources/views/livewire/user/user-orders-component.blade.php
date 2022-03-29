@@ -1,4 +1,4 @@
-<div>
+<div dir="rtl" style="text-align: right">
     <style>
         nav svg{
             height: 20px;
@@ -14,26 +14,26 @@
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    All Orders 
+                    {{__('mshmk.All_Orders')}}
                 </div>
             </div>
             <div class="panel-body">
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th>Id</th>
-                            <th>Subtotal</th>
-                            <th>Discount</th>
-                            <th>Tax</th>
-                            <th>Total</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Mobile</th>
-                            <th>Email</th>
-                            <th>Zipcode</th>
-                            <th>Status</th>
-                            <th>Order Date</th>
-                            <th>Action</th>
+                            <th>{{__('mshmk.Id')}}</th>
+                            <th>{{__('mshmk.Subtotal')}}</th>
+                            <th>{{__('mshmk.Discount')}}</th>
+                            <th>{{__('mshmk.Tax')}}</th>
+                            <th>{{__('mshmk.Total')}}</th>
+                            <th>{{__('mshmk.First_Name')}}</th>
+                            <th>{{__('mshmk.Last_Name')}}</th>
+                            <th>{{__('mshmk.Mobile')}}</th>
+                            <th>{{__('mshmk.Email')}}</th>
+                            <th>{{__('mshmk.Zipcode')}}</th>
+                            <th>{{__('mshmk.Status')}}</th>
+                            <th>{{__('mshmk.Order_Date')}}</th>
+                            <th>{{__('mshmk.Action')}}</th>
 
                         </tr>
                     </thead>
@@ -52,7 +52,7 @@
                                 <td>{{$order->zipcode}}</td>
                                 <td>{{$order->status}}</td>
                                 <td>{{$order->created_at}}</td>
-                                <td><a href="{{route('user.orderdetails',['order_id' => $order->id ])}}" class="btn btn-info btn-sm">Details</a></td>
+                                <td><a href="{{route('user.orderdetails',['order_id' => $order->id ])}}" class="btn btn-info btn-sm">{{__('mshmk.Details')}}</a></td>
                             </tr>
                         @endforeach
                     </tbody>

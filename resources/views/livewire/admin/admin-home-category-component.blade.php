@@ -1,10 +1,10 @@
-<div>
+<div dir="rtl" style="text-align: right">
    <div class="container" style="padding: 30px 0;">
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Manage Home Category
+                        {{__('mshmk.Manage_Home_Category')}}
                     </div>
                     <div class="panel-body">
                         @if(Session::has('message'))
@@ -14,7 +14,7 @@
                          @csrf
                             <div class="form-group">
                                 <label class="col-md-4 control-label">
-                                    Choose Categories
+                                    {{__('mshmk.Choose_Categories')}}
                                 </label>
                                 <div class="col-md-4" wire:ignore>
                                     <select class="sel_categories form-control" name="categories[]" multiple='multiple' wire:model='selected_categories'>
@@ -27,7 +27,7 @@
 
                             <div class="form-group">
                                 <label class="col-md-4 control-label">
-                                    No Of Products
+                                     {{__('mshmk.No_Of_Products')}}
                                 </label>
                                 <div class="col-md-4">
                                     <input type="text" class="form-control input-md" wire:model='numberofproducts'>
@@ -38,7 +38,7 @@
                                 <label class="col-md-4 control-label">
                                 </label>
                                 <div class="col-md-4">
-                                    <button type="submit" class="btn btn-primary">Save</button>
+                                    <button type="submit" class="btn btn-primary"> {{__('mshmk.Save')}}</button>
                                 </div>
                             </div>
                         </form>

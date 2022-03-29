@@ -1,14 +1,14 @@
-<div>
+<div dir="rtl" style="text-align: right">
     <div class="container" style="padding: 30px 0;">
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <div class="col-md-6">
-                            All Coupon
+                            {{__('mshmk.All_Coupon')}}
                         </div>
                         <div class="col-md-6">
-                            <a href="{{ route('admin.addcoupons') }}" class="btn btn-success pull-right">ADD New</a>
+                            <a href="{{ route('admin.addcoupons') }}" class="btn btn-success pull-right">{{__('mshmk.ADD_New')}}</a>
                         </div>
                     </div>
                     <div class="panel-body">
@@ -20,13 +20,13 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>Id</th>
-                                    <th>Coupon Code</th>
-                                    <th>Coupon Type</th>
-                                    <th>Coupon Value</th>
-                                    <th>Cart Value</th>
-                                    <th>Expiry Date</th>
-                                    <th>Action</th>
+                                    <th>{{__('mshmk.Id')}}</th>
+                                    <th>{{__('mshmk.Coupon_Code')}}</th>
+                                    <th>{{__('mshmk.Coupon_Type')}}</th>
+                                    <th>{{__('mshmk.Coupon_Value')}}</th>
+                                    <th>{{__('mshmk.Cart_Value')}}</th>
+                                    <th>{{__('mshmk.Expiry_Date')}}</th>
+                                    <th>{{__('mshmk.Action')}}</th>
                                 </tr>
                             </thead>
                             <tbody>

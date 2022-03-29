@@ -4,25 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Order Confirmation</title>
+    <title>{{__('mshmk.Order_Confirmation') }}</title>
 </head>
 <body>
-    <p>Hi {{$order->firstname}} {{ $order->lastname}}</p>
-    <p>Your Order Has Been Successfully Placed.</p>
+    <p>{{__('mshmk.Hi')}} {{$order->firstname}} {{ $order->lastname}}</p>
+    <p>{{__('mshmk.Your_Order_Has_Been_Successfully_Placed.')}}</p>
     <br/>
-    <table style="width: 600px; text-align:right;">
+    <table style="width: 600px; text-align:right;" dir="rtl">
         <thead>
             <tr>
-                <th>Image</th>
-                <th>Name</th>
-                <th>Quantity</th>
-                <th>Price</th>
+                <th>{{__('mshmk.Image')}}</th>
+                <th>{{__('mshmk.Name')}}</th>
+                <th>{{__('mshmk.Quantity')}}</th>
+                <th>{{__('mshmk.Price')}}</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($orderItems as $item)
                 <tr>
-                    <td> <img src="{{asset('assets/images/products')}}/{{$item->product->image}}" alt="" width="100"></td>
+                    <td> <img src="{{asset('assets/images/products')}}/{{$item->product->image}}" alt="{{$item->product->name}}" width="100"></td>
                     <td>{{$item->product->name}}</td>
                     <td>{{$item->quantity}}</td>
                     <td>${{$item->price * $item->quantity}}</td>
@@ -30,19 +30,19 @@
             @endforeach
             <tr>
                 <td colspan="3" style="border-top: 10px solid #ccc;"></td>
-                <td style="font-size: 15px;font-weight:bold; border-top: 10px solid #ccc;">Subtotal : ${{$order->subtotal}}</td>
+                <td style="font-size: 15px;font-weight:bold; border-top: 10px solid #ccc;">{{__('mshmk.Subtotal_:')}} ${{$order->subtotal}}</td>
             </tr>
             <tr>
                 <td colspan="3"></td>
-                <td style="font-size: 15px;font-weight:bold;">Tax :${{$order->tax}}</td>
+                <td style="font-size: 15px;font-weight:bold;">{{__('mshmk.Tax')}}${{$order->tax}}</td>
             </tr>
             <tr>
                 <td colspan="3"></td>
-                <td style="font-size: 15px;font-weight:bold;">Shipping : Free Shipping</td>
+                <td style="font-size: 15px;font-weight:bold;">{{__('mshmk.Shipping_:_Free_Shipping')}}</td>
             </tr>
             <tr>
                 <td colspan="3"></td>
-                <td style="font-size: 22px;font-weight:bold;">Total : ${{$order->total}}</td>
+                <td style="font-size: 22px;font-weight:bold;">{{__('mshmk.Total_:')}} ${{$order->total}}</td>
             </tr>
         </tbody>
     </table>

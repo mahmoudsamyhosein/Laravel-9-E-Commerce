@@ -16,3 +16,6 @@ class GuestLayout extends Component
         return view('layouts.guest');
     }
 }
+/*
+خلصانة بشياكة
+*/

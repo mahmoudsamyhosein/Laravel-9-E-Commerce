@@ -1,5 +1,9 @@
 <?php
-
+/*
+*بسم الله الرحمن الرحيم والصلاة والسلام علي أشرف المرسلين سيدنا محمد
+* [لوحة المستخدم] يحتوي هذا الملف علي منطق خواص المنتج .
+*MY_GITHUB_ACCOUNT:https://github.com/mahmoudsamyhosein .
+*/
 namespace App\Http\Livewire;
 
 use App\Models\Product;
@@ -29,7 +33,7 @@ class ShopComponent extends Component
     public function store($product_id,$product_name,$product_price){
 
         Cart::instance('cart')->add($product_id,$product_name,1,$product_price)->associate('App\Models\Product');
-        session()->flash('success_message','Item added in Cart');
+        session()->flash('success_message',trans('mshmk.Item_added_in_Cart!'));
         return redirect()->route('product.cart');
 
     }
@@ -76,3 +80,6 @@ class ShopComponent extends Component
         return view('livewire.shop-component' ,['products'=> $products ,'categories' => $categories , 'popular_products' =>  $popular_products  ])->layout('layouts.base');
     }
 }
+/*
+خلصانة بشياكة
+*/

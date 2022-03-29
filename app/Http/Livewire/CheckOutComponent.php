@@ -1,5 +1,9 @@
 <?php
-
+/*
+*بسم الله الرحمن الرحيم والصلاة والسلام علي أشرف المرسلين سيدنا محمد
+* [لوحة المستخدم] يحتوي هذا الملف علي منطق خواص المنتج .
+*MY_GITHUB_ACCOUNT:https://github.com/mahmoudsamyhosein .
+*/
 namespace App\Http\Livewire;
 
 use App\Mail\OrderMail;
@@ -144,13 +148,12 @@ class CheckOutComponent extends Component
             //قم بانشاء كائن جديد من الموديل orderitem
             $orderItem = new OrderItem();
             $orderItem->product_id = $item->id;
-            $orderItem->order_id = $item->id;
+            $orderItem->order_id = $order->id;
             $orderItem->price = $item->price;
             $orderItem->quantity = $item->qty;
             if($item->options){
               $orderItem->options =  serialize($item->options);
             }
-
             //حقظ بيانات الطلب الجديد
             $orderItem->save();
         }
@@ -205,7 +208,7 @@ class CheckOutComponent extends Component
                     ]
                 ]);
                 if(!isset($token['id'])){
-                    session()->flash('stripe_error','The Stripe Token Was Not Generated Correctly!');
+                    session()->flash('stripe_error',trans('mshmk.The_Stripe_Token_Was_Not_Generated_Correctly!'));
                     $this->thankyou = 0;
                 }
 
@@ -253,7 +256,7 @@ class CheckOutComponent extends Component
 
                 }
                 else{
-                    session()->flash('stripe_error','Error In Transaction!');
+                    session()->flash('stripe_error',trans('mshmk.Error_In_Transaction!'));
                     $this->thankyou = 0;
 
                 }
@@ -311,3 +314,6 @@ class CheckOutComponent extends Component
         return view('livewire.check-out-component')->layout('layouts.base');
     }
 }
+/*
+خلصانة بشياكة
+*/

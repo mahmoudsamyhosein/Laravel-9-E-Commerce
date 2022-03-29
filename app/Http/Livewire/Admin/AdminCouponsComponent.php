@@ -1,5 +1,9 @@
 <?php
-
+/*
+*بسم الله الرحمن الرحيم والصلاة والسلام علي أشرف المرسلين سيدنا محمد
+* [لوحة المدير] يحتوي هذا الملف علي منطق خواص المنتج .
+*MY_GITHUB_ACCOUNT:https://github.com/mahmoudsamyhosein .
+*/
 namespace App\Http\Livewire\Admin;
 
 use Livewire\Component;
@@ -11,7 +15,7 @@ class AdminCouponsComponent extends Component
 
         $coupon = Coupon::find($coupon_id);
         $coupon->delete();
-        session()->flash('message','Coupon Has Been Deleted Successfully !');
+        session()->flash('message',trans('mshmk.Coupon_Has_Been_Deleted_Successfully!'));
     }
 
     public function render()
@@ -20,3 +24,6 @@ class AdminCouponsComponent extends Component
         return view('livewire.admin.admin-coupons-component',['coupons' =>$coupons ])->layout('layouts.base');
     }
 }
+/*
+خلصانة بشياكة
+*/

@@ -1,9 +1,14 @@
 <?php
-
+/*
+*بسم الله الرحمن الرحيم والصلاة والسلام علي أشرف المرسلين سيدنا محمد
+* [لوحة المدير] يحتوي هذا الملف علي منطق خواص المنتج .
+*MY_GITHUB_ACCOUNT:https://github.com/mahmoudsamyhosein .
+*/
 namespace App\Http\Livewire\Admin;
-
+//النماذج [القسم-القسم الفرعي]
 use App\Models\Category;
 use App\Models\Subcategory;
+// أستخدام 
 use Livewire\Component;
 use Illuminate\Support\Str;
 class AdminAddCategoryComponent extends Component
@@ -41,7 +46,7 @@ class AdminAddCategoryComponent extends Component
             $category->save();
         }
         
-        Session()->flash('message','Category Has Been Created Successfully !');
+        Session()->flash('message',trans('mshmk.Category_Has_Been_Created_Successfully!'));
     }
     public function render()
     {
@@ -49,3 +54,6 @@ class AdminAddCategoryComponent extends Component
         return view('livewire.admin.admin-add-category-component',[ 'categories' => $categories])->layout('layouts.base');
     }
 }
+/*
+خلصانة بشياكة
+*/

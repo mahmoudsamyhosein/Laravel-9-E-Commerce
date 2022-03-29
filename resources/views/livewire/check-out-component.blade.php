@@ -46,11 +46,11 @@
 									</p>
 									<p class="row-in-form">
 										<label for="phone">{{__('mshmk.Phone_number')}}<span>*</span></label>
-										<input  type="number" name="phone" placeholder="{{__('mshmk.10_digits_format')}}" wire:model='mobile'>
+										<input  type="text" name="phone" placeholder="{{__('mshmk.10_digits_format')}}" wire:model='mobile'>
 										@error('mobile')<span class="text-danger">{{$message}}</span>@enderror
 									</p>
 									<p class="row-in-form">
-										<label for="add">{{__('mshmk.line1')}}</label>
+										<label for="add">{{__('mshmk.line1')}}<span style="color: red">*</span></label>
 										<input  type="text" name="line1"  placeholder="{{__('mshmk.Street_at_apartment_number')}}" wire:model='line1'>
 										@error('line1')<span class="text-danger">{{$message}}</span>@enderror
 									</p>
@@ -76,7 +76,7 @@
 									</p>
 									<p class="row-in-form">
 										<label for="zip-code">{{__('mshmk.Postcode/ZIP:')}}</label>
-										<input  type="number" name="zip-code" placeholder="{{__('mshmk.Your_postal_code')}}" wire:model='zipcode'>
+										<input  type="text" name="zip-code" placeholder="{{__('mshmk.Your_postal_code')}}" wire:model='zipcode'>
 										@error('zipcode')<span class="text-danger">{{$message}}</span>@enderror
 									</p>
 									<p class="row-in-form fill-wife">
@@ -112,11 +112,11 @@
 									</p>
 									<p class="row-in-form">
 										<label for="phone">{{__('mshmk.Phone_number')}}<span>*</span></label>
-										<input  type="number" name="phone" placeholder="{{__('mshmk.10_digits_format')}}" wire:model='s_mobile'>
+										<input  type="text" name="phone" placeholder="{{__('mshmk.10_digits_format')}}" wire:model='s_mobile'>
 										@error('s_mobile')<span class="text-danger">{{$message}}</span>@enderror
 									</p>
 									<p class="row-in-form">
-										<label for="add">{{__('mshmk.line1')}}</label>
+										<label for="add">{{__('mshmk.line1')}}<span style="color: red">*</span></label>
 										<input  type="text" name="line1"  placeholder="{{__('mshmk.Street_at_apartment_number')}}" wire:model='s_line1'>
 										@error('s_line1')<span class="text-danger">{{$message}}</span>@enderror
 									</p>
@@ -142,7 +142,7 @@
 									</p>
 									<p class="row-in-form">
 										<label for="zip-code">{{__('mshmk.Postcode/ZIP:')}}</label>
-										<input  type="number" name="zip-code" placeholder="{{__('mshmk.Your_postal_code')}}" wire:model='s_zipcode'>
+										<input  type="text" name="zip-code" placeholder="{{__('mshmk.Your_postal_code')}}" wire:model='s_zipcode'>
 										@error('s_zipcode')<span class="text-danger">{{$message}}</span>@enderror
 									</p>
 								</div>		
@@ -192,12 +192,7 @@
 									<span>{{__('mshmk.Debit/Credit_card')}}</span>
 									<span class="payment-desc">{{__('mshmk.Debit/Credit_card_description')}}</span>
 								</label>
-								<label class="payment-method">
-									<input name="payment-method" id="payment-method-paypal" value="paypal" type="radio" wire:model='paymentmode'>
-									<span>{{__('mshmk.Paypal')}}</span>
-									<span class="payment-desc">{{__('mshmk.card_if_you_don\'t_have_a_paypal_account')}}</span>
-								</label>
-								@error('payment-method')<span class="text-danger">{{$message}}</span>@enderror
+								
 							</div>
 							@if(Session::has('checkout'))
 								<p class="summary-info grand-total"><span>{{__('mshmk.Grand_Total')}}</span> <span class="grand-total-price">${{Session::get('checkout')['total']}}</span></p>

@@ -1,5 +1,9 @@
 <?php
-
+/*
+*بسم الله الرحمن الرحيم والصلاة والسلام علي أشرف المرسلين سيدنا محمد
+* [لوحة المدير] يحتوي هذا الملف علي منطق خواص المنتج .
+*MY_GITHUB_ACCOUNT:https://github.com/mahmoudsamyhosein .
+*/
 namespace App\Http\Livewire\Admin;
 
 use App\Models\Order;
@@ -20,7 +24,7 @@ class AdminOrderComponent extends Component
 
         }
         $order->save();
-        session()->flash('order_message','Order Status Has Been Successfully!');
+        session()->flash('order_message',trans('mshmk.Order_Status_Has_Been_Successfully!'));
     }
     public function render()
     {
@@ -28,3 +32,6 @@ class AdminOrderComponent extends Component
         return view('livewire.admin.admin-order-component',['orders' => $orders])->layout('layouts.base');
     }
 }
+/*
+خلصانة بشياكة
+*/

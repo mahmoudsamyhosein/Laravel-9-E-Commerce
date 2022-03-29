@@ -1,5 +1,9 @@
 <?php
-
+/*
+*بسم الله الرحمن الرحيم والصلاة والسلام علي أشرف المرسلين سيدنا محمد
+* [لوحة المدير] يحتوي هذا الملف علي منطق خواص المنتج .
+*MY_GITHUB_ACCOUNT:https://github.com/mahmoudsamyhosein .
+*/
 namespace App\Http\Livewire\Admin;
 
 use App\Models\Page;
@@ -32,7 +36,7 @@ class AdminAddPageComponent extends Component
         $Page->body = $this->body;
         $Page->save();
 
-        session()->flash('message','Page Has Been Added Successfully !');
+        session()->flash('message',trans('mshmk.Page_Has_Been_Added_Successfully!'));
     }
 
     public function render()
@@ -40,3 +44,6 @@ class AdminAddPageComponent extends Component
         return view('livewire.admin.admin-add-page-component')->layout('layouts.base');
     }
 }
+/*
+خلصانة بشياكة
+*/

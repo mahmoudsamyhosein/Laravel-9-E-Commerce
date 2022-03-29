@@ -6,7 +6,7 @@
         display: block !important;
     }
 </style>
-<div>
+<div dir="rtl" style="text-align: right">
     <div class="container" style="padding: 30px 0;">
         <div class="row">
             <div class="col-md-12">
@@ -25,8 +25,8 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>Id</th>
-                                    <th>Name</th>
+                                    <th>{{__('mshmk.Id')}}</th>
+                                    <th>{{__('mshmk.Name')}}</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -37,9 +37,9 @@
                                         <td>
                                             {{-- <a href="{{ route('admin.editpage')}}"><i class="fa fa-edit fa-2x text-info">
                                                 </i>
-                                            </a>
-                                            <a href="#" onclick="confirm('Are You Sure, You Want To Delete This Product ? ') || event.stopImmediatePropagation()" style="margin-left:10px;" 
-                                            wire:click.prevent="destroyproduct('{{$product->id}}')">
+                                            </a> --}}
+                                            {{-- <a href="#" onclick="confirm('Are You Sure, You Want To Delete This Product ? ') || event.stopImmediatePropagation()" style="margin-left:10px;" 
+                                            wire:click.prevent="destroyproduct('{{$page->id}}')">
                                             <i class="fa fa-times fa-2x text-danger"></i></a> --}}
                                         </td>
                                     </tr>

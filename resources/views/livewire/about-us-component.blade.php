@@ -1,4 +1,4 @@
-<div>
+<div >
     	<!--main area-->
 	<main id="main" class="main-site">
 
@@ -6,8 +6,8 @@
 
 			<div class="wrap-breadcrumb">
 				<ul>
-					<li class="item-link"><a href="#" class="link">home</a></li>
-					<li class="item-link"><span>Contact us</span></li>
+					<li class="item-link"><a href="/" class="link">{{__('mshmk.Home')}}</a></li>
+					<li class="item-link"><span>{{__('mshmk.About_us')}}</span></li>
 				</ul>
 			</div>
 		</div>
@@ -67,7 +67,7 @@
 						</div>
 					</div>
 
-					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"dir="rtl" style="text-align: right">
 						<div class="aboutus-info style-small-left">
 							<b class="box-title">Cooperate with Us!</b>
 							<div class="list-showups">

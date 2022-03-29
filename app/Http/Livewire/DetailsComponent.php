@@ -1,7 +1,12 @@
 <?php
-
+/*
+*بسم الله الرحمن الرحيم والصلاة والسلام علي أشرف المرسلين سيدنا محمد
+* [لوحة المستخدم] يحتوي هذا الملف علي منطق تفاصيل المنتج .
+*MY_GITHUB_ACCOUNT:https://github.com/mahmoudsamyhosein .
+*/
 namespace App\Http\Livewire;
 
+use App\Models\AttributeValue;
 use App\Models\Product;
 use App\Models\Sale;
 use Livewire\Component;
@@ -14,7 +19,7 @@ class DetailsComponent extends Component
     public $satt=[];
     public function store($product_id,$product_name,$product_price){
         Cart::instance('cart')->add($product_id,$product_name,$this->qty,$product_price,$this->satt)->associate('App\Models\Product');
-        session()->flush('success_message','Item added in Cart');
+        session()->flash('success_message',trans('mshmk.Item_added_in_Cart'));
         return redirect()->route('product.cart');
 
     } 
@@ -28,7 +33,6 @@ class DetailsComponent extends Component
     public function decreasequantity(){
 
         if($this->qty > 1){
-
             $this->qty--;
         }
     }
@@ -38,6 +42,10 @@ class DetailsComponent extends Component
         $popular_products = Product::inRandomOrder()->limit(5)->get();
         $related_products = Product::where('category_id',$product->category_id)->inRandomOrder()->limit(12)->get();
         $sale = Sale::find(1); 
-        return view('livewire.details-component',[ 'product' => $product ,'popular_products' => $popular_products , 'related_products' => $related_products  ,'sale' =>$sale])->layout('layouts.base');
+        $attributeValues = AttributeValue::all();
+        return view('livewire.details-component',[ 'product' => $product ,'popular_products' => $popular_products , 'related_products' => $related_products  ,'sale' =>$sale ,'attributeValues' =>$attributeValues])->layout('layouts.base');
     }
 }
+/*
+خلصانة بشياكة
+*/

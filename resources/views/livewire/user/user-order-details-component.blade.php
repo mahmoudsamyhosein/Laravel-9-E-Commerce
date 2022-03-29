@@ -1,4 +1,4 @@
-<div>
+<div dir="rtl" style="text-align: right">
     <div class="container" style="padding: 30px 0; text-align:right;" dir="rtl" >
         <div class="row">
             <div class="col-md-12">
@@ -9,29 +9,29 @@
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-md-6">
-                                Order Details
+                                {{__('mshmk.Order_Details')}}
                             </div>
                             <div class="col-md-6">
-                                <a href="{{route('user.orders')}}" class="btn btn-success pull-left">My Orders</a>
+                                <a href="{{route('user.orders')}}" class="btn btn-success pull-left">{{__('mshmk.My_Orders')}}</a>
                                 @if ($order->status == 'ordered')
-                                     <a href="#" class="btn btn-warning pull-right" wire:click.prevent='cancleorder'>Cancel Order</a>
+                                     <a href="#" class="btn btn-warning pull-right" wire:click.prevent='cancleorder'>{{__('mshmk.Cancel_Order')}}</a>
                                 @endif
                             </div>
                         </div>
                     </div>
                     <div class="panel-body">
                         <table class="table">
-                            <th>Order ID</th>
+                            <th>{{__('mshmk.Order_ID')}}</th>
                             <td>{{$order->id}}</td>
-                            <th>Order Date</th>
+                            <th>{{__('mshmk.Order_Date')}}</th>
                             <td>{{$order->created_at}}</td>
-                            <th>Status</th>
+                            <th>{{__('mshmk.Status')}}</th>
                             <td>{{$order->status}}</td>
                             @if ($order->status == 'delivered')
-                            <th>Delivery Date</th>
+                            <th>{{__('mshmk.Delivery_Date')}}</th>
                             <td>{{$order->delivered_date}}</td>
                             @elseif($order->status == 'canceled')
-                                <th>Canceled Date</th>
+                                <th>{{__('mshmk.Canceled_Date')}}</th>
                             <td>{{$order->canceled_date}}</td>
                             @endif
                         </table>
@@ -43,7 +43,7 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Ordered Items
+                        {{__('mshmk.Ordered_Items')}}
                     </div>
                 </div>
                 <div class="panel-body">
@@ -81,7 +81,7 @@
                 <div class="summary">
                     <div class='order-summary'>
                         <h4 class="title-box">
-                            Order Summery
+                           {{__('mshmk.Order_Summery')}}
                         </h4>
                         <p class="summary-info"><span class="title">{{__('mshmk.Subtotal')}}</span></span><b class="index">${{$order->subtotal}}</b></p>                        
                         <p class="summary-info"><span class="title">{{__('mshmk.Tax')}}</span></span><b class="index">{{$order->tax}}</b></p>                        
@@ -95,39 +95,39 @@
                 <div class="col-md-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                        Billing Details
+                        {{__('mshmk.Billing_Details')}}
                         </div>
                         <div class="panel-body">
                             <table class="table">
                                 <tr>
-                                    <th>First Name</th>
+                                    <th>{{__('mshmk.First_Name')}}</th>
                                     <td>{{$order->firstname}}</td>
-                                    <th>Last name</th>
+                                    <th>{{__('mshmk.Last_Name')}}</th>
                                     <td>{{$order->lastname}}</td>
                                 </tr>
                                 <tr>
-                                    <th>Phone</th>
+                                    <th>{{__('mshmk.Phone')}}</th>
                                     <td>{{$order->phone}}</td>
-                                    <th>Email</th>
+                                    <th>{{__('mshmk.Email')}}</th>
                                     <td>{{$order->email}}</td>
                                 </tr>
                                 <tr>
-                                    <th>Line1</th>
+                                    <th>{{__('mshmk.Line1')}}</th>
                                     <td>{{$order->line1}}</td>
-                                    <th>Line2</th>
+                                    <th>{{__('mshmk.Line2')}}</th>
                                     <td>{{$order->line2}}</td>
                                 </tr>
 
                                 <tr>
-                                    <th>City</th>
+                                    <th>{{__('mshmk.City')}}</th>
                                     <td>{{$order->city}}</td>
-                                    <th>Province</th>
+                                    <th>{{__('mshmk.Province')}}</th>
                                     <td>{{$order->province}}</td>
                                 </tr>
                                 <tr>
-                                    <th>Country</th>
+                                    <th>{{__('mshmk.Country')}}</th>
                                     <td>{{$order->country}}</td>
-                                    <th>Zipcode</th>
+                                    <th>{{__('mshmk.Zipcode')}}</th>
                                     <td>{{$order->zipcode}}</td>
                                 </tr>
                             </table> 
@@ -140,40 +140,40 @@
                 <div class="col-md-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                        Shipping Details
+                        {{__('mshmk.Shipping_Details')}}
                         </div>
                     </div>
                     <div class="panel-body">
                         <table class="table">
                             <tr>
-                                <th>First Name</th>
+                                <th>{{__('mshmk.First_Name')}}</th>
                                 <td>{{$order->shipping->firstname}}</td>
-                                <th>Last name</th>
+                                <th>{{__('mshmk.Last_Name')}}</th>
                                 <td>{{$order->shipping->lastname}}</td>
                             </tr>
                             <tr>
-                                <th>Phone</th>
+                                <th>{{__('mshmk.Phone')}}</th>
                                 <td>{{$order->shipping->phone}}</td>
-                                <th>Email</th>
+                                <th>{{__('mshmk.Email')}}</th>
                                 <td>{{$order->shipping->email}}</td>
                             </tr>
                             <tr>
-                                <th>Line1</th>
+                                <th>{{__('mshmk.Line1')}}</th>
                                 <td>{{$order->shipping->line1}}</td>
-                                <th>Line2</th>
+                                <th>{{__('mshmk.Line2')}}</th>
                                 <td>{{$order->shipping->line2}}</td>
                             </tr>
 
                             <tr>
-                                <th>City</th>
+                                <th>{{__('mshmk.City')}}</th>
                                 <td>{{$order->shipping->city}}</td>
-                                <th>Province</th>
+                                <th>{{__('mshmk.Province')}}</th>
                                 <td>{{$order->shipping->province}}</td>
                             </tr>
                             <tr>
-                                <th>Country</th>
+                                <th>{{__('mshmk.Country')}}</th>
                                 <td>{{$order->shipping->country}}</td>
-                                <th>Zipcode</th>
+                                <th>{{__('mshmk.Zipcode')}}</th>
                                 <td>{{$order->shipping->zipcode}}</td>
                             </tr>
                         </table> 
@@ -186,25 +186,25 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                      Transaction
+                      {{__('mshmk.Transaction')}}
                     </div>
                 </div>
-                {{-- <div class="panel-body">
+                <div class="panel-body">
                     <table class="table text-right">
                         <tr>
-                            <th>Transaction Mode </th>
+                            <th>{{__('mshmk.Transaction_Mode')}} </th>
                             <td>{{$order->transaction->mode}}</td>
                         </tr>
                         <tr>
-                            <th>Status</th>
+                            <th>{{__('mshmk.Status')}}</th>
                             <td>{{$order->transaction->status}}</td>
                         </tr>
                         <tr>
-                            <th>Created_at </th>
+                            <th>{{__('mshmk.Created_at')}}</th>
                             <td>{{$order->transaction->created_at}}</td>
                         </tr>
                     </table>
-                </div> --}}
+                </div>
             </div>
         </div>
     </div>

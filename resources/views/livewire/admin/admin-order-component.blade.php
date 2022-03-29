@@ -1,4 +1,4 @@
-<div>
+<div dir="rtl" style="text-align: right">
     <style>
         nav svg{
             height: 20px;
@@ -14,7 +14,7 @@
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    All Orders 
+                     {{__('mshmk.All_Orders')}}
                 </div>
             </div>
             <div class="panel-body">
@@ -24,19 +24,19 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th>Id</th>
-                            <th>Subtotal</th>
-                            <th>Discount</th>
-                            <th>Tax</th>
-                            <th>Total</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Mobile</th>
-                            <th>Email</th>
-                            <th>Zipcode</th>
-                            <th>Status</th>
-                            <th>Order Date</th>
-                            <th colspan="2" class="text-center">Action</th>
+                            <th>{{__('mshmk.Id')}}</th>
+                            <th>{{__('mshmk.Subtotal')}}</th>
+                            <th>{{__('mshmk.Discount')}}</th>
+                            <th>{{__('mshmk.Tax')}}</th>
+                            <th>{{__('mshmk.Total')}}</th>
+                            <th>{{__('mshmk.First_Name')}}</th>
+                            <th>{{__('mshmk.Last_Name')}}</th>
+                            <th>{{__('mshmk.Mobile')}}</th>
+                            <th>{{__('mshmk.Email')}}</th>
+                            <th>{{__('mshmk.Zipcode')}}</th>
+                            <th>{{__('mshmk.Status')}}</th>
+                            <th>{{__('mshmk.Order_Date')}}</th>
+                            <th colspan="2" class="text-center">{{__('mshmk.Action')}}</th>
 
                         </tr>
                     </thead>
@@ -55,16 +55,16 @@
                                 <td>{{$order->zipcode}}</td>
                                 <td>{{$order->status}}</td>
                                 <td>{{$order->created_at}}</td>
-                                <td><a href="{{route('admin.order_details',['order_id' => $order->id ])}}" class="btn btn-info btn-sm">Details</a></td>
+                                <td><a href="{{route('admin.order_details',['order_id' => $order->id ])}}" class="btn btn-info btn-sm">{{__('mshmk.Details')}}</a></td>
                                 <td>
                                     <div class="dropdown">
                                         <button class="btn btn-success btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-                                            Status
+                                            {{__('mshmk.Status')}}
                                             <span class="caret"></span>
                                         </button>
                                         <ul class="dropdown-menu">
-                                            <li><a href="#" wire:click.prevent="updateOrderStatus({{$order->id}},'delivered')">Delivered</a></li>
-                                            <li><a href="#" wire:click.prevent="updateOrderStatus({{$order->id}},'canceled')">Canceled</a></li>
+                                            <li><a href="#" wire:click.prevent="updateOrderStatus({{$order->id}},'delivered')">{{__('mshmk.Delivered')}}</a></li>
+                                            <li><a href="#" wire:click.prevent="updateOrderStatus({{$order->id}},'canceled')">{{__('mshmk.Canceled')}}</a></li>
                                         </ul>
                                     </div>
                                 </td>

@@ -1,4 +1,4 @@
-<div>
+<div dir="rtl" style="text-align: right">
     <div class="container" style="padding: 30px 0;">
         <div class="row">
             <div class="col-md-12">
@@ -8,7 +8,7 @@
 										<div class="wrap-review-form">
 											
 											<div id="comments">
-												<h2 class="woocommerce-Reviews-title">Add Review For</h2>
+												<h2 class="woocommerce-Reviews-title">{{__('mshmk.Add_Review_For')}}</h2>
 												<ol class="commentlist">
 													<li class="comment byuser comment-author-admin bypostauthor even thread-even depth-1" id="li-comment-20">
 														<div id="comment-20" class="comment_container"> 
@@ -31,7 +31,7 @@
 														<form  id="commentform" class="comment-form"  wire:submit.prevent='addreview' > 
                                                             @csrf
 															<div class="comment-form-rating">
-																<span>Your Rating</span>
+																<span>{{__('mshmk.Your_Rating')}}</span>
 																<p class="stars">
 																	<label for="rated-1"></label>
 																	<input type="radio" id="rated-1" name="rating" value="1" wire:model='rating'>
@@ -49,7 +49,7 @@
 																</p>
 															</div>
 															<p class="comment-form-comment">
-																<label for="comment">Your Review <span class="required" style="color: red;">*</span>
+																<label for="comment">{{__('mshmk.Your_Review')}}<span class="required" style="color: red;">*</span>
 																</label>
 																<textarea id="comment" name="comment" cols="45" rows="8" wire:model='comment'></textarea>
                                                                 @error('comment')
@@ -57,7 +57,7 @@
                                                             @enderror
 															</p>
 															<p class="form-submit">
-																<input name="submit" type="submit" id="submit" class="submit" value="Submit">
+																<input name="submit" type="submit" id="submit" class="submit" value="{{__('mshmk.Submit')}}">
 															</p>
 														</form>
 

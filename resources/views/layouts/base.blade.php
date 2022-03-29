@@ -162,7 +162,7 @@
 								@endif
 							</ul>
 						</div>
-						<div class="topbar-menu right-menu">
+						{{-- <div class="topbar-menu right-menu">
 							<ul>
 								<li class="menu-item lang-menu menu-item-has-children parent">
 									<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
@@ -182,8 +182,8 @@
 									</div>
 								</li>
 							</ul>
-						</div>
-						<div class="topbar-menu left-menu" style="margin-right:10px;">
+						</div> --}}
+						<div class="topbar-menu left-menu" style="margin-right:25px;">
 							<ul>
 								<li class="menu-item menu-item-has-children parent">
 									<a title="Dollar (USD)" href="#">Dollar (USD)<i class="fa fa-angle-down"
@@ -213,8 +213,6 @@
 						</div>
 						@livewire('header-search-component')
 						<div class="wrap-icon right-section" >
-							@livewire('wish-list-count-component')
-							@livewire('cart-count-component')
 							<div class="wrap-icon-section show-up-after-1024">
 								<a href="#" class="mobile-navigation">
 									<span></span>
@@ -222,6 +220,9 @@
 									<span></span>
 								</a>
 							</div>
+							@livewire('wish-list-count-component')
+							@livewire('cart-count-component')
+							
 						</div>
 					</div>
 				</div>

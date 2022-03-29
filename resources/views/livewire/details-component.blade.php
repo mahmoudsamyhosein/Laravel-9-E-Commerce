@@ -2,7 +2,7 @@
 <!--main area-->
 	<main id="main" class="main-site" >
 		<div class="container">
-			<div class="wrap-breadcrumb">
+			<div class="wrap-breadcrumb" dir="rtl">
 				<ul>
 					<li class="item-link"><a href="/" class="link">{{__('mshmk.Home')}}</a></li>
 					<li class="item-link"><span>{{__('mshmk.product_details')}}</span></li>
@@ -51,7 +51,7 @@
 											<i class="fa fa-star color-grey" aria-hidden="true"></i>
 										@endif
 									@endfor
-									<a href="#" class="count-review">( {{$product->orderItems->where('rstatus',1)->count()}} Review )</a>
+									<a href="#" class="count-review">( {{$product->orderItems->where('rstatus',1)->count()}} {{__('mshmk.Review')}} )</a>
 
 								</div>
 								<h2 class="product-name">{{ $product->name }}</h2>
@@ -62,7 +62,7 @@
 								</div>
 								
 								@if($product->sale_price > 0 && $sale->status == 1 && $sale->sale_date > Carbon\Carbon::now() )
-								<div class="wrap-price"><ins><p class="product-price">${{$product->sale_price}}</p></ins> <del><p class="product-price">${{$product->regular_price}}</p></del></div>
+								<div class="wrap-price" ><ins><p class="product-price">${{$product->sale_price}}</p></ins> <del><p class="product-price">${{$product->regular_price}}</p></del></div>
 								@else
 									<div class="wrap-price"><span class="product-price">${{ $product->regular_price }}</span></div>
 								@endif
@@ -100,38 +100,18 @@
 									@else
 										<a href="#" class="btn add-to-cart" wire:click.prevent="store( {{ $product->id }},{{ $product->name }},{{ $product->regular_price }} )">{{__('mshmk.Add_To_Cart')}}</a>
 									@endif
-									<div class="wrap-btn">
-										<a href="#"  class="btn btn-wishlist">{{__('mshmk.Add_Wishlist')}}</a>
-									</div>
+									
 								</div>
 							</div>
 							<div class="advance-info">
 								<div class="tab-control normal">
 									<a href="#description" class="tab-control-item active">{{__('mshmk.description')}}</a>
-									<a href="#add_infomation" class="tab-control-item">{{__('mshmk.Addtional_Infomation')}}</a>
 									<a href="#review" class="tab-control-item">{{__('mshmk.Reviews')}}</a>
 								</div>
 								<div class="tab-contents">
 									<div class="tab-content-item active" id="description">
 										{!! $product->description !!}
 									</div>
-									{{-- جدول وصف المنتج --}}
-									<div class="tab-content-item " id="add_infomation">
-										<table class="shop_attributes">
-											<tbody>
-												<tr>
-													<th>Weight</th><td class="product_weight">1 kg</td>
-												</tr>
-												<tr>
-													<th>Dimensions</th><td class="product_dimensions">12 x 15 x 23 cm</td>
-												</tr>
-												<tr>
-													<th>Color</th><td><p>Black, Blue, Grey, Violet, Yellow</p></td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
-									{{-- جدول وصف المنتج --}}
 								{{-- مراجعات المنتج--}}
 									<div class="tab-content-item " id="review"dir="rtl" style="text-align: right">
 										<div class="wrap-review-form">

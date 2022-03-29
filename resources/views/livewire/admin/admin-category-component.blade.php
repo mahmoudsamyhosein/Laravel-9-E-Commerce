@@ -1,4 +1,4 @@
-<div>
+<div dir="rtl" style="text-align: right">
     <style>
         nav svg {
             height: 20px;
@@ -27,10 +27,10 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <div class="col-md-6">
-                            All Catgories
+                            {{__('mshmk.All_Categories')}}
                         </div>
                         <div class="col-md-6">
-                            <a href="{{ route('admin.addcategory') }}" class="btn btn-success pull-right">ADD New</a>
+                            <a href="{{ route('admin.addcategory') }}" class="btn btn-success pull-right">{{__('mshmk.ADD_New')}}</a>
                         </div>
                     </div>
                     <div class="panel-body">
@@ -42,11 +42,11 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>Id</th>
-                                    <th>Category Name</th>
-                                    <th>Slug</th>
-                                    <th>Sub Category</th>
-                                    <th>Action</th>
+                                    <th>{{__('mshmk.Id')}}</th>
+                                    <th>{{__('mshmk.Category_Name')}}</th>
+                                    <th>{{__('mshmk.Slug')}}</th>
+                                    <th>{{__('mshmk.Sub_Category')}}</th>
+                                    <th>{{__('mshmk.Action')}}</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -70,7 +70,7 @@
                                             href="{{route('admin.editcategory' ,['category_slug'=>$category->slug ] )}}"><i
                                                 class="fa fa-edit fa-2x"></i></a> 
                                         <a href="#"
-                                            onclick="confirm('Are You Sure, You Want to delete this Category?') || event.stopImmediatePropagation()"
+                                            onclick="confirm('{{__('mshmk.Are_You_Sure,You_Want_to_delete_this_Category?')}}') || event.stopImmediatePropagation()"
                                             wire:click.prevent='destroycategory({{$category->id}})'
                                             style="margin-left:10px;"><i class="fa fa-times fa-2x text-danger"></i></a>
                                     </td>

@@ -1,5 +1,9 @@
 <?php
-
+/*
+*بسم الله الرحمن الرحيم والصلاة والسلام علي أشرف المرسلين سيدنا محمد
+* [لوحة المستخدم] يحتوي هذا الملف علي منطق خواص المنتج .
+*MY_GITHUB_ACCOUNT:https://github.com/mahmoudsamyhosein .
+*/
 namespace App\Http\Livewire\User;
 
 use App\Models\Order;
@@ -21,7 +25,7 @@ class UserOrderDetailsComponent extends Component
         $order->status = "canceled";
         $order->canceled_date = DB::raw('CURRENT_DATE');
         $order->save();
-        session()->flash('order_message','Order Has Been Canceled!');
+        session()->flash('order_message',trans('mshmk.Order_Has_Been_Canceled!'));
     }
     public function render()
     {
@@ -29,3 +33,6 @@ class UserOrderDetailsComponent extends Component
         return view('livewire.user.user-order-details-component',['order' => $order])->layout('layouts.base');
     }
 }
+/*
+خلصانة بشياكة
+*/

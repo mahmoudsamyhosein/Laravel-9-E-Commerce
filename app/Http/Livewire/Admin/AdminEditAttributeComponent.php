@@ -1,5 +1,9 @@
 <?php
-
+/*
+*بسم الله الرحمن الرحيم والصلاة والسلام علي أشرف المرسلين سيدنا محمد
+* [لوحة المدير] يحتوي هذا الملف علي منطق خواص المنتج .
+*MY_GITHUB_ACCOUNT:https://github.com/mahmoudsamyhosein .
+*/
 namespace App\Http\Livewire\Admin;
 
 use App\Models\ProductAttribute;
@@ -26,7 +30,7 @@ class AdminEditAttributeComponent extends Component
         $pattribute = ProductAttribute::find($this->attribute_id);
         $pattribute->name = $this->name;
         $pattribute->save();
-        session()->flash('message','Attribute Has Been Updated Successfully!');
+        session()->flash('message',trans('mshmk.Attribute_Has_Been_Updated_Successfully!'));
     }
 
     public function render()
@@ -34,3 +38,6 @@ class AdminEditAttributeComponent extends Component
         return view('livewire.admin.admin-edit-attribute-component')->layout('layouts.base');
     }
 }
+/*
+خلصانة بشياكة
+*/

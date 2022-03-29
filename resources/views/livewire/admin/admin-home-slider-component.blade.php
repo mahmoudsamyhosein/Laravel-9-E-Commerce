@@ -1,4 +1,4 @@
-<div>
+<div dir="rtl" style="text-align: right">
     <div class="container" style="padding: 30px 0;">
         <div class="row">
             <div class="col-md-12">
@@ -6,11 +6,11 @@
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-md-6">
-                                All Slides
+                                {{__('mshmk.All_Slides')}}
                             </div>
                             <div class="col-md-6">
                                 <a href="{{route('admin.addhomeslider')}}" class="btn btn-success pull-right">
-                                    Add New Slide
+                                    {{__('mshmk.Add_New_Slide')}}
                                 </a>
                             </div>
                         </div>
@@ -22,15 +22,15 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Id</th>
-                                    <th>Image</th>
-                                    <th>Title</th>
-                                    <th>Subtitle</th>
-                                    <th>Price</th>
-                                    <th>Link</th>
-                                    <th>Status</th>
-                                    <th>Date</th>
-                                    <th>Action</th>
+                                    <th>{{__('mshmk.Id')}}</th>
+                                    <th>{{__('mshmk.Image')}}</th>
+                                    <th>{{__('mshmk.Title')}}</th>
+                                    <th>{{__('mshmk.Subtitle')}}</th>
+                                    <th>{{__('mshmk.Price')}}</th>
+                                    <th>{{__('mshmk.Link')}}</th>
+                                    <th>{{__('mshmk.Status')}}</th>
+                                    <th>{{__('mshmk.Date')}}</th>
+                                    <th>{{__('mshmk.Action')}}</th>
                                 </tr>
                             </thead>
                             <tbody>

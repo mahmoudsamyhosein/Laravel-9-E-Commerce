@@ -1,5 +1,9 @@
 <?php
-
+/*
+*بسم الله الرحمن الرحيم والصلاة والسلام علي أشرف المرسلين سيدنا محمد
+* [لوحة المدير] يحتوي هذا الملف علي منطق خواص المنتج .
+*MY_GITHUB_ACCOUNT:https://github.com/mahmoudsamyhosein .
+*/
 namespace App\Http\Livewire\Admin;
 
 use Livewire\Component;
@@ -46,7 +50,7 @@ class AdminAddCouponComponent extends Component
        // قم بحفظ البيانات بأستخدام التابع save
        $coupon->save();
        //بعد ذلك قم بطباعه الرسالة التالية لجلسة المستخدم
-       session()->flash('message','coupon Has Been Saved Successfully!');
+       session()->flash('message',trans('mshmk.coupon_Has_Been_Saved_Successfully!'));
     }
 
     public function render()
@@ -55,3 +59,6 @@ class AdminAddCouponComponent extends Component
         return view('livewire.admin.admin-add-coupon-component')->layout('layouts.base');
     }
 }
+/*
+خلصانة بشياكة
+*/

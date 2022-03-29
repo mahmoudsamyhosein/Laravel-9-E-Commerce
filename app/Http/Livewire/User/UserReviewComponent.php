@@ -1,5 +1,9 @@
 <?php
-
+/*
+*بسم الله الرحمن الرحيم والصلاة والسلام علي أشرف المرسلين سيدنا محمد
+* [لوحة المستخدم] يحتوي هذا الملف علي منطق خواص المنتج .
+*MY_GITHUB_ACCOUNT:https://github.com/mahmoudsamyhosein .
+*/
 namespace App\Http\Livewire\User;
 
 use App\Models\OrderItem;
@@ -36,7 +40,7 @@ class UserReviewComponent extends Component
         $orderItem = OrderItem::find($this->order_item_id);
         $orderItem->rstatus = true;
         $orderItem->save();
-        session()->flash('mesage','Your Review Has Been Added Successfully!');
+        session()->flash('mesage',trans('mshmk.Your_Review_Has_Been_Added_Successfully!'));
     }
     public function render()
     {
@@ -44,3 +48,6 @@ class UserReviewComponent extends Component
         return view('livewire.user.user-review-component',['orderItem' => $orderItem])->layout('layouts.base');
     }
 }
+/*
+خلصانة بشياكة
+*/

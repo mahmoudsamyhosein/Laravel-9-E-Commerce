@@ -1,5 +1,9 @@
 <?php
-
+/*
+*بسم الله الرحمن الرحيم والصلاة والسلام علي أشرف المرسلين سيدنا محمد
+*يحتوي هذا الملف علي مسارات التطبيق  .
+*MY_GITHUB_ACCOUNT:https://github.com/mahmoudsamyhosein .
+*/
 use App\Http\Livewire\AboutUsComponent;
 use App\Http\Livewire\Admin\AdminAddAttributeComponent;
 use App\Http\Livewire\Admin\AdminAddCategoryComponent;
@@ -56,7 +60,8 @@ use Illuminate\Support\Facades\Route;
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
-|
+| يحتوي هذا الملف علي مسارات التطبيق 
+| لعرض المسارات يرجي كتابة الأمر 
 */
 //مسار الرئيسية
 Route::get('/',HomeComponent::class);
@@ -140,3 +145,6 @@ Route::middleware(['auth:sanctum', 'verified','authadmin'])->group(function(){
 });
 //مبدل اللغات
 Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);
+/*
+خلصانة بشياكة
+*/

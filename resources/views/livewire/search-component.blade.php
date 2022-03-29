@@ -1,12 +1,10 @@
 <div>	
 <main id="main" class="main-site right-sidebar" dir="rtl" style="text-align: right">
-
 		<div class="container">
-
 			<div class="wrap-breadcrumb">
 				<ul>
 					<li class="item-link"><a href="/" class="link">{{__('mshmk.home')}}</a></li>
-					<li class="item-link"><span>{{__('mshmk.Shop')}}</span></li>
+					<li class="item-link"><span>{{__('mshmk.Search')}}</span></li>
 				</ul>
 			</div>
 			<div class="row">
@@ -20,7 +18,7 @@
 					</div>
 
 					<div class="wrap-shop-control" dir="rtl" style="text-align: right">
-						<h1 class="shop-title" >{{__('mshmk.Shop')}}</h1>
+						<h1 class="shop-title" >{{__('mshmk.Search')}}</h1>
 						<div class="wrap-right">
 
 							<div class="sort-item orderby ">
@@ -89,49 +87,6 @@
 							</ul>
 						</div>
 					</div><!-- Categories widget-->
-
-
-					<div class="widget mercado-widget filter-widget price-filter">
-						<h2 class="widget-title">Price</h2>
-						<div class="widget-content">
-							<div id="slider-range"></div>
-							<p>
-								<label for="amount">Price:</label>
-								<input type="text" id="amount" readonly>
-								<button class="filter-submit">Filter</button>
-							</p>
-						</div>
-					</div><!-- Price-->
-
-					<div class="widget mercado-widget filter-widget">
-						<h2 class="widget-title">{{__('mshmk.Color')}}</h2>
-						<div class="widget-content">
-							<ul class="list-style vertical-list has-count-index">
-								<li class="list-item"><a class="filter-link " href="#">Red <span>(217)</span></a></li>
-								<li class="list-item"><a class="filter-link " href="#">Yellow <span>(179)</span></a></li>
-								<li class="list-item"><a class="filter-link " href="#">Black <span>(79)</span></a></li>
-								<li class="list-item"><a class="filter-link " href="#">Blue <span>(283)</span></a></li>
-								<li class="list-item"><a class="filter-link " href="#">Grey <span>(116)</span></a></li>
-								<li class="list-item"><a class="filter-link " href="#">Pink <span>(29)</span></a></li>
-							</ul>
-						</div>
-					</div><!-- Color -->
-
-					<div class="widget mercado-widget filter-widget">
-						<h2 class="widget-title">{{__('mshmk.Size')}}</h2>
-						<div class="widget-content">
-							<ul class="list-style inline-round ">
-								<li class="list-item"><a class="filter-link active" href="#">s</a></li>
-								<li class="list-item"><a class="filter-link " href="#">M</a></li>
-								<li class="list-item"><a class="filter-link " href="#">l</a></li>
-								<li class="list-item"><a class="filter-link " href="#">xl</a></li>
-							</ul>
-							<div class="widget-banner">
-								<figure><img src="{{ asset ('assets/images/size-banner-widget.jpg') }}" width="270" height="331" alt=""></figure>
-							</div>
-						</div>
-					</div><!-- Size -->
-
 					<div class="widget mercado-widget widget-product">
 						<h2 class="widget-title">{{__('mshmk.Popular_Products')}}</h2>
 						<div class="widget-content">

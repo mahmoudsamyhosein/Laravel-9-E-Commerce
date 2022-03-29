@@ -4,7 +4,7 @@
 		<div class="container">
 			<div class="wrap-breadcrumb">
 				<ul>
-					<li class="item-link"><a href="/" class="link">{{__('mshmk.home')}}</a></li>
+					<li class="item-link"><a href="/" class="link">{{__('mshmk.Home')}}</a></li>
 					<li class="item-link"><span>{{__('mshmk.Cart')}}</span></li>
 				</ul>
 			</div>
@@ -27,16 +27,16 @@
 										<div class="product-name">
 											<a class="link-to-product" href="{{ route('products.details' ,['slug' => $item->model->slug ]) }}">{{$item->model->name}}</a>
 										</div>
-										<div class="price-field produtc-price"><p class="price">${{ $item->model->regular_price }}</p></div>
+										<div class="price-field product-price"><p class="price">${{ $item->model->regular_price }}</p></div>
 										<div class="quantity">
 											<div class="quantity-input">
-												<input type="text" name="product-quatity" value="{{ $item->qty }}" data-max="120" pattern="[0-9]*" >									
-												<a class="btn btn-increase" href="#" wire:click.prevent="increasecartby_1({{ $item->rowId }})"></a>
-												<a class="btn btn-reduce" href="#"wire:click.prevent="decreasecartby_1({{ $item->rowId }})"></a>
+												<input type="text" name="product-quatity" value="{{$item->qty}}" data-max="120" pattern="[0-9]*" >									
+												<a class="btn btn-increase" href="#" wire:click.prevent="increase_quantity('{{$item->rowId}}')"></a>
+												<a class="btn btn-reduce" href="#" wire:click.prevent="decrease_quantity('{{$item->rowId}}')"></a>
 											</div>
 											<p class="text-center"><a href="#" wire:click.prevent="switchToSaveForLater('{{$item->rowId}}')">{{__('mshmk.Saved_For_Later')}}</a></p>
 										</div>
-										<div class="price-field sub-total"><p class="price">${{ $item->sub_total}}</p></div>
+										<div class="price-field sub-total"><p class="price">${{ $item->subtotal}}</p></div>
 										<div class="delete">
 											<a href="#" class="btn btn-delete" title="" wire:click.prevent="destroy({{$item->rowId}})">
 												<span>{{__('mshmk.Delete_from_your_cart')}}</span>
@@ -54,7 +54,7 @@
 				<div class="summary" >
 					<div class="order-summary">
 						<h4 class="title-box">{{__('mshmk.Order_Summary')}}</h4>
-						<p class="summary-info"><span class="title">{{__('mshmk.Subtotal')}}</span><b class="index">${{ Cart::instance()->subtotal() }}</b></p>
+						<p class="summary-info" ><span class="title">{{__('mshmk.Subtotal')}}</span><b class="index">${{ Cart::instance('cart')->subtotal() }}</b></p>
 						@if(Session::has('coupon'))
 							<p class="summary-info"><span class="title">{{__('mshmk.Discount')}}({{Session::get('coupon')['code']}}) <a href="#" wire:click.prevent= "removeCoupon"><i class="fa fa-times text-danger"></i></a></span></span><b class="index"> -${{number_format($discount,2)}}</b></p>
 							<p class="summary-info"><span class="title">{{__('mshmk.Subtotal_with_Discount')}}</span></span><b class="index">${{number_format($subtotalAfterDiscount,2)}}</b></p>

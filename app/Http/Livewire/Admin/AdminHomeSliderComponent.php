@@ -1,5 +1,9 @@
 <?php
-
+/*
+*بسم الله الرحمن الرحيم والصلاة والسلام علي أشرف المرسلين سيدنا محمد
+* [لوحة المدير] يحتوي هذا الملف علي منطق خواص المنتج .
+*MY_GITHUB_ACCOUNT:https://github.com/mahmoudsamyhosein .
+*/
 namespace App\Http\Livewire\Admin;
 
 use App\Models\Homeslider;
@@ -11,7 +15,7 @@ class AdminHomeSliderComponent extends Component
 
         $slider = Homeslider::find($slide_id);
         $slider->delete();
-        Session()->flash('message','Slider Has Been Deleted Successfully!');
+        Session()->flash('message',trans('mshmk.Slider_Has_Been_Deleted_Successfully!'));
 
     }
     public function render()
@@ -20,3 +24,6 @@ class AdminHomeSliderComponent extends Component
         return view('livewire.admin.admin-home-slider-component' ,['sliders' => $sliders ])->layout('layouts.base');
     }
 }
+/*
+خلصانة بشياكة
+*/

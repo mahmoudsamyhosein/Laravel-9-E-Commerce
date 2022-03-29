@@ -1,5 +1,9 @@
 <?php
-
+/*
+*بسم الله الرحمن الرحيم والصلاة والسلام علي أشرف المرسلين سيدنا محمد
+* [لوحة المدير] يحتوي هذا الملف علي منطق خواص المنتج .
+*MY_GITHUB_ACCOUNT:https://github.com/mahmoudsamyhosein .
+*/
 namespace App\Http\Livewire\Admin;
 
 use App\Models\Setting;
@@ -86,7 +90,7 @@ class AdminSettingComponent extends Component
         $setting->instagram = $this->instagram;
         $setting->youtube = $this->youtube;
         $setting->save();
-        Session()->flash('message','Setting Has Been Saved!');
+        Session()->flash('message',trans('mshmk.Setting_Has_Been_Saved!'));
     }
 
 
@@ -97,3 +101,6 @@ class AdminSettingComponent extends Component
         return view('livewire.admin.admin-setting-component')->layout('layouts.base');
     }
 }
+/*
+خلصانة بشياكة
+*/

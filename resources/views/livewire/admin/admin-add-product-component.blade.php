@@ -5,11 +5,11 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <div class="row">
-                            <div class="col-md-6">
-                                Add New Product
+                            <div class="col-md-6  pull-right">
+                                {{__('mshmk.Add_New_Product')}}
                             </div>
                             <div class="col-md-6">
-                                <a href="{{route('admin.products')}}" class="btn btn-success pull-right">All Products</a>
+                                <a href="{{route('admin.products')}}" class="btn btn-success">{{__('mshmk.All_Products')}}</a>
                             </div>
                             <div class="panel-body">
                                 @if(Session::has('message'))
@@ -18,84 +18,84 @@
                                 <form class="form-horizontal" enctype="multipart/form-data" wire:submit.prevent='addproduct'>
                                     @csrf
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label">Product Name</label>
+                                        <label class="col-md-4 control-label">{{__('mshmk.Product_Name')}}</label>
                                         <div class="col-md-4">
-                                            <input type="text" placeholder="Product Name"  class="form-control input-md" wire:model='name' wire:keyup='generateslug'>
+                                            <input type="text" placeholder="{{__('mshmk.Product_Name')}}"  class="form-control input-md" wire:model='name' wire:keyup='generateslug'>
                                             @error('name') <p class="text-danger">{{$message}}</p> @enderror
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label">Product Slug</label>
+                                        <label class="col-md-4 control-label">{{__('mshmk.Product_Slug')}}</label>
                                         <div class="col-md-4">
-                                            <input type="text" placeholder="Product Slug"  class="form-control input-md" wire:model='slug'>
+                                            <input type="text" placeholder="{{__('mshmk.Product_Slug')}}"  class="form-control input-md" wire:model='slug'>
                                             @error('slug') <p class="text-danger">{{$message}}</p> @enderror
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label">Short Description</label>
+                                        <label class="col-md-4 control-label">{{__('mshmk.Short_Description')}}</label>
                                         <div class="col-md-4" wire:ignore>
-                                            <textarea type="text" id="short_description" placeholder="Short Description"  class="form-control" wire:model='short_description'></textarea>
+                                            <textarea type="text" id="short_description" placeholder="{{__('mshmk.Short_Description')}}"  class="form-control" wire:model='short_description'></textarea>
                                             @error('short_description') <p class="text-danger">{{$message}}</p> @enderror
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label">Description</label>
+                                        <label class="col-md-4 control-label">{{__('mshmk.Description')}}</label>
                                         <div class="col-md-4" wire:ignore>
-                                            <textarea type="text" id="description" placeholder="Description"  class="form-control" wire:model='description'></textarea>
+                                            <textarea type="text" id="description" placeholder="{{__('mshmk.Description')}}"  class="form-control" wire:model='description'></textarea>
                                             @error('description') <p class="text-danger">{{$message}}</p> @enderror
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label">Regular Price</label>
+                                        <label class="col-md-4 control-label">{{__('mshmk.Regular_Price')}}</label>
                                         <div class="col-md-4">
-                                            <input type="text" placeholder="Regular Price" class="form-control input-md" wire:model='regular_price'>
+                                            <input type="text" placeholder="{{__('mshmk.Regular_Price')}}" class="form-control input-md" wire:model='regular_price'>
                                             @error('regular_price') <p class="text-danger">{{$message}}</p> @enderror
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label">Sale Price</label>
+                                        <label class="col-md-4 control-label">{{__('mshmk.Sale_Price')}}</label>
                                         <div class="col-md-4">
-                                            <input type="text" placeholder="Sale Price" class="form-control input-md" wire:model='sale_price'>
+                                            <input type="text" placeholder="{{__('mshmk.Sale_Price')}}" class="form-control input-md" wire:model='sale_price'>
                                             @error('sale_price') <p class="text-danger">{{$message}}</p> @enderror
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label">SKU</label>
+                                        <label class="col-md-4 control-label">{{__('mshmk.SKU')}}</label>
                                         <div class="col-md-4">
-                                            <input type="text" placeholder="SKU" class="form-control input-md" wire:model='SKU'>
+                                            <input type="text" placeholder="{{__('mshmk.SKU')}}" class="form-control input-md" wire:model='SKU'>
                                             @error('SKU') <p class="text-danger">{{$message}}</p> @enderror
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label">Stock</label>
+                                        <label class="col-md-4 control-label">{{__('mshmk.Stock')}}</label>
                                         <div class="col-md-4">
                                             <select class="form-control" wire:model='stock_status'>
                                                 
-                                                <option value="instock">In Stock </option>
-                                                <option value="outofstock">Out Of Stock </option>
+                                                <option value="instock"> {{__('mshmk.In_Stock')}}</option>
+                                                <option value="outofstock">{{__('mshmk.Out_Of_Stock')}}</option>
                                             </select>
                                             @error('stock_status') <p class="text-danger">{{$message}}</p> @enderror
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label">Featured</label>
+                                        <label class="col-md-4 control-label">{{__('mshmk.Featured')}}</label>
                                         <div class="col-md-4">
                                             <select class="form-control" wire:model='featured'>
                                                
-                                                <option value="0">No</option>
-                                                <option value="1">Yes</option>
+                                                <option value="0">{{__('mshmk.No')}}</option>
+                                                <option value="1">{{__('mshmk.Yes')}}</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label">Quantity</label>
+                                        <label class="col-md-4 control-label">{{__('mshmk.Quantity')}}</label>
                                         <div class="col-md-4">
-                                            <input type="text" placeholder="Quantity" class="form-control input-md" wire:model='quantity'>
+                                            <input type="text" placeholder="{{__('mshmk.Quantity')}}" class="form-control input-md" wire:model='quantity'>
                                             @error('quantity') <p class="text-danger">{{$message}}</p> @enderror
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label">Product Image</label>
+                                        <label class="col-md-4 control-label">{{__('mshmk.Product_Image')}}</label>
                                         <div class="col-md-4">
                                             <input type="file" class="input-file" wire:model='image'>
                                             @if($image)
@@ -105,7 +105,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label">Product Gallery</label>
+                                        <label class="col-md-4 control-label">{{__('mshmk.Product_Gallery')}}</label>
                                         <div class="col-md-4">
                                             <input type="file" class="input-file" wire:model='images' multiple >
                                             @if($images)
@@ -117,11 +117,11 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label">Category</label>
+                                        <label class="col-md-4 control-label">{{__('mshmk.Category')}}</label>
                                         <div class="col-md-4">
                                             <select class="form-control" wire:model='category_id' wire:change='changesubcategory'>
                                                 
-                                                <option value="">Select Category</option>
+                                                <option value="">{{__('mshmk.Select_Category')}}</option>
                                                 @foreach ($categories as $category)
                                                     <option value="{{$category->id}}">{{$category->name}}</option>
                                                 @endforeach
@@ -131,11 +131,11 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label">Sub Category</label>
+                                        <label class="col-md-4 control-label">{{__('mshmk.Sub_Category')}}</label>
                                         <div class="col-md-4">
                                             <select class="form-control" wire:model='scategory_id'>
                                                 
-                                                <option value="0">Select Sub Category</option>
+                                                <option value="0">{{__('mshmk.Select_Sub_Category')}}</option>
                                                 @foreach ($scategories as $scategory)
                                                     <option value="{{$scategory->id}}">{{$scategory->name}}</option>
                                                 @endforeach
@@ -145,11 +145,11 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label">Product Attributes</label>
+                                        <label class="col-md-4 control-label">{{__('mshmk.Product_Attributes')}}</label>
                                         <div class="col-md-3">
                                             <select class="form-control" wire:model='attr'>
                                                 
-                                                <option value="0">Select Attribute</option>
+                                                <option value="0">{{__('mshmk.Select_Attribute')}}</option>
                                                 @foreach ($pattributes as $pattribute)
                                                     <option value="{{$pattribute->id}}">{{$pattribute->name}}</option>
                                                 @endforeach
@@ -157,7 +157,7 @@
                                         </div>
                                         <div class="col-md-1">
                                             <button type="button" class="btn btn-info" wire:click.prevent="add">
-                                                Add
+                                                {{__('mshmk.Add')}}
                                             </button>
                                         </div>
                                     </div>
@@ -169,7 +169,7 @@
                                             </div>
                                             <div class="col-md-1">
                                                 <button type="button" class="btn btn-danger btn-sm" wire:click.prevent='remove({{$key}})'>
-                                                    Remove
+                                                   {{__('mshmk.Remove')}}
                                                 </button>
                                             </div>
                                         </div>
@@ -178,7 +178,7 @@
                                     <div class="form-group">
                                         <label class="col-md-4 control-label"></label>
                                         <div class="col-md-4">
-                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                            <button type="submit" class="btn btn-primary">{{__('mshmk.Submit')}}</button>
                                         </div>
                                     </div>
                                 </form>

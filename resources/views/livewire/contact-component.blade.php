@@ -72,6 +72,7 @@
 									<label for="comment">{{__('mshmk.Comment')}}</label>
 									<textarea name="comment"  id="comment" wire:model="comment"></textarea>
                                     @error('comment') <p class="text-danger">{{ $message }}</p>@enderror
+									
 									<input type="submit"  value="{{__('mshmk.Submit')}}" >
 								</form>
 							</div>

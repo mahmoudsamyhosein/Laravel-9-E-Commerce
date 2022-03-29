@@ -1,5 +1,9 @@
 <?php
-
+/*
+*بسم الله الرحمن الرحيم والصلاة والسلام علي أشرف المرسلين سيدنا محمد
+* [لوحة المستخدم] يحتوي هذا الملف علي منطق خواص المنتج .
+*MY_GITHUB_ACCOUNT:https://github.com/mahmoudsamyhosein .
+*/
 namespace App\Mail;
 
 use App\Models\Order;
@@ -34,3 +38,6 @@ class OrderMail extends Mailable
         return $this->subject('Order Confirmation ')->view('mails.order-mail');
     }
 }
+/*
+خلصانة بشياكة
+*/

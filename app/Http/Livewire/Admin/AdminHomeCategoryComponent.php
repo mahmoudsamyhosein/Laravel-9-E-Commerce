@@ -1,5 +1,9 @@
 <?php
-
+/*
+*بسم الله الرحمن الرحيم والصلاة والسلام علي أشرف المرسلين سيدنا محمد
+* [لوحة المدير] يحتوي هذا الملف علي منطق خواص المنتج .
+*MY_GITHUB_ACCOUNT:https://github.com/mahmoudsamyhosein .
+*/
 namespace App\Http\Livewire\Admin;
 
 use App\Models\Category;
@@ -24,7 +28,7 @@ class AdminHomeCategoryComponent extends Component
         $category->sel_categories = implode(',',$this->selected_categories);
         $category->no_of_products = $this->numberofproducts;
         $category->save();
-        Session()->flash('message','HomeCategory Has Been Updated Successfully!');
+        Session()->flash('message',trans('mshmk.Home_Category_Has_Been_Updated_Successfully!'));
     }
     public function render()
     {
@@ -32,3 +36,6 @@ class AdminHomeCategoryComponent extends Component
         return view('livewire.admin.admin-home-category-component',['categories' => $categories])->layout('layouts.base');
     }
 }
+/*
+خلصانة بشياكة
+*/

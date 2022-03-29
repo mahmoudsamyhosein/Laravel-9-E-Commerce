@@ -39,7 +39,7 @@ class ContactComponent extends Component
         $contact->phone = $this->phone;
         $contact->comment = $this->comment;
         $contact->save();
-        session()->flash('message','Your Message Has Been Sent Successfully!');
+        session()->flash('message',trans('mshmk.Your_Message_Has_Been_Sent_Successfully!'));
     }
     // دالة لتمرير المتغيرات الي العرض 
     public function render()

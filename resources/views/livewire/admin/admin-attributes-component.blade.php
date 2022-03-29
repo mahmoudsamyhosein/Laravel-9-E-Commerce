@@ -1,4 +1,4 @@
-<div>
+<div dir="rtl" style="text-align: right">
     <div>
         <style>
             nav svg {
@@ -28,10 +28,10 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <div class="col-md-6">
-                                All Attributes
+                                {{__('mshmk.All_Attributes')}}
                             </div>
                             <div class="col-md-6">
-                                <a href="{{ route('admin.add_attribute') }}" class="btn btn-success pull-right">ADD New</a>
+                                <a href="{{ route('admin.add_attribute') }}" class="btn btn-success pull-right">{{__('mshmk.ADD_New')}}</a>
                             </div>
                         </div>
                         <div class="panel-body">
@@ -43,10 +43,10 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th>Id</th>
-                                        <th>Name</th>
-                                        <th>Created At</th>
-                                        <th>Action</th>
+                                        <th>{{__('mshmk.Id')}}</th>
+                                        <th>{{__('mshmk.Name')}}</th>
+                                        <th>{{__('mshmk.Created_At')}}</th>
+                                        <th>{{__('mshmk.Action')}}</th>
                                     </tr>
                                 </thead>
                                 <tbody>

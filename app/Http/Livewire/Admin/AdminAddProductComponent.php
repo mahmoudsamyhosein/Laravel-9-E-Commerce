@@ -1,5 +1,9 @@
 <?php
-
+/*
+*بسم الله الرحمن الرحيم والصلاة والسلام علي أشرف المرسلين سيدنا محمد
+* [لوحة المدير] يحتوي هذا الملف علي منطق خواص المنتج .
+*MY_GITHUB_ACCOUNT:https://github.com/mahmoudsamyhosein .
+*/
 namespace App\Http\Livewire\Admin;
 
 use App\Models\AttributeValue;
@@ -129,7 +133,7 @@ class AdminAddProductComponent extends Component
                 $attr_value->save();
             }
         }
-        session()->flash('message','Product Has Been Created Successfully!');
+        session()->flash('message',trans('mshmk.Product_Has_Been_Created_Successfully!'));
        
     }
     public function changesubcategory(){
@@ -144,3 +148,6 @@ class AdminAddProductComponent extends Component
         return view('livewire.admin.admin-add-product-component',['categories'=> $categories ,'scategories' => $scategories ,'pattributes' =>$pattributes ])->layout('layouts.base');
     }
 }
+/*
+خلصانة بشياكة
+*/

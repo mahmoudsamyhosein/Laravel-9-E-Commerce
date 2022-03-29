@@ -1,5 +1,9 @@
 <?php
-
+/*
+*بسم الله الرحمن الرحيم والصلاة والسلام علي أشرف المرسلين سيدنا محمد
+* [لوحة المستخدم] يحتوي هذا الملف علي منطق خواص المنتج .
+*MY_GITHUB_ACCOUNT:https://github.com/mahmoudsamyhosein .
+*/
 namespace App\Http\Livewire\User;
 
 use App\Models\User;
@@ -59,7 +63,7 @@ class UserEditProfileComponent extends Component
         $user->profile->country = $this->country;
         $user->profile->zipcode = $this->zipcode;
         $user->profile->save();
-        session()->flash('message','Profile Has Been Updated Successfully ! ');
+        session()->flash('message',trans('mshmk.Profile_Has_Been_Updated_Successfully!'));
     }
 
     public function render()
@@ -67,3 +71,6 @@ class UserEditProfileComponent extends Component
         return view('livewire.user.user-edit-profile-component')->layout('layouts.base');
     }
 }
+/*
+خلصانة بشياكة
+*/

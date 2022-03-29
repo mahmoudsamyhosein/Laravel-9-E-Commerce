@@ -1,5 +1,9 @@
 <?php
-
+/*
+*بسم الله الرحمن الرحيم والصلاة والسلام علي أشرف المرسلين سيدنا محمد
+* [لوحة المدير] يحتوي هذا الملف علي منطق خواص المنتج .
+*MY_GITHUB_ACCOUNT:https://github.com/mahmoudsamyhosein .
+*/
 namespace App\Http\Livewire\Admin;
 
 use App\Models\Category;
@@ -19,7 +23,7 @@ class AdminCategoryComponent extends Component
     public function deletesubcategory($id){
         $scategory = Subcategory::find($id);
         $scategory->delete();
-        session()->flash('message','Subcategory Has Been Deleted!');
+        session()->flash('message',trans('mshmk.Subcategory_Has_Been_Deleted!'));
     }
     public function render()
     {
@@ -27,3 +31,6 @@ class AdminCategoryComponent extends Component
         return view('livewire.admin.admin-category-component' ,['categories' => $categories ])->layout('layouts.base');
     }
 }
+/*
+خلصانة بشياكة
+*/

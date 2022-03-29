@@ -1,5 +1,9 @@
 <?php
-
+/*
+*بسم الله الرحمن الرحيم والصلاة والسلام علي أشرف المرسلين سيدنا محمد
+* [لوحة المدير] يحتوي هذا الملف علي منطق خواص المنتج .
+*MY_GITHUB_ACCOUNT:https://github.com/mahmoudsamyhosein .
+*/
 namespace App\Http\Livewire\Admin;
 
 use Livewire\Component;
@@ -23,7 +27,7 @@ class AdminSaleComponent extends Component
         $sale->status = $this->status;
         $sale->save();
 
-        Session()->flash('message','Record Has Been Updated Successfully!');
+        Session()->flash('message',trans('mshmk.Record_Has_Been_Updated_Successfully!'));
 
     }
     public function render()
@@ -31,3 +35,6 @@ class AdminSaleComponent extends Component
         return view('livewire.admin.admin-sale-component')->layout('layouts.base');
     }
 }
+/*
+خلصانة بشياكة
+*/

@@ -1959,7 +1959,7 @@ li.menu-item .nav-label.sale-label::before{
     transform: translateY(-7px);
     -webkit-transform: translateY(-7px);
     -ms-transform: translateY(-7px);
-    margin-right: 10px;
+    margin-right: 20px;
     line-height: 20px;
 }
 .wrap-footer-content .wrap-footer-item{
@@ -4343,7 +4343,7 @@ article.single-post blockquote p:last-child::after{
 }
 .detail-media .flex-control-nav .owl-nav button.owl-next{
     right: auto;
-    left: 8px;
+    right: 8px;
 }
 .wrap-product-detail .detail-info .product-name{
     font-size: 16px;
@@ -4373,7 +4373,7 @@ article.single-post blockquote p:last-child::after{
     border-radius: 3px;
     margin-top: 4px;
     font-size: 0;
-    text-align: left;
+    text-align: right;
 }
 .wrap-product-detail .detail-info .quantity-input input{
     display: block;
@@ -4385,14 +4385,14 @@ article.single-post blockquote p:last-child::after{
     height: 36px;
     width: 63px;
     text-align: center;
-    float: right;
+    float: left;
     padding: 0 3px;
     border: none;
     border-radius: 3px;
 }
 .wrap-product-detail .detail-info .quantity-input .btn-increase{
-    margin-right: 10px;
-    margin-left: 1px;
+    margin-left: 10px;
+    margin-right: 1px;
    
 }
 .wrap-product-detail .detail-info .quantity-input .btn{
@@ -4421,7 +4421,7 @@ article.single-post blockquote p:last-child::after{
     display: inline-block;
     position: absolute;
     top: 50%;
-    right: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
@@ -4434,7 +4434,7 @@ article.single-post blockquote p:last-child::after{
     display: inline-block;
     position: absolute;
     top: 50%;
-    right: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
@@ -6365,7 +6365,7 @@ background-color: #888888;
 
 	.header .main-info-area .right-section .show-up-after-1024 a{
 	    display: inline-block;
-	    float: left;
+	    float: right;
 	    padding: 3px 0;
 	    border: 1px solid #333;
 	}
@@ -6375,7 +6375,7 @@ background-color: #888888;
 	    height: 2px;
 	    background: #333333;
 	    margin: 3px 5px;
-	    float: left;
+	    float: right;
 	    clear: both;
 	}
     .custom-col-5,
@@ -7149,8 +7149,8 @@ background-color: #888888;
 	bottom: 0;
 }
 .wrap-product-detail .detail-info .quantity-input .btn-increase {
-	margin-right: 10px;
-	margin-left: 1px;
+	margin-left: 10px;
+	margin-right: 1px;
 }
 
 .wrap-iten-in-cart .products-cart .product-image {
@@ -7189,6 +7189,9 @@ background-color: #888888;
 
 .text-red-600{
     color: red;
+}
+.col-xs-2{
+    float: right;
 }
 
 

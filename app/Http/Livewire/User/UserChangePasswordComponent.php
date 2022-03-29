@@ -1,5 +1,9 @@
 <?php
-
+/*
+*بسم الله الرحمن الرحيم والصلاة والسلام علي أشرف المرسلين سيدنا محمد
+* [لوحة المستخدم] يحتوي هذا الملف علي منطق خواص المنتج .
+*MY_GITHUB_ACCOUNT:https://github.com/mahmoudsamyhosein .
+*/
 namespace App\Http\Livewire\User;
 
 use App\Models\User;
@@ -27,10 +31,10 @@ class UserChangePasswordComponent extends Component
             $user = User::findOrfail(Auth::user()->id);
             $user->password = Hash::make($this->password);
             $user->save();
-            session()->flash('password_success','Password Has Been Changed successfully !');
+            session()->flash('password_success',trans('mshmk.Password_Has_Been_Changed_successfully!'));
         }
         else{
-            session()->flash('password_error','Password Does Not Match !');
+            session()->flash('password_error',trans('mshmk.Password_Does_Not_Match!'));
         }
 
     }
@@ -39,3 +43,6 @@ class UserChangePasswordComponent extends Component
         return view('livewire.user.user-change-password-component')->layout('layouts.base');
     }
 }
+/*
+خلصانة بشياكة
+*/
