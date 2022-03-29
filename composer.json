@@ -14,8 +14,8 @@
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^2.5",
-        "cartalyst/stripe-laravel": "^13.0",
-        "fakerphp/faker": "^1.9.1"
+        "cartalyst/stripe-laravel": "^13.0"
+        
 
     },
     "require-dev": {
@@ -23,7 +23,8 @@
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^5.10",
-        "phpunit/phpunit": "^9.5.10"
+        "phpunit/phpunit": "^9.5.10",
+        "fakerphp/faker": "^1.9.1"
     },
     "autoload": {
         "psr-4": {
