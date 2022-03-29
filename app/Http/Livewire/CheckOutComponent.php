@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Cartalyst\Stripe\Laravel\Facades\Stripe;
 use Illuminate\Support\Facades\Mail;
+use Exception ;
 
 class CheckOutComponent extends Component
 {
@@ -190,8 +191,6 @@ class CheckOutComponent extends Component
 
             $this->maketransaction($order->id,'pending');
             $this->resetCart();
-
-            
         }
         elseif($this->paymentmode == 'card' ){
 

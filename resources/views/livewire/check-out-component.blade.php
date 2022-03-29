@@ -195,6 +195,7 @@
 								
 							</div>
 							@if(Session::has('checkout'))
+								<p class="summary-info grand-total"><span>{{__('mshmk.Subtotal')}}</span> <span class="grand-total-price">${{Session::get('checkout')['subtotal']}}</span></p>
 								<p class="summary-info grand-total"><span>{{__('mshmk.Grand_Total')}}</span> <span class="grand-total-price">${{Session::get('checkout')['total']}}</span></p>
 							@endif
 							@if ($errors->isEmpty())
