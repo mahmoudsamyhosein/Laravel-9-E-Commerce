@@ -7,12 +7,14 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use App\Models\Setting;
 
 class PrivacyPolicyComponent extends Component
 {
     public function render()
     {
-        return view('livewire.privacy-policy-component')->layout('layouts.base');
+        $setting = Setting::find(1);
+        return view('livewire.privacy-policy-component',['setting'=> $setting ])->layout('layouts.base');
     
     }
 }

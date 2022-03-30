@@ -35,7 +35,7 @@ class AdminEditAttributeComponent extends Component
 
     public function render()
     {
-        return view('livewire.admin.admin-edit-attribute-component')->layout('layouts.base');
+        return view('livewire.admin.attributes.admin-edit-attribute-component')->layout('layouts.base');
     }
 }
 /*

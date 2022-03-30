@@ -49,19 +49,18 @@ class UserEditProfileComponent extends Component
         $user->profile->mobile = $this->mobile;
         if($this->newimage){
             if($this->image){
-                unlink('assets/images/profile/' .$this->image);
+                unlink('assets/images/profile' . $this->image);
             }
             $imageName = Carbon::now()->timestamp . '.' . $this->newimage->extension();
             $this->newimage->storeAs('profile',$imageName);
             $this->profile->image = $imageName;
         }
-
-        $user->profile->line1 = $this->line1;
-        $user->profile->line2 = $this->line2;
-        $user->profile->city = $this->city;
-        $user->profile->province = $this->province;
-        $user->profile->country = $this->country;
-        $user->profile->zipcode = $this->zipcode;
+        $user->profile->line1      = $this->line1;
+        $user->profile->line2      = $this->line2;
+        $user->profile->city       =  $this->city;
+        $user->profile->province   = $this->province;
+        $user->profile->country    = $this->country;
+        $user->profile->zipcode    = $this->zipcode;
         $user->profile->save();
         session()->flash('message',trans('mshmk.Profile_Has_Been_Updated_Successfully!'));
     }

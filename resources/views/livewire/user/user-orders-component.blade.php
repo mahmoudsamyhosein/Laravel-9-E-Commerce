@@ -1,4 +1,6 @@
 <div dir="rtl" style="text-align: right">
+    <title>@section('title','| الطلبات ')</title>
+
     <style>
         nav svg{
             height: 20px;
@@ -14,7 +16,7 @@
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    {{__('mshmk.All_Orders')}}
+                    <h4>{{__('mshmk.All_Orders')}}</h4>
                 </div>
             </div>
             <div class="panel-body">

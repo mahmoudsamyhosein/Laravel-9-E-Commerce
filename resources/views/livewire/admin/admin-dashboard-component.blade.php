@@ -1,4 +1,5 @@
-<div class="content" dir="rtl" style="text-align: right">   
+<div class="content" dir="rtl" style="text-align: right"> 
+  <title>@section('title','| لوحة التحكم ')</title>
     <style>
         .content {
           padding-top: 40px;
@@ -60,7 +61,7 @@
               <div class="icon-stat">    
                 <div class="row">
                   <div class="col-xs-8 text-left">
-                    <span class="icon-stat-label text-right" >{{__('mshmk.Total_Revenue')}}</span>
+                    <span class="icon-stat-label text-right">{{__('mshmk.Total_Revenue')}}</span>
                     <span class="icon-stat-value">${{$totalRevenue}}</span>
                   </div>   
                   <div class="col-xs-4 text-center">
@@ -125,7 +126,7 @@
               <div class="col-md-12">
                   <div class="panel panel-default">
                       <div class="panel-heading">
-                        {{__('mshmk.Latest_Order')}}
+                        <h4>{{__('mshmk.Latest_Order')}}</h4>
                       </div>
                       <div class="panel-body">
                         <table class="table table-striped">

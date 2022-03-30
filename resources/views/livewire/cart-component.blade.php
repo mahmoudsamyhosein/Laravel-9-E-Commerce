@@ -1,6 +1,8 @@
 <div>
 <!--main area-->
 	<main id="main" class="main-site" dir="rtl" style="text-align: right">
+		<title>@section('title','| عربة المشتريات  ')</title>
+
 		<div class="container">
 			<div class="wrap-breadcrumb">
 				<ul>
@@ -9,13 +11,15 @@
 				</ul>
 			</div>
 			<div class=" main-content-area">
+{{----------------------------------------------سلة المشتريات---------------------------------------------------------}}
 				@if(Cart::instance('cart')->count() > 0)
 				<div class="wrap-iten-in-cart">
 					@if(Session::has('success_message'))
 						<div>
-							<strong>{{__('mshmk.Success')}}</strong>{{ Session::get('success_message')}}
+							<span class="alert alert-success">{{ Session::get('success_message')}}</span>
 						</div>
 					@endif
+					<hr>
 					@if(Cart::instance('cart')->count() > 0 )
 						<h3 class="box-title">{{__('mshmk.Products_Name')}}</h3>
 						<ul class="products-cart">
@@ -50,6 +54,7 @@
 						<p>{{__('mshmk.No_Item_In_Cart')}}</p>
 					@endif
 				</div>
+{{----------------------------------------------سلة المشتريات---------------------------------------------------------}}
 <!--ملخص الطلب-->
 				<div class="summary" >
 					<div class="order-summary">
@@ -74,6 +79,7 @@
 							@if($haveCouponCode == 1)
 								<div class="summary-item">
 									<form wire:submit.prevent="applyCouponCode">
+										@csrf
 										<h4 class="title-box">{{__('mshmk.Coupon_Code')}}</h4>
 										@if(Session::has('coupon_message'))
 											<div class="alert alert-danger" role="danger">{{Session::get('coupon_message')}}</div>
@@ -104,51 +110,53 @@
 					</div>
 				@endif
 <!--ملخص الطلب-->
+{{-----------------------------------------------------------------------------------------------حفظ للاحقا --}}
 				<div class="wrap-iten-in-cart">
 					<h3 class="title-box" style="border-bottom: 1px solid; padding-bottom:15px;">{{Cart::instance('saveForLater')->count()}} {{__('mshmk.Item(s)')}} {{__('mshmk.Saved_For_Later')}}</h3>
 					@if(Session::has('s_success_message'))
 						<div>
-							<strong>{{__('mshmk.Success')}}</strong>{{ Session::get('s_success_message')}}
+							<span class="alert alert-success">{{ Session::get('s_success_message')}}</span>
 						</div>
 					@endif
 					@if(Cart::instance('cart')->count() > 0 )
 						<h3 class="box-title">{{__('mshmk.Products_Name')}}</h3>
-						<ul class="products-cart">
-							@foreach(Cart::instance('saveForLater')->content() as $item)
-									<li class="pr-cart-item">
-										<div class="product-image">
-											<figure><img src="{{asset('assets/images/products')}}/{{$item->model->image}}" alt="{{$item->model->name}}"></figure>
-										</div>
-										<div class="product-name">
-											<a class="link-to-product" href="{{ route('products.details' ,['slug' => $item->model->slug ]) }}">{{$item->model->name}}</a>
-										</div>
-										@foreach ($item->options  as $key=>$value)
-											<div style="vertical-align:middle; width:180px;">
-												<p><b>{{$key}}: {{$value}}</b></p>
+							<ul class="products-cart">
+								@foreach(Cart::instance('saveForLater')->content() as $item)
+										<li class="pr-cart-item">
+											<div class="product-image">
+												<figure><img src="{{asset('assets/images/products')}}/{{$item->model->image}}" alt="{{$item->model->name}}"></figure>
 											</div>
-										@endforeach
-										<div class="price-field produtc-price"><p class="price">${{ $item->model->regular_price }}</p></div>
-										<div class="quantity">
-											<div class="quantity-input">
-												<input type="text" name="product-quatity" value="{{ $item->qty }}" data-max="120" pattern="[0-9]*" >									
-												<a class="btn btn-increase" href="#" wire:click.prevent="increasecartby_1({{ $item->rowId }})"></a>
-												<a class="btn btn-reduce" href="#"wire:click.prevent="decreasecartby_1({{ $item->rowId }})"></a>
+											<div class="product-name">
+												<a class="link-to-product" href="{{ route('products.details' ,['slug' => $item->model->slug ]) }}">{{$item->model->name}}</a>
 											</div>
-											<p class="text-center"><a href="#" wire:click.prevent="moveToCart('{{$item->rowId}}')">{{__('mshmk.Move_To_Cart')}}</a></p>
-										</div>
-										<div class="delete">
-											<a href="#" class="btn btn-delete"  wire:click.prevent="deleteFromSaveForLater({{$item->rowId}})">
-												<span>{{__('mshmk.Delete_from_save_for_later')}}</span>
-												<i class="fa fa-times-circle" aria-hidden="true"></i>
-											</a>
-										</div>
-									</li>
-							@endforeach										
-						</ul>
+											@foreach ($item->options  as $key=>$value)
+												<div style="vertical-align:middle; width:180px;">
+													<p><b>{{$key}}: {{$value}}</b></p>
+												</div>
+											@endforeach
+											<div class="price-field produtc-price"><p class="price">${{ $item->model->regular_price }}</p></div>
+											<div class="quantity">
+												<div class="quantity-input">
+													<input type="text" name="product-quatity" value="{{$item->qty}}" data-max="120" pattern="[0-9]*" >									
+													<a class="btn btn-increase" href="#" wire:click.prevent="increase_quantity({{ $item->rowId }})"></a>
+													<a class="btn btn-reduce" href="#"wire:click.prevent="decrease_quantity({{ $item->rowId }})"></a>
+												</div>
+												<p class="text-center"><a href="#" wire:click.prevent="moveToCart('{{$item->rowId}}')">{{__('mshmk.Move_To_Cart')}}</a></p>
+											</div>
+											<div class="delete">
+												<a href="#" class="btn btn-delete"  wire:click.prevent="deleteFromSaveForLater({{$item->rowId}})">
+													<span>{{__('mshmk.Delete_from_save_for_later')}}</span>
+													<i class="fa fa-times-circle" aria-hidden="true"></i>
+												</a>
+											</div>
+										</li>
+								@endforeach										
+							</ul>
 					@else
 						<p>{{__('mshmk.No_Item_Saved_For_Later')}}</p>
 					@endif
 				</div>
+{{-----------------------------------------------------------------------------------------------حفظ للاحقا --}}
 			</div><!--end main content area-->
 		</div><!--end container-->
 

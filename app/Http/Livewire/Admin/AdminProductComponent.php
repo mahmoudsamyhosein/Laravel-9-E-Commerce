@@ -16,7 +16,6 @@ class AdminProductComponent extends Component
     public $searchterm;
     
     public function deleteProduct($id){
-        
         $product = Product::find($id);
 
         if($product->image){
@@ -45,7 +44,7 @@ class AdminProductComponent extends Component
             ->orwhere('sale_price','LIKE',$search);
             
         $products = Product::paginate(12);
-        return view('livewire.admin.admin-product-component',['products' => $products])->layout('layouts.base');
+        return view('livewire.admin.products.admin-product-component',['products' => $products])->layout('layouts.base');
     }
 }
 /*

@@ -6,40 +6,36 @@
             <div class="container">
                 <ul>
                     <li class="fc-info-item">
-                        
+                        {{--section_1--}}
                         <div class="wrap-left-info">
-                            <h4 class="fc-name">{{__('mshmk.Free_Shipping')}}</h4>
-                            <p class="fc-desc">{{__('mshmk.Free_On_Oder_Over_$99')}}</p>
+                            <h4 class="fc-name">{{$setting->section_1_title}}</h4>
+                            <p class="fc-desc">{{$setting->section_1_subtitle}}</p>
                         </div>
-                        <i class="fa fa-truck" aria-hidden="true"></i>
-
+                        <i class="{{$setting->section_1_icon}}" aria-hidden="true"></i>
                     </li>
                     <li class="fc-info-item">
-                        
+                        {{--section_2--}}
                         <div class="wrap-left-info ">
-                            <h4 class="fc-name">{{__('mshmk.Guarantee')}}</h4>
-                            <p class="fc-desc">{{__('mshmk.30_Days_Money_Back')}}</p>
+                            <h4 class="fc-name">{{$setting->section_2_title}}</h4>
+                            <p class="fc-desc">{{$setting->section_2_subtitle}}</p>
                         </div>
-                        <i class="fa fa-recycle" aria-hidden="true"></i>
-
+                        <i class="{{$setting->section_2_icon}}" aria-hidden="true"></i>
                     </li>
                     <li class="fc-info-item">
-                        
+                        {{--section_3--}}
                         <div class="wrap-left-info">
-                            <h4 class="fc-name ">{{__('mshmk.Safe_Payment')}}</h4>
-                            <p class="fc-desc">{{__('mshmk.Safe_your_online_payment')}}</p>
+                            <h4 class="fc-name">{{$setting->section_3_title}}</h4>
+                            <p class="fc-desc">{{$setting->section_3_subtitle}}</p>
                         </div>
-                        <i class="fa fa-credit-card-alt" aria-hidden="true"></i>
-
+                        <i class="{{$setting->section_3_icon}}" aria-hidden="true"></i>
                     </li>
                     <li class="fc-info-item">
-                        
+                        {{--section_4--}}
                         <div class="wrap-left-info">
-                            <h4 class="fc-name">{{__('mshmk.Online_Suport')}}</h4>
-                            <p class="fc-desc">{{__('mshmk.We_Have_Support_24/7')}}</p>
+                            <h4 class="fc-name">{{$setting->section_4_title}}</h4>
+                            <p class="fc-desc">{{$setting->section_4_subtitle}}</p>
                         </div>
-                        <i class="fa fa-life-ring" aria-hidden="true" ></i>
-
+                        <i class="{{$setting->section_4_icon}}" aria-hidden="true" ></i>
                     </li>
                 </ul>
             </div>
@@ -49,34 +45,25 @@
         <div class="main-footer-content">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12 box-twin-content ">
-                        <div class="row">
-                            <div class="wrap-footer-item twin-item">
-                                <h3 class="item-header">{{__('mshmk.My_Account')}}</h3>
-                                <div class="item-content">
-                                    <div class="wrap-vertical-nav">
-                                        <ul>
-                                            <li class="menu-item"><a href="{{route('user.dashboard')}}" class="link-term">{{__('mshmk.My_Account')}}</a></li>
-                                            <li class="menu-item"><a href="{{route('contact-us')}}" class="link-term">{{__('mshmk.Contact_Us')}}</a></li>
-                                            <li class="menu-item"><a href="{{route('product.checkout')}}" class="link-term">{{__('mshmk.Check_out')}}</a></li>
-                                            <li class="menu-item"><a href="/shop" class="link-term">{{__('mshmk.Shop')}}</a></li>
-                                            <li class="menu-item"><a href="{{route('product.wishlist')}}" class="link-term">{{__('mshmk.Wish_list')}}</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="wrap-footer-item twin-item">
-                                <h3 class="item-header">{{__('mshmk.Infomation')}}</h3>
-                                <div class="item-content">
-                                    <div class="wrap-vertical-nav">
-                                        <ul>
-                                            <li class="menu-item"><a href="{{route('aboutus')}}" class="link-term">{{__('mshmk.About_Us')}}</a></li>
-                                            <li class="menu-item"><a href="{{route('terms')}}" class="link-term">{{__('mshmk.terms')}}</a></li>
-                                            <li class="menu-item"><a href="{{route('faq')}}" class="link-term">{{__('mshmk.faq')}}</a></li>
-                                            <li class="menu-item"><a href="{{route('privacy-policy')}}" class="link-term">{{__('mshmk.privacy-policy')}}</a></li>
-                                            <li class="menu-item"><a href="{{route('return-policy')}}" class="link-term">{{__('mshmk.return-policy')}}</a></li>
-                                        </ul>
-                                    </div>
+                    <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
+                        <div class="wrap-footer-item">
+                            <h3 class="item-header">{{__('mshmk.Contact_Details')}}</h3>
+                            <div class="item-content">
+                                <div class="wrap-contact-detail">
+                                    <ul>
+                                        <li>
+                                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                            <p class="contact-txt">{{$setting->address}}</p>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-phone" aria-hidden="true"></i>
+                                            <p class="contact-txt">{{$setting->phone}}</p>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                                            <p class="contact-txt">{{$setting->email}}</p>
+                                        </li>											
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -109,40 +96,53 @@
 
                    
 
-                    <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
-                        <div class="wrap-footer-item">
-                            <h3 class="item-header">{{__('mshmk.Contact_Details')}}</h3>
-                            <div class="item-content">
-                                <div class="wrap-contact-detail">
-                                    <ul>
-                                        <li>
-                                            <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                            <p class="contact-txt">{{$setting->address}}</p>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-phone" aria-hidden="true"></i>
-                                            <p class="contact-txt">{{$setting->phone}}</p>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-envelope" aria-hidden="true"></i>
-                                            <p class="contact-txt">{{$setting->email}}</p>
-                                        </li>											
-                                    </ul>
+                   
+
+                    <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12 box-twin-content ">
+                        <div class="row">
+                            <div class="wrap-footer-item twin-item">
+                                <h3 class="item-header">{{__('mshmk.My_Account')}}</h3>
+                                <div class="item-content">
+                                    <div class="wrap-vertical-nav">
+                                        <ul>
+                                            <li class="menu-item"><a href="{{route('user.dashboard')}}" class="link-term">{{__('mshmk.My_Account')}}</a></li>
+                                            <li class="menu-item"><a href="{{route('contact-us')}}" class="link-term">{{__('mshmk.Contact_Us')}}</a></li>
+                                            <li class="menu-item"><a href="{{route('product.checkout')}}" class="link-term">{{__('mshmk.Check_out')}}</a></li>
+                                            <li class="menu-item"><a href="/shop" class="link-term">{{__('mshmk.Shop')}}</a></li>
+                                            <li class="menu-item"><a href="{{route('product.wishlist')}}" class="link-term">{{__('mshmk.Wish_list')}}</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wrap-footer-item twin-item">
+                                <h3 class="item-header">{{__('mshmk.Infomation')}}</h3>
+                                <div class="item-content">
+                                    <div class="wrap-vertical-nav">
+                                        <ul>
+                                            <li class="menu-item"><a href="{{route('aboutus')}}" class="link-term">{{__('mshmk.About_Us')}}</a></li>
+                                            <li class="menu-item"><a href="{{route('terms')}}" class="link-term">{{__('mshmk.terms')}}</a></li>
+                                            <li class="menu-item"><a href="{{route('faq')}}" class="link-term">{{__('mshmk.faq')}}</a></li>
+                                            <li class="menu-item"><a href="{{route('privacy-policy')}}" class="link-term">{{__('mshmk.privacy-policy')}}</a></li>
+                                            <li class="menu-item"><a href="{{route('return-policy')}}" class="link-term">{{__('mshmk.return-policy')}}</a></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
 
                 <div class="row">
 
                     <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
                         <div class="wrap-footer-item">
-                            <h3 class="item-header">{{__('mshmk.We_Using_Safe_Payments:')}}</h3>
+                            <h3 class="item-header">{{__('mshmk.Dowload_App')}}</h3>
                             <div class="item-content">
-                                <div class="wrap-list-item wrap-gallery">
-                                    <img src="{{asset('assets/images/payment.png')}}" style="max-width: 260px;">
+                                <div class="wrap-list-item apps-list">
+                                    <ul>
+                                        <li><a href="{{$setting->download_app_link_1}}" class="link-to-item" title="our application on apple store"><figure><img src="{{asset('assets/images/brands/apple-store.png')}}" alt="apple store" width="128" height="36"></figure></a></li>
+                                        <li><a href="{{$setting->download_app_link_2}}" class="link-to-item" title="our application on google play store"><figure><img src="{{asset('assets/images/brands/google-play-store.png')}}" alt="google play store" width="128" height="36"></figure></a></li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -165,15 +165,14 @@
                         </div>
                     </div>
 
+                   
+
                     <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
                         <div class="wrap-footer-item">
-                            <h3 class="item-header">{{__('mshmk.Dowload_App')}}</h3>
+                            <h3 class="item-header">{{__('mshmk.We_Using_Safe_Payments:')}}</h3>
                             <div class="item-content">
-                                <div class="wrap-list-item apps-list">
-                                    <ul>
-                                        <li><a href="#" class="link-to-item" title="our application on apple store"><figure><img src="{{asset('assets/images/brands/apple-store.png')}}" alt="apple store" width="128" height="36"></figure></a></li>
-                                        <li><a href="#" class="link-to-item" title="our application on google play store"><figure><img src="{{asset('assets/images/brands/google-play-store.png')}}" alt="google play store" width="128" height="36"></figure></a></li>
-                                    </ul>
+                                <div class="wrap-list-item wrap-gallery">
+                                    <img src="{{asset('assets/images/payment.png')}}" style="max-width: 260px;">
                                 </div>
                             </div>
                         </div>
@@ -203,14 +202,14 @@
                 <div class="coppy-right-item item-right">
                     <div class="wrap-nav horizontal-nav">
                         <ul>
+                           
                             <li class="menu-item"><a href="https://github.com/mahmoudsamyhosein/mshmk_shop_tech_doc" class="link-term">{{__('mshmk.tech_doc')}}</a></li>
-                            <li class="menu-item"><a href="https://github.com/mahmoudsamyhosein/mshmk_shop_doc" class="link-term">{{__('mshmk.doc')}}</a></li>															
-															
+                            <li class="menu-item"><a href="https://github.com/mahmoudsamyhosein/mshmk_shop_doc" class="link-term">{{__('mshmk.doc')}}</a></li>																							
                         </ul>
                     </div>
                 </div>
                 <div class="coppy-right-item item-left">
-                    <a href="https://github.com/mahmoudsamyhosein"><p class="coppy-right-text">  {{__('mshmk.MSHMK_Systems._All_rights_reserved')}} © {{ now()->year }}   </p></a>
+                    <a href="https://github.com/mahmoudsamyhosein"><p class="coppy-right-text">{{$setting->copyright}} © {{ now()->year }}   </p></a>
                 </div>
             </div>
         </div>

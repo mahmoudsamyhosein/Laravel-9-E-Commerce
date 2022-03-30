@@ -1,6 +1,8 @@
 <div>
 <!--main area-->
 	<main id="main" class="main-site left-sidebar" >
+		<title>@section('title','| المتجر ')</title>
+
 		<div class="container">
 			<div class="wrap-breadcrumb" dir="rtl">
 				<ul>

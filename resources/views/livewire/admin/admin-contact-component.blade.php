@@ -7,14 +7,16 @@
     }
 </style>
 <div dir="rtl" style="text-align: right">
+    <title>@section('title','| رسائل التواصل ')</title>
+
     <div class="container" style="padding: 30px 0;">
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <div class="row">
-                            <div class="col-md-6">
-                               {{__('mshmk.Contact_Messages')}}
+                            <div class="col-md-6 pull-right">
+                              <h4 >{{__('mshmk.Contact_Messages')}}</h4> 
                             </div>
                             
                         </div>    

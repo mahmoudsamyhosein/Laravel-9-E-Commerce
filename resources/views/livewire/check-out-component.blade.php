@@ -1,6 +1,7 @@
 <div>
 	<!--main area-->
 	<main id="main" class="main-site" dir="rtl" style="text-align: right">
+		<title>@section('title','| أتمام الدفع  ')</title>
 		<style>
 			.summary-item .row-in-form input[type="password"], .summary-item .row-in-form input[type="text"], .summary-item .row-in-form input[type="tel"] {
 				font-size: 13px;
@@ -26,6 +27,7 @@
 				@csrf
 					<div class="row">
 						<div class="col-md-12">
+{{------------------------------------------- بيانات الدفع والطلب  ---}}
 							<div class="wrap-address-billing">
 								<h3 class="box-title">{{__('mshmk.Billing_Address')}}</h3>
 								<div class="Billing_Address">
@@ -88,6 +90,9 @@
 									</p>
 								</div>		
 						</div>
+{{------------------------------------------- بيانات الدفع والطلب  ---}}
+
+{{-------------------------------------------الشحن الي عنوان مختلف ---}}
 						@if($is_shipping_different)
 						<div class="col-md-12">
 							<div class="wrap-address-billing">
@@ -149,6 +154,9 @@
 						</div>
 						@endif
 					</div>
+{{-------------------------------------------الشحن الي عنوان مختلف ---}}
+
+{{-------------------------------------------طريقة الدقع ---}}
 					<div class="summary summary-checkout">
 						<div class="summary-item payment-method">
 							<h4 class="title-box">{{__('mshmk.Payment_Method')}}</h4>
@@ -181,7 +189,6 @@
 								</div>
 							@endif
 							<div class="choose-payment-methods">
-								
 								<label class="payment-method">
 									<input name="payment-method" id="payment-method-bank" value="cod" type="radio" wire:model='paymentmode'>
 									<span> {{__('mshmk.Cash_On_Delivery')}}</span>
@@ -192,25 +199,35 @@
 									<span>{{__('mshmk.Debit/Credit_card')}}</span>
 									<span class="payment-desc">{{__('mshmk.Debit/Credit_card_description')}}</span>
 								</label>
-								
 							</div>
+{{-------------------------------------------طريقة الدقع ---}}
+
+{{-------------------------------------------الأجماليات ---}}
 							@if(Session::has('checkout'))
-								<p class="summary-info grand-total"><span>{{__('mshmk.Subtotal')}}</span> <span class="grand-total-price">${{Session::get('checkout')['subtotal']}}</span></p>
-								<p class="summary-info grand-total"><span>{{__('mshmk.Grand_Total')}}</span> <span class="grand-total-price">${{Session::get('checkout')['total']}}</span></p>
+								<p class="summary-info grand-total"><span>{{__('mshmk.Subtotal')}}</span> <span class="grand-total-price">{{Session::get('checkout')['subtotal']}}$</span></p>
+								<p class="summary-info grand-total"><span>{{__('mshmk.Grand_Total')}}</span> <span class="grand-total-price">{{Session::get('checkout')['total']}}$</span></p>
 							@endif
+{{-------------------------------------------الأجماليات ---}}
+
+{{-------------------------------------------رسالة معالجة الطلب  ---}}
 							@if ($errors->isEmpty())
 								<div wire:ignore id="processing" style="font-size:22px; margin-bottom:20px;padding-left:37px;color:green;display:none;">
 									<i class="fa fa-spinner fa-pulse fa-fw"></i>
 									<span>{{__('mshmk.Processing...')}}</span>
 								</div>							
 							@endif
+{{-------------------------------------------رسالة معالجة الطلب  ---}}
+
 							<button type="submit" class="btn btn-medium">{{__('mshmk.Place_order_now')}}</button>
 						</div>
+
+{{------------------------------------------- الشحن ---}}	
 						<div class="summary-item shipping-method">
 							<h4 class="title-box f-title">{{__('mshmk.Shipping_method')}}</h4>
 							<p class="summary-info"><span class="title">{{__('mshmk.Flat_Rate')}}</span></p>
 							<p class="summary-info"><span class="title">{{__('mshmk.Fixed_$0')}}</span></p>
 						</div>
+{{------------------------------------------- الشحن ---}}	
 					</div>
 				</form>
 			</div><!--end main content area-->

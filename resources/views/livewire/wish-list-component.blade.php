@@ -1,5 +1,7 @@
 <div>
 <main id="main" class="main-site left-sidebar">
+    <title>@section('title','| قائمة الأمنيات ')</title>
+
 		<div class="container">
 			<div class="wrap-breadcrumb">
 				<ul>

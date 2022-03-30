@@ -16,6 +16,7 @@ class UserChangePasswordComponent extends Component
     public $current_password;
     public $password;
     public $password_confirmation;
+
     public function updated($fields){
         $this->validateOnly($fields,[
             'current_password' => 'required',
@@ -28,9 +29,10 @@ class UserChangePasswordComponent extends Component
             'password' => 'required|min:8|confirmed|different:current_password',
         ]);
         if(Hash::check($this->current_password,Auth::user()->password)){
-            $user = User::findOrfail(Auth::user()->id);
+            $user = User::findOrFail(Auth::user()->id);
             $user->password = Hash::make($this->password);
             $user->save();
+            
             session()->flash('password_success',trans('mshmk.Password_Has_Been_Changed_successfully!'));
         }
         else{

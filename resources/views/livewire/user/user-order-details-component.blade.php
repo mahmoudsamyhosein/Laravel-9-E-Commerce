@@ -1,4 +1,6 @@
 <div dir="rtl" style="text-align: right">
+    <title>@section('title','| تفاصيل الطلب ')</title>
+
     <div class="container" style="padding: 30px 0; text-align:right;" dir="rtl" >
         <div class="row">
             <div class="col-md-12">
@@ -8,13 +10,13 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <div class="row">
-                            <div class="col-md-6">
-                                {{__('mshmk.Order_Details')}}
+                            <div class="col-md-6 pull-right">
+                                <h4>{{__('mshmk.Order_Details')}}</h4>
                             </div>
                             <div class="col-md-6">
                                 <a href="{{route('user.orders')}}" class="btn btn-success pull-left">{{__('mshmk.My_Orders')}}</a>
                                 @if ($order->status == 'ordered')
-                                     <a href="#" class="btn btn-warning pull-right" wire:click.prevent='cancleorder'>{{__('mshmk.Cancel_Order')}}</a>
+                                     <a href="#" class="btn btn-warning pull-left" wire:click.prevent='cancleorder'>{{__('mshmk.Cancel_Order')}}</a>
                                 @endif
                             </div>
                         </div>

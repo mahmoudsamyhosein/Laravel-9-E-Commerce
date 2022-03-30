@@ -1,4 +1,10 @@
+<style>
+    b{
+        margin-left: 10px;
+    }
+</style>
 <div dir="rtl" style="text-align: right">
+    <title>@section('title','| الملف الشخصي ')</title>
     <div class="container" style="padding: 30px 0" dir="rtl" style="text-align: right;">
         <div class="row">
             <div class="panel panel-default">
@@ -13,7 +19,7 @@
                             <img src="{{ asset('assets/images/profile/default.jpg')}}" width="100%" alt="{{$user->name}}"> 
                         @endif
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-8 ">
                         <p><b>{{__('mshmk.Name:')}}</b>{{$user->name}}</p>
                         <p><b>{{__('mshmk.Email:')}}</b>{{$user->email}}</p>
                         <p><b>{{__('mshmk.Phone:')}}</b>{{$user->profile->mobile}}</p>

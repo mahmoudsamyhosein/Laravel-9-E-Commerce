@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>{{__('mshmk.Home')}} @yield('title') </title>
+	<title>مصري شوب @yield('title','| الرئيسية')</title> 
 	<link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/favicon.ico') }}">
 	<link
 		href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic,900,900italic&amp;subset=latin,latin-ext"
@@ -56,34 +56,42 @@
 								@if(Route::has('login'))
 								@auth{{-- في حال كان المستخدم مدير أو بخلاف ذلك --}}
 								@if(Auth::user()->utype === "ADM" )
-								<li class="menu-item menu-item-has-children parent">
+								<li class="menu-item menu-item-has-children parent" dir="rtl" style="text-align: right">
 									{{-- عرض أسم المستخدم --}}
 									<a title="My Account" href="#">{{__('mshmk.My_Account')}}({{Auth::user()->name}})<i
 											class="fa fa-angle-down" aria-hidden="true"></i></a>
-									<ul class="submenu curency">
+									<ul class="submenu curency"  >
 										<li class="menu-item">
 											<a title="{{__('mshmk.Dashboard')}}"
 												href="{{ route('admin.dashboard')}}">{{__('mshmk.Dashboard')}}</a>
-										</li>
-										<li class="menu-item">
-											<a title="{{__('mshmk.Categories')}}"
-												href="{{ route('admin.categories')}}">{{__('mshmk.Categories')}}</a>
 										</li>
 										<li class="menu-item">
 											<a title="{{__('mshmk.All_Products')}}"
 												href="{{ route('admin.products')}}">{{__('mshmk.All_Products')}}</a>
 										</li>
 										<li class="menu-item">
-											<a title="{{__('mshmk.Manage_Home_Slider')}}"
-												href="{{ route('admin.homeslider')}}">{{__('mshmk.Manage_Home_Slider')}}</a>
+											<a title="{{__('mshmk.Orders')}}" href="{{ route('admin.orders')}}">
+												{{__('mshmk.Orders')}}</a>
+										</li>
+										<li class="menu-item">
+											<a title="{{__('mshmk.Categories')}}"
+												href="{{ route('admin.categories')}}">{{__('mshmk.Categories')}}</a>
+										</li>
+										<li class="menu-item">
+											<a title="{{__('mshmk.attributes')}}"
+												href="{{ route('admin.attributes')}}">{{__('mshmk.attributes')}}</a>
+										</li>
+										<li class="menu-item">
+											<a title="{{__('mshmk.coupons')}}" href="{{ route('admin.coupons')}}">
+												{{__('mshmk.coupons')}}</a>
 										</li>
 										<li class="menu-item">
 											<a title="{{__('mshmk.Manage_Home_Categories')}}"
 												href="{{ route('admin.home-categories')}}">{{__('mshmk.Manage_Home_Categories')}}</a>
 										</li>
 										<li class="menu-item">
-											<a title="{{__('mshmk.attributes')}}"
-												href="{{ route('admin.attributes')}}">{{__('mshmk.attributes')}}</a>
+											<a title="{{__('mshmk.Manage_Home_Slider')}}"
+												href="{{ route('admin.homeslider')}}">{{__('mshmk.Manage_Home_Slider')}}</a>
 										</li>
 										<li class="menu-item">
 											<a title="{{__('mshmk.Sale_Setting')}}"
@@ -93,22 +101,13 @@
 											<a title="{{__('mshmk.Contact_Messages')}}" href="{{ route('admin.contact-us')}}">
 												{{__('mshmk.Contact_Messages')}}</a>
 										</li>
-										<li class="menu-item">
-											<a title="{{__('mshmk.coupons')}}" href="{{ route('admin.coupons')}}">
-												{{__('mshmk.coupons')}}</a>
-										</li>
+										
 										<li class="menu-item">
 											<a title="{{__('mshmk.Settings')}}" href="{{ route('admin.settings')}}">
 												{{__('mshmk.Settings')}}</a>
 										</li>
-										<li class="menu-item">
-											<a title="{{__('mshmk.Orders')}}" href="{{ route('admin.orders')}}">
-												{{__('mshmk.Orders')}}</a>
-										</li>
-										<li class="menu-item">
-											<a title="{{__('mshmk.Pages')}}" href="{{ route('admin.pages')}}">
-												{{__('mshmk.Pages')}}</a>
-										</li>
+										
+										
 										<li class="menu-item">
 											<a title="{{__('mshmk.Logout')}}" href=" {{ route('logout') }}"
 												onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{__('mshmk.Logout')}}</a>
@@ -119,7 +118,7 @@
 									</ul>
 								</li>
 								@else
-								<li class="menu-item menu-item-has-children parent">
+								<li class="menu-item menu-item-has-children parent" dir="rtl" style="text-align: right">
 									{{-- عرض أسم المستخدم --}}
 									<a title="{{__('mshmk.My_Account')}}" href="#">{{__('mshmk.My_Account')}}({{Auth::user()->name}})<i
 											class="fa fa-angle-down" aria-hidden="true"></i></a>
@@ -157,7 +156,6 @@
 								<li class="menu-item" style="margin-right: 10px;" ><a  title="{{__('mshmk.Login')}}"
 										href="{{ route('login') }}">{{__('mshmk.Login')}}</a>
 								</li>
-								
 								@endif
 								@endif
 							</ul>
@@ -183,7 +181,7 @@
 								</li>
 							</ul>
 						</div> --}}
-						<div class="topbar-menu left-menu" style="margin-right:25px;">
+						{{-- <div class="topbar-menu left-menu" style="margin-right:25px;">
 							<ul>
 								<li class="menu-item menu-item-has-children parent">
 									<a title="Dollar (USD)" href="#">Dollar (USD)<i class="fa fa-angle-down"
@@ -201,7 +199,7 @@
 									</ul>
 								</li>
 							</ul>
-						</div>
+						</div> --}}
 					</div>
 				</div>
 

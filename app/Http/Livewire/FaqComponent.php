@@ -7,12 +7,14 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use App\Models\Setting;
 
 class FaqComponent extends Component
 {
     public function render()
     {
-        return view('livewire.faq-component')->layout('layouts.base');
+        $setting = Setting::find(1);
+        return view('livewire.faq-component',['setting'=> $setting ])->layout('layouts.base');
     
     }
 }

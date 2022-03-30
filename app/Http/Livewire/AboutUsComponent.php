@@ -7,12 +7,14 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use App\Models\Setting;
 
 class AboutUsComponent extends Component
 {
     public function render()
     {
-        return view('livewire.about-us-component')->layout('layouts.base');
+        $setting = Setting::find(1);
+        return view('livewire.about-us-component',['setting'=> $setting ])->layout('layouts.base');
     
     }
 }

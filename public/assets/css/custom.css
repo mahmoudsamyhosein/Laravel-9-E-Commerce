@@ -7193,8 +7193,16 @@ background-color: #888888;
 .col-xs-2{
     float: right;
 }
-
-
+.col-md-4{
+    float:right;
+}
+.form-horizontal .form-group {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+th {
+    text-align: right; 
+}
 /*
 خلصانة بشياكة
 */

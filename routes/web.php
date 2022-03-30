@@ -15,18 +15,15 @@ use App\Http\Livewire\Admin\AdminEditCategoryComponent;
 use App\Http\Livewire\Admin\AdminEditProductComponent;
 use App\Http\Livewire\Admin\AdminHomeSliderComponent;
 use App\Http\Livewire\Admin\AdminAddHomeSliderComponent;
-use App\Http\Livewire\Admin\AdminAddPageComponent;
 use App\Http\Livewire\Admin\AdminAttributesComponent;
 use App\Http\Livewire\Admin\AdminContactComponent;
 use App\Http\Livewire\Admin\AdminCouponsComponent;
 use App\Http\Livewire\Admin\AdminEditAttributeComponent;
 use App\Http\Livewire\Admin\AdminEditCouponComponent;
 use App\Http\Livewire\Admin\AdminEditHomeSliderComponent;
-use App\Http\Livewire\Admin\AdminEditPageComponent;
 use App\Http\Livewire\Admin\AdminHomeCategoryComponent;
 use App\Http\Livewire\Admin\AdminOrderComponent;
 use App\Http\Livewire\Admin\AdminOrderDetailsComponent;
-use App\Http\Livewire\Admin\AdminPagesComponent;
 use App\Http\Livewire\Admin\AdminProductComponent;
 use App\Http\Livewire\Admin\AdminSaleComponent;
 use App\Http\Livewire\Admin\AdminSettingComponent;
@@ -131,10 +128,6 @@ Route::middleware(['auth:sanctum', 'verified','authadmin'])->group(function(){
     Route::get('admin/coupons',AdminCouponsComponent::class)->name('admin.coupons');
     Route::get('admin/coupon/add',AdminAddCouponComponent::class)->name('admin.addcoupons');
     Route::get('admin/coupon/edit/{coupon_id}',AdminEditCouponComponent::class)->name('admin.editcoupons');
-    //الصفحات
-    Route::get('admin/pages',AdminPagesComponent::class)->name('admin.pages');
-    Route::get('admin/pages/add',AdminAddPageComponent::class)->name('admin.addpages');
-    Route::get('admin/pages/edit/{page_id}',AdminEditPageComponent::class)->name('admin.editpages');
     //الطلبات
     Route::get('/admin/orders',AdminOrderComponent::class)->name('admin.orders');
     Route::get('/admin/orders/{order_id}',AdminOrderDetailsComponent::class)->name('admin.order_details');

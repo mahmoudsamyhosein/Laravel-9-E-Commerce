@@ -1,4 +1,6 @@
-<div class="content" dir="rtl" style="text-align: right">   
+<div class="content" dir="rtl" style="text-align: right">  
+  <title>@section('title','| لوحة التحكم ')</title>
+ 
     <style>
         .content {
           padding-top: 40px;
@@ -58,7 +60,7 @@
               <div class="icon-stat">    
                 <div class="row">
                   <div class="col-xs-8 text-left">
-                    <span class="icon-stat-label">{{__('mshmk.Total_Cost')}}</span>
+                    <span class="icon-stat-label text-right">{{__('mshmk.Total_Cost')}}</span>
                     <span class="icon-stat-value">${{$total_cost}}</span>
                   </div>   
                   <div class="col-xs-4 text-center">
@@ -66,7 +68,7 @@
                   </div>
                 </div>    
                 <div class="icon-stat-footer">
-                  <i class="fa fa-clock-o"></i>{{__('mshmk.Updated_Now')}}
+                  <i class="fa fa-clock-o" style="margin-left: 5px;"></i>{{__('mshmk.Updated_Now')}}
                 </div>    
               </div>    
             </div>    
@@ -74,7 +76,7 @@
               <div class="icon-stat">    
                 <div class="row">
                   <div class="col-xs-8 text-left">
-                    <span class="icon-stat-label">{{__('mshmk.Total_Purchase')}}</span>
+                    <span class="icon-stat-label text-right">{{__('mshmk.Total_Purchase')}}</span>
                     <span class="icon-stat-value">{{$total_purchase}}</span>
                   </div>    
                   <div class="col-xs-4 text-center">
@@ -82,7 +84,7 @@
                   </div>
                 </div>    
                 <div class="icon-stat-footer">
-                  <i class="fa fa-clock-o"></i>{{__('mshmk.Updated_Now')}}
+                  <i class="fa fa-clock-o" style="margin-left: 5px;"></i>{{__('mshmk.Updated_Now')}}
                 </div>   
               </div>
             </div>
@@ -90,7 +92,7 @@
               <div class="icon-stat">    
                 <div class="row">
                   <div class="col-xs-8 text-left">
-                    <span class="icon-stat-label">{{__('mshmk.Total_Delivered')}}</span>
+                    <span class="icon-stat-label text-right">{{__('mshmk.Total_Delivered')}}</span>
                     <span class="icon-stat-value">{{$totalDelivered}}</span>
                   </div>    
                   <div class="col-xs-4 text-center">
@@ -98,7 +100,7 @@
                   </div>
                 </div>    
                 <div class="icon-stat-footer">
-                  <i class="fa fa-clock-o"></i>{{__('mshmk.Updated_Now')}}
+                  <i class="fa fa-clock-o" style="margin-left: 5px;"></i>{{__('mshmk.Updated_Now')}}
                 </div>
               </div>    
             </div>    
@@ -106,7 +108,7 @@
               <div class="icon-stat">    
                 <div class="row">
                   <div class="col-xs-8 text-left">
-                    <span class="icon-stat-label">{{__('mshmk.Total_Canceled')}}</span>
+                    <span class="icon-stat-label text-right">{{__('mshmk.Total_Canceled')}}</span>
                     <span class="icon-stat-value">{{$totalCanceled}}</span>
                   </div>    
                   <div class="col-xs-4 text-center">
@@ -114,7 +116,7 @@
                   </div>
                 </div>    
                 <div class="icon-stat-footer">
-                  <i class="fa fa-clock-o"></i>{{__('mshmk.Updated_Now')}}
+                  <i class="fa fa-clock-o" style="margin-left: 5px;"></i>{{__('mshmk.Updated_Now')}}
                 </div>    
               </div>    
             </div>    
@@ -123,7 +125,7 @@
               <div class="col-md-12">
                   <div class="panel panel-default">
                       <div class="panel-heading">
-                        {{__('mshmk.Latest_Order')}}
+                        <h4>{{__('mshmk.Latest_Order')}}</h4>
                       </div>
                       <div class="panel-body">
                         <table class="table table-striped">

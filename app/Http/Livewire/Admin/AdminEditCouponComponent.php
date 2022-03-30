@@ -69,7 +69,7 @@ class AdminEditCouponComponent extends Component
     public function render()
     {
         // دالة أعادة العرض الي المستخدم 
-        return view('livewire.admin.admin-edit-coupon-component' )->layout('layouts.base');
+        return view('livewire.admin.coupons.admin-edit-coupon-component' )->layout('layouts.base');
     }
 }
 /*
