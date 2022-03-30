@@ -27,7 +27,6 @@ class AdminEditCouponComponent extends Component
         $this->type = $coupon->type;
         $this->value = $coupon->value;
         $this->cart_value = $coupon->cart_value;
-        $this->coupon_id = $coupon->coupon_id;
 
     }
 
@@ -44,7 +43,7 @@ class AdminEditCouponComponent extends Component
         ]);
     }
 
-    public function updatecoupon(){
+    public function updateCoupon(){
        $this->validate([
            //بعدما تتحقق من البيانات التي أدخلها المستخدم باستخدام التابع validate
            'code' => 'required',

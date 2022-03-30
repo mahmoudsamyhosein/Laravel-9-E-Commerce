@@ -41,10 +41,8 @@ class ContactComponent extends Component
         $contact->save();
         session()->flash('message',trans('mshmk.Your_Message_Has_Been_Sent_Successfully!'));
     }
-    // دالة لتمرير المتغيرات الي العرض 
     public function render()
     {
-        //متغير لتعديل واضافه محتوي الصفحة [AdminContactCoomponent.php]
         $setting = Setting::find(1);
         return view('livewire.contact-component' ,['setting' => $setting ] )->layout('layouts.base');
     }

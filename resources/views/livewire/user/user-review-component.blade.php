@@ -51,7 +51,7 @@
 																</p>
 															</div>
 															<p class="comment-form-comment">
-																<label for="comment">{{__('mshmk.Your_Review')}}<span class="required" style="color: red;">*</span>
+																<label for="comment">{{__('mshmk.Your_Review')}}<span class="required" style="color: red; margin-right:2px;" >*</span>
 																</label>
 																<textarea id="comment" name="comment" cols="45" rows="8" wire:model='comment'></textarea>
                                                                 @error('comment')

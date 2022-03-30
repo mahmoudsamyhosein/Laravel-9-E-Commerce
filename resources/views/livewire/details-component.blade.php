@@ -98,14 +98,14 @@
 								</div>
 								<div class="wrap-butons">
 									@if($product->sale_price > 0 && $sale->status == 1 && $sale->sale_date > Carbon\Carbon::now() )
-										<a href="#" class="btn add-to-cart" wire:click.prevent="store( {{ $product->id }},{{ $product->name }},{{ $product->sale_price }} )">{{__('mshmk.Add_To_Cart')}}</a>
+										<a href="#" class="btn add-to-cart" wire:click.prevent="store( {{ $product->id }},'{{ $product->name }}',{{ $product->sale_price }} )">{{__('mshmk.Add_To_Cart')}}</a>
 									@else
-										<a href="#" class="btn add-to-cart" wire:click.prevent="store( {{ $product->id }},{{ $product->name }},{{ $product->regular_price }} )">{{__('mshmk.Add_To_Cart')}}</a>
+										<a href="#" class="btn add-to-cart" wire:click.prevent="store( {{ $product->id }},'{{ $product->name }}',{{ $product->regular_price }} )">{{__('mshmk.Add_To_Cart')}}</a>
 									@endif
 									
 								</div>
 							</div>
-							<div class="advance-info">
+							<div class="advance-info" dir="rtl" style="text-align: right">
 								<div class="tab-control normal">
 									<a href="#description" class="tab-control-item active">{{__('mshmk.description')}}</a>
 									<a href="#review" class="tab-control-item">{{__('mshmk.Reviews')}}</a>
@@ -138,7 +138,7 @@
 												}
 											</style>
 											<div id="comments">
-												<h2 class="woocommerce-Reviews-title">{{$product->orderItems->where('rstatus',1)->count()}} Review for <span>{{$product->name}}</span></h2>
+												<h2 class="woocommerce-Reviews-title">{{$product->orderItems->where('rstatus',1)->count()}} {{__('mshmk.Review_for')}} <span>{{$product->name}}</span></h2>
 												<ol class="commentlist">
 													@foreach ($product->orderItems->where('rstatus',1) as $orderItem)
 														<li class="comment byuser comment-author-admin bypostauthor even thread-even depth-1" id="li-comment-20">

@@ -1,6 +1,5 @@
 <div dir="rtl" style="text-align: right">
     <title>@section('title','| تفاصيل الطلب ')</title>
-
     <div class="container" style="padding: 30px 0; text-align:right;" dir="rtl" >
         <div class="row">
             <div class="col-md-12">
@@ -16,7 +15,7 @@
                             <div class="col-md-6">
                                 <a href="{{route('user.orders')}}" class="btn btn-success pull-left">{{__('mshmk.My_Orders')}}</a>
                                 @if ($order->status == 'ordered')
-                                     <a href="#" class="btn btn-warning pull-left" wire:click.prevent='cancleorder'>{{__('mshmk.Cancel_Order')}}</a>
+                                     <a href="#" class="btn btn-warning pull-right"  wire:click.prevent='cancleorder'>{{__('mshmk.Cancel_Order')}}</a>
                                 @endif
                             </div>
                         </div>
@@ -45,7 +44,7 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        {{__('mshmk.Ordered_Items')}}
+                       <h4>{{__('mshmk.Ordered_Items')}}</h4> 
                     </div>
                 </div>
                 <div class="panel-body">
@@ -73,7 +72,7 @@
                                             </div>
                                             <div class="price-field sub-total"><p class="price">${{ $item->price * $item->quantity }}</p></div>
                                             @if ($order->status == 'delivered' && $item->rstatus == false)
-                                                <div class="price-field sub-total"><p class="price"> <a href="{{ route('review.order',['order_item_id' => $item->id ])}}">Write Review</a></p></div>
+                                                <div class="price-field sub-total"><p class="price"> <a href="{{ route('user.review',['order_item_id' => $item->id ])}}">{{__('mshmk.Write_Review')}}</a></p></div>
                                             @endif
                                         </li>
                                 @endforeach										
@@ -97,7 +96,7 @@
                 <div class="col-md-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                        {{__('mshmk.Billing_Details')}}
+                        <h4>{{__('mshmk.Billing_Details')}}</h4>
                         </div>
                         <div class="panel-body">
                             <table class="table">
@@ -142,7 +141,7 @@
                 <div class="col-md-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                        {{__('mshmk.Shipping_Details')}}
+                        <h4>{{__('mshmk.Shipping_Details')}}</h4>
                         </div>
                     </div>
                     <div class="panel-body">
@@ -188,7 +187,7 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                      {{__('mshmk.Transaction')}}
+                      <h4>{{__('mshmk.Transaction')}}</h4> 
                     </div>
                 </div>
                 <div class="panel-body">

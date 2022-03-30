@@ -19,11 +19,11 @@ class UserReviewComponent extends Component
     public function mount($order_item_id){
         $this->order_item_id = $order_item_id;
     }
+
     public function updated($fields){
-        $this->validateOnly([
+        $this->validateOnly($fields,[
             'rating' => 'required',
             'comment' => 'required',
-
         ]);
     }
     public function addreview(){
@@ -37,11 +37,14 @@ class UserReviewComponent extends Component
         $review->comment    = $this->comment;
         $review->order_item_id = $this->order_item_id;
         $review->save();
+
         $orderItem = OrderItem::find($this->order_item_id);
         $orderItem->rstatus = true;
         $orderItem->save();
-        session()->flash('mesage',trans('mshmk.Your_Review_Has_Been_Added_Successfully!'));
+
+        session()->flash('message',trans('mshmk.Your_Review_Has_Been_Added_Successfully!'));
     }
+
     public function render()
     {
         $orderItem = OrderItem::find($this->order_item_id);

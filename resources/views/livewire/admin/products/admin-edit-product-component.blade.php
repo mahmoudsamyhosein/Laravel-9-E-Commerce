@@ -4,16 +4,16 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <div class="row">
-                                    <div class="col-md-6 pull-right" >
-                                    <h4> {{__('mshmk.Edit_Product')}}</h4>  
-                                    </div>
-                                    <div class="col-md-6">
-                                        <a href="{{route('admin.products')}}" class="btn btn-success pull-left" >{{__('mshmk.All_Products')}}</a>
-                                    </div>
+                            <div class="panel-heading">
+                                <div class="row">
+                                        <div class="col-md-6 pull-right" >
+                                        <h4> {{__('mshmk.Edit_Product')}}</h4>  
+                                        </div>
+                                        <div class="col-md-6">
+                                            <a href="{{route('admin.products')}}" class="btn btn-success pull-left" >{{__('mshmk.All_Products')}}</a>
+                                        </div>
+                                </div>
                             </div>
-                        </div>
                             <div class="panel-body">
                                 @if(Session::has('message'))
                                     <div class="alert alert-success" role="alert">{{ Session::get('message')}}</div>

@@ -4,20 +4,21 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <a href="{{ route('admin.coupons')}}" class="btn btn-success pull-left">
-                                   {{__('mshmk.All_Coupons')}}
-                                </a>
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-6">
+                                        <a href="{{ route('admin.coupons')}}" class="btn btn-success pull-left">
+                                        {{__('mshmk.All_Coupons')}}
+                                        </a>
+                                    </div>
+                                    <div class="col-md-6">
+                                         <h4>{{__('mshmk.Add_New_Coupon')}}</h4>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-md-6">
-                                {{__('mshmk.Add_New_Coupon')}}
-                            </div>
-                            
                         </div>
-                    </div>
-                    <div class="panel-body">
+                <div class="panel-body">
                         @if(Session::has('message'))
                             <div class="alert alert-success" role="alert">{{ Session::get('message')}}</div>
                         @endif

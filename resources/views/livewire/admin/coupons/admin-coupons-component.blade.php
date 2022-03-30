@@ -5,11 +5,16 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <div class="col-md-6 pull-right">
-                            <h4>{{__('mshmk.All_Coupon')}}</h4>
-                        </div>
-                        <div class="col-md-6">
-                            <a href="{{ route('admin.addcoupons') }}" class="btn btn-success pull-left">{{__('mshmk.ADD_New')}}</a>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="col-md-6 pull-right">
+                                    {{__('mshmk.All_Coupon')}}</h4>
+                                </div>
+                                <div class="col-md-6">
+                                    <a href="{{ route('admin.addcoupons') }}" class="btn btn-success pull-left">
+                                        {{__('mshmk.ADD_New')}}</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="panel-body">

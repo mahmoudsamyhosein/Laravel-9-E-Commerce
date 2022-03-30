@@ -6,15 +6,15 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <div class="row">
-                            <div class="col-md-6 pull-right">
-                                <h4>{{__('mshmk.Add_New_Attribute')}}</h4>
+                                <div class="col-md-6 pull-right">
+                                    <h4>{{__('mshmk.Add_New_Attribute')}}</h4>
+                                </div>
+                                <div class="col-md-6 ">
+                                    <a href="{{ route('admin.attributes')}}" class="btn btn-success pull-left">
+                                        {{__('mshmk.All_Attribute')}}
+                                    </a>
+                                </div>
                             </div>
-                            <div class="col-md-6 ">
-                                <a href="{{ route('admin.attributes')}}" class="btn btn-success pull-left">
-                                    {{__('mshmk.All_Attribute')}}
-                                </a>
-                            </div>
-                        </div>
                     </div>
                     <div class="panel-body">
                         @if(Session::has('message'))

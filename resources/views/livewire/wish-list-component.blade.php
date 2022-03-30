@@ -1,4 +1,4 @@
-<div>
+<div dir="rtl" style="text-align:right;">
 <main id="main" class="main-site left-sidebar">
     <title>@section('title','| قائمة الأمنيات ')</title>
 
@@ -45,7 +45,7 @@
                                     <div class="product-info">
                                         <a href="{{ route('products.details', ['slug' => $item->model->slug ]) }}" class="product-name"><span>{{ $item->model->name }}</span></a>
                                         <div class="wrap-price"><span class="product-price">{{ $item->model->regular_price }}</span></div>
-                                        <a href="#" class="btn add-to-cart" wire.click.prevent="moveproductfromwishisttocart('{{ $item->rowId }}')">{{__('mshmk.Move_To_Cart')}}</a>
+                                        <a href="#" class="btn add-to-cart" wire:click.prevent="moveproductfromwishisttocart('{{$item->rowId}}')">{{__('mshmk.Move_To_Cart')}}</a>
                                     </div>
                                     <div class="product-wish">
                                         <a href="#" wire:click.prevent="removeFromWishList({{$item->model->id}})"><i class="fa fa-heart fill-heart"></i></a>

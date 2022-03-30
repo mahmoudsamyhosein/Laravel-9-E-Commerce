@@ -163,12 +163,17 @@ class AdminEditProductComponent extends Component
                 $imagesname = $imagesname . ',' . $imgName;
             }
             $product->images =  $imagesname;
+
         $product->category_id = $this->category_id;
+
         if($this->scategory_id){
             $product->subcategory_id = $this->scategory_id;
         }
+
         $product->save();
+
         AttributeValue::where('product_id',$product->id)->delete();
+        
         foreach($this->attribute_values  as $key=>$attribute_value){
             $avalues = explode(',',$attribute_value);
             foreach($avalues as $avalue){

@@ -5,7 +5,7 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                   <div class="panel-heading">
-                      {{__('mshmk.Sale_Setting')}}
+                      <h4>{{__('mshmk.Sale_Setting')}}</h4>
                   </div>
                   <div class="panel-body">
                         @if(Session::has('message'))

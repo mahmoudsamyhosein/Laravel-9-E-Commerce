@@ -5,13 +5,15 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-md-6  pull-right">
-                                <h4>{{__('mshmk.Add_New_Product')}}</h4>
-                            </div>
-                            <div class="col-md-6">
-                                <a href="{{route('admin.products')}}" class="btn btn-success pull-left" style="margin-bottom:10px;">{{__('mshmk.All_Products')}}</a>
+                            <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-md-6  pull-right">
+                                            <h4>{{__('mshmk.Add_New_Product')}}</h4>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <a href="{{route('admin.products')}}" class="btn btn-success pull-left" style="margin-bottom:10px;">{{__('mshmk.All_Products')}}</a>
+                                        </div>
+                                    </div>
                             </div>
                             <div class="panel-body">
                                 @if(Session::has('message'))

@@ -57,7 +57,7 @@
                                 @if(Session::has('message'))
                                     <div class="alert alert-success" role="alert">{{ Session::get('message')}}</div>
                                 @endif
-								<form  name="frm-contact" wire.submit.prevent='sendmessage'>
+								<form  name="frm-contact" wire:submit.prevent='sendmessage'>
 									@csrf
 									<label for="name">{{__('mshmk.Name')}}<span>*</span></label>
 									<input type="text" name="name"  id="name"  wire:model='name'>

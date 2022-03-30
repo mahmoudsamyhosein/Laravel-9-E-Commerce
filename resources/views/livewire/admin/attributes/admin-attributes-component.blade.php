@@ -1,6 +1,5 @@
 <div dir="rtl" style="text-align: right">
     <title>@section('title','| خواص المنتجات ')</title>
-
     <div>
         <style>
             nav svg {
@@ -29,12 +28,14 @@
                 <div class="col-md-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <div class="col-md-6 pull-right">
-                                <h4>{{__('mshmk.All_Attributes')}}</h4>
-                            </div>
-                            <div class="col-md-6">
-                                <a href="{{ route('admin.add_attribute') }}" class="btn btn-success pull-left">{{__('mshmk.ADD_New')}}</a>
-                            </div>
+                            <div class="row">
+                                    <div class="col-md-6 pull-right">
+                                        <h4>{{__('mshmk.All_Attributes')}}</h4>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <a href="{{ route('admin.add_attribute') }}" class="btn btn-success pull-left">{{__('mshmk.ADD_New')}}</a>
+                                    </div>
+                             </div>
                         </div>
                         <div class="panel-body">
                             @if(Session::has('message'))
@@ -65,7 +66,7 @@
                                                 onclick="confirm('Are You Sure, You Want to delete this Attribute?') || event.stopImmediatePropagation()"
                                                 wire:click.prevent='deleteAttribute({{$pattribute->id}})'
                                                 
-                                                style="margin-left:10px;"><i class="fa fa-times fa-2x text-danger"></i></a>
+                                                style="margin-right:10px;"><i class="fa fa-times fa-2x text-danger"></i></a>
                                         </td>
                                     </tr>
                                     @endforeach
