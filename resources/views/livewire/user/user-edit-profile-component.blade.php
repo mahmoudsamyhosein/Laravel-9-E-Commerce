@@ -8,20 +8,20 @@
                     <h4>{{__('mshmk.Update_Profile')}}</h4>
                 </div>
                 <div class="panel-body">
-                    <form wire:submit.prevent='updateprofile'>
+                    <form wire:submit.prevent="updateProfile">
                         @csrf
                         @if(Session::has('message'))
                             <div class="alert alert-success" role="alert">{{Session::get('message')}}</div>
                         @endif
                         <div class="col-md-4">
                             @if($newimage)
-                                <img src="{{$newimage->temporaryUrl()}}" width="100%" >                            
+                                <img src="{{$newimage->temporaryUrl()}}" width="100%" />
                             @elseif($image)
-                                <img src="{{ asset('assets/images/profile')}}/{{$user->profile->image}}" width="100%" >                            
+                                <img src="{{asset('assets/images/profile')}}/{{$image}}" width="100%" />
                             @else
-                                <img src="{{ asset('assets/images/profile/default.jpg')}}" width="100%"> 
+                                <img src="{{asset('assets/images/profile/default.jpg')}}" width="100%" />
                             @endif
-                            <input type="file" class="form-control" wire:model='newimage'>
+                            <input type="file" class="form-control" wire:model="newimage" />
                         </div>
                         <div class="col-md-8">
                             <p><b>{{__('mshmk.Name:')}}     </b><input type="text" class="form-control" wire:model='name'></p>

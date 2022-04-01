@@ -2,8 +2,9 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
-
+use Carbon\Carbon;
 class CreateCouponsTable extends Migration
 {
     /**
@@ -19,7 +20,7 @@ class CreateCouponsTable extends Migration
             $table->enum('type',['fixed','percent']);
             $table->decimal('value');
             $table->decimal('cart_value');
-            $table->date('expiry_date')->timestamps();
+            $table->date('expiry_date')->default(Carbon::now());;
             $table->timestamps();
         });
     }
@@ -32,7 +33,7 @@ class CreateCouponsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('coupons', function (Blueprint $table) {
-            $table->date('expiry_date')->timestamps();
+            $table->date('expiry_date');
         });
     }
 }

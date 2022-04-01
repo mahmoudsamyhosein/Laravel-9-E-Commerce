@@ -1,7 +1,6 @@
 <?php
 /*
 *بسم الله الرحمن الرحيم والصلاة والسلام علي أشرف المرسلين سيدنا محمد
-* [لوحة المستخدم] يحتوي هذا الملف علي منطق تفاصيل المنتج .
 *MY_GITHUB_ACCOUNT:https://github.com/mahmoudsamyhosein .
 */
 namespace App\Http\Livewire;
@@ -10,6 +9,7 @@ use App\Models\AttributeValue;
 use App\Models\Product;
 use App\Models\Sale;
 use Livewire\Component;
+use App\Models\Setting;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
 class DetailsComponent extends Component
@@ -43,7 +43,8 @@ class DetailsComponent extends Component
         $related_products = Product::where('category_id',$product->category_id)->inRandomOrder()->limit(12)->get();
         $sale = Sale::find(1); 
         $attributeValues = AttributeValue::all();
-        return view('livewire.details-component',[ 'product' => $product ,'popular_products' => $popular_products , 'related_products' => $related_products  ,'sale' =>$sale ,'attributeValues' =>$attributeValues])->layout('layouts.base');
+        $setting = Setting::find(1);
+        return view('livewire.details-component',[ 'product' => $product ,'popular_products' => $popular_products , 'related_products' => $related_products  ,'sale' =>$sale ,'attributeValues' =>$attributeValues ,'setting' => $setting])->layout('layouts.base');
     }
 }
 /*

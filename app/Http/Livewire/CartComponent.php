@@ -1,7 +1,6 @@
 <?php
 /*
 *بسم الله الرحمن الرحيم والصلاة والسلام علي أشرف المرسلين سيدنا محمد
-* [لوحة المستخدم] يحتوي هذا الملف علي منطق خواص المنتج .
 *MY_GITHUB_ACCOUNT:https://github.com/mahmoudsamyhosein .
 */
 namespace App\Http\Livewire;
@@ -11,10 +10,12 @@ use Livewire\Component;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Coupon;
+use App\Models\Setting;
 use Illuminate\Support\Carbon;
 
 class CartComponent extends Component
 {
+
         public $haveCouponCode;
         public $couponCode;
         public $discount;
@@ -161,6 +162,8 @@ class CartComponent extends Component
 
     public function render()
     {
+        
+
         $products = session()->get('livewire.cart-component');
         $products = Product::find($products);
         $this->setAmountForCheckout();
@@ -168,7 +171,8 @@ class CartComponent extends Component
         if(Auth::check()){
             Cart::instance('cart')->store(Auth::user()->email);
         }
-        return view('livewire.cart-component',['products' => $products])->layout('layouts.base');
+        $setting = Setting::find(1);
+        return view('livewire.cart-component',['products' => $products , 'setting' => $setting])->layout('layouts.base');
     }
 
 }

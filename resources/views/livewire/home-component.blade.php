@@ -10,7 +10,7 @@
 						<div class="slide-info slide-1">
 							<h2 class="f-title"><b>{{$slide->title}}</b></h2>
 							<span class="subtitle">{{$slide->subtitle}}</span>
-							<p class="sale-info">{{__('mshmk.Only_price:')}} <span class="price">${{$slide->price}}</span></p>
+							<p class="sale-info" dir="rtl">{{__('mshmk.Only_price:')}} <span class="price">{{$slide->price}} {{$setting->store_name}} </span></p>
 							<a href="{{ $slide->link }}" class="btn-link">{{__('mshmk.Shop_Now')}}</a>
 						</div>
 					</div>
@@ -51,7 +51,7 @@
 								</div>
 								<div class="product-info">
 									<a href="{{ route('products.details' ,['slug' => $sproduct->slug ])}}" class="product-name"><span>{{$sproduct->name}}</span></a>
-									<div class="wrap-price"><ins><p class="product-price">${{$sproduct->sale_price}}</p></ins> <del><p class="product-price">${{$sproduct->regular_price}}</p></del></div>
+									<div class="wrap-price"><ins><p class="product-price" dir="rtl">{{$sproduct->sale_price}} {{$setting->store_name}}</p></ins> <del><p class="product-price" dir="rtl">{{$sproduct->regular_price}} {{$setting->store_name}}</p></del></div>
 								</div>
 							</div>
 						@endforeach
@@ -81,7 +81,7 @@
 											</div>
 											<div class="product-info">
 												<a href="{{route('products.details',['slug' => $lproduct->slug ])}}" class="product-name"><span>{{ $lproduct->name }}</span></a>
-												<div class="wrap-price"><span class="product-price">${{ $lproduct->regular_price }}</span></div>
+												<div class="wrap-price" dir="rtl"><span class="product-price">{{ $lproduct->regular_price }} {{$setting->store_name}}</span></div>
 											</div>
 										</div>
 									@endforeach
@@ -123,7 +123,7 @@
 													</div>
 													<div class="product-info">
 															<a href="{{route('products.details',['slug' => $c_product->slug])}}" class="product-name"><span>{{$c_product->name}}</span></a>
-															<div class="wrap-price"><span class="product-price">${{$c_product->regular_price}}</span></div>
+															<div class="wrap-price" dir="rtl"><span class="product-price">{{$c_product->regular_price}} {{$setting->store_name}}</span></div>
 													</div>
 												</div>
 												@endforeach

@@ -1,7 +1,6 @@
 <?php
 /*
 *بسم الله الرحمن الرحيم والصلاة والسلام علي أشرف المرسلين سيدنا محمد
-* [لوحة المستخدم] يحتوي هذا الملف علي منطق خواص المنتج .
 *MY_GITHUB_ACCOUNT:https://github.com/mahmoudsamyhosein .
 */
 namespace App\Http\Livewire;
@@ -11,6 +10,7 @@ use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\Shipping;
 use App\Models\Transaction;
+use App\Models\Setting;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
@@ -310,7 +310,8 @@ class CheckOutComponent extends Component
     public function render()
     {
         $this->verifyforcheckout();
-        return view('livewire.check-out-component')->layout('layouts.base');
+        $setting = Setting::find(1);
+        return view('livewire.check-out-component',['setting' => $setting])->layout('layouts.base');
     }
 }
 /*

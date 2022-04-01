@@ -1,7 +1,6 @@
 <?php
 /*
 *بسم الله الرحمن الرحيم والصلاة والسلام علي أشرف المرسلين سيدنا محمد
-* [لوحة المستخدم] يحتوي هذا الملف علي منطق خواص المنتج .
 *MY_GITHUB_ACCOUNT:https://github.com/mahmoudsamyhosein .
 */
 namespace App\Http\Livewire;
@@ -11,6 +10,7 @@ use App\Models\Homeslider;
 use App\Models\Product;
 use App\Models\HomeCategory;
 use App\Models\Sale;
+use App\Models\Setting;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -31,7 +31,8 @@ class HomeComponent extends Component
             Cart::instance('cart')->restore(Auth::user()->email);
             Cart::instance('wishlist')->store(Auth::user()->email);
         }
-        return view('livewire.home-component',['sliders' => $sliders ,'lproducts' => $lproducts ,'categories'=>$categories,'no_of_products'=> $no_of_products , 'sproducts' => $sproducts ,'sale' => $sale])->layout('layouts.base');
+        $setting = Setting::find(1);
+        return view('livewire.home-component',['sliders' => $sliders ,'lproducts' => $lproducts ,'categories'=>$categories,'no_of_products'=> $no_of_products , 'sproducts' => $sproducts ,'sale' => $sale ,'setting' => $setting])->layout('layouts.base');
 
     }
 }

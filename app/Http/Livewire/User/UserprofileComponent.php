@@ -1,11 +1,10 @@
 <?php
 /*
 *بسم الله الرحمن الرحيم والصلاة والسلام علي أشرف المرسلين سيدنا محمد
-* [لوحة المستخدم] يحتوي هذا الملف علي منطق خواص المنتج .
 *MY_GITHUB_ACCOUNT:https://github.com/mahmoudsamyhosein .
 */
-namespace App\Http\Livewire\User;
 
+namespace App\Http\Livewire\User;
 use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -22,7 +21,7 @@ class UserprofileComponent extends Component
             $profile->save();
         }
         $user = User::find(Auth::user()->id);
-        return view('livewire.user.userprofile-component',['user' => $user ])->layout('layouts.base');
+        return view('livewire.user.userprofile-component', ['user' => $user])->layout('layouts.base');
     }
 }
 /*

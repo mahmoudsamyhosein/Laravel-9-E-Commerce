@@ -1,7 +1,6 @@
 <?php
 /*
 *بسم الله الرحمن الرحيم والصلاة والسلام علي أشرف المرسلين سيدنا محمد
-* [لوحة المستخدم] يحتوي هذا الملف علي منطق خواص المنتج .
 *MY_GITHUB_ACCOUNT:https://github.com/mahmoudsamyhosein .
 */
 namespace App\Http\Livewire\User;
@@ -27,40 +26,44 @@ class UserEditProfileComponent extends Component
     public $zipcode;
     public $newimage;
 
-    public function mount(){
-      $user = User::find(Auth::user()->id); 
-      $this->name = $user->name;
-      $this->email = $user->email;
-      $this->mobile = $user->profile->mobile;
-      $this->image  = $user->profile->image;
-      $this->line1 = $user->profile->line1;
-      $this->line2 = $user->profile->line2;
-      $this->city = $user->profile->city;
-      $this->province = $user->profile->province;
-      $this->country = $user->profile->country;
-      $this->zipcode = $user->profile->zipcode;
-      $this->newimage = $user->profile->newimage;
+    public function mount()
+    {
+        $user = User::find(Auth::user()->id);
+        $this->name = $user->name;
+        $this->email = $user->email;
+        $this->mobile = $user->profile->mobile;
+        $this->image = $user->profile->image;
+        $this->line1 = $user->profile->line1;
+        $this->line2 = $user->profile->line2;
+        $this->city = $user->profile->city;
+        $this->province = $user->profile->province;
+        $this->country = $user->profile->country;
+        $this->zipcode = $user->profile->zipcode;
     }
-    public function updateprofile(){
+
+    public function updateProfile()
+    {
         $user = User::find(Auth::user()->id);
         $user->name = $this->name;
         $user->save();
 
         $user->profile->mobile = $this->mobile;
-        if($this->newimage){
-            if($this->image){
-                unlink('assets/images/profile/' . $this->image);
+        if($this->newimage)
+        {
+            if($this->image)
+            {
+                unlink('assets/images/profile/'.$this->image);
             }
             $imageName = Carbon::now()->timestamp . '.' . $this->newimage->extension();
             $this->newimage->storeAs('profile',$imageName);
-            $this->profile->image = $imageName;
+            $user->profile->image = $imageName;
         }
-        $user->profile->line1      = $this->line1;
-        $user->profile->line2      = $this->line2;
-        $user->profile->city       =  $this->city;
-        $user->profile->province   = $this->province;
-        $user->profile->country    = $this->country;
-        $user->profile->zipcode    = $this->zipcode;
+        $user->profile->line1 = $this->line1;
+        $user->profile->line2 = $this->line2;
+        $user->profile->city = $this->city;
+        $user->profile->province = $this->province;
+        $user->profile->country = $this->country;
+        $user->profile->zipcode = $this->zipcode;
         $user->profile->save();
         session()->flash('message',trans('mshmk.Profile_Has_Been_Updated_Successfully!'));
     }

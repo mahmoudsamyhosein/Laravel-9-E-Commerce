@@ -204,8 +204,8 @@
 
 {{-------------------------------------------الأجماليات ---}}
 							@if(Session::has('checkout'))
-								<p class="summary-info grand-total"><span>{{__('mshmk.Subtotal')}}</span> <span class="grand-total-price">{{Session::get('checkout')['subtotal']}}$</span></p>
-								<p class="summary-info grand-total"><span>{{__('mshmk.Grand_Total')}}</span> <span class="grand-total-price">{{Session::get('checkout')['total']}}$</span></p>
+								<p class="summary-info grand-total"><span>{{__('mshmk.Subtotal')}}</span><span class="grand-total-price">{{Session::get('checkout')['subtotal']}} {{$setting->store_name}}</span></p>
+								<p class="summary-info grand-total"><span>{{__('mshmk.Grand_Total')}}</span><span class="grand-total-price">{{Session::get('checkout')['total']}} {{$setting->store_name}}</span></p>
 							@endif
 {{-------------------------------------------الأجماليات ---}}
 

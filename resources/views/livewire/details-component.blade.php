@@ -2,7 +2,6 @@
 <!--main area-->
 	<main id="main" class="main-site" >
 		<title>@section('title','| تفاصيل المنتج  ')</title>
-
 		<div class="container">
 			<div class="wrap-breadcrumb" dir="rtl">
 				<ul>
@@ -64,9 +63,9 @@
 								</div>
 								
 								@if($product->sale_price > 0 && $sale->status == 1 && $sale->sale_date > Carbon\Carbon::now() )
-								<div class="wrap-price" ><ins><p class="product-price">${{$product->sale_price}}</p></ins> <del><p class="product-price">${{$product->regular_price}}</p></del></div>
+								<div class="wrap-price" ><ins><p class="product-price">{{$product->sale_price}} {{$setting->store_name}}</p></ins> <del><p class="product-price">{{$product->regular_price}} {{$setting->store_nmae}}</p></del></div>
 								@else
-									<div class="wrap-price"><span class="product-price">${{ $product->regular_price }}</span></div>
+									<div class="wrap-price"><span class="product-price"> {{ $product->regular_price }} {{$setting->store_name}} </span></div>
 								@endif
 								<div class="stock-info in-stock">
 									<p class="availability">{{__('mshmk.Availability:')}}<b>{{ $product->stock_status }}</b></p>
@@ -146,7 +145,7 @@
 																<img alt="{{$orderItem->order->user->name}}" src="{{ asset('assets/images/profile') }}/{{$orderItem->order->user->profile->image}}" height="80" width="80">
 																<div class="comment-text">
 																	<div class="star-rating">
-																		<span class="width-{{ $orderItem->review->rating * 20 }}-percent">Rated <strong class="rating">{{ $orderItem->review->rating  }}</strong> out of 5</span>
+																		<span class="width-{{ $orderItem->review->rating * 20 }}-percent">{{__('mshmk.Rated')}} <strong class="rating">{{ $orderItem->review->rating  }}</strong> {{__('mshmk.out_of_5')}}</span>
 																	</div>
 																	<p class="meta"> 
 																		<strong class="woocommerce-review__author">{{$orderItem->order->user->name}}</strong> 
@@ -187,7 +186,7 @@
 											</div>
 											<div class="product-info">
 												<a href="{{ route('products.details', ['slug' => $p_product->slug ]) }}" class="product-name"><span>{{ $p_product->name }}</span></a>
-												<div class="wrap-price"><span class="product-price">${{$p_product->regular_price}}</span></div>
+												<div class="wrap-price"><span class="product-price">{{$p_product->regular_price}} {{$setting->store_name}}</span></div>
 											</div>
 										</div>
 									</li>
@@ -212,7 +211,7 @@
 										</div>
 										<div class="product-info">
 											<a href="{{ route('products.details',['slug'=>$r_product->slug])}}" class="product-name"><span>{{$r_product->name}}</span></a>
-											<div class="wrap-price"><span class="product-price">${{$r_product->regular_price}}</span></div>
+											<div class="wrap-price" dir="rtl"><span class="product-price">{{$r_product->regular_price}} {{$setting->store_name}}</span></div>
 										</div>
 									</div>
 								@endforeach

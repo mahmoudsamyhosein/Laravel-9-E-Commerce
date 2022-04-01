@@ -7203,6 +7203,13 @@ background-color: #888888;
 th {
     text-align: right; 
 }
+/* .has-child-cate .toggle-control{
+    
+} */
+.has-child-cate:not(.open) .toggle-control::after{
+    right:;
+
+}
 /*
 خلصانة بشياكة
 */

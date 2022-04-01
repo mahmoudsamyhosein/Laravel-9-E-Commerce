@@ -14,10 +14,10 @@
 												<ol class="commentlist">
 													<li class="comment byuser comment-author-admin bypostauthor even thread-even depth-1" id="li-comment-20">
 														<div id="comment-20" class="comment_container"> 
-															<img alt="" src="{{ asset('assets/images/produts') }}/{{$orderItem->product->image}}" height="80" width="80">
+															<img alt="" src="{{ asset('assets/images/products') }}/{{$orderItem->product->image}}" height="80" width="80">
 															<div class="comment-text">
-																<p class="meta"> 
-																	<strong class="woocommerce-review__author">{{$orderItem->product->name}}</strong> 
+																<p class="meta" > 
+																	<p  style="margin-top: 30px; " class="woocommerce-review__author">{{$orderItem->product->name}}</p> 
 																</p>
 															</div>
 														</div>
@@ -69,7 +69,7 @@
 
 										</div>
 									</div>
-								{{-- مراجعات المنتج--}}
+					{{-- مراجعات المنتج--}}
             </div>
         </div>
 

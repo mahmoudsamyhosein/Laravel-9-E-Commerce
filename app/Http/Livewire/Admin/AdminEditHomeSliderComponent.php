@@ -1,7 +1,6 @@
 <?php
 /*
 *بسم الله الرحمن الرحيم والصلاة والسلام علي أشرف المرسلين سيدنا محمد
-* [لوحة المدير] يحتوي هذا الملف علي منطق خواص المنتج .
 *MY_GITHUB_ACCOUNT:https://github.com/mahmoudsamyhosein .
 */
 namespace App\Http\Livewire\Admin;
@@ -36,22 +35,24 @@ class AdminEditHomeSliderComponent extends Component
         $this->slider_id = $slider->id;
 
     }
-
-    public function updateslide(){
-
-        $slider = Homeslider::find($this->slider_id);
+    public function updateSlide()
+    {
+        $slider = HomeSlider::find($this->slider_id);
         $slider->title = $this->title;
         $slider->subtitle = $this->subtitle;
         $slider->price = $this->price;
         $slider->link = $this->link;
-        if($this->newimage){
+        if($this->newimage)
+        {
             $imagename = Carbon::now()->timestamp. '.' . $this->newimage->extension();
-            $this->image->storeAs('sliders',$imagename);
-            $slider->image = $this->image;
-        }
+            $this->newimage->storeAs('sliders',$imagename);
+            $slider->image = $imagename;
+        }        
         $slider->status = $this->status;
-        $slider->slider_id  = $this->slider_id;
+        $slider->save();
+        Session()->flash('message',trans('mshmk.Slide_Has_Been_updated_Successfully!'));
     }
+
     
     public function render()
     {

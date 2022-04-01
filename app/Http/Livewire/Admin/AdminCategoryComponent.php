@@ -1,14 +1,12 @@
 <?php
 /*
 *بسم الله الرحمن الرحيم والصلاة والسلام علي أشرف المرسلين سيدنا محمد
-* [لوحة المدير] يحتوي هذا الملف علي منطق خواص المنتج .
 *MY_GITHUB_ACCOUNT:https://github.com/mahmoudsamyhosein .
 */
 namespace App\Http\Livewire\Admin;
 
 use App\Models\Category;
 use App\Models\Subcategory;
-use Illuminate\Contracts\Session\Session;
 use Livewire\Component;
 use Livewire\WithPagination;
 class AdminCategoryComponent extends Component
@@ -18,7 +16,7 @@ class AdminCategoryComponent extends Component
     public function destroycategory($id){
         $category = Category::find($id);
         $category->delete();
-        Session()->flash('message',trans('mshmk.Category_Has_Been_Deleted_Successfully!'));
+        session()->flash('message',trans('mshmk.Category_Has_Been_Deleted_Successfully!'));
     }
     public function deletesubcategory($id){
         $scategory = Subcategory::find($id);

@@ -1,6 +1,5 @@
 <div dir="rtl" style="text-align: right" >
     <title>@section('title','| أضافة منتج جديد ')</title>
-
     <div class="container" style="padding: 30px 0;">
         <div class="row">
             <div class="col-md-12">

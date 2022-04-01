@@ -9,7 +9,7 @@
         <div class="row">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    {{__('mshmk.Profile')}}  
+                    <h4>{{__('mshmk.Profile')}}</h4>
                 </div>
                 <div class="panel-body">
                     <div class="col-md-4">
@@ -19,7 +19,7 @@
                             <img src="{{ asset('assets/images/profile/default.jpg')}}" width="100%" alt="{{$user->name}}"> 
                         @endif
                     </div>
-                    <div class="col-md-8 ">
+                    <div class="col-md-8">
                         <p><b>{{__('mshmk.Name:')}}</b>{{$user->name}}</p>
                         <p><b>{{__('mshmk.Email:')}}</b>{{$user->email}}</p>
                         <p><b>{{__('mshmk.Phone:')}}</b>{{$user->profile->mobile}}</p>

@@ -89,7 +89,7 @@
 										</div>
 										<div class="product-info">
 											<a href="{{ route('products.details', ['slug' => $product->slug ]) }}" class="product-name"><span>{{ $product->name }}</span></a>
-											<div class="wrap-price"><span class="product-price">{{ $product->regular_price }}</span></div>
+											<div class="wrap-price" dir="rtl"><span class="product-price">{{ $product->regular_price }} {{$setting->store_name}}</span></div>
 											<a href="#" class="btn add-to-cart" wire:click.prevent="store( {{$product->id}},'{{$product->name}}',{{$product->regular_price}} )" >{{__('mshmk.Add_To_Cart')}}</a>
 										</div>
 										<div class="product-wish">
@@ -138,7 +138,7 @@
 
 					<div class="widget mercado-widget filter-widget price-filter">
 						<h2 class="widget-title">{{__('mshmk.search_by_price')}}</h2>
-						<h2 class="widget-title">{{__('mshmk.Price:')}}<span class="text-info">${{$min_price}} - ${{$max_price}} </span></h2>
+						<h2 class="widget-title">{{__('mshmk.Price:')}}<span class="text-info"> {{$min_price}} {{$setting->store_name}} - {{$max_price}} {{$setting->store_name}} </span></h2>
 						<div class="widget-content" style="padding:10px 5px 40px 5px;">
 							<div id="slider" wire:ignore></div>
 						</div>
@@ -157,7 +157,7 @@
 										</div>
 										<div class="product-info">
 											<a href="{{ route('products.details', ['slug' => $p_product->slug ]) }}" class="product-name"><span>{{ $p_product->name }}</span></a>
-											<div class="wrap-price"><span class="product-price">${{$p_product->regular_price}}</span></div>
+											<div class="wrap-price"><span class="product-price">{{$p_product->regular_price}} {{$setting->store_name}}</span></div>
 										</div>
 									</div>
 								</li>

@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>مصري شوب @yield('title','| الرئيسية')</title> 
-	<link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/favicon.ico') }}">
+	<link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/favicon.png') }}">
 	<link
 		href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic,900,900italic&amp;subset=latin,latin-ext"
 		rel="stylesheet">
@@ -206,7 +206,7 @@
 				<div class="container" >
 					<div class="mid-section main-info-area" dir="rtl">
 						<div class="wrap-logo-top left-section " >
-							<a href="/" class="link-to-home"><img src="{{asset('assets/images/logo-top-1.png')}}"
+							<a href="/" class="link-to-home"><img src="{{asset('assets/images/logo/logo-top-1.png')}}"
 									alt="mercado"></a>
 						</div>
 						@livewire('header-search-component')
