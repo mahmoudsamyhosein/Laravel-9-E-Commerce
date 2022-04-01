@@ -20,7 +20,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($orderItems as $item)
+            @foreach ($order->orderItems as $item)
                 <tr>
                     <td> <img src="{{asset('assets/images/products')}}/{{$item->product->image}}" alt="{{$item->product->name}}" width="100"></td>
                     <td>{{$item->product->name}}</td>

@@ -209,7 +209,7 @@
                     </div>
                 </div>
                 <div class="coppy-right-item item-left">
-                    <a href="https://github.com/mahmoudsamyhosein"><p class="coppy-right-text">{{$setting->copyright}} © {{ now()->year }}   </p></a>
+                    <a href="https://github.com/mahmoudsamyhosein"><p class="coppy-right-text">{{$setting->copyright}} © {{ now()->year }} </p></a>
                 </div>
             </div>
         </div>

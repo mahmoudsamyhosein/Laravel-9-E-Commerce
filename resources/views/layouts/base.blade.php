@@ -34,6 +34,11 @@
 	@livewireStyles
 </head>
 <body class="home-page home-01 " >
+	<style>
+        .col-md-4{
+                float:right;
+            }
+    </style>
 	<!-- قائمة الموبايل -->
 	<div class="mercado-clone-wrap" dir="rtl">
 		<div class="mercado-panels-actions-wrap">

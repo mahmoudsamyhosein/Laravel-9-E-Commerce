@@ -108,7 +108,7 @@
                                 </tr>
                                 <tr>
                                     <th>{{__('mshmk.Phone')}}</th>
-                                    <td>{{$order->phone}}</td>
+                                    <td>{{$order->mobile}}</td>
                                     <th>{{__('mshmk.Email')}}</th>
                                     <td>{{$order->email}}</td>
                                 </tr>
@@ -154,7 +154,7 @@
                             </tr>
                             <tr>
                                 <th>{{__('mshmk.Phone')}}</th>
-                                <td>{{$order->shipping->phone}}</td>
+                                <td>{{$order->shipping->mobile}}</td>
                                 <th>{{__('mshmk.Email')}}</th>
                                 <td>{{$order->shipping->email}}</td>
                             </tr>
