@@ -18,6 +18,3 @@ class AdminContactComponent extends Component
         return view('livewire.admin.admin-contact-component',[ 'contacts' => $contacts ])->layout('layouts.base');
     }
 }
-/*
-خلصانة بشياكة
-*/

@@ -73,6 +73,3 @@ class UserEditProfileComponent extends Component
         return view('livewire.user.user-edit-profile-component')->layout('layouts.base');
     }
 }
-/*
-خلصانة بشياكة
-*/

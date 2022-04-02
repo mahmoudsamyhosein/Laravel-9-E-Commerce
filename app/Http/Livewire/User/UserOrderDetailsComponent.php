@@ -32,6 +32,3 @@ class UserOrderDetailsComponent extends Component
         return view('livewire.user.user-order-details-component',['order' => $order])->layout('layouts.base');
     }
 }
-/*
-خلصانة بشياكة
-*/

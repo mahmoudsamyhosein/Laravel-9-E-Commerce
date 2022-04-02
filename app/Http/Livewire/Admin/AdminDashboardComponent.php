@@ -32,6 +32,3 @@ class AdminDashboardComponent extends Component
             ])->layout('layouts.base');
     }
 }
-/*
-خلصانة بشياكة
-*/

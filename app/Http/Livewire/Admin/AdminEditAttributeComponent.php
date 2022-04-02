@@ -37,6 +37,3 @@ class AdminEditAttributeComponent extends Component
         return view('livewire.admin.attributes.admin-edit-attribute-component')->layout('layouts.base');
     }
 }
-/*
-خلصانة بشياكة
-*/

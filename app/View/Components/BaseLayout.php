@@ -13,10 +13,7 @@ class BaseLayout extends Component
      * @return \Illuminate\View\View
      */
     public function render()
-    {
+    {   
         return view('layouts.base');
     }
 }
-/*
-خلصانة بشياكة
-*/

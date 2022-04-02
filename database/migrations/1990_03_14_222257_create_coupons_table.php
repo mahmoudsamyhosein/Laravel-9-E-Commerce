@@ -20,7 +20,7 @@ class CreateCouponsTable extends Migration
             $table->enum('type',['fixed','percent']);
             $table->decimal('value');
             $table->decimal('cart_value');
-            $table->date('expiry_date')->default(Carbon::now());;
+            $table->date('expiry_date');
             $table->timestamps();
         });
     }

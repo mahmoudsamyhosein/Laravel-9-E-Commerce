@@ -44,6 +44,3 @@ class UserChangePasswordComponent extends Component
         return view('livewire.user.user-change-password-component')->layout('layouts.base');
     }
 }
-/*
-خلصانة بشياكة
-*/

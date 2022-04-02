@@ -63,7 +63,7 @@
                                             {{__('mshmk.Status')}}
                                             <span class="caret"></span>
                                         </button>
-                                        <ul class="dropdown-menu">
+                                        <ul class="dropdown-menu" style="text-align: right">
                                             <li><a href="#" wire:click.prevent="updateOrderStatus({{$order->id}},'delivered')">{{__('mshmk.Delivered')}}</a></li>
                                             <li><a href="#" wire:click.prevent="updateOrderStatus({{$order->id}},'canceled')">{{__('mshmk.Canceled')}}</a></li>
                                         </ul>

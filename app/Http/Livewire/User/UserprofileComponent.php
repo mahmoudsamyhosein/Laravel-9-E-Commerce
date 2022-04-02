@@ -24,6 +24,3 @@ class UserprofileComponent extends Component
         return view('livewire.user.userprofile-component', ['user' => $user])->layout('layouts.base');
     }
 }
-/*
-خلصانة بشياكة
-*/

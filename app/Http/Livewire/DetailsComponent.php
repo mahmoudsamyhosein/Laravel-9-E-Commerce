@@ -47,6 +47,3 @@ class DetailsComponent extends Component
         return view('livewire.details-component',[ 'product' => $product ,'popular_products' => $popular_products , 'related_products' => $related_products  ,'sale' =>$sale ,'attributeValues' =>$attributeValues ,'setting' => $setting])->layout('layouts.base');
     }
 }
-/*
-خلصانة بشياكة
-*/

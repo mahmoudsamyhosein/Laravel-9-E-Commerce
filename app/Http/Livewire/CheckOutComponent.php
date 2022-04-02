@@ -314,6 +314,3 @@ class CheckOutComponent extends Component
         return view('livewire.check-out-component',['setting' => $setting])->layout('layouts.base');
     }
 }
-/*
-خلصانة بشياكة
-*/

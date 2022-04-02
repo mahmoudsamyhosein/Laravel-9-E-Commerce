@@ -20,6 +20,3 @@ class FooterComponent extends Component
         return view('livewire.footer-component',['setting' => $setting ,'categories' => $categories])->layout('layouts.base');
     }
 }
-/*
-خلصانة بشياكة
-*/

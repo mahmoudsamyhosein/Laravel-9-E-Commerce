@@ -53,6 +53,3 @@ class AdminAddCategoryComponent extends Component
         return view('livewire.admin.categories.admin-add-category-component',[ 'categories' => $categories])->layout('layouts.base');
     }
 }
-/*
-خلصانة بشياكة
-*/

@@ -17,6 +17,3 @@ class PrivacyPolicyComponent extends Component
     
     }
 }
-/*
-خلصانة بشياكة
-*/

@@ -27,6 +27,3 @@ class HeaderSearchComponent extends Component
         return view('livewire.header-search-component' ,['categories' => $categories ])->layout('layouts.base');
     }
 }
-/*
-خلصانة بشياكة
-*/

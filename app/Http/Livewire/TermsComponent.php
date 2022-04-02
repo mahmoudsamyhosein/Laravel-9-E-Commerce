@@ -16,6 +16,3 @@ class TermsComponent extends Component
         return view('livewire.terms-component',['setting'=> $setting ])->layout('layouts.base');
     }
 }
-/*
-خلصانة بشياكة
-*/

@@ -35,6 +35,3 @@ class WishListComponent extends Component
         return view('livewire.wish-list-component')->layout('layouts.base');
     }
 }
-/*
-خلصانة بشياكة
-*/

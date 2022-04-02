@@ -257,6 +257,3 @@ class AdminSettingComponent extends Component
         return view('livewire.admin.admin-setting-component')->layout('layouts.base');
     }
 }
-/*
-خلصانة بشياكة
-*/

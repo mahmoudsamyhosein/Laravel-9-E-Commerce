@@ -198,6 +198,3 @@ class AdminEditProductComponent extends Component
         return view('livewire.admin.products.admin-edit-product-component',[ 'categories' => $categories ,'scategories' => $scategories, 'pattributes' => $pattributes])->layout('layouts.base');
     }
 }
-/*
-خلصانة بشياكة
-*/

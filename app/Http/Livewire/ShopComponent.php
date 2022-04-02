@@ -82,6 +82,3 @@ class ShopComponent extends Component
         return view('livewire.shop-component' ,['products'=> $products ,'categories' => $categories , 'popular_products' =>  $popular_products ,'setting' => $setting ])->layout('layouts.base');
     }
 }
-/*
-خلصانة بشياكة
-*/

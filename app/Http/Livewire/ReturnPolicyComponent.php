@@ -17,6 +17,3 @@ class ReturnPolicyComponent extends Component
     
     }
 }
-/*
-خلصانة بشياكة
-*/

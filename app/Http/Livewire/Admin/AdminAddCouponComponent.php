@@ -58,6 +58,3 @@ class AdminAddCouponComponent extends Component
         return view('livewire.admin.coupons.admin-add-coupon-component')->layout('layouts.base');
     }
 }
-/*
-خلصانة بشياكة
-*/

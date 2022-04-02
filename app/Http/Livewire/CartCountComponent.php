@@ -16,6 +16,3 @@ class CartCountComponent extends Component
         return view('livewire.cart-count-component');
     }
 }
-/*
-خلصانة بشياكة
-*/

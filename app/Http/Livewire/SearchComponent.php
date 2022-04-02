@@ -63,6 +63,3 @@ class SearchComponent extends Component
         return view('livewire.search-component' ,['products'=> $products ,'categories' => $categories , 'popular_products' => $popular_products ])->layout('layouts.base');
     }
 }
-/*
-خلصانة بشياكة
-*/

@@ -46,6 +46,3 @@ class ContactComponent extends Component
         return view('livewire.contact-component' ,['setting' => $setting ] )->layout('layouts.base');
     }
 }
-/*
-خلصانة بشياكة
-*/

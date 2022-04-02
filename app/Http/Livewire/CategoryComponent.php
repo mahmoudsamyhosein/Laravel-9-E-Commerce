@@ -83,6 +83,3 @@ class CategoryComponent extends Component
         return view('livewire.category-component' ,['products'=> $products ,'categories' => $categories , 'category_name' => $category_name ,'popular_products' => $popular_products ])->layout('layouts.base');
     }
 }
-/*
-خلصانة بشياكة
-*/

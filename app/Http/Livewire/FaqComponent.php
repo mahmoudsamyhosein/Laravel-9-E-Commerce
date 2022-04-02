@@ -17,6 +17,3 @@ class FaqComponent extends Component
     
     }
 }
-/*
-خلصانة بشياكة
-*/

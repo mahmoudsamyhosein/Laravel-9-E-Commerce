@@ -36,6 +36,3 @@ class HomeComponent extends Component
 
     }
 }
-/*
-خلصانة بشياكة
-*/

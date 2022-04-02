@@ -21,25 +21,27 @@ class AdminEditCategoryComponent extends Component
     public $scategory_id;
     public $scategory_slug;
 
-    public function mount($category_slug,$scategory_slug=null){
-        if($scategory_slug){
-            $this->$scategory_slug = $scategory_slug;
+    public function mount($category_slug,$scategory_slug=null)
+    {
+        if($scategory_slug)
+        {
+            $this->scategory_slug = $scategory_slug;
             $scategory = Subcategory::where('slug',$scategory_slug)->first();
-            $this->scategory_slug = $scategory->id;
+            $this->scategory_id = $scategory->id;
             $this->category_id = $scategory->category_id;
             $this->name = $scategory->name;
             $this->slug = $scategory->slug;
         }
-        else{
+        else
+        {
             $this->category_slug = $category_slug;
             $category = Category::where('slug',$category_slug)->first();
             $this->category_id = $category->id;
             $this->name = $category->name;
             $this->slug = $category->slug;
-
-        }
+        }        
     }
-
+    
     public function generateslug(){
         $this->slug = Str::slug($this->name);
     }
@@ -56,21 +58,23 @@ class AdminEditCategoryComponent extends Component
     public function updatecategory(){
         $this->validate([
             'name' => 'required',
-            'slug' => 'required|unique:categories',
+            'slug' => 'required|unique:categories'
         ]);
-        if($this->category_id){
+        if($this->scategory_id)
+        {
             $scategory = Subcategory::find($this->scategory_id);
             $scategory->name = $this->name;
             $scategory->slug = $this->slug;
             $scategory->category_id = $this->category_id;
             $scategory->save();
         }
-        else{
+        else
+        {
             $category = Category::find($this->category_id);
             $category->name = $this->name;
             $category->slug = $this->slug;
             $category->save();
-        }
+        }       
         Session()->flash('message',trans('mshmk.Category_has_Been_Updated_Successfully!'));
     }
 
@@ -80,6 +84,3 @@ class AdminEditCategoryComponent extends Component
         return view('livewire.admin.categories.admin-edit-category-component',['categories' => $categories ])->layout('layouts.base');
     }
 }
-/*
-خلصانة بشياكة
-*/

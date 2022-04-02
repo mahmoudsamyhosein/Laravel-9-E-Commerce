@@ -22,6 +22,3 @@ class AdminAttributesComponent extends Component
         return view('livewire.admin.attributes.admin-attributes-component',[ 'pattributes' => $pattributes])->layout('layouts.base');
     }
 }
-/*
-خلصانة بشياكة
-*/

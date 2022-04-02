@@ -31,6 +31,3 @@ class AdminOrderComponent extends Component
         return view('livewire.admin.orders.admin-order-component',['orders' => $orders])->layout('layouts.base');
     }
 }
-/*
-خلصانة بشياكة
-*/

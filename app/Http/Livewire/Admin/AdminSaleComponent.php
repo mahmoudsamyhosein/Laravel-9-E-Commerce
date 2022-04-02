@@ -34,6 +34,3 @@ class AdminSaleComponent extends Component
         return view('livewire.admin.admin-sale-component')->layout('layouts.base');
     }
 }
-/*
-خلصانة بشياكة
-*/

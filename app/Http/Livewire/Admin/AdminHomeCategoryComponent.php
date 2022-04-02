@@ -35,6 +35,3 @@ class AdminHomeCategoryComponent extends Component
         return view('livewire.admin.admin-home-category-component',['categories' => $categories])->layout('layouts.base');
     }
 }
-/*
-خلصانة بشياكة
-*/

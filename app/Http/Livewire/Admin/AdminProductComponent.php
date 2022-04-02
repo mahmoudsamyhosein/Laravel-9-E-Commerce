@@ -40,6 +40,3 @@ class AdminProductComponent extends Component
         return view('livewire.admin.products.admin-product-component',['products' => $products])->layout('layouts.base');
     }
 }
-/*
-خلصانة بشياكة
-*/

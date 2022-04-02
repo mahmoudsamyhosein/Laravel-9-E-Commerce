@@ -23,6 +23,3 @@ class AdminHomeSliderComponent extends Component
         return view('livewire.admin.home_slider.admin-home-slider-component' ,['sliders' => $sliders ])->layout('layouts.base');
     }
 }
-/*
-خلصانة بشياكة
-*/

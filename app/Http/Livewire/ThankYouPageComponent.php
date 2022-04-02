@@ -14,6 +14,3 @@ class ThankYouPageComponent extends Component
         return view('livewire.thank-you-page-component')->layout('layouts.base');
     }
 }
-/*
-خلصانة بشياكة
-*/

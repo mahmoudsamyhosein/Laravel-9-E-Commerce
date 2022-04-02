@@ -50,6 +50,3 @@ class UserReviewComponent extends Component
         return view('livewire.user.user-review-component',['orderItem' => $orderItem])->layout('layouts.base');
     }
 }
-/*
-خلصانة بشياكة
-*/

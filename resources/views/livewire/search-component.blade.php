@@ -1,7 +1,6 @@
 <div>	
 <main id="main" class="main-site right-sidebar" dir="rtl" style="text-align: right">
 	<title>@section('title','| البحث ')</title>
-
 		<div class="container">
 			<div class="wrap-breadcrumb">
 				<ul>
@@ -10,7 +9,6 @@
 				</ul>
 			</div>
 			<div class="row">
-
 				<div class="col-lg-9 col-md-8 col-sm-8 col-xs-12 main-content-area">
 
 					<div class="banner-shop">
@@ -18,11 +16,9 @@
 							<figure><img src="{{asset('assets/images/shop-banner.jpg')}}" alt=""></figure>
 						</a>
 					</div>
-
 					<div class="wrap-shop-control" dir="rtl" style="text-align: right">
 						<h1 class="shop-title" >{{__('mshmk.Search')}}</h1>
 						<div class="wrap-right">
-
 							<div class="sort-item orderby ">
 								<select name="orderby" class="use-chosen" wire:model='sorting'>
 									<option value="default" selected="selected">{{__('mshmk.Default_sorting')}}</option>

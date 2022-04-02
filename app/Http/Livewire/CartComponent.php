@@ -176,6 +176,3 @@ class CartComponent extends Component
     }
 
 }
-/*
-خلصانة بشياكة
-*/

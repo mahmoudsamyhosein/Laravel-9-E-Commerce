@@ -23,6 +23,3 @@ class AdminCouponsComponent extends Component
         return view('livewire.admin.coupons.admin-coupons-component',['coupons' =>$coupons ])->layout('layouts.base');
     }
 }
-/*
-خلصانة بشياكة
-*/

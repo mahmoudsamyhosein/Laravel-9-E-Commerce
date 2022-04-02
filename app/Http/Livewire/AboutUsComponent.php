@@ -17,6 +17,3 @@ class AboutUsComponent extends Component
     
     }
 }
-/*
-خلصانة بشياكة
-*/

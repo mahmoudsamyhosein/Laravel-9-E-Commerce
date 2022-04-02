@@ -21,6 +21,3 @@ class UserDashboardComponent extends Component
         return view('livewire.user.user-dashboard-component',['orders' => $orders , 'total_cost' => $total_cost ,'total_purchase' => $total_purchase ,'totalDelivered' => $totalDelivered ,'totalCanceled' => $totalCanceled ])->layout('layouts.base');
     }
 }
-/*
-خلصانة بشياكة
-*/

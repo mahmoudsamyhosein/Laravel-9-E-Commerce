@@ -70,6 +70,3 @@ class AdminEditCouponComponent extends Component
         return view('livewire.admin.coupons.admin-edit-coupon-component' )->layout('layouts.base');
     }
 }
-/*
-خلصانة بشياكة
-*/

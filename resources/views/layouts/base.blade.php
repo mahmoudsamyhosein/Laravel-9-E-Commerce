@@ -38,7 +38,26 @@
         .col-md-4{
                 float:right;
             }
-    </style>
+        th{
+            text-align: right; 
+
+        }
+        .wrap-footer-content .wrap-function-info .fc-info-item i {
+            width: 7%;
+            }
+        .fa-truck:before{
+            margin-left: 25px;
+        }
+        .fa-recycle:before{
+             margin-left: 50px;
+        }
+        .fa-credit-card-alt:before{
+            margin-left: 50px;
+        }
+        .fa-life-ring:before{
+            margin-left: 40px;
+        }
+    </style>	
 	<!-- قائمة الموبايل -->
 	<div class="mercado-clone-wrap" dir="rtl">
 		<div class="mercado-panels-actions-wrap">
@@ -50,7 +69,7 @@
 	</div>
 	<!-- قائمة الموبايل -->
 	<!--الهيدر-->
-	<header id="header" class="header header-style-1"  >
+	<header id="header" class="header header-style-1">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="topbar-menu-area">
@@ -111,8 +130,6 @@
 											<a title="{{__('mshmk.Settings')}}" href="{{ route('admin.settings')}}">
 												{{__('mshmk.Settings')}}</a>
 										</li>
-										
-										
 										<li class="menu-item">
 											<a title="{{__('mshmk.Logout')}}" href=" {{ route('logout') }}"
 												onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{__('mshmk.Logout')}}</a>
@@ -165,46 +182,25 @@
 								@endif
 							</ul>
 						</div>
-						{{-- <div class="topbar-menu right-menu">
-							<ul>
-								<li class="menu-item lang-menu menu-item-has-children parent">
+						<div class="topbar-menu right-menu" >
+							<ul >
+								<li class="menu-item lang-menu menu-item-has-children parent" dir="rtl" style="text-align: right;" >
 									<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
 										data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-										<span
-											class="flag-icon flag-icon-{{Config::get('languages')[App::getLocale()]['flag-icon']}}"></span>
 										{{ Config::get('languages')[App::getLocale()]['display'] }}
 									</a>
 									<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 										@foreach (Config::get('languages') as $lang => $language)
 										@if ($lang != App::getLocale() )
-										<a class="dropdown-item" href="{{ route('lang.switch', $lang) }}"><span
-												class="flag-icon flag-icon-{{$language['flag-icon']}}"></span>
+										<a class="dropdown-item" href="{{ route('lang.switch', $lang) }}"  >
 											{{$language['display']}}</a>
 										@endif
 										@endforeach
 									</div>
 								</li>
 							</ul>
-						</div> --}}
-						{{-- <div class="topbar-menu left-menu" style="margin-right:25px;">
-							<ul>
-								<li class="menu-item menu-item-has-children parent">
-									<a title="Dollar (USD)" href="#">Dollar (USD)<i class="fa fa-angle-down"
-											aria-hidden="true"></i></a>
-									<ul class="submenu curency">
-										<li class="menu-item">
-											<a title="Pound (GBP)" href="#">Pound (GBP)</a>
-										</li>
-										<li class="menu-item">
-											<a title="Euro (EUR)" href="#">Euro (EUR)</a>
-										</li>
-										<li class="menu-item">
-											<a title="Dollar (USD)" href="#">Dollar (USD)</a>
-										</li>
-									</ul>
-								</li>
-							</ul>
-						</div> --}}
+						</div>
+						
 					</div>
 				</div>
 
@@ -232,7 +228,7 @@
 				<div class="nav-section header-sticky" >
 					<div class="primary-nav-section" >
 						<div class="container">
-							<ul class="nav primary clone-main-menu " id="mercado_main" data-menuname="Main menu">
+							<ul class="nav primary clone-main-menu " id="mercado_main" data-menuname="{{__('mshmk.MAIN_MENU')}}">
 								<li class="menu-item home-icon">
 									<a href="/" class="link-term mercado-item-title">
 										<i class="fa fa-home" aria-hidden="true"></i>
