@@ -2,8 +2,7 @@
 <p align="center"><a href="https://body-vivid.com/">رابط الموقع</a></p>
 <p align="center">للدخول الي لوحة تحكم المدير : 
 </p>
-<p align="center">للدخول الي لوحة تحكم المدير : 
-</p>
+
 <p align="center"> 
     أسم المستخدم : masry_shop@admin.com
 </p>
