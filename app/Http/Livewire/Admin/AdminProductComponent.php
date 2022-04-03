@@ -13,22 +13,14 @@ class AdminProductComponent extends Component
 {
     use WithPagination;
     public $searchTerm;
-    public function deleteProduct($id){
+    public  $product;
+   
+    public function deleteProduct($id)
+    {
         $product = Product::find($id);
-            if($product->image){
-                unlink('assets/images/products' . '/' . $product->image);
-            }
-            if($product->images){
-                $images = explode(',',$product->images);
-                foreach($images as $image){
-                    if($image){
-                        unlink('assets/images/products' . '/' . $image);
-                    }
-                }
-            }
         $product->delete();
-        session()->flash('message',trans('mshmk.Product_Has_Been_Deleted_Successfully!'));
-    }
+        session()->flash('message','Product has been deleted successfully!');
+    } 
     public function render()
     {
         $search = '%' . $this->searchTerm . '%';

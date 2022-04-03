@@ -17,8 +17,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<h3>{{__('mshmk.faq')}}</h3>
-					<p>{{$setting->about_faq_body}}</p>
-				</div>
+					{{$setting->about_faq_body}}
 			</div>
 		</div><!--end container-->
 

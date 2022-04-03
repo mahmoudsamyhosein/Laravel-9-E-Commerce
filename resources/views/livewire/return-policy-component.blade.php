@@ -16,7 +16,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<h3>{{__('mshmk.return-policy')}}</h3>
-					<p>{{$setting->about_return_body}}</p>
+					{{$setting->about_return_body}}
 				</div>
 			</div>
 		</div><!--end container-->

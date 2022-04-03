@@ -17,7 +17,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<h3>{{__('mshmk.privacy-policy')}}</h3>
-					<p>{{$setting->about_privacy_body}}</p>
+					{{$setting->about_privacy_body}}
 				</div>
 			</div>
 		</div><!--end container-->

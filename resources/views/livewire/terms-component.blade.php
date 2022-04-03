@@ -17,7 +17,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<h3>{{__('mshmk.Terms_&_Conditions')}}</h3>
-					<p>{{$setting->about_faq_body}}</p>
+					{{$setting->about_faq_body}}
 				</div>
 			</div>
 		</div><!--end container-->

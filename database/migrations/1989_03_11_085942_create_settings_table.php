@@ -17,6 +17,8 @@ class CreateSettingsTable extends Migration
             $table->id();
             //بيانات المتجر store info
             $table->string('store_name');
+            $table->string('currency');
+            $table->string('shipping_cost');
             $table->string('logo_1');
             $table->string('logo_mobile');
             //contact us تواصل معنا 
@@ -64,11 +66,11 @@ class CreateSettingsTable extends Migration
             $table->string('products_by_section_banner');
             $table->string('shop_banner');
             //fixed_pages الصفحات الثابتة
-            $table->string('about_shop_page_body');
-            $table->string('terms_page_body');
-            $table->string('about_privacy_body');
-            $table->string('about_return_body');
-            $table->string('about_faq_body');
+            $table->text('about_shop_page_body',10000);
+            $table->text('terms_page_body',10000);
+            $table->text('about_privacy_body',10000);
+            $table->text('about_return_body',10000);
+            $table->text('about_faq_body',10000);
             $table->timestamps();
         });
     }

@@ -87,7 +87,7 @@
 
                                 <label class="col-md-4 control-label">{{__('mshmk.about_shop_page_body')}}</label>
                                 <div class="col-md-4">
-                                    <input type="text" placeholder="{{__('mshmk.about_shop_page_body')}}" class="form-control input-md" wire:model='about_shop_page_body'>
+                                    <textarea type="text" placeholder="{{__('mshmk.about_shop_page_body')}}" class="form-control input-md" wire:model='about_shop_page_body' id="about_shop_page_body"></textarea>
                                     @error('about_shop_page_body') <p class="text-danger">{{$message}}</p>@enderror
                                 </div>
                             </div>
@@ -96,7 +96,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label">{{__('mshmk.terms_page_body')}}</label>
                                 <div class="col-md-4">
-                                    <input type="text" placeholder="{{__('mshmk.terms_page_body')}}" class="form-control input-md" wire:model='terms_page_body'>
+                                    <textarea type="text" placeholder="{{__('mshmk.terms_page_body')}}" class="form-control input-md" wire:model='terms_page_body' id="terms_page_body" ></textarea>
                                     @error('terms_page_body') <p class="text-danger">{{$message}}</p>@enderror
                                 </div>
                             </div>
@@ -105,7 +105,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label">{{__('mshmk.about_privacy_body')}}</label>
                                 <div class="col-md-4">
-                                    <input type="text" placeholder="{{__('mshmk.about_privacy_body')}}" class="form-control input-md" wire:model='about_privacy_body'>
+                                    <textarea type="text" placeholder="{{__('mshmk.about_privacy_body')}}" class="form-control input-md" wire:model='about_privacy_body'  id="about_privacy_body"></textarea>
                                     @error('about_privacy_body') <p class="text-danger">{{$message}}</p>@enderror
                                 </div>
                             </div>
@@ -113,7 +113,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label">{{__('mshmk.about_return_body')}}</label>
                                 <div class="col-md-4">
-                                    <input type="text" placeholder="{{__('mshmk.about_return_body')}}" class="form-control input-md" wire:model='about_return_body'>
+                                    <textarea type="text" placeholder="{{__('mshmk.about_return_body')}}" class="form-control input-md" wire:model='about_return_body'  id="about_return_body"></textarea>
                                     @error('about_return_body') <p class="text-danger">{{$message}}</p>@enderror
                                 </div>
                             </div>
@@ -121,8 +121,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label">{{__('mshmk.about_faq_body')}}</label>
                                 <div class="col-md-4">
-                                    <input type="text" placeholder="{{__('mshmk.about_faq_body')}}" class="form-control input-md" wire:model='about_faq_body'>
-                                    @error('about_faq_body') <p class="text-danger">{{$message}}</p>@enderror
+                                    <textarea type="text" placeholder="{{__('mshmk.about_faq_body')}}" class="form-control input-md" wire:model='about_faq_body'  id="about_faq_body"></textarea>
                                 </div>
                             </div>
 {{--------------------------------- fixed_pages الصفحات الثابتة--------------------------------------}}
