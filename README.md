@@ -2,6 +2,12 @@
 <p align="center"><a href="https://body-vivid.com/">رابط الموقع</a></p>
 <p align="center">للدخول الي لوحة تحكم المدير : 
 </p>
-أسم المستخدم : masry_shop@admin.com
+<p align="center">للدخول الي لوحة تحكم المدير : 
+</p>
+<p align="center"> 
+    أسم المستخدم : masry_shop@admin.com
+</p>
+<p align="center"> 
+كلمة المرور : masry_shop
 
-كلمة المرور : masry_shop</p>
+</p>
