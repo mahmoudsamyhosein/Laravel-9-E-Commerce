@@ -105,10 +105,10 @@
 											<a title="{{__('mshmk.attributes')}}"
 												href="{{ route('admin.attributes')}}">{{__('mshmk.attributes')}}</a>
 										</li>
-										<li class="menu-item">
+										{{-- <li class="menu-item">
 											<a title="{{__('mshmk.coupons')}}" href="{{ route('admin.coupons')}}">
 												{{__('mshmk.coupons')}}</a>
-										</li>
+										</li> --}}
 										<li class="menu-item">
 											<a title="{{__('mshmk.Manage_Home_Categories')}}"
 												href="{{ route('admin.home-categories')}}">{{__('mshmk.Manage_Home_Categories')}}</a>
@@ -172,17 +172,17 @@
 								</li>
 								@endif
 								@else{{-- اذا لم يكن مخول اظهر روابط تسجيل الدخول والتسجيل --}}
-								<li class="menu-item"  ><a title="{{__('mshmk.Register')}}"
-											href="{{ route('register') }}">{{__('mshmk.Register')}}</a>
-								</li>
-								<li class="menu-item" style="margin-right: 10px;" ><a  title="{{__('mshmk.Login')}}"
+								<li class="menu-item"  ><a  title="{{__('mshmk.Login')}}"
 										href="{{ route('login') }}">{{__('mshmk.Login')}}</a>
+								</li>
+								<li class="menu-item" style="margin-right: 10px;" ><a title="{{__('mshmk.Register')}}"
+									href="{{ route('register') }}">{{__('mshmk.Register')}}</a>
 								</li>
 								@endif
 								@endif
 							</ul>
 						</div>
-						<div class="topbar-menu right-menu" >
+						{{-- <div class="topbar-menu right-menu" >
 							<ul >
 								<li class="menu-item lang-menu menu-item-has-children parent" dir="rtl" style="text-align: right;" >
 									<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
@@ -199,11 +199,9 @@
 									</div>
 								</li>
 							</ul>
-						</div>
-						
+						</div> --}}
 					</div>
 				</div>
-
 				<div class="container" >
 					<div class="mid-section main-info-area" dir="rtl">
 						<div class="wrap-logo-top left-section " >

@@ -14,6 +14,3 @@ class HomeCategory extends Model
 
     protected $table = 'home_categories';
 }
-/*
-خلصانة بشياكة
-*/

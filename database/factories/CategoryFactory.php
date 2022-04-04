@@ -13,9 +13,7 @@ class CategoryFactory extends Factory
      */
     public function definition()
     {
-        // استخدم حزمة faker لتوليد مقطع نصي من كلمتين 
-        $category_name = $this->faker->unique()->words($nb=2,$astext=true);
-        //الاسم اللطيف slug يساوي = الدالة المعرفة مسبقا 
+        $category_name = 'هذا النص هو مثال لنص';
         $slug = Str::slug($category_name);
         return [
             'name' => $category_name,

@@ -10,7 +10,7 @@
 				</ul>
 			</div>
 			<div class="row">
-				<div class="col-lg-9 col-md-8 col-sm-8 col-xs-12 main-content-area">
+				<div class="col-lg-9 col-md-8 col-sm-8 col-xs-12 main-content-area ">
 					<div class="wrap-product-detail">
 							<div class="detail-media">
 								<div class="product-gallery" wire:ignore>
@@ -63,9 +63,9 @@
 								</div>
 								
 								@if($product->sale_price > 0 && $sale->status == 1 && $sale->sale_date > Carbon\Carbon::now() )
-								<div class="wrap-price" ><ins><p class="product-price">{{$product->sale_price}} {{$setting->store_name}}</p></ins> <del><p class="product-price">{{$product->regular_price}} {{$setting->store_nmae}}</p></del></div>
+								<div class="wrap-price" ><del><p class="product-price">{{$product->regular_price}} {{$setting->currency}}</p></del><ins><p class="product-price">{{$product->sale_price}} {{$setting->currency}}</p></ins> </div>
 								@else
-									<div class="wrap-price"><span class="product-price"> {{ $product->regular_price }} {{$setting->store_name}} </span></div>
+									<div class="wrap-price"><span class="product-price"> {{ $product->regular_price }} {{$setting->currency}} </span></div>
 								@endif
 								<div class="stock-info in-stock">
 									<p class="availability">{{__('mshmk.Availability:')}}<b>{{ $product->stock_status }}</b></p>
@@ -85,7 +85,6 @@
 											</div>
 										</div>
 									@endforeach
-
 								</div>
 								<div class="quantity" style="margin-top: 10px;">
 									<span>{{__('mshmk.Quantity:')}}</span>
@@ -170,7 +169,7 @@
 					</div>
 				</div><!--end main products area-->
 
-					<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 sitebar" dir="rtl" style="text-align: right" >
+					<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 sitebar " dir="rtl" style="text-align: right" >
 						{{--المنتجات الشائعة --}}
 						<div class="widget mercado-widget widget-product">
 							<h2 class="widget-title">{{__('mshmk.Popular_Products')}}</h2>
@@ -186,7 +185,7 @@
 											</div>
 											<div class="product-info">
 												<a href="{{ route('products.details', ['slug' => $p_product->slug ]) }}" class="product-name"><span>{{ $p_product->name }}</span></a>
-												<div class="wrap-price"><span class="product-price">{{$p_product->regular_price}} {{$setting->store_name}}</span></div>
+												<div class="wrap-price"><span class="product-price">{{$p_product->regular_price}} {{$setting->currency}}</span></div>
 											</div>
 										</div>
 									</li>
@@ -211,7 +210,7 @@
 										</div>
 										<div class="product-info">
 											<a href="{{ route('products.details',['slug'=>$r_product->slug])}}" class="product-name"><span>{{$r_product->name}}</span></a>
-											<div class="wrap-price" dir="rtl"><span class="product-price">{{$r_product->regular_price}} {{$setting->store_name}}</span></div>
+											<div class="wrap-price" dir="rtl"><span class="product-price">{{$r_product->regular_price}} {{$setting->currency}}</span></div>
 										</div>
 									</div>
 								@endforeach

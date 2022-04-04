@@ -5,6 +5,7 @@
 */
 namespace App\Http\Livewire;
 
+use App\Models\Setting;
 use Livewire\Component;
 use Gloudemans\Shoppingcart\Facades\Cart;
 class WishListComponent extends Component
@@ -32,6 +33,7 @@ class WishListComponent extends Component
 
     public function render()
     {
-        return view('livewire.wish-list-component')->layout('layouts.base');
+        $setting = Setting::find(1);
+        return view('livewire.wish-list-component',['setting' => $setting ])->layout('layouts.base');
     }
 }

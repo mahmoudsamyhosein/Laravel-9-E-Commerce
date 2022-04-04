@@ -69,11 +69,11 @@
                                                     @endforeach
                                                 </div>
                                             @endif
-                                            <div class="price-field produtc-price"><p class="price">${{ $item->price }}</p></div>
+                                            <div class="price-field produtc-price"><p class="price">{{ $item->price }} {{$setting->currency}}</p></div>
                                             <div class="quantity">
                                                 <h5>{{$item->quantity}}</h5>                                                
                                             </div>
-                                            <div class="price-field sub-total"><p class="price">${{ $item->price * $item->quantity }}</p></div>
+                                            <div class="price-field sub-total"><p class="price">{{ $item->price * $item->quantity }} {{$setting->currency}}</p></div>
                                         </li>
                                 @endforeach										
                             </ul>
@@ -84,7 +84,7 @@
                         <h4 class="title-box">
                            {{__('mshmk.Order_Summery')}}
                         </h4>
-                        <p class="summary-info"><span class="title">{{__('mshmk.Subtotal')}}</span></span><b class="index">${{$order->subtotal}}</b></p>                        
+                        <p class="summary-info"><span class="title">{{__('mshmk.Subtotal')}}</span></span><b class="index">{{$order->subtotal}} {{$setting->currency}}</b></p>                        
                         <p class="summary-info"><span class="title">{{__('mshmk.Tax')}}</span></span><b class="index">{{$order->tax}}</b></p>                        
                         <p class="summary-info"><span class="title">{{__('mshmk.Shipping')}}</span></span><b class="index">{{__('mshmk.Free_Shipping')}}</b></p>                        
                         <p class="summary-info"><span class="title">{{__('mshmk.Total')}}</span></span><b class="index">{{$order->total}}</b></p>                                              

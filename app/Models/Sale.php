@@ -14,6 +14,4 @@ class Sale extends Model
 
     protected $table ='sales';
 }
-/*
-خلصانة بشياكة
-*/
+

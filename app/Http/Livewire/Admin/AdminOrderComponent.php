@@ -6,6 +6,7 @@
 namespace App\Http\Livewire\Admin;
 
 use App\Models\Order;
+use App\Models\Setting;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -27,7 +28,8 @@ class AdminOrderComponent extends Component
     }
     public function render()
     {
+        $setting = Setting::find(1);
         $orders = Order::orderBy('created_at','DESC')->paginate(12);
-        return view('livewire.admin.orders.admin-order-component',['orders' => $orders])->layout('layouts.base');
+        return view('livewire.admin.orders.admin-order-component',['orders' => $orders , 'setting' => $setting ])->layout('layouts.base');
     }
 }

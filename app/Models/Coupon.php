@@ -15,6 +15,3 @@ class Coupon extends Model
 
     protected $table = 'coupons';
 }
-/*
-خلصانة بشياكة
-*/

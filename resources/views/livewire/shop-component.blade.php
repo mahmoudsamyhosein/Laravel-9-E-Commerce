@@ -11,9 +11,7 @@
 				</ul>
 			</div>
 			<div class="row">
-
 				<div class="col-lg-9 col-md-8 col-sm-8 col-xs-12 main-content-area">
-
 					<div class="banner-shop">
 						<a href="/shop" class="banner-link">
 							<figure><img src="{{asset('assets/images/shop-banner.jpg')}}" alt=""></figure>
@@ -31,7 +29,6 @@
 									<option value="price-desc">{{__('mshmk.Sort_by_price:_high_to_low')}}</option>
 								</select>
 							</div>
-
 							<div class="sort-item product-per-page">
 								<select name="post-per-page" class="use-chosen" wire:model='pagesize'>
 									<option value="12" selected="selected">{{__('mshmk.12_per_page')}}</option>
@@ -43,9 +40,7 @@
 									<option value="32">{{__('mshmk.32_per_page')}}</option>
 								</select>
 							</div>
-
 						</div>
-
 					</div><!--end wrap shop control-->
 					<style>
 						.product-wish{
@@ -89,7 +84,7 @@
 										</div>
 										<div class="product-info">
 											<a href="{{ route('products.details', ['slug' => $product->slug ]) }}" class="product-name"><span>{{ $product->name }}</span></a>
-											<div class="wrap-price" dir="rtl"><span class="product-price">{{ $product->regular_price }} {{$setting->store_name}}</span></div>
+											<div class="wrap-price" dir="rtl"><span class="product-price">{{ $product->regular_price }} {{$setting->currency}}</span></div>
 											<a href="#" class="btn add-to-cart" wire:click.prevent="store( {{$product->id}},'{{$product->name}}',{{$product->regular_price}} )" >{{__('mshmk.Add_To_Cart')}}</a>
 										</div>
 										<div class="product-wish">
@@ -106,12 +101,10 @@
 						</ul>
 
 					</div>
-
-					<div class="wrap-pagination-info">
+					<div class="wrap-pagination-info" dir="rtl">
 						{{ $products->links() }}
 					</div>
 				</div><!--end main products area-->
-
 				<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 sitebar">
 					<div class="widget mercado-widget categories-widget" dir="rtl" style="text-align: right">
 						<h2 class="widget-title">{{__('mshmk.All_Categories')}}</h2>
@@ -138,9 +131,9 @@
 
 					<div class="widget mercado-widget filter-widget price-filter">
 						<h2 class="widget-title">{{__('mshmk.search_by_price')}}</h2>
-						<h2 class="widget-title">{{__('mshmk.Price:')}}<span class="text-info"> {{$min_price}} {{$setting->store_name}} - {{$max_price}} {{$setting->store_name}} </span></h2>
-						<div class="widget-content" style="padding:10px 5px 40px 5px;">
-							<div id="slider" wire:ignore></div>
+						<h2 class="widget-title">{{__('mshmk.Price:')}}<span  class="text-info"> {{$min_price}} {{$setting->currency}} - {{$max_price}} {{$setting->currency}} </span></h2>
+						<div class="widget-content"  style="padding:10px 5px 40px 5px;">
+							<div id="slider" wire:ignore ></div>
 						</div>
 					</div><!-- Price-->
 					<div class="widget mercado-widget widget-product" dir="rtl">
@@ -157,7 +150,7 @@
 										</div>
 										<div class="product-info">
 											<a href="{{ route('products.details', ['slug' => $p_product->slug ]) }}" class="product-name"><span>{{ $p_product->name }}</span></a>
-											<div class="wrap-price"><span class="product-price">{{$p_product->regular_price}} {{$setting->store_name}}</span></div>
+											<div class="wrap-price"><span class="product-price">{{$p_product->regular_price}} {{$setting->currency}}</span></div>
 										</div>
 									</div>
 								</li>
@@ -165,14 +158,9 @@
 							</ul>
 						</div>
 					</div>
-					
-
 				</div><!--end sitebar-->
-
 			</div><!--end row-->
-
 		</div><!--end container-->
-
 	</main>
 	<!--main area-->
 </div>

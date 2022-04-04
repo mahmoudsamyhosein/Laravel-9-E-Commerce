@@ -6,6 +6,7 @@
 namespace App\Http\Livewire\User;
 
 use App\Models\Order;
+use App\Models\Setting;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -28,7 +29,8 @@ class UserOrderDetailsComponent extends Component
     }
     public function render()
     {
+        $setting = Setting::find(1);
         $order = Order::where('user_id',Auth::user()->id)->where('id',$this->order_id)->first();
-        return view('livewire.user.user-order-details-component',['order' => $order])->layout('layouts.base');
+        return view('livewire.user.user-order-details-component',['order' => $order ,'setting' => $setting ])->layout('layouts.base');
     }
 }

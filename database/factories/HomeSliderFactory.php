@@ -14,8 +14,8 @@ class HomeSliderFactory extends Factory
     public function definition()
     {
        // استخدم حزمة faker لتوليد مقطع نصي من كلمتين 
-       $slider_name = $this->faker->unique()->words($nb=4,$astext=true); 
-       $slider_subtitle = $this->faker->unique()->words($nb=6,$astext=true);
+       $slider_name = 'هذا النص هو مثال لنص'; 
+       $slider_subtitle = 'هذا النص هو مثال لنص'; 
        
        return [
            'title' =>  $slider_name,

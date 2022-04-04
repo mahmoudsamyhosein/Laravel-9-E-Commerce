@@ -12,8 +12,10 @@ use Livewire\WithFileUploads;
 class AdminSettingComponent extends Component
 {
     use WithFileUploads;
-      //عملة المتجر
+      //بيانات المتجر
      public $store_name;
+     public $currency;
+     public $shipping_cost;
     //footer begin here الفوتور يبدأ من هنا
     //قسم تغيير مميزات المتجر
     //section_1
@@ -60,8 +62,10 @@ class AdminSettingComponent extends Component
     public function mount(){
         $setting = Setting::find(1);
         if($setting){
-            //عملة المتجر
+            //بيانات المتجر
             $this->store_name = $setting->store_name;
+            $this->currency = $setting->currency;
+            $this->shipping_cost = $setting->shipping_cost;
             //contact us تواصل معنا 
             $this->email = $setting->email;
             $this->phone = $setting->phone;
@@ -111,6 +115,8 @@ class AdminSettingComponent extends Component
 
         $this->validateOnly($fields,[
         'store_name' => 'required',
+        'currency' => 'required',
+        'shipping_cost' => 'required',
         'email' => 'required|email',
         'phone' => 'required',
         'phone2'=> 'required',
@@ -158,6 +164,8 @@ class AdminSettingComponent extends Component
     public function savesettings(){
         $this->validate([
             'store_name' => 'required',
+            'currency' => 'required',
+            'shipping_cost' => 'required',
             'email' => 'required|email',
             'phone' => 'required',
             'phone2'=> 'required',
@@ -204,8 +212,9 @@ class AdminSettingComponent extends Component
         if(!$setting){
             $setting = new Setting();
         }
-        //عملة المتجر
-        $setting->store_name = $this->store_name; 
+        //بيانات المتجر
+        $setting->store_name = $this->store_name;
+        $setting->currency   = $this->currency;
         //contact us تواصل معنا 
         $setting->email = $this->email;
         $setting->phone = $this->phone;
@@ -247,8 +256,6 @@ class AdminSettingComponent extends Component
         $setting->pinterest = $this->pinterest;
         $setting->instagram = $this->instagram ; 
         $setting->youtube= $this->youtube;
-
-
         $setting->save();
         Session()->flash('message',trans('mshmk.Setting_Has_Been_Saved!'));
     }

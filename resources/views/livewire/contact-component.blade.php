@@ -1,8 +1,7 @@
-<div>
+<div dir="rtl" style="text-align:right;">
 <!--main area-->
-	<main id="main" class="main-site left-sidebar" dir="rtl" style="text-align: right">
+	<main id="main" class="main-site left-sidebar" >
 		<title>@section('title','| تواصل معنا  ')</title>
-
 		<div class="container">
 			<div class="wrap-breadcrumb">
 				<ul>
@@ -13,15 +12,14 @@
 			<div class="row" >
 				<div class="main-content-area">
 					<div class="wrap-contacts ">
-						<!--معلومات وخريطة المتجر-->
-						<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12 ">
+						{{-- معلومات وخريطة المتجر --}}
+						<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
 							<div class="contact-box contact-info">
 								<div class="wrap-map">
 									<iframe src="{{ $setting->map }}" width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 								</div>
 								<h2 class="box-title">{{__('mshmk.Contact_Detail')}}</h2>
 								<div class="wrap-icon-box">
-
 									<div class="icon-box-item">
 										<i class="fa fa-envelope" aria-hidden="true"></i>
 										<div class="right-info">
@@ -29,7 +27,6 @@
 											<p>{{ $setting->email}}</p>
 										</div>
 									</div>
-
 									<div class="icon-box-item">
 										<i class="fa fa-phone" aria-hidden="true"></i>
 										<div class="right-info">
@@ -37,7 +34,6 @@
 											<p>{{ $setting->phone}}</p>
 										</div>
 									</div>
-
 									<div class="icon-box-item">
 										<i class="fa fa-map-marker" aria-hidden="true"></i>
 										<div class="right-info">
@@ -45,12 +41,11 @@
 											<p>{{ $setting->address}}</p>
 										</div>
 									</div>
-
 								</div>
 							</div>
 						</div>
-						<!--معلومات وخريطة المتجر-->
-						<!--فورم التواصل-->
+						{{-- معلومات وخريطة المتجر --}}
+						{{-- فورم التواصل --}}
 						<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12 ">
 							<div class="contact-box contact-form">
 								<h2 class="box-title">{{__('mshmk.Leave_a_Message')}}</h2>
@@ -62,24 +57,20 @@
 									<label for="name">{{__('mshmk.Name')}}<span>*</span></label>
 									<input type="text" name="name"  id="name"  wire:model='name'>
                                     @error('name') <p class="text-danger">{{ $message }}</p> @enderror
-
 									<label for="email">{{__('mshmk.Email')}}<span>*</span></label>
 									<input type="text" name="email" id="email"  wire:model="email" >
                                     @error('email') <p class="text-danger">{{ $message }}</p>@enderror
-
 									<label for="phone">{{__('mshmk.Number_Phone')}}</label>
 									<input type="text" name="phone" id="phone"  wire:model="phone">
                                     @error('phone') <p class="text-danger">{{ $message }}</p>@enderror
-
 									<label for="comment">{{__('mshmk.Comment')}}</label>
 									<textarea name="comment"  id="comment" wire:model="comment"></textarea>
                                     @error('comment') <p class="text-danger">{{ $message }}</p>@enderror
-									
 									<input type="submit"  value="{{__('mshmk.Submit')}}" >
 								</form>
 							</div>
 						</div>
-						<!--فورم التواصل-->
+						{{-- فورم التواصل --}}
 					</div>
 				</div><!--end main products area-->
 

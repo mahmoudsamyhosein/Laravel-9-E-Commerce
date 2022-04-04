@@ -13,6 +13,3 @@ class Profile extends Model
     protected $table = 'profiles';
     use HasFactory;
 }
-/*
-خلصانة بشياكة
-*/

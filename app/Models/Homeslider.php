@@ -16,6 +16,3 @@ class Homeslider extends Model
 
     
 }
-/*
-خلصانة بشياكة
-*/

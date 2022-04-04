@@ -15,6 +15,3 @@ class Setting extends Model
 
     protected $table = 'settings';
 }
-/*
-خلصانة بشياكة
-*/

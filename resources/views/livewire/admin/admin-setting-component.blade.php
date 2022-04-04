@@ -16,7 +16,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label">{{__('mshmk.store_currency')}}</label>
                                 <div class="col-md-4">
-                                    <input type="text" placeholder="{{__('mshmk.store_currency')}}" class="form-control input-md" wire:model='store_name'>
+                                    <input type="text" placeholder="{{__('mshmk.store_currency')}}" class="form-control input-md" wire:model='currency'>
                                     @error('store_currency') <p class="text-danger">{{$message}}</p>@enderror
                                 </div>
                             </div>
@@ -91,8 +91,6 @@
                                     @error('about_shop_page_body') <p class="text-danger">{{$message}}</p>@enderror
                                 </div>
                             </div>
-
-
                             <div class="form-group">
                                 <label class="col-md-4 control-label">{{__('mshmk.terms_page_body')}}</label>
                                 <div class="col-md-4">
@@ -100,8 +98,6 @@
                                     @error('terms_page_body') <p class="text-danger">{{$message}}</p>@enderror
                                 </div>
                             </div>
-
-
                             <div class="form-group">
                                 <label class="col-md-4 control-label">{{__('mshmk.about_privacy_body')}}</label>
                                 <div class="col-md-4">
@@ -109,7 +105,6 @@
                                     @error('about_privacy_body') <p class="text-danger">{{$message}}</p>@enderror
                                 </div>
                             </div>
-
                             <div class="form-group">
                                 <label class="col-md-4 control-label">{{__('mshmk.about_return_body')}}</label>
                                 <div class="col-md-4">
@@ -117,7 +112,6 @@
                                     @error('about_return_body') <p class="text-danger">{{$message}}</p>@enderror
                                 </div>
                             </div>
-
                             <div class="form-group">
                                 <label class="col-md-4 control-label">{{__('mshmk.about_faq_body')}}</label>
                                 <div class="col-md-4">
@@ -332,6 +326,5 @@
                 </div>
             </div>
         </div>
-    
     </div>
 </div>

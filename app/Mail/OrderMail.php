@@ -2,7 +2,6 @@
 /*
 *بسم الله الرحمن الرحيم والصلاة والسلام علي أشرف المرسلين سيدنا محمد
 * [لوحة المستخدم] يحتوي هذا الملف علي منطق خواص المنتج .
-*MY_GITHUB_ACCOUNT:https://github.com/mahmoudsamyhosein .
 */
 namespace App\Mail;
 
@@ -35,7 +34,7 @@ class OrderMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Order Confirmation ')->view('mails.order-mail');
+        return $this->subject('تأكيد الطللب')->view('mails.order-mail');
     }
 }
 /*

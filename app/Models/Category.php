@@ -18,6 +18,3 @@ class Category extends Model
       return $this->hasMany(Subcategory::class,'category_id');  
     }
 }
-/*
-خلصانة بشياكة
-*/

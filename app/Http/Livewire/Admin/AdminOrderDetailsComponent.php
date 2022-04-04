@@ -6,6 +6,7 @@
 namespace App\Http\Livewire\Admin;
 
 use App\Models\Order;
+use App\Models\Setting;
 // livewire أستخدام 
 use Livewire\Component;
 
@@ -18,7 +19,8 @@ class AdminOrderDetailsComponent extends Component
 
     public function render()
     {
+        $setting = Setting::find(1);
         $order =  Order::find($this->order_id);
-        return view('livewire.admin.orders.admin-order-details-component',['order' => $order])->layout('layouts.base');
+        return view('livewire.admin.orders.admin-order-details-component',['order' => $order  , 'setting' => $setting ])->layout('layouts.base');
     }
 }

@@ -19,6 +19,3 @@ class Review extends Model
     }
     
 }
-/*
-خلصانة بشياكة
-*/

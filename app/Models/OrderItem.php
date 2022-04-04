@@ -27,6 +27,3 @@ class OrderItem extends Model
         return $this->hasone(Review::class,'order_item_id');
     }
 }
-/*
-خلصانة بشياكة
-*/

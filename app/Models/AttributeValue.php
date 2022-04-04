@@ -18,6 +18,3 @@ class AttributeValue extends Model
         return $this->belongsTo(ProductAttribute::class,'product_attribute_id');
     }
 }
-/*
-خلصانة بشياكة
-*/

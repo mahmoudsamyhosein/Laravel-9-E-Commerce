@@ -13,6 +13,3 @@ class Shipping extends Model
     protected $table = 'shippings';
     use HasFactory;
 }
-/*
-خلصانة بشياكة
-*/

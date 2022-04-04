@@ -285,9 +285,9 @@ class CheckOutComponent extends Component
             $transaction->save();
 
     }
-    public function sendOrderConfirmationMail($order){
-        Mail::to($order->email)->send(new OrderMail($order));
-    }
+    // public function sendOrderConfirmationMail($order){
+    //     Mail::to($order->email)->send(new OrderMail($order));
+    // }
 
     public function verifyforcheckout(){
 

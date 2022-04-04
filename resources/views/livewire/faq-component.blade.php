@@ -12,7 +12,6 @@
 				</ul>
 			</div>
 		</div>
-		
 		<div class="container pb-60">
 			<div class="row">
 				<div class="col-md-12">

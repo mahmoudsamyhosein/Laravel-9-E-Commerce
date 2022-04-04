@@ -61,7 +61,7 @@
                 <div class="row">
                   <div class="col-xs-8 text-left">
                     <span class="icon-stat-label text-right">{{__('mshmk.Total_Cost')}}</span>
-                    <span class="icon-stat-value">${{$total_cost}}</span>
+                    <span class="icon-stat-value">{{$total_cost}}{{$setting->currency}}</span>
                   </div>   
                   <div class="col-xs-4 text-center">
                     <i class="fa fa-dollar icon-stat-visual bg-primary"></i>
@@ -151,10 +151,10 @@
                               @foreach ($orders as $order)
                                   <tr>
                                       <td>{{$order->id}}</td>
-                                      <td>${{$order->subtotal}}</td>
-                                      <td>${{$order->discount}}</td>
-                                      <td>${{$order->tax}}</td>
-                                      <td>${{$order->total}}</td>
+                                      <td>{{$order->subtotal}}{{$setting->currency}}</td>
+                                      <td>{{$order->discount}}{{$setting->currency}}</td>
+                                      <td>{{$order->tax}}{{$setting->currency}}</td>
+                                      <td>{{$order->total}}{{$setting->currency}}</td>
                                       <td>{{$order->firstname}}</td>
                                       <td>{{$order->lastname}}</td>
                                       <td>{{$order->mobile}}</td>

@@ -13,11 +13,7 @@ class ProductAttribute extends Model
     use HasFactory;
 
     protected $table= 'product_attributes';
-    // العلاقه بين البيانات One To Many 
     public function attributeValues(){
         return $this->hasMany(AttributeValue::class);
     }
 }
-/*
-خلصانة بشياكة
-*/

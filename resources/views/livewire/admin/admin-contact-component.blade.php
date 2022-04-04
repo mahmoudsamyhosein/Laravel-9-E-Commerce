@@ -52,7 +52,9 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        {{ $contacts->links() }}
+                        <div class="wrap-pagination-info" dir="rtl">
+                            {{ $contacts->links() }}
+                        </div>
                     </div>
                 </div>
             </div>
