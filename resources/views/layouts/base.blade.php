@@ -381,6 +381,15 @@
 			background: #FE9900;
 
 		}
+		.noUi-connect {
+			background: #FE9900;
+		}.text-info{
+			color: #FE9900;
+		}
+		.fa-caret-right:before{
+			margin-left: 6px;
+			
+		}
     </style>	
 	<!-- قائمة الموبايل -->
 	<div class="mercado-clone-wrap" dir="rtl">

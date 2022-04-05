@@ -55,7 +55,8 @@ class AdminEditCategoryComponent extends Component
 
     }
     
-    public function updatecategory(){
+    public function updatecategory()
+    {
         $this->validate([
             'name' => 'required',
             'slug' => 'required|unique:categories'
@@ -75,9 +76,8 @@ class AdminEditCategoryComponent extends Component
             $category->slug = $this->slug;
             $category->save();
         }       
-        Session()->flash('message',trans('mshmk.Category_has_Been_Updated_Successfully!'));
+        session()->flash('message',trans('mshmk.Category_has_Been_Updated_Successfully!'));
     }
-
     public function render()
     {
         $categories = Category::all();

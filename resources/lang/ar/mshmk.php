@@ -241,6 +241,7 @@ return [
     'Your_Message_Has_Been_Sent_Successfully!'=> 'تم أرسال رسالتك بنجاح !',
     'Error_In_Transaction!'=> 'خطأ في المعاملة أو التحويل !',
     'The_Stripe_Token_Was_Not_Generated_Correctly!'=> '!بنجاح [StripeToken] لم يتم أنشاء ',
+    'Are_You_Sure,_You_Want_To_Delete_Subcategory?'=>'هل أنت متأكد من أنك تريد حذف القسم الفرعي ؟',
     //ترجمة البريد الالكتروني تبدأ من هنا
     'Your_Order_Has_Been_Successfully_Placed.'=> 'تم وضع طلبك بنجاح',
     'Order_Confirmation'=> 'تأكيد الطلب',
