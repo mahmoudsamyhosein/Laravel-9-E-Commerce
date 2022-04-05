@@ -10,6 +10,7 @@ use Livewire\Component;
 use Livewire\WithPagination;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use App\Models\Category;
+use App\Models\Setting;
 use App\Models\Subcategory;
 
 class CategoryComponent extends Component
@@ -79,7 +80,7 @@ class CategoryComponent extends Component
         }
         $categories = Category::all();
         $popular_products = Product::all()->take(5);
-       
-        return view('livewire.category-component' ,['products'=> $products ,'categories' => $categories , 'category_name' => $category_name ,'popular_products' => $popular_products ])->layout('layouts.base');
+        $setting = Setting::find(1);
+        return view('livewire.category-component' ,['products'=> $products ,'categories' => $categories , 'category_name' => $category_name ,'popular_products' => $popular_products ,'setting' => $setting ])->layout('layouts.base');
     }
 }

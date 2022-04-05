@@ -15,21 +15,20 @@ class AdminProductComponent extends Component
     public $searchTerm;
     public  $product;
    
-    // public function deleteProduct($id)
-    // {
-    //     $product = Product::find($id);
-    //     $product->delete();
-    //     session()->flash('message','Product has been deleted successfully!');
-    // } 
+    public function deleteProduct($id)
+    {
+        $product = Product::find($id);
+        $product->delete();
+        session()->flash('message',trans('mshmk.Product_Has_Been_Deleted_Successfully!'));
+    } 
     public function render()
     {
-        // $search = '%' . $this->searchTerm . '%';
-        // $products = Product::where('name','LIKE',$search)
-        //                 ->orwhere('stock_status','LIKE',$search)
-        //                 ->orwhere('regular_price','LIKE',$search)
-        //                 ->orwhere('sale_price','LIKE',$search)
-        //                 ->orderBy('id','DESC')->paginate(10);
-        $products = Product::paginate(12); 
+        $search = '%' . $this->searchTerm . '%';
+        $products = Product::where('name','LIKE',$search)
+                        ->orwhere('stock_status','LIKE',$search)
+                        ->orwhere('regular_price','LIKE',$search)
+                        ->orwhere('sale_price','LIKE',$search)
+                        ->orderBy('id','DESC')->paginate(10);
         return view('livewire.admin.products.admin-product-component',['products' => $products])->layout('layouts.base');
     }
 }

@@ -42,8 +42,7 @@ class DetailsComponent extends Component
         $popular_products = Product::inRandomOrder()->limit(5)->get();
         $related_products = Product::where('category_id',$product->category_id)->inRandomOrder()->limit(12)->get();
         $sale = Sale::find(1); 
-        $attributeValues = AttributeValue::all();
         $setting = Setting::find(1);
-        return view('livewire.details-component',[ 'product' => $product ,'popular_products' => $popular_products , 'related_products' => $related_products  ,'sale' =>$sale ,'attributeValues' =>$attributeValues ,'setting' => $setting])->layout('layouts.base');
+        return view('livewire.details-component',[ 'product' => $product ,'popular_products' => $popular_products , 'related_products' => $related_products  ,'sale' =>$sale ,'setting' => $setting ])->layout('layouts.base');
     }
 }

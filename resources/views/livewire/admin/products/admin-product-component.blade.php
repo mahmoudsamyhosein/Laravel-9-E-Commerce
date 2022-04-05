@@ -9,9 +9,9 @@
                             <div class="col-md-4 pull-right">
                                 <h4>{{__('mshmk.All_Products')}}</h4> 
                             </div>
-                            {{-- <div class="col-md-4">
+                            <div class="col-md-4">
                                 <input type="text" class="form-control" placeholder="{{__('mshmk.search...')}}" wire:model='searchTerm' >
-                            </div> --}}
+                            </div>
                             <div class="col-md-4">
                                 <a href="{{ route('admin.addproduct') }}" class="btn btn-success pull-left">{{__('mshmk.Add_New')}}</a>
                              </div>
@@ -50,10 +50,10 @@
                                             <a href="{{ route('admin.editproduct' ,['product_slug' => $product->slug ])}}">
                                                 <i class="fa fa-edit fa-2x text-info"></i> 
                                             </a>
-                                            {{-- <a href="#" onclick="confirm('{{__('mshmk.Are_You_Sure,_You_Want_To_Delete_This_Product_?')}}') || event.stopImmediatePropagation()" style="margin-left:10px;"
+                                            <a href="#" onclick="confirm('{{__('mshmk.Are_You_Sure,_You_Want_To_Delete_This_Product_?')}}') || event.stopImmediatePropagation()" style="margin-left:10px;"
                                                 wire:click.prevent="deleteProduct({{$product->id}})">
                                                 <i class="fa fa-times fa-2x text-danger" style="margin-right: 20px;"></i>
-                                            </a>  --}}
+                                            </a> 
                                         </td>
                                     </tr>
                                 @endforeach

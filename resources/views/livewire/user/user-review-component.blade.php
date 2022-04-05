@@ -24,12 +24,13 @@
 													</li>
 												</ol>
 											</div><!-- #comments -->
-                                            @if(Session::has('message'))
-                                            <div class="alert alert-success" role="alert">{{Session::get('message')}}</div>
-                                            @endif
+                                            
 											<div id="review_form_wrapper"dir="rtl" style="text-align: right">
 												<div id="review_form">
-													<div id="respond" class="comment-respond"> 
+													<div id="respond" class="comment-respond">
+														@if(Session::has('message'))
+															<div class="alert alert-success"  role="alert">{{Session::get('message')}}</div>
+														@endif 
 														<form  id="commentform" class="comment-form"  wire:submit.prevent='addreview' > 
                                                             @csrf
 															<div class="comment-form-rating">

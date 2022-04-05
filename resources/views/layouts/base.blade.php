@@ -278,9 +278,10 @@
 			background: #FE9900;
 			margin-left:10px;
 			margin-top: 2px;
-			border-width: 2px;
+			border-width: 1px;
 			border-color: #FE9900;
 			margin-right: 5px;
+			color: #ffffff;
 		}
 		.wrap-shop-control{
 			background-color: #FE9900;
@@ -337,6 +338,48 @@
 		}
 		.fa-edit:before, .fa-pencil-square-o:before{
 			color: #FE9900;
+		}
+		.wrap-nav.horizontal-nav .link-term:hover{
+			color: #FE9900;
+		}
+		.btn-submitx{
+			color: #ffffff;
+			background: #FE9900;
+		}
+		.text-danger{
+			color: crimson;
+		}
+		.wrap-footer-content .wrap-function-info .fc-info-item .wrap-left-info .fc-desc {
+			color: #ffffff !important;
+			
+		}
+		.alert-success{
+			background-color: #FE9900;
+			border-color:#FE9900;
+			color: #ffffff;
+		}
+		.flex-control-thumbs img.flex-active{
+			background:#FE9900;
+		}
+		.wrap-contacts .contact-box textarea{
+			background: #ffffff;
+		}
+		.wrap-iten-in-cart .products-cart .product-name a:hover{
+			color:#FE9900
+		}
+		.wrap-iten-in-cart .products-cart .product-name a:hover{
+			color: #FE9900;
+		}
+		.flex-control-thumbs img.flex-active{
+			border-color:#FE9900;
+		}
+		#review_form_wrapper #review_form .comment-form textarea[name=comment] {
+			background:#ffffff;
+			color: black;
+		}
+		#review_form_wrapper #review_form .comment-form p.form-submit input[type=submit]{
+			background: #FE9900;
+
 		}
     </style>	
 	<!-- قائمة الموبايل -->

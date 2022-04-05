@@ -211,7 +211,7 @@
 
 {{-------------------------------------------رسالة معالجة الطلب  ---}}
 							@if ($errors->isEmpty())
-								<div wire:ignore id="processing" style="font-size:22px; margin-bottom:20px;padding-left:37px;color:green;display:none;">
+								<div wire:ignore id="processing" style="font-size:22px; margin-bottom:20px;padding-left:37px;display:none;color: #FE9900;">
 									<i class="fa fa-spinner fa-pulse fa-fw"></i>
 									<span>{{__('mshmk.Processing...')}}</span>
 								</div>							

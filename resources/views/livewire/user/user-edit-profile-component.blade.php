@@ -1,6 +1,12 @@
 <div dir="rtl" style="text-align: right">
     <title>@section('title','| تعديل الملف الشخصي ')</title>
-
+    <style>
+        input{
+            margin-top:5px;
+            margin-bottom:7px;
+        }
+        
+    </style>
     <div class="container" style="padding: 30px 0" dir="rtl" style="text-align: right;">
         <div class="row">
             <div class="panel panel-default">
@@ -24,19 +30,19 @@
                             <input type="file" class="form-control" wire:model="newimage" />
                         </div>
                         <div class="col-md-8">
-                            <p><b>{{__('mshmk.Name:')}}     </b><input type="text" class="form-control" wire:model='name'></p>
+                            <p><b>{{__('mshmk.Name:')}}</b><input type="text" class="form-control" wire:model='name'></p>
                             <hr>
-                            <p><b>{{__('mshmk.Email:')}}    </b>{{$email}}</p>
+                            <p><b>{{__('mshmk.Email:')}}</b>{{$email}}</p>
                             <hr>
-                            <p><b>{{__('mshmk.Phone:')}}    </b><input type="text" class="form-control" wire:model='mobile'></p>
+                            <p><b>{{__('mshmk.Phone:')}}</b><input type="text" class="form-control" wire:model='mobile'></p>
                             <hr>
-                            <p><b>{{__('mshmk.Country:')}}  </b><input type="text" class="form-control" wire:model='country'></p>
-                            <p><b>{{__('mshmk.City:')}}     </b><input type="text" class="form-control" wire:model='city'></p>
-                            <p><b>{{__('mshmk.Province:')}} </b><input type="text" class="form-control" wire:model='province'></p>
+                            <p><b>{{__('mshmk.Country:')}}</b><input type="text" class="form-control" wire:model='country'></p>
+                            <p><b>{{__('mshmk.province')}}</b><input type="text" class="form-control" wire:model='province'></p>
+                            <p><b>{{__('mshmk.City:')}}</b><input type="text" class="form-control" wire:model='city'></p>
                             <hr>
-                            <p><b>{{__('mshmk.Line1:')}}    </b><input type="text" class="form-control" wire:model='line1'></p>
-                            <p><b>{{__('mshmk.Line2:')}}    </b><input type="text" class="form-control" wire:model='line2'></p>
-                            <p><b>{{__('mshmk.Zip_Code:')}} </b><input type="text" class="form-control" wire:model='zipcode'></p>
+                            <p><b>{{__('mshmk.Line1:')}}</b><input type="text" class="form-control" wire:model='line1'></p>
+                            <p><b>{{__('mshmk.Line2:')}}</b><input type="text" class="form-control" wire:model='line2'></p>
+                            <p><b>{{__('mshmk.Zip_Code:')}}</b><input type="text" class="form-control" wire:model='zipcode'></p>
                             <button type='submit' class='btn btn-info pull-right'>{{__('mshmk.Update')}}</button>
                         </div>
                     </form>

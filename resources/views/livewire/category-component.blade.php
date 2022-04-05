@@ -44,7 +44,7 @@
 					<div class="row">
 						<ul class="product-list grid-products equal-container">
 							@foreach ($products as $product)	
-								<li class="col-lg-4 col-md-6 col-sm-6 col-xs-6 ">
+								<li class="col-lg-4 col-md-6 col-sm-6 col-xs-6 pull-right" dir="rtl">
 									<div class="product product-style-3 equal-elem ">
 										<div class="product-thumnail">
 											<a href="{{ route('products.details', ['slug' => $product->slug ]) }}" title="{{$product->name}}">
@@ -53,7 +53,7 @@
 										</div>
 										<div class="product-info">
 											<a href="{{ route('products.details', ['slug' => $product->slug ]) }}" class="product-name"><span>{{ $product->name }}</span></a>
-											<div class="wrap-price"><span class="product-price">{{ $product->regular_price }}</span></div>
+											<div class="wrap-price"><span class="product-price">{{ $product->regular_price }}  {{$setting->currrency}}</span></div>
 											<a href="#" class="btn add-to-cart" wire:click.prevent="store({{ $product->id }},{{ $product->name }},{{ $product->regular_price }})">{{__('mshmk.Add_To_Cart')}}</a>
 										</div>
 									</div>
@@ -102,7 +102,7 @@
 										</div>
 										<div class="product-info">
 											<a href="{{ route('products.details', ['slug' => $p_product->slug ]) }}" class="product-name"><span>{{ $p_product->name }}</span></a>
-											<div class="wrap-price"><span class="product-price">${{$p_product->regular_price}}</span></div>
+											<div class="wrap-price"><span class="product-price">{{$p_product->regular_price}} {{$setting->currrency}}</span></div>
 										</div>
 									</div>
 								</li>
@@ -120,25 +120,3 @@
 	</main>
 	<!--main area-->
 </div>
-@push('scripts')
-<script>
-	 var slider = document.getElementById('slider');
-	 noUiSlider.create(slider,{
-		 start : [1,1000],
-		 connect:true,
-		 range : {
-			 'min' : 1,
-			 'max' : 1000
- 		 },
-		pips:{
-			mode:'steps',
-			stepped:true,
-			density:4	
-		}
-	 });
-	 slider.noUiSlider.on('update',function(value){
-		 @this.set('min_price',value[0]);
-		 @this.set('max_price',value[1]);
-	 });
-</script>
-@endpush

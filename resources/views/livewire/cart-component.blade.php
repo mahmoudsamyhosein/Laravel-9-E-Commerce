@@ -30,6 +30,11 @@
 										<div class="product-name">
 											<a class="link-to-product" href="{{ route('products.details' ,['slug' => $item->model->slug ]) }}">{{$item->model->name}}</a>
 										</div>
+										@foreach($item->options as $key=> $value)
+											<div style="vertical-align: middle; width:180px;">
+												 <p><b>{{$key}} : {{$value}}</b></p> 
+											</div>
+										@endforeach 
 										<div class="price-field product-price"><p class="price">{{ $item->model->regular_price }} {{$setting->currency}} </p></div>
 										<div class="quantity">
 											<div class="quantity-input">
