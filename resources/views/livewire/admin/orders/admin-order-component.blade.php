@@ -73,7 +73,9 @@
                         @endforeach
                     </tbody>
                 </table>
-            {{ $orders->links() }}
+                <div class="wrap-pagination-info" dir="rtl">
+                     {{ $orders->links() }}
+                </div>
             </div>
         </div>
     </div>

@@ -122,7 +122,7 @@ class AdminAddProductComponent extends Component
             $product->subcategory_id = $this->scategory_id;
         }
         $product->save();
-        foreach ($this->attribute_values as $key=>$attribute_value){
+        foreach ($this->attribute_values as $key => $attribute_value){
             $avalues = explode(',',$attribute_value);
             foreach($avalues as $avalue){
                 $attr_value = new AttributeValue();

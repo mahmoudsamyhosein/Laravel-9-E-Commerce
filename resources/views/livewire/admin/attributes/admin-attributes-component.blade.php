@@ -2,13 +2,7 @@
     <title>@section('title','| خواص المنتجات ')</title>
     <div>
         <style>
-            nav svg {
-                height: 20px;
-            }
-    
-            nav .hidden {
-                display: block !important;
-            }
+            
             .sclist{
                 list-style: none;
             }
@@ -72,7 +66,9 @@
                                     @endforeach
                                 </tbody>
                             </table>
-                            {{ $pattributes->links() }}
+                            <div class="wrap-pagination-info" dir="rtl">
+                                 {{ $pattributes->links() }}
+                            </div>
                         </div>
                     </div>
                 </div>

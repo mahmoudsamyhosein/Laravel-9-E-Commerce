@@ -1,12 +1,6 @@
 <div dir="rtl" style="text-align: right">
     <style>
-        nav svg {
-            height: 20px;
-        }
-
-        nav .hidden {
-            display: block !important;
-        }
+       
         .sclist{
             list-style: none;
         }
@@ -81,7 +75,9 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        {{ $categories->links() }}
+                        <div class="wrap-pagination-info" dir="rtl">
+                            {{ $categories->links() }}
+                        </div>
                     </div>
                 </div>
             </div>

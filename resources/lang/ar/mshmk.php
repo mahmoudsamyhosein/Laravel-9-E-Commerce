@@ -462,4 +462,5 @@ return [
     'edit_store_info'=> 'تعديل بيانات المتجر',
     'store_currency'=> 'عملة المتجر',
     'MAIN_MENU'=> 'القائمة الرئيسية',
+    'Free_shipping' => 'شحن مجاني',
 ];

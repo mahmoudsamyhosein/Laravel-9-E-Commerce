@@ -1,11 +1,3 @@
-<style>
-    nav svg{
-        height: 20px;
-    }
-    nav .hidden{
-        display: block !important;
-    }
-</style>
 <div dir="rtl" style="text-align: right">
     <title>@section('title','| رسائل التواصل ')</title>
 

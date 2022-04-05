@@ -4,14 +4,11 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>مصري شوب @yield('title','| الرئيسية')</title> 
+	<title>مصري شوب @yield('title','| الرئيسية')</title>
 	<link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/favicon.png') }}">
-	<link
-		href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic,900,900italic&amp;subset=latin,latin-ext"
-		rel="stylesheet">
-	<link
-		href="https://fonts.googleapis.com/css?family=Open%20Sans:300,400,400italic,600,600italic,700,700italic&amp;subset=latin,latin-ext"
-		rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/animate.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/font-awesome.min.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css') }}">
@@ -29,8 +26,6 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.css"
 		integrity="sha512-KRrxEp/6rgIme11XXeYvYRYY/x6XPGwk0RsIC6PyMRc072vj2tcjBzFmn939xzjeDhj0aDO7TDMd7Rbz3OEuBQ=="
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<!-- include summernote css -->
-	<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 	@livewireStyles
 </head>
 <body class="home-page home-01 " >
@@ -57,6 +52,292 @@
         .fa-life-ring:before{
             margin-left: 40px;
         }
+
+		.wrap-show-advance-info-box .title-box{
+			background-color:#FE9900 ;
+		}
+		.wrap-footer-content .wrap-function-info{
+			background: #FE9900 ;
+		}
+		.wrap-newletter-footer .btn-submit{
+			background: #FE9900 ;
+		}
+		header.fill-color .main-info-area .right-section .wrap-icon-section.minicart .index{
+			background-color: #FE9900;
+		}
+		li.menu-item .nav-label.sale-label{
+			background:  #FE9900;
+		}
+		li.menu-item .nav-label.sale-label::before{
+			border-top-color:  #FE9900;
+			border-left-color:  #FE9900;
+		}
+		.wrap-banner.banner-style-3 .sub-title::first-letter{
+			color:  #FE9900;
+		}
+		.wrap-main-slide .slide-1 .sale-info .price{
+			color: #FE9900;
+			
+		}
+		.wrap-main-slide .slide-2 .f-title{
+			color: #FE9900;
+		}
+		.wrap-main-slide .slide-3 .sale-info .price{
+			color: #FE9900;
+		}
+		.wrap-show-advance-info-box .title-box{
+
+			background-color: #FE9900;
+
+		}
+		.wrap-main-slide .active .slide-1 .f-title{
+			margin-bottom: 10px;
+		}
+		.product .product-thumnail .group-flash .flash-item.sale-label::before{
+			border-top-color: #FE9900;
+			border-left-color: #FE9900;
+		}
+
+		.wrap-product-detail .detail-info .wrap-price ins>p,
+		.product .product-info .wrap-price ins>p,
+		.product-style-2 .product-info .wrap-price ins>p{
+			color: #FE9900;
+
+		}
+		.ui-slider-horizontal .ui-slider-handle {
+
+			background-color: #FE9900;
+		}
+		.ui-slider-horizontal .ui-slider-range {
+
+			background: #FE9900;
+		}
+		.product-list-style .product-attribute li .attr-red-color{
+			background: #FE9900;
+		}
+		.product-list-style .advance-info .wrap-price ins>p{
+			color: #FE9900;
+
+		}
+		.wrap-contacts .contact-box label>span{
+			color: #FE9900;
+
+		}
+		.wrap-iten-in-cart .products-cart .delete a.btn:hover i{
+			color: #FE9900;
+		}
+		.wrap-product-detail .detail-info .wrap-price ins>p{
+			color: #FE9900;
+
+		}
+		.wrap-product-detail .detail-info .stock-info.in-stock b{
+			color: #FE9900;
+		}
+		.wrap-address-billing .row-in-form label span{
+			color: #FE9900;
+		}
+		.wrap-footer-item .wrap-hotline-footer .phone-number,
+		.topbar-menu-area .topbar-menu .label-before.fa-mobile{
+			color: #FE9900 !important;
+		}
+		.btn-submit{
+			color: #FE9900;
+		}
+		.wrap-main-slide .slide-1 .btn-link{
+			background: #FE9900;
+		}
+		
+		.product .product-thumnail .group-flash .flash-item.sale-label {
+    	background-color: #FE9900;
+    	margin-right: 8px;
+		}
+		.wrap-footer-content .wrap-function-info .fc-info-item {
+    	border-color: #FE9900 !important;
+		}
+		.center-section .wrap-search-form button{
+			background: #FE9900;
+		}
+		.center-section .wrap-search-form {
+			border-color: #FE9900;
+		}
+		.wrap-main-slide .slide-1 .btn-link{
+			background: #FE9900;
+
+		}
+		.summary .checkout-info .btn-checkout{
+			background: #FE9900;
+		}
+		.main-info-area .right-section .wrap-icon-section.minicart .index {
+			background: #FE9900;
+		}
+		.primary .menu-item.home-icon{
+			background: #FE9900;
+		}
+		.product-style-3 a.add-to-cart:hover {
+			border-color: #FE9900 !important;
+		}
+		.product-style-3 a.add-to-cart:hover{
+			background: #FE9900;
+		}
+		.wrap-contacts .contact-box input[type="submit"]{
+			background: #FE9900;
+		}
+		.wrap-icon-box .icon-box-item i{
+			background: #FE9900;
+		}
+		.wrap-login-item .form-item .btn{
+			background: #FE9900;
+		}
+		.wrap-login-item .form-item input[type="checkbox"] + span::after{
+			color: #FE9900;
+		}
+		.product .product-info .product-name:hover span{
+			color: #FE9900;
+		}
+		.product-widget-style .thumbnnail a:hover img{
+			border-color: #FE9900;
+		}
+		.wrap-product-detail .advance-info .tab-control a.active{
+			border-color: #FE9900;
+		}
+		.wrap-product-detail .advance-info .tab-control a.active{
+			background: #FE9900;
+		}
+		
+		.wrap-product-detail .detail-info .quantity-input input{
+			color: #FE9900;
+		}
+		.wrap-product-detail .detail-info .wrap-butons .add-to-cart:hover{
+			background: #FE9900;
+		}
+		.wrap-product-detail .detail-info .wrap-butons .add-to-cart:hover{
+			border-color: #FE9900;
+		}
+		.detail-media .flex-control-nav .owl-nav button:hover{
+			background: #FE9900 !important;
+		}
+		.wrap-product-detail .detail-info .quantity-input .btn:hover{
+			background: #FE9900 !important;
+			border-color: #FE9900;
+		}
+		.summary-item .btn{
+			background: #FE9900;
+		}
+		.choose-payment-methods .payment-method input[type=radio]:checked + span::before{
+			background: #FE9900;
+			border-color: #FE9900;
+		}
+		.topbar-menu-area .topbar-menu ul li a:hover{
+			color: #FE9900;
+		}
+		.wrap-footer-item .social-network ul li a:hover{
+			background: #FE9900;
+		}
+		.wrap-vertical-nav li a:hover{
+			color: #FE9900;
+		}
+		.back-link-box .list-back-link li a:hover{
+			color: #FE9900;
+		}
+		.summary .checkout-info .link-to-shop:hover{
+			color: #FE9900;
+		}
+		.summary .update-clear .btn{
+			margin-right: 210px;
+		}
+		.summary .checkout-info .link-to-shop{
+			margin-right: 520px;
+		}
+		.btn-primary {
+		
+		background-color: #FE9900;
+		border-color: #FE9900;
+		}
+		.btn-primary:hover{
+			background: #333333;
+			border-color: #333333;
+		}
+		.btn-info{
+			background-color: #FE9900;
+			border-color: #FE9900;
+		}
+		.btn-info:hover{
+			background: #333333;
+			border-color: #333333;
+		}
+		.wrap-login-item .form-item .link-function:hover{
+			color: #FE9900 !important;
+		}
+		.widget a:hover{
+			color: #FE9900 !important;
+		}
+		.wrap-breadcrumb ul a:hover{
+			color: #FE9900 ;
+		}
+		.input, button, select, textarea{
+			background: #FE9900;
+			margin-left:10px;
+			margin-top: 2px;
+			border-width: 2px;
+			border-color: #FE9900;
+			margin-right: 5px;
+		}
+		.wrap-shop-control{
+			background-color: #FE9900;
+		}
+		.center-section .wrap-search-form button{
+			
+			margin-left:0;
+			margin-top: 0;
+			border-width: 0;
+			margin-right: 363;
+			border-color:#FE9900;
+			
+		}
+		.center-section .wrap-search-form .wrap-list-cate .list-cate li:not(.level-0):hover{
+			color: #FE9900 ;
+		}
+		.wrap-list-cate{
+			margin-left: 10px;
+
+		}
+		.center-section .wrap-search-form .wrap-list-cate .list-cate{
+			text-align: right;
+		}
+		.center-section .wrap-search-form .wrap-list-cate .link-control{
+			color: #FE9900;
+		}
+		a.mercado-next-panel:before{
+			display: none;
+		}
+		.wrap-newletter-footer .btn-submit{
+			margin-left:0;
+			margin-top: 0;
+			border-width: 0;
+			margin-right: 363;
+			border-color:#FE9900;
+		}
+		.btn-success:hover{
+			
+			background: #333333;
+			border-color: #333333;	
+		}
+		.btn-success{
+			background:#FE9900;
+			border-color:#FE9900;
+		}
+		.panel-default>.panel-heading {
+			color: #FE9900;
+			background-color: #333333;
+			border-color: #FE9900;
+		}
+		.panel-default{
+			border-color: #FE9900;
+			border-width: 1px;
+		}
+		.fa-edit:before, .fa-pencil-square-o:before{
+			color: #FE9900;
+		}
     </style>	
 	<!-- قائمة الموبايل -->
 	<div class="mercado-clone-wrap" dir="rtl">
@@ -301,7 +582,6 @@
 		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="https://cdn.tiny.cloud/1/b7vhlj1xgbj9guv1kjrx6iyin4zov3kr6x7aguzir6ds7v7j/tinymce/5/tinymce.min.js"
 		referrerpolicy="origin"></script>
-	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 	@stack('scripts')
 	<!--جافا سكربت-->
 	@livewireScripts

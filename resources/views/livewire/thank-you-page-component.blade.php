@@ -15,7 +15,7 @@
 			<div class="row">
 				<div class="col-md-12 text-center">
 					<h2>{{__('mshmk.Thank_you_for_your_order')}}</h2>
-                    <p>{{__('mshmk.A_confirmation_email_was_sent.')}}</p>
+                    {{-- <p>{{__('mshmk.A_confirmation_email_was_sent.')}}</p> --}}
                     <a href="/shop" class="btn btn-submit btn-submitx">{{__('mshmk.Continue_Shopping')}}</a>
 				</div>
 			</div>

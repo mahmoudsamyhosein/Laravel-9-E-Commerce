@@ -224,8 +224,9 @@
 {{------------------------------------------- الشحن ---}}	
 						<div class="summary-item shipping-method">
 							<h4 class="title-box f-title">{{__('mshmk.Shipping_method')}}</h4>
-							<p class="summary-info"><span class="title">{{__('mshmk.Flat_Rate')}}</span></p>
-							<p class="summary-info"><span class="title">{{__('mshmk.Fixed_$0')}}</span></p>
+							<p class="summary-info"><span class="title">{{__('mshmk.Free_shipping')}}</span></p>
+							{{-- <p class="summary-info"><span class="title">{{__('mshmk.Flat_Rate')}}</span></p> --}}
+							{{-- <p class="summary-info"><span class="title">{{__('mshmk.Fixed_$0')}}</span></p> --}}
 						</div>
 {{------------------------------------------- الشحن ---}}	
 					</div>

@@ -197,8 +197,7 @@
                 <div class="coppy-right-item item-right">
                     <div class="wrap-nav horizontal-nav">
                         <ul>
-                           
-                            <li class="menu-item"><a href="https://mahmoudsamyhosein.github.io/masry_shop_tech_doc/" class="link-term">{{__('mshmk.tech_doc')}}</a></li>
+                            {{-- <li class="menu-item"><a href="https://mahmoudsamyhosein.github.io/masry_shop_tech_doc/" class="link-term">{{__('mshmk.tech_doc')}}</a></li> --}}
                             <li class="menu-item"><a href="https://mahmoudsamyhosein.github.io/masry_shop_doc/" class="link-term">{{__('mshmk.doc')}}</a></li>																							
                         </ul>
                     </div>

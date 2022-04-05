@@ -51,7 +51,7 @@ Primary use:    Ecommerce
 
 -------------------------------------------------------------------*/
 body{
-	font-family: 'Open Sans', sans-serif;
+	font-family:  'Cairo', sans-serif;
 	font-size: 13px;
 	color: #444444;
 	overflow-x: hidden;
@@ -7188,7 +7188,7 @@ background-color: #888888;
 }
 
 .text-red-600{
-    color: red;
+    color: #FE9900;
 }
 .col-xs-2{
     float: right;
@@ -7207,8 +7207,3 @@ th {
     right:;
 
 }
-/* .has-child-cate .toggle-control{
-    
-} */
-
-
