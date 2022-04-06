@@ -1,7 +1,7 @@
 <div dir="rtl" style="text-align:right;">
 <!--main area-->
 	<main id="main" class="main-site left-sidebar" >
-		<title>@section('title','| تواصل معنا  ')</title>
+		<title>@section('title',' تواصل معنا |')</title>
 		<div class="container">
 			<div class="wrap-breadcrumb">
 				<ul>

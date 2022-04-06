@@ -4,83 +4,59 @@
 *MY_GITHUB_ACCOUNT:https://github.com/mahmoudsamyhosein .
 */
 namespace App\Http\Livewire;
-
 use App\Models\Product;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use App\Models\Category;
 use App\Models\Setting;
-use App\Models\Subcategory;
 
 class CategoryComponent extends Component
 {
-    
     use WithPagination;
     public $sorting;
     public $pagesize;
     public $category_slug;
-    public $scategory_slug;
-   
 
-    public function mount($category_slug, $scategory_slug=null){
-
+    public function mount($category_slug)
+    {
         $this->sorting = "default";
         $this->pagesize = 12;
         $this->category_slug = $category_slug;
-        $this->scategory_slug = $scategory_slug;
-        
     }
 
-    public function store($product_id,$product_name,$product_price){
-
-        Cart::add($product_id,$product_name,1,$product_price)->associate('App\Models\Product');
-        session()->flash('success_message',trans('mshmk.Item_added_in_Cart!'));
-        return redirect()->route('product.cart');
-
-    }
-    
-    
-    public function render()
+    public function store($product_id,$product_name,$product_price)
     {
-        $category_id = null;
-        $category_name = "";
-        $filter = "";
+        Cart::add($product_id,$product_name,1,$product_price)->associate('App\Models\Product');
+        session()->flash('success_message','Item added in Cart');
+        return redirect()->route('product.cart');
+    }
 
-        if($this->scategory_slug){
-            $scategory = Subcategory::where('slug',$this->scategory_slug)->first();
-            $category_id = $scategory->id;
-            $category_name = $category_name;
-            $filter = "sub";
+    public function render()
+    {  
+        $category = Category::where('slug',$this->category_slug)->first();
+        $category_id = $category->id;
+        $category_name = $category->name;
+        if($this->sorting=='date')   
+        {
+            $products = Product::where('category_id',$category_id)->orderBy('created_at','DESC')->paginate($this->pagesize);  
+        }
+        else if($this->sorting=="price")
+        {
+            $products = Product::where('category_id',$category_id)->orderBy('regular_price','ASC')->paginate($this->pagesize); 
+        }
+        else if($this->sorting=="price-desc")
+        {
+            $products = Product::where('category_id',$category_id)->orderBy('regular_price','DESC')->paginate($this->pagesize); 
         }
         else{
-            $category = Category::where('slug',$this->category_slug)->first();
-            $category_id = $category->id;
-            $category_name = $category->name;
-            $filter = "";
-
-        }
-
+            $products = Product::where('category_id',$category_id)->paginate($this->pagesize);  
+        }   
         
-        
-        if($this->sorting == 'date'){
-
-            $products = Product::where($filter,'category_id' , $category_id )->orderBy('created_at','DESC')->paginate($this->pagesize);
-        }
-        elseif($this->sorting == 'price'){
-
-            $products = Product::where($filter,'category_id' , $category_id )->orderBy('regular_price','ASC')->paginate($this->pagesize);
-        }
-        elseif($this->sorting == 'price-desc'){
-
-            $products = Product::where($filter,'category_id' , $category_id )->orderBy('regular_price','DESC')->paginate($this->pagesize);
-        }
-        else{
-            $products = Product::where($filter,'category_id' , $category_id )->paginate($this->pagesize);
-        }
         $categories = Category::all();
+        $setting= Setting::find(1);
         $popular_products = Product::all()->take(5);
-        $setting = Setting::find(1);
-        return view('livewire.category-component' ,['products'=> $products ,'categories' => $categories , 'category_name' => $category_name ,'popular_products' => $popular_products ,'setting' => $setting ])->layout('layouts.base');
+        
+        return view('livewire.category-component',['products'=> $products,'categories'=>$categories,'category_name'=>$category_name , 'popular_products' => $popular_products ,'setting' =>  $setting])->layout("layouts.base");
     }
 }

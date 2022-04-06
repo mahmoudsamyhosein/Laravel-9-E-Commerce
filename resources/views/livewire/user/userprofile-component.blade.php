@@ -4,7 +4,7 @@
     }
 </style>
 <div dir="rtl" style="text-align: right">
-    <title>@section('title','| الملف الشخصي ')</title>
+    <title>@section('title','الملف الشخصي |')</title>
     <div class="container" style="padding: 30px 0" dir="rtl" style="text-align: right;">
         <div class="row">
             <div class="panel panel-default">

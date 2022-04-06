@@ -1,5 +1,5 @@
 <div dir="rtl" style="text-align: right">
-    <title>@section('title','| تفاصيل الطلب ')</title>
+    <title>@section('title',' تفاصيل الطلب |')</title>
     <div class="container" style="padding: 30px 0; text-align:right;" dir="rtl" >
         <div class="row">
             <div class="col-md-12">

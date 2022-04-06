@@ -1,5 +1,5 @@
 <div dir="rtl" style="text-align: right">
-    <title>@section('title','| الأعدادات ')</title>
+    <title>@section('title',' الأعدادات |')</title>
     <div class="container" style="padding: 30px 0;">
         <div class="row">
             <div class="col-md-12">

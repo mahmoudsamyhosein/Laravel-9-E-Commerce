@@ -9,7 +9,7 @@
             <div class="wrap-list-cate">
                 <input type="hidden" name="product_cat" value="{{ $product_cat }}" id="product-cate">
                 <input type="hidden" name="product_cat_id" value="{{ $product_cat_id }}" id="product-cate-id">
-                <a href="#" class="link-control">{{ str_split($product_cat,12)[0] }}</a>
+                <a href="#" class="link-control">{{__('mshmk.All_Categories')}}</a>
                 <ul class="list-cate">
                     <li class="level-0">{{__('mshmk.All_Categories')}}</li>
                     @foreach($categories as $category)

@@ -22,7 +22,9 @@ class AdminHomeCategoryComponent extends Component
     }
 
     public function updateHomeCategory(){
-        
+        $this->validate([
+            'numberofproducts' => 'required',
+        ]);
         $category = HomeCategory::find(1);
         $category->sel_categories = implode(',',$this->selected_categories);
         $category->no_of_products = $this->numberofproducts;

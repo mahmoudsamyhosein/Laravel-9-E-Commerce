@@ -40,7 +40,7 @@ class AdminAddProductComponent extends Component
     public $inputs =[];
     public $attribute_arr = [];
     public $attribute_values;
-
+    public $product_has_attr;
     public function mount(){
         $this->stock_status = 'instock';
         $this->featured = 0;
@@ -67,7 +67,7 @@ class AdminAddProductComponent extends Component
             'short_description' => 'required',
             'description' => 'required',
             'regular_price' => 'required|numeric',
-            'sale_price' => 'numeric',
+            
             'SKU' => 'required',
             'stock_status' => 'required',
             'quantity' => 'required|numeric',
@@ -83,7 +83,7 @@ class AdminAddProductComponent extends Component
             'short_description' => 'required',
             'description' => 'required',
             'regular_price' => 'required|numeric',
-            'sale_price' => 'numeric',
+            
             'SKU' => 'required',
             'stock_status' => 'required',
             'quantity' => 'required|numeric',
@@ -122,14 +122,16 @@ class AdminAddProductComponent extends Component
             $product->subcategory_id = $this->scategory_id;
         }
         $product->save();
-        foreach ($this->attribute_values as $key => $attribute_value){
-            $avalues = explode(',',$attribute_value);
-            foreach($avalues as $avalue){
-                $attr_value = new AttributeValue();
-                $attr_value->product_attribute_id = $key;
-                $attr_value->value = $avalue;
-                $attr_value->product_id =  $product->id;
-                $attr_value->save();
+        if($this->attribute_values){
+            foreach ($this->attribute_values as $key => $attribute_value){
+                $avalues = explode(',',$attribute_value);
+                foreach($avalues as $avalue){
+                    $attr_value = new AttributeValue();
+                    $attr_value->product_attribute_id = $key;
+                    $attr_value->value = $avalue;
+                    $attr_value->product_id =  $product->id;
+                    $attr_value->save();
+                }
             }
         }
         session()->flash('message',trans('mshmk.Product_Has_Been_Created_Successfully!'));

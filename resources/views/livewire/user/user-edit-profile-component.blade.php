@@ -1,5 +1,5 @@
 <div dir="rtl" style="text-align: right">
-    <title>@section('title','| تعديل الملف الشخصي ')</title>
+    <title>@section('title',' تعديل الملف الشخصي |')</title>
     <style>
         input{
             margin-top:5px;
@@ -30,19 +30,45 @@
                             <input type="file" class="form-control" wire:model="newimage" />
                         </div>
                         <div class="col-md-8">
-                            <p><b>{{__('mshmk.Name:')}}</b><input type="text" class="form-control" wire:model='name'></p>
+                            <p><b>{{__('mshmk.Name:')}}</b><input type="text" class="form-control" wire:model='name'>
+                                @error('name')
+                                  <p class="text-danger">{{ $message}}</p>  
+                                @enderror
+                            </p>
                             <hr>
                             <p><b>{{__('mshmk.Email:')}}</b>{{$email}}</p>
                             <hr>
-                            <p><b>{{__('mshmk.Phone:')}}</b><input type="text" class="form-control" wire:model='mobile'></p>
+                            <p><b>{{__('mshmk.Phone:')}}</b><input type="text" class="form-control" wire:model='mobile'>
+                                @error('mobile')
+                                  <p class="text-danger">{{ $message}}</p>  
+                                @enderror
+                            </p>
                             <hr>
-                            <p><b>{{__('mshmk.Country:')}}</b><input type="text" class="form-control" wire:model='country'></p>
-                            <p><b>{{__('mshmk.province')}}</b><input type="text" class="form-control" wire:model='province'></p>
-                            <p><b>{{__('mshmk.City:')}}</b><input type="text" class="form-control" wire:model='city'></p>
+                            <p><b>{{__('mshmk.Country:')}}</b><input type="text" class="form-control" wire:model='country'>
+                                @error('country')
+                                  <p class="text-danger">{{ $message}}</p>  
+                                @enderror
+                            </p>
+                            <p><b>{{__('mshmk.province')}}</b><input type="text" class="form-control" wire:model='province'>
+                                @error('province')
+                                  <p class="text-danger">{{ $message}}</p>  
+                                @enderror
+                            </p>
+                            <p><b>{{__('mshmk.City:')}}</b><input type="text" class="form-control" wire:model='city'>
+                                @error('city')
+                                  <p class="text-danger">{{ $message}}</p>  
+                                @enderror
+                            </p>
                             <hr>
-                            <p><b>{{__('mshmk.Line1:')}}</b><input type="text" class="form-control" wire:model='line1'></p>
-                            <p><b>{{__('mshmk.Line2:')}}</b><input type="text" class="form-control" wire:model='line2'></p>
-                            <p><b>{{__('mshmk.Zip_Code:')}}</b><input type="text" class="form-control" wire:model='zipcode'></p>
+                            <p><b>{{__('mshmk.Line1:')}}</b><input type="text" class="form-control" wire:model='line1'>
+                                @error('line1')
+                                  <p class="text-danger">{{ $message}}</p>  
+                                @enderror
+                            </p>
+                            <p><b>{{__('mshmk.Line2:')}}</b><input type="text" class="form-control" wire:model='line2'>
+                            </p>
+                            <p><b>{{__('mshmk.Zip_Code:')}}</b><input type="text" class="form-control" wire:model='zipcode'>
+                            </p>
                             <button type='submit' class='btn btn-info pull-right'>{{__('mshmk.Update')}}</button>
                         </div>
                     </form>

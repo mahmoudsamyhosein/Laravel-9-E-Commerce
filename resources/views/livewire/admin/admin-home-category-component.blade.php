@@ -1,5 +1,5 @@
 <div dir="rtl" style="text-align: right">
-    <title>@section('title','| أقسام الرئيسية')</title>
+    <title>@section('title',' أقسام الرئيسية |')</title>
 
    <div class="container" style="padding: 30px 0;">
         <div class="row">
@@ -33,6 +33,8 @@
                                 </label>
                                 <div class="col-md-4">
                                     <input type="text" class="form-control input-md" wire:model='numberofproducts'>
+                                    @error('numberofproducts') <p class="text-danger">{{$message}}</p>@enderror
+
                                 </div>
                             </div>
                             

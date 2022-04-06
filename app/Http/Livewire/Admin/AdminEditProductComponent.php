@@ -11,7 +11,6 @@ use App\Models\Product;
 use App\Models\ProductAttribute;
 use App\Models\Subcategory;
 use Carbon\Carbon;
-use Illuminate\Contracts\Session\Session;
 use Livewire\Component;
 use Illuminate\Support\Str;
 use Livewire\WithFileUploads;
@@ -155,41 +154,43 @@ class AdminEditProductComponent extends Component
                 }
             }
 
-        }   $imagesname = '';
-            foreach($this->newimages as $key=>$image){
-                $imgName = Carbon::now()->timestamp . $key . '.' . $image->extension();
-                $image->storeAs('products',$imgName);
-                $imagesname = $imagesname . ',' . $imgName;
-            }
+        }   
+            $imagesname = '';
+            if($this->newimages){
+                
+                foreach($this->newimages as $key=>$image){
+                    $imgName = Carbon::now()->timestamp . $key . '.' . $image->extension();
+                    $image->storeAs('products',$imgName);
+                    $imagesname = $imagesname . ',' . $imgName;
+                }
+             }
             $product->images =  $imagesname;
 
         $product->category_id = $this->category_id;
-
         if($this->scategory_id){
             $product->subcategory_id = $this->scategory_id;
         }
-
         $product->save();
-
         AttributeValue::where('product_id',$product->id)->delete();
-        
-        foreach($this->attribute_values  as $key=>$attribute_value){
-            $avalues = explode(',',$attribute_value);
-            foreach($avalues as $avalue){
-                $attr_value = new AttributeValue();
-                $attr_value->product_attribute_id = $key;
-                $attr_value->value =  $avalue;
-                $attr_value->product_id = $product->id;
-                $attr_value->save();
+        if($this->attribute_values){
+            foreach($this->attribute_values  as $key=>$attribute_value){
+                $avalues = explode(',',$attribute_value);
+                foreach($avalues as $avalue){
+                    $attr_value = new AttributeValue();
+                    $attr_value->product_attribute_id = $key;
+                    $attr_value->value =  $avalue;
+                    $attr_value->product_id = $product->id;
+                    $attr_value->save();
 
+                }
             }
         }
-        Session()->flash('message',trans('mshmk.Product_Has_Been_Updated_Successfully!'));
+
+        session()->flash('message',trans('mshmk.Product_Has_Been_Updated_Successfully!'));
     }
     public function changesubcategory(){
         $this->scategory_id = 0;
     }
-
     public function render()
     {
         $categories = Category::all();

@@ -1,6 +1,6 @@
 <div dir="rtl" style="text-align: right">
     <div class="container" style="padding: 30px 0;" >
-        <title>@section('title','| تغيير كلمة المرور ')</title>
+        <title>@section('title','تغيير كلمة المرور | ')</title>
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default">

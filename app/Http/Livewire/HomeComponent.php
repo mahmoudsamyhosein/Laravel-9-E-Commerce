@@ -11,12 +11,14 @@ use App\Models\Product;
 use App\Models\HomeCategory;
 use App\Models\Sale;
 use App\Models\Setting;
+use Carbon\Carbon;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
 class HomeComponent extends Component
 {
+    
     public function render()
     {   
         $sliders = Homeslider::where('status',1)->get();

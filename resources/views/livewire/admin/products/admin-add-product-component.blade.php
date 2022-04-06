@@ -1,5 +1,5 @@
 <div dir="rtl" style="text-align: right" >
-    <title>@section('title','| أضافة منتج جديد ')</title>
+    <title>@section('title','أضافة منتج جديد | ')</title>
     <div class="container" style="padding: 30px 0;">
         <div class="row">
             <div class="col-md-12">
@@ -146,7 +146,6 @@
                                             @error('scategory_id') <p class="text-danger">{{$message}}</p> @enderror
                                         </div>
                                     </div>
-
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">{{__('mshmk.Product_Attributes')}}</label>
                                         

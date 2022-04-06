@@ -1,7 +1,7 @@
 <div>
 <!--main area-->
 	<main id="main" class="main-site left-sidebar">
-		<title>@section('title','| الأقسام  ')</title>
+		<title>@section('title',' الأقسام  |')</title>
 		<div class="container">
 			<div class="wrap-breadcrumb" dir="rtl">
 				<ul>
@@ -17,6 +17,7 @@
 							<figure><img src="{{asset('assets/images/banner/shop.jpg')}}" alt=""></figure>
 						</a>
 					</div>
+{{----------------------------------------------------------------- البحث بداخل المتجر --}}					
 					<div class="wrap-shop-control" dir="rtl">
 						<h1 class="shop-title text-right" >{{ $category_name }}</h1>
 						<div class="wrap-right">
@@ -40,7 +41,11 @@
 								</select>
 							</div>
 						</div>
-					</div><!--end wrap shop control-->
+					</div>
+{{----------------------------------------------------------------- البحث بداخل المتجر --}}
+
+{{----------------------------------------------------------------- المنتجات --}}
+
 					<div class="row">
 						<ul class="product-list grid-products equal-container">
 							@foreach ($products as $product)	
@@ -64,6 +69,10 @@
 					<div class="wrap-pagination-info">
 						{{ $products->links() }}
 					</div>
+{{----------------------------------------------------------------- المنتجات --}}
+
+
+{{-----------------------------------------------------------------الأقسام --}}
 				</div><!--end main products area-->
 				<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 sitebar" dir="rtl">
 					<div class="widget mercado-widget categories-widget">
@@ -71,7 +80,7 @@
 						<div class="widget-content">
 							<ul class="list-category">
 								@foreach ($categories as $category)
-									<li class="category-item {{count($category->subcategories) > 0 ? 'has-child-cate':''}}">
+									<li class="category-item {{ count($category->subcategories) > 0 ? 'has-child-cate':''}}">
 										 <a href="{{ route('product.category' , [ 'category_slug' =>$category->slug ] )}}" class="cate-link"> {{ $category->name }} </a> 
 										 @if (count($category->subcategories) > 0 )
 											 <span class="toggle-control">+</span>
@@ -87,7 +96,11 @@
 								@endforeach
 							</ul>
 						</div>
-					</div><!-- Categories widget-->
+					</div>
+{{-----------------------------------------------------------------الأقسام --}}
+
+{{----------------------------------------------------------------- المنتجات الشائعة--}}
+
 					<div class="widget mercado-widget widget-product">
 						<h2 class="widget-title">{{__('mshmk.Popular_Products')}}</h2>
 						<div class="widget-content">
@@ -110,6 +123,7 @@
 							</ul>
 						</div>
 					</div>
+{{----------------------------------------------------------------- المنتجات الشائعة--}}
 
 				</div><!--end sitebar-->
 

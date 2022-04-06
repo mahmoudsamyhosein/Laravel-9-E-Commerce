@@ -1,7 +1,7 @@
 <div>
 	<!--main area-->
 	<main id="main" class="main-site" dir="rtl" style="text-align: right">
-		<title>@section('title','| أتمام الدفع  ')</title>
+		<title>@section('title',' أتمام الدفع  |')</title>
 		<style>
 			.summary-item .row-in-form input[type="password"], .summary-item .row-in-form input[type="text"], .summary-item .row-in-form input[type="tel"] {
 				font-size: 13px;

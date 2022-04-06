@@ -1,5 +1,5 @@
 <div dir="rtl" style="text-align: right">
-    <title>@section('title','| خواص المنتجات ')</title>
+    <title>@section('title',' خواص المنتجات |')</title>
     <div>
         <style>
             

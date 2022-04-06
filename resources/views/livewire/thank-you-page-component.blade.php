@@ -1,7 +1,7 @@
 <div dir="rtl" style="text-align:right;">
    	<!--صفحة شكر للمستخدم-->
 	<main id="main" class="main-site">
-		<title>@section('title','| شكرا لك ')</title>
+		<title>@section('title',' شكرا لك |')</title>
 
 		<div class="container">
 			<div class="wrap-breadcrumb">

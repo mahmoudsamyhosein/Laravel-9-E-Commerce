@@ -1,7 +1,7 @@
 <div>
 <!--main area-->
 	<main id="main" class="main-site" >
-		<title>@section('title','| تفاصيل المنتج  ')</title>
+		<title>@section('title',' تفاصيل المنتج |')</title>
 		<div class="container">
 			<div class="wrap-breadcrumb" dir="rtl">
 				<ul>

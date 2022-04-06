@@ -1,6 +1,6 @@
 <div>	
 <main id="main" class="main-site right-sidebar" dir="rtl" style="text-align: right">
-	<title>@section('title','| البحث ')</title>
+	<title>@section('title',' البحث |')</title>
 		<div class="container">
 			<div class="wrap-breadcrumb">
 				<ul>

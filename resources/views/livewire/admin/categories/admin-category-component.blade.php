@@ -1,6 +1,5 @@
 <div dir="rtl" style="text-align: right">
     <style>
-       
         .sclist{
             list-style: none;
         }
@@ -16,7 +15,7 @@
         
     </style>
     <div class="container" style="padding: 30px 0;">
-        <title>@section('title','| الأقسام ')</title>
+        <title>@section('title',' الأقسام |')</title>
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default">
@@ -57,7 +56,7 @@
                                             @foreach ($category->subcategories as $scategory)
                                                 <li>
                                                     <i class="fa fa-caret-right"></i>{{$scategory->name}} <a class="slink" href="{{route('admin.editcategory',[ 'category_slug'=> $category->slug , 'scategory_slug'=> $scategory->slug])}}"><i class="fa fa-edit"></i></a> 
-                                                    <a class="slink" href="#" onclick="confirm('mshmk.Are_You_Sure,_You_Want_To_Delete_Subcategory?') || event.stopImmediatePropagation()" wire:click.prevent='deletesubcategory({{$scategory->id}})'><i class="fa fa-times text-danger"></i></a>
+                                                    <a class="slink" href="#" onclick="confirm('{{__('mshmk.Are_You_Sure,_You_Want_To_Delete_Subcategory?')}}') || event.stopImmediatePropagation()" wire:click.prevent='deletesubcategory({{$scategory->id}})'><i class="fa fa-times text-danger"></i></a>
                                                 </li>
                                             @endforeach
                                         </ul>

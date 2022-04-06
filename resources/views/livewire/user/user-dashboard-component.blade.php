@@ -1,5 +1,5 @@
 <div class="content" dir="rtl" style="text-align: right">  
-  <title>@section('title','| لوحة التحكم ')</title>
+  <title>@section('title',' لوحة التحكم |')</title>
  
     <style>
         .content {

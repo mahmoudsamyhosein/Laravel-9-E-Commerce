@@ -24,7 +24,16 @@ class AdminAddHomeSliderComponent extends Component
     public function mount(){
         $this->status = 0;
     }
+
     public function addslide(){
+        $this->validate([
+            'title'  => 'required',
+            'subtitle'  => 'required',
+            'price'  => 'required',
+            'link'  =>'required',
+            'image'  => 'required',
+            
+        ]);
         $slider = new Homeslider();
         $slider->title = $this->title;
         $slider->subtitle = $this->subtitle;

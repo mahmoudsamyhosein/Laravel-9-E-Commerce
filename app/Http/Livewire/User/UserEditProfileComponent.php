@@ -43,6 +43,16 @@ class UserEditProfileComponent extends Component
 
     public function updateProfile()
     {
+        $this->validate([
+            'name' => 'required',
+            'mobile' => 'required|numeric',
+            'image' => 'required',
+            'city' => 'required',
+            'province' => 'required',
+            'country' => 'required',
+            'line1' => 'required',
+
+        ]);
         $user = User::find(Auth::user()->id);
         $user->name = $this->name;
         $user->save();

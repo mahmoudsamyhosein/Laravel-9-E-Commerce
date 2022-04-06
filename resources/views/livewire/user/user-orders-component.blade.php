@@ -1,5 +1,5 @@
 <div dir="rtl" style="text-align: right">
-    <title>@section('title','| الطلبات ')</title>
+    <title>@section('title',' الطلبات |')</title>
 
     <style>
         nav svg{

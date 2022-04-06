@@ -62,14 +62,14 @@ class AdminEditCategoryComponent extends Component
             'slug' => 'required|unique:categories'
         ]);
         if($this->scategory_id)
-        {
-            $scategory = Subcategory::find($this->scategory_id);
-            $scategory->name = $this->name;
-            $scategory->slug = $this->slug;
-            $scategory->category_id = $this->category_id;
-            $scategory->save();
-        }
-        else
+            {
+                $scategory = Subcategory::find($this->scategory_id);
+                $scategory->name = $this->name;
+                $scategory->slug = $this->slug;
+                $scategory->category_id = $this->category_id;
+                $scategory->save();
+            }
+        elseif($this->category_id)
         {
             $category = Category::find($this->category_id);
             $category->name = $this->name;

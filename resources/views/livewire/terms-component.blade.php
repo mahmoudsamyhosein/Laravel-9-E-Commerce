@@ -1,7 +1,7 @@
 <div dir="rtl" style="text-align: right;">
     <!--main area-->
 	<main id="main" class="main-site">
-		<title>@section('title','| الشروط والأحكام ')</title>
+		<title>@section('title',' الشروط والأحكام |')</title>
 
 		<div class="container">
 

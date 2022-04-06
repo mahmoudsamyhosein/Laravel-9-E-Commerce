@@ -4,8 +4,9 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>مصري شوب @yield('title','| الرئيسية')</title>
+	<title>@yield('title',' الرئيسية |') مصري شوب </title>
 	<link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/favicon.png') }}">
+	<link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/icon.png') }}">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
@@ -132,6 +133,7 @@
 		}
 		.wrap-product-detail .detail-info .stock-info.in-stock b{
 			color: #FE9900;
+			margin-right:2px;
 		}
 		.wrap-address-billing .row-in-form label span{
 			color: #FE9900;
@@ -364,11 +366,13 @@
 		.wrap-contacts .contact-box textarea{
 			background: #ffffff;
 		}
-		.wrap-iten-in-cart .products-cart .product-name a:hover{
-			color:#FE9900
-		}
+		
 		.wrap-iten-in-cart .products-cart .product-name a:hover{
 			color: #FE9900;
+			margin-right: 5px;
+		}
+		.wrap-iten-in-cart .products-cart .quantity .quantity-input .btn:hover{
+			background: #FE9900 !important;
 		}
 		.flex-control-thumbs img.flex-active{
 			border-color:#FE9900;
@@ -389,6 +393,15 @@
 		.fa-caret-right:before{
 			margin-left: 6px;
 			
+		}
+		.wrap-shop-control .shop-title{
+			color:#ffffff;
+		}
+		.wrap-main-slide .slide-1 .sale-info{
+			color: #ffffff;
+		}
+		.wrap-main-slide .active .slide-1 .sale-info{
+			margin-right: 275px;
 		}
     </style>	
 	<!-- قائمة الموبايل -->
