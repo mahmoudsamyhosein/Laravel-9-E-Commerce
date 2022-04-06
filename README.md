@@ -4,7 +4,10 @@
 </p>
 
 <p align="center"> 
-    أسم المستخدم : masry_shop@admin.com
+    مدير المتجر : masry_shop@admin.com
+</p>
+<p align="center"> 
+    مستخدم عادي : masry_shop@admin.com
 </p>
 <p align="center"> 
 كلمة المرور : masry_shop
