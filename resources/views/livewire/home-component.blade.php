@@ -108,7 +108,7 @@
 				<h3 class="title-box">{{__('mshmk.Product_Categories')}}</h3>
 				<div class="wrap-top-banner">
 					<a href="#" class="link-banner banner-effect-2">
-						<figure><img src="{{asset('assets/images/banner/b-2.GIF')}}" width="1170" height="240" alt=""></figure>
+						<figure><img src="{{asset('assets/images/banner/b-2.gif')}}" width="1170" height="240" alt=""></figure>
 					</a>
 				</div>
 				<div class="wrap-products">
